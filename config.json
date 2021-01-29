@@ -3,6 +3,7 @@
   "language": "Zig",
   "active": false,
   "blurb": "",
+  "version": 3,
   "ignore_pattern": "[Ee]xample",
   "solution_pattern": "[Ee]xample",
   "test_pattern": "[Tt]est",
