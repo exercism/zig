@@ -1,6 +1,7 @@
 {
   "track_id": "zig",
   "language": "Zig",
+  "slug": "zig",
   "active": false,
   "status": {
     "concept_exercises": false,
