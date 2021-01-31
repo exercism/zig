@@ -11,7 +11,7 @@
 [discord-zig]: https://discord.com/invite/gxsFFjE
 [documentation]: https://ziglang.org/documentation/master
 [irc]: https://webchat.freenode.net/?channels=%23zig
+[newsletter]: https://zig.show/
 [reddit]: https://www.reddit.com/r/Zig
 [stack-overflow]: https://stackoverflow.com/questions/tagged/zig
 [std]: https://github.com/ziglang/zig/tree/master/lib/std
-[newsletter]: https://zig.show/
