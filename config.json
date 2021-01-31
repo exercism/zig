@@ -1,10 +1,28 @@
 {
   "track_id": "zig",
   "language": "Zig",
+  "slug": "zig",
   "active": false,
+  "status": {
+    "concept_exercises": false,
+    "test_runner": false,
+    "representer": false,
+    "analyzer": false
+  },
   "blurb": "",
+  "version": 3,
+  "online_editor": {
+    "indent_style": "space",
+    "indent_size": 4
+  },
   "ignore_pattern": "[Ee]xample",
   "solution_pattern": "[Ee]xample",
   "test_pattern": "[Tt]est",
-  "exercises": null
+  "exercises": {
+    "concept": [],
+    "practice": []
+  },
+  "concepts": [],
+  "key_features": [],
+  "tags": []
 }
