@@ -1,3 +1,5 @@
+# Installation
+
 There are many ways to install Zig, and the number of ways to install Zig are steadily increasing as the language matures. Fortunately, all of the popular installation methods are listed on the [Zig install page][install-zig].
 
 ## Additional utilities

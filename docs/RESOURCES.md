@@ -1,3 +1,5 @@
+# Resources
+
 * [The Zig Programming Language Documentation][documentation] is a great overview of all of the language features that Zig provides to those who use it.
 * [The Zig Standard Library][std] is a good reference to learn how Zig code is written and shows many of the functions that you could import into your own code.
 * [#zig][irc] on irc.freenode.net is the main Zig IRC channel.

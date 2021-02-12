@@ -1,4 +1,4 @@
-## Writing the Code
+# Writing the Code
 
 Write your code in `<exercise-name>.zig`. Some exercises come with prewritten signatures for specific Zig constructs, such as [constants][constants], [functions][functions], [imports][imports], [structs][structs], and [potentially many more][et-cetera]!
 
