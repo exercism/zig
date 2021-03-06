@@ -1,10 +1,10 @@
-## Writing the Code
+# Writing the Code
 
 Write your code in `<exercise-name>.zig`. Some exercises come with prewritten signatures for specific Zig constructs, such as [constants][constants], [functions][functions], [imports][imports], [structs][structs], and [potentially many more][et-cetera]!
 
 These prewritten signatures are meant to help you towards completing exercises by providing a clear starting point. However, starting from these signatures is not necessary. Especially when any written code which passes their tests are perfectly acceptable solutions.
 
-### Running Tests
+## Running Tests
 
 To run the tests, all you need to do is run the following command:
 
