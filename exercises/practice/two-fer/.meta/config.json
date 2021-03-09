@@ -1,0 +1,21 @@
+{
+  "authors": [
+    {
+      "github_username": "massivelivefun",
+      "exercism_username": "massivelivefun"
+    }
+  ],
+  "blurb": "Create a sentence of the form \"One for X, one for me.\"",
+  "files": {
+    "example": [
+      ".meta/example.zig"
+    ],
+    "solution": [
+      "two_fer.zig"
+    ],
+    "test": [
+      "test_two_fer.zig"
+    ]
+  },
+  "source_url": "https://github.com/exercism/problem-specifications/issues/757"
+}
