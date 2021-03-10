@@ -1,5 +1,4 @@
 {
-  "track_id": "zig",
   "language": "Zig",
   "slug": "zig",
   "active": false,
@@ -9,20 +8,39 @@
     "representer": false,
     "analyzer": false
   },
-  "blurb": "",
+  "blurb": "Zig is a general-purpose programming language equipped with well-rounded toolchains that aims to be simple and familiar, yet disparate from what programmers rely on today.",
   "version": 3,
   "online_editor": {
     "indent_style": "space",
     "indent_size": 4
   },
-  "ignore_pattern": "[Ee]xample",
-  "solution_pattern": "[Ee]xample",
-  "test_pattern": "[Tt]est",
   "exercises": {
     "concept": [],
     "practice": []
   },
   "concepts": [],
   "key_features": [],
-  "tags": []
+  "tags": [
+    "paradigm/imperative",
+    "paradigm/procedural",
+    "typing/static",
+    "typing/weak",
+    "execution_mode/compiled",
+    "platform/windows",
+    "platform/mac",
+    "platform/linux",
+    "platform/ios",
+    "platform/android",
+    "platform/web",
+    "runtime/standalone_executable",
+    "used_for/backends",
+    "used_for/cross_platform_development",
+    "used_for/embedded_systems",
+    "used_for/financial_systems",
+    "used_for/frontends",
+    "used_for/games",
+    "used_for/robotics",
+    "used_for/scientific_calculations",
+    "used_for/web_development"
+  ]
 }
