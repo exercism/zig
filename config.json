@@ -16,7 +16,26 @@
   },
   "exercises": {
     "concept": [],
-    "practice": []
+    "practice": [
+      {
+        "uuid": "25a0331e-612f-48c1-8a3f-9b0e9601a2fa",
+        "slug": "hello-world",
+        "name": "Hello, World!",
+        "practices": [
+          "functions",
+          "slices",
+          "strings",
+          "type-coercion"
+        ],
+        "prerequisites": [
+          "functions",
+          "slices",
+          "strings",
+          "type-coercion"
+        ],
+        "difficulty": 1
+      }
+    ]
   },
   "concepts": [],
   "key_features": [],
