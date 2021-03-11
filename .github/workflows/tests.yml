@@ -17,7 +17,7 @@ jobs:
       - name: Check for invalid UUIDs
         # Can be removed once `configlet lint` gains this ability.
         # Check issue https://github.com/exercism/configlet/issues/99
-        run: _test/check_uuids.sh
+        run: ./_test/check_uuids.sh
 
   test-exercises:
     name: Check exercises
@@ -33,4 +33,4 @@ jobs:
         ln -s $(pwd)/zig-*/zig $HOME/bin
     
     - name: Test exercises
-      run: _test/run-tests.sh
+      run: ./_test/run-tests.sh
