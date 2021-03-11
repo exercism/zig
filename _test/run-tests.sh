@@ -38,7 +38,8 @@ if [ -d "exercises/practice" ]; then
     cd build/
 else
     printf '%s\n' "The exercises/practice folder is missing..."
-    return 0
+    printf '%s\n' "Nothing wrong with that, just means there's nothing to test."
+    exit 0
 fi
 
 # Allow specifying which tests to run as arguments
