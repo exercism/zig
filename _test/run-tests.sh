@@ -13,8 +13,14 @@ execute_test () {
         # Copy the examples with the correct name for the exercise
         if [ -e "./.meta/example.zig" ]; then
             mv ./.meta/example.zig "${EXERCISE_NAME}".zig
-            # No building required, just test it.
-            zig test test_${EXERCISE_NAME}.zig
+            # No building required, just test it
+            if [ -L "$HOME/bin/zig" ]; then
+                # Zig track repo symlinks zig to this location
+                $HOME/bin/zig test test_${EXERCISE_NAME}.zig
+            else
+                # Otherwise zig should be on your $PATH
+                zig test test_${EXERCISE_NAME}.zig
+            fi
             printf '\n'
         else
             printf '%s\n' \
