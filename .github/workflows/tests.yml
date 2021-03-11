@@ -1,0 +1,36 @@
+name: Testing CI
+on:
+  push:
+  pull_request:
+    branches:
+    - main
+
+jobs:
+  ensure-conventions:
+    name: Ensure conventions are followed
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Check for invalid UUIDs
+        # Can be removed once `configlet lint` gains this ability.
+        # Check issue https://github.com/exercism/configlet/issues/99
+        run: ./_test/check_uuids.sh
+
+  test-exercises:
+    name: Check exercises
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install Zig
+      run: |
+        curl -o zig.tar.xz https://ziglang.org/download/0.7.0/zig-linux-x86_64-0.7.0.tar.xz
+        tar xJf zig.tar.xz
+        mkdir -p $HOME/bin
+        ln -s $(pwd)/zig-*/zig $HOME/bin
+    
+    - name: Test exercises
+      run: ./_test/run-tests.sh
