@@ -7,14 +7,14 @@
   ],
   "blurb": "Convert a resistor band's color to its numeric representation",
   "files": {
+    "example": [
+      ".meta/example.zig"
+    ],
     "solution": [
       "resistor_color.zig"
     ],
     "test": [
       "test_resistor_color.zig"
-    ],
-    "example": [
-      ".meta/example.zig"
     ]
   },
   "source": "Maud de Vries, Erik Schierboom",
