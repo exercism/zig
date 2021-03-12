@@ -34,6 +34,26 @@
           "type-coercion"
         ],
         "difficulty": 1
+      },
+      {
+        "uuid": "866a09d8-6949-4363-b83f-7b9fefb53893",
+        "slug": "two-fer",
+        "name": "Two Fer",
+        "practices": [
+          "conditionals",
+          "errors",
+          "functions",
+          "optionals",
+          "slices"
+        ],
+        "prerequisites": [
+          "conditionals",
+          "errors",
+          "functions",
+          "optionals",
+          "slices"
+        ],
+        "difficulty": 1
       }
     ]
   },
