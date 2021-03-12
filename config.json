@@ -54,6 +54,28 @@
           "slices"
         ],
         "difficulty": 1
+      },
+      {
+        "uuid": "52a244a4-205d-4fb3-8725-2f31fbc0a0b8",
+        "slug": "resistor-color-duo",
+        "name": "Resistor Color Duo",
+        "practices": [
+          "arrays",
+          "builtin-functions",
+          "enums",
+          "functions",
+          "pointers",
+          "slices"
+        ],
+        "prerequisites": [
+          "arrays",
+          "builtin-functions",
+          "enums",
+          "functions",
+          "pointers",
+          "slices"
+        ],
+        "difficulty": 1
       }
     ]
   },
