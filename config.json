@@ -54,6 +54,20 @@
           "slices"
         ],
         "difficulty": 1
+      },
+      {
+        "uuid": "7f1ae5db-82f6-44b0-a5b4-a206f29c4bb0",
+        "slug": "difference-of-squares",
+        "name": "Difference of Squares",
+        "practices": [
+          "builtin-functions",
+          "functions"
+        ],
+        "prerequisites": [
+          "builtin-functions",
+          "functions"
+        ],
+        "difficulty": 1
       }
     ]
   },
