@@ -56,6 +56,28 @@
         "difficulty": 1
       },
       {
+        "uuid": "52a244a4-205d-4fb3-8725-2f31fbc0a0b8",
+        "slug": "resistor-color-duo",
+        "name": "Resistor Color Duo",
+        "practices": [
+          "arrays",
+          "builtin-functions",
+          "enums",
+          "functions",
+          "pointers",
+          "slices"
+        ],
+        "prerequisites": [
+          "arrays",
+          "builtin-functions",
+          "enums",
+          "functions",
+          "pointers",
+          "slices"
+        ],
+        "difficulty": 1
+      },
+      {
         "uuid": "7f1ae5db-82f6-44b0-a5b4-a206f29c4bb0",
         "slug": "difference-of-squares",
         "name": "Difference of Squares",
