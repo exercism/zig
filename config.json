@@ -90,6 +90,22 @@
           "functions"
         ],
         "difficulty": 1
+      },
+      {
+        "uuid": "3c5268f9-d8d7-46b4-a751-a4ff3774a3e1",
+        "slug": "collatz-conjecture",
+        "name": "Collatz Conjecture",
+        "practices": [
+          "builtin-functions",
+          "control-flow",
+          "functions"
+        ],
+        "prerequisites": [
+          "builtin-functions",
+          "control-flow",
+          "functions"
+        ],
+        "difficulty": 1
       }
     ]
   },
