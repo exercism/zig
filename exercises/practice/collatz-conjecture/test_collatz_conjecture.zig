@@ -2,6 +2,7 @@ const std = @import("std");
 const testing = std.testing;
 
 const collatz_conjecture = @import("collatz_conjecture.zig");
+const ComputationError = collatz_conjecture.ComputationError;
 
 test "zero steps for one" {
     const expected = 0;
@@ -28,13 +29,13 @@ test "large number of even and odd steps" {
 }
 
 test "zero is an error" {
-    const expected = collatz_conjecture.ComputationError.IllegalArgument;
+    const expected = ComputationError.IllegalArgument;
     const actual = comptime collatz_conjecture.steps(0);
     testing.expectError(expected, actual);
 }
 
 test "negative value is an error" {
-    const expected = collatz_conjecture.ComputationError.IllegalArgument;
+    const expected = ComputationError.IllegalArgument;
     const actual = comptime collatz_conjecture.steps(-15);
     testing.expectError(expected, actual);
 }
