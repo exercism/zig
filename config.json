@@ -56,16 +56,17 @@
         "difficulty": 1
       },
       {
-        "uuid": "52a244a4-205d-4fb3-8725-2f31fbc0a0b8",
-        "slug": "resistor-color-duo",
-        "name": "Resistor Color Duo",
+        "uuid": "f49a0baa-a309-4814-a123-f41a2d770bdd",
+        "slug": "resistor-color",
+        "name": "Resistor Color",
         "practices": [
           "arrays",
           "builtin-functions",
           "enums",
           "functions",
           "pointers",
-          "slices"
+          "slices",
+          "type-coercion"
         ],
         "prerequisites": [
           "arrays",
@@ -73,7 +74,34 @@
           "enums",
           "functions",
           "pointers",
-          "slices"
+          "slices",
+          "type-coercion"
+        ],
+        "difficulty": 1
+      },
+      {
+        "uuid": "52a244a4-205d-4fb3-8725-2f31fbc0a0b8",
+        "slug": "resistor-color-duo",
+        "name": "Resistor Color Duo",
+        "practices": [
+          "arrays",
+          "builtin-functions",
+          "enums",
+          "error-set",
+          "functions",
+          "pointers",
+          "slices",
+          "type-coercion"
+        ],
+        "prerequisites": [
+          "arrays",
+          "builtin-functions",
+          "enums",
+          "error-set",
+          "functions",
+          "pointers",
+          "slices",
+          "type-coercion"
         ],
         "difficulty": 1
       },
