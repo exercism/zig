@@ -154,6 +154,26 @@
           "functions"
         ],
         "difficulty": 1
+      },
+      {
+        "uuid": "3819c81e-db22-4aac-b745-5eec450b7b4d",
+        "slug": "darts",
+        "name": "Darts",
+        "practices": [
+          "conditionals",
+          "functions",
+          "importing",
+          "methods",
+          "structs"
+        ],
+        "prerequisites": [
+          "conditionals",
+          "functions",
+          "importing",
+          "methods",
+          "structs"
+        ],
+        "difficulty": 1
       }
     ]
   },
