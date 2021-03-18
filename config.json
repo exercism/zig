@@ -196,6 +196,20 @@
           "type-coercion"
         ],
         "difficulty": 1
+      },
+      {
+        "uuid": "5e8e92f6-e8c7-49f1-8ebf-a93f73998d47",
+        "slug": "leap",
+        "name": "Leap",
+        "practices": [
+          "conditionals",
+          "functions"
+        ],
+        "prerequisites": [
+          "conditionals",
+          "functions"
+        ],
+        "difficulty": 1
       }
     ]
   },
