@@ -1,0 +1,22 @@
+{
+  "blurb": "Given a year, report if it is a leap year.",
+  "authors": [
+    {
+      "github_username": "massivelivefun",
+      "exercism_username": "massivelivefun"
+    }
+  ],
+  "files": {
+    "example": [
+      ".meta/example.zig"
+    ],
+    "solution": [
+      "leap.zig"
+    ],
+    "test": [
+      "test_leap.zig"
+    ]
+  },
+  "source": "JavaRanch Cattle Drive, exercise 3",
+  "source_url": "http://www.javaranch.com/leap.jsp"
+}
