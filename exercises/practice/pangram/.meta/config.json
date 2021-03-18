@@ -1,0 +1,22 @@
+{
+  "blurb": "Determine if a sentence is a pangram.",
+  "authors": [
+    {
+      "github_username": "massivelivefun",
+      "exercism_username": "massivelivefun"
+    }
+  ],
+  "files": {
+    "example": [
+      ".meta/example.zig"
+    ],
+    "solution": [
+      "pangram.zig"
+    ],
+    "test": [
+      "test_pangram.zig"
+    ]
+  },
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Pangram"
+}
