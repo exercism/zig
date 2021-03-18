@@ -1,0 +1,22 @@
+{
+  "authors": [
+    {
+      "github_username": "massivelivefun",
+      "exercism_username": "massivelivefun"
+    }
+  ],
+  "blurb": "Determine if a triangle is equilateral, isosceles, or scalene.",
+  "files": {
+    "example": [
+      ".meta/example.zig"
+    ],
+    "solution": [
+      "triangle.zig"
+    ],
+    "test": [
+      "test_triangle.zig"
+    ]
+  },
+  "source": "The Ruby Koans triangle project, parts 1 & 2",
+  "source_url": "http://rubykoans.com"
+}
