@@ -232,6 +232,30 @@
           "structs"
         ],
         "difficulty": 1
+      },
+      {
+        "uuid": "8f48a213-9a28-4a7e-93f9-f2b1fbe46e58",
+        "slug": "pangram",
+        "name": "Pangram",
+        "topics": [
+          "bitwise-operations",
+          "builtin-functions",
+          "conditionals",
+          "control-flow",
+          "importing",
+          "slices",
+          "type-coercion"
+        ],
+        "prerequisites": [
+          "bitwise-operations",
+          "builtin-functions",
+          "conditionals",
+          "control-flow",
+          "importing",
+          "slices",
+          "type-coercion"
+        ],
+        "difficulty": 1
       }
     ]
   },
