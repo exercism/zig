@@ -210,6 +210,28 @@
           "functions"
         ],
         "difficulty": 1
+      },
+      {
+        "uuid": "d36abb68-78cc-4c99-8693-00e02eb9011e",
+        "slug": "triangle",
+        "name": "Triangle",
+        "practices": [
+          "bitwise-operations",
+          "conditionals",
+          "error-sets",
+          "functions",
+          "methods",
+          "structs"
+        ],
+        "prerequisites": [
+          "bitwise-operations",
+          "conditionals",
+          "error-sets",
+          "functions",
+          "methods",
+          "structs"
+        ],
+        "difficulty": 1
       }
     ]
   },
