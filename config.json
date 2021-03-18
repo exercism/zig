@@ -24,13 +24,11 @@
         "practices": [
           "functions",
           "slices",
-          "strings",
           "type-coercion"
         ],
         "prerequisites": [
           "functions",
           "slices",
-          "strings",
           "type-coercion"
         ],
         "difficulty": 1
@@ -41,14 +39,14 @@
         "name": "Two Fer",
         "practices": [
           "conditionals",
-          "errors",
+          "error-sets",
           "functions",
           "optionals",
           "slices"
         ],
         "prerequisites": [
           "conditionals",
-          "errors",
+          "error-sets",
           "functions",
           "optionals",
           "slices"
@@ -87,7 +85,7 @@
           "arrays",
           "builtin-functions",
           "enums",
-          "error-set",
+          "error-sets",
           "functions",
           "pointers",
           "slices",
@@ -97,7 +95,7 @@
           "arrays",
           "builtin-functions",
           "enums",
-          "error-set",
+          "error-sets",
           "functions",
           "pointers",
           "slices",
