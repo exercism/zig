@@ -256,6 +256,28 @@
           "type-coercion"
         ],
         "difficulty": 1
+      },
+      {
+        "uuid": "9f715841-e4d0-491e-9ed7-af36c8eafb49",
+        "slug": "rna-transcription",
+        "name": "RNA Transcription",
+        "practices": [
+          "allocators",
+          "conditionals",
+          "control-flow",
+          "error-sets",
+          "slices",
+          "type-coercion"
+        ],
+        "prerequisites": [
+          "allocators",
+          "conditionals",
+          "control-flow",
+          "error-sets",
+          "slices",
+          "type-coercion"
+        ],
+        "difficulty": 1
       }
     ]
   },
