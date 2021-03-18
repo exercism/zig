@@ -174,6 +174,28 @@
           "structs"
         ],
         "difficulty": 1
+      },
+      {
+        "uuid": "bd72bb30-583f-494c-818d-4394703293a1",
+        "slug": "hamming",
+        "name": "Hamming",
+        "practices": [
+          "conditionals",
+          "control-flow",
+          "error-sets",
+          "functions",
+          "slices",
+          "type-coercion"
+        ],
+        "prerequisites": [
+          "conditionals",
+          "control-flow",
+          "error-sets",
+          "functions",
+          "slices",
+          "type-coercion"
+        ],
+        "difficulty": 1
       }
     ]
   },
