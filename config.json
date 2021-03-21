@@ -298,6 +298,26 @@
           "structs"
         ],
         "difficulty": 1
+      },
+      {
+        "uuid": "6eb542c3-c14f-430a-81ce-ba9f2c0551c2",
+        "slug": "queen-attack",
+        "name": "Queen Attack",
+        "practices": [
+          "control-flow",
+          "error-sets",
+          "importing",
+          "methods",
+          "structs"
+        ],
+        "prerequisites": [
+          "control-flow",
+          "error-sets",
+          "importing",
+          "methods",
+          "structs"
+        ],
+        "difficulty": 1
       }
     ]
   },
