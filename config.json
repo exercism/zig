@@ -276,6 +276,28 @@
           "type-coercion"
         ],
         "difficulty": 1
+      },
+      {
+        "uuid": "280bd414-898d-4ab9-8a7c-f9c0d1e382f6",
+        "slug": "space-age",
+        "name": "Space Age",
+        "practices": [
+          "builtin-functions",
+          "control-flow",
+          "enums",
+          "functions",
+          "methods",
+          "structs"
+        ],
+        "prerequisites": [
+          "builtin-functions",
+          "control-flow",
+          "enums",
+          "functions",
+          "methods",
+          "structs"
+        ],
+        "difficulty": 1
       }
     ]
   },
