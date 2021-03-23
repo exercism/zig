@@ -1,10 +1,7 @@
 {
   "blurb": "Given a year, report if it is a leap year.",
   "authors": [
-    {
-      "github_username": "massivelivefun",
-      "exercism_username": "massivelivefun"
-    }
+    "massivelivefun"
   ],
   "files": {
     "example": [

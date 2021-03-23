@@ -1,9 +1,6 @@
 {
   "authors": [
-    {
-      "github_username": "massivelivefun",
-      "exercism_username": "massivelivefun"
-    }
+    "massivelivefun"
   ],
   "blurb": "Determine if a triangle is equilateral, isosceles, or scalene.",
   "files": {

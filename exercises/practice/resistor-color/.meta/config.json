@@ -1,9 +1,6 @@
 {
   "authors": [
-    {
-      "github_username": "massivelivefun",
-      "exercism_username": "massivelivefun"
-    }
+    "massivelivefun"
   ],
   "blurb": "Convert a resistor band's color to its numeric representation",
   "files": {

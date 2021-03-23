@@ -1,9 +1,6 @@
 {
   "authors": [
-    {
-      "github_username": "massivelivefun",
-      "exercism_username": "massivelivefun"
-    }
+    "massivelivefun"
   ],
   "blurb": "Find the difference between the square of the sum and the sum of the squares of the first N natural numbers.",
   "files": {

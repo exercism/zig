@@ -1,10 +1,7 @@
 {
   "blurb": "Determine if a sentence is a pangram.",
   "authors": [
-    {
-      "github_username": "massivelivefun",
-      "exercism_username": "massivelivefun"
-    }
+    "massivelivefun"
   ],
   "files": {
     "example": [
