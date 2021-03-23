@@ -1,9 +1,6 @@
 {
   "authors": [
-    {
-      "github_username": "massivelivefun",
-      "exercism_username": "massivelivefun"
-    }
+    "massivelivefun"
   ],
   "blurb": "Create a sentence of the form \"One for X, one for me.\"",
   "files": {

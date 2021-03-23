@@ -1,9 +1,6 @@
 {
   "authors": [
-    {
-      "github_username": "massivelivefun",
-      "exercism_username": "massivelivefun"
-    }
+    "massivelivefun"
   ],
   "blurb": "Given an age in seconds, calculate how old someone is in terms of a given planet's solar years.",
   "files": {
