@@ -1,0 +1,22 @@
+{
+  "authors": [
+    {
+      "github_username": "massivelivefun",
+      "exercism_username": "massivelivefun"
+    }
+  ],
+  "blurb": "Implement a binary search algorithm.",
+  "files": {
+    "example": [
+      ".meta/example.zig"
+    ],
+    "solution": [
+      "binary_search.zig"
+    ],
+    "test": [
+      "test_binary_search.zig"
+    ]
+  },
+  "source": "Wikipedia",
+  "source_url": "http://en.wikipedia.org/wiki/Binary_search_algorithm"
+}
