@@ -328,14 +328,16 @@
           "error-sets",
           "generics",
           "functions",
-          "optionals"
+          "optionals",
+          "type-coercion"
         ],
         "prerequisites": [
           "control-flow",
           "error-sets",
           "generics",
           "functions",
-          "optionals"
+          "optionals",
+          "type-coercion"
         ],
         "difficulty": 1
       }
