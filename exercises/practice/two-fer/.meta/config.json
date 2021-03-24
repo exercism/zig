@@ -2,6 +2,10 @@
   "authors": [
     "massivelivefun"
   ],
+  "contributors": [
+    "ErikSchierboom",
+    "iHiD"
+  ],
   "blurb": "Create a sentence of the form \"One for X, one for me.\"",
   "files": {
     "example": [
