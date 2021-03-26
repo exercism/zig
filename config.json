@@ -318,6 +318,28 @@
           "structs"
         ],
         "difficulty": 1
+      },
+      {
+        "uuid": "f47bbe16-dd61-4542-8634-30ea14cc4f56",
+        "slug": "binary-search",
+        "name": "Binary Search",
+        "practices": [
+          "control-flow",
+          "error-sets",
+          "generics",
+          "functions",
+          "optionals",
+          "type-coercion"
+        ],
+        "prerequisites": [
+          "control-flow",
+          "error-sets",
+          "generics",
+          "functions",
+          "optionals",
+          "type-coercion"
+        ],
+        "difficulty": 1
       }
     ]
   },
