@@ -21,13 +21,13 @@ jobs:
 
   test-exercises:
     name: Check exercises
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
     - uses: actions/checkout@v2
 
     - name: Install Zig
       run: |
-        curl -o zig.tar.xz https://ziglang.org/download/0.7.0/zig-linux-x86_64-0.7.0.tar.xz
+        curl -o zig.tar.xz https://ziglang.org/download/0.7.1/zig-macos-x86_64-0.7.1.tar.xz
         tar xJf zig.tar.xz
         mkdir -p $HOME/bin
         ln -s $(pwd)/zig-*/zig $HOME/bin
