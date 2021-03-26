@@ -340,6 +340,30 @@
           "type-coercion"
         ],
         "difficulty": 1
+      },
+      {
+        "uuid": "bf256ae9-9e65-48bf-8f27-fde487c05856",
+        "slug": "secret-handshake",
+        "name": "Secret Handshake",
+        "practices": [
+          "allocators",
+          "bitwise-operations",
+          "conditionals",
+          "control-flow",
+          "error-sets",
+          "functions",
+          "importing"
+        ],
+        "prerequisites": [
+          "allocators",
+          "bitwise-operations",
+          "conditionals",
+          "control-flow",
+          "error-sets",
+          "functions",
+          "importing"
+        ],
+        "difficulty": 1
       }
     ]
   },
