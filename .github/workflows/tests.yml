@@ -34,3 +34,18 @@ jobs:
     
     - name: Test exercises
       run: ./_test/run-tests.sh
+  test-exercises-mac:
+    name: Check exercises on mac
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install Zig
+      run: |
+        curl -o zig.tar.xz https://ziglang.org/download/0.7.0/zig-macos-x86_64-0.7.0.tar.xz
+        tar xJf zig.tar.xz
+        mkdir -p $HOME/bin
+        ln -s $(pwd)/zig-*/zig $HOME/bin
+    
+    - name: Test exercises
+      run: ./_test/run-tests.sh
