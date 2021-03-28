@@ -364,6 +364,26 @@
           "importing"
         ],
         "difficulty": 1
+      },
+      {
+        "uuid": "bf256ae9-9e65-48bf-8f27-fde487c05856",
+        "slug": "isogram",
+        "name": "Isogram",
+        "practices": [
+          "builtin-functions",
+          "bitwise-operations",
+          "conditionals",
+          "control-flow",
+          "functions"
+        ],
+        "prerequisites": [
+          "builtin-functions",
+          "bitwise-operations",
+          "conditionals",
+          "control-flow",
+          "functions"
+        ],
+        "difficulty": 1
       }
     ]
   },
