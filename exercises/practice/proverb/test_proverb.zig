@@ -26,7 +26,7 @@ test "one piece" {
     const input_array = [_][]const u8 { first_slice };
     const input_slice = &input_array;
 
-    const first_expected = "And all for the want of a nail.".*;
+    const first_expected = "And all for the want of a nail.\n".*;
     const first_expected_slice = &first_expected;
     const expected_array = [_][]const u8 { first_expected_slice };
     const expected = &expected_array;
@@ -51,9 +51,9 @@ test "two pieces" {
     const input_array = [_][]const u8 { first_slice, second_slice };
     const input_slice = &input_array;
 
-    const first_expected = "For want of a nail the shoe was lost.".*;
+    const first_expected = "For want of a nail the shoe was lost.\n".*;
     const first_expected_slice = &first_expected ;
-    const second_expected = "And all for the want of a nail.".*;
+    const second_expected = "And all for the want of a nail.\n".*;
     const second_expected_slice = &second_expected;
     const expected_array = [_][]const u8 { first_expected_slice,
         second_expected_slice };
@@ -82,11 +82,11 @@ test "three pieces" {
         third_slice };
     const input_slice = &input_array;
 
-    const first_expected = "For want of a nail the shoe was lost.".*;
+    const first_expected = "For want of a nail the shoe was lost.\n".*;
     const first_expected_slice = &first_expected;
-    const second_expected = "For want of a shoe the horse was lost.".*;
+    const second_expected = "For want of a shoe the horse was lost.\n".*;
     const second_expected_slice = &second_expected;
-    const third_expected = "And all for the want of a nail.".*;
+    const third_expected = "And all for the want of a nail.\n".*;
     const third_expected_slice = &third_expected;
     const expected_array = [_][]const u8 { first_expected_slice,
         second_expected_slice, third_expected_slice };
@@ -123,19 +123,19 @@ test "full proverb" {
         third_slice, fourth_slice, fifth_slice, sixth_slice, seventh_slice };
     const input_slice = &input_array;
 
-    const first_expected = "For want of a nail the shoe was lost.".*;
+    const first_expected = "For want of a nail the shoe was lost.\n".*;
     const first_expected_slice = &first_expected;
-    const second_expected = "For want of a shoe the horse was lost.".*;
+    const second_expected = "For want of a shoe the horse was lost.\n".*;
     const second_expected_slice = &second_expected;
-    const third_expected = "For want of a horse the rider was lost.".*;
+    const third_expected = "For want of a horse the rider was lost.\n".*;
     const third_expected_slice = &third_expected;
-    const fourth_expected = "For want of a rider the message was lost.".*;
+    const fourth_expected = "For want of a rider the message was lost.\n".*;
     const fourth_expected_slice = &fourth_expected;
-    const fifth_expected = "For want of a message the battle was lost.".*;
+    const fifth_expected = "For want of a message the battle was lost.\n".*;
     const fifth_expected_slice = &fifth_expected;
-    const sixth_expected = "For want of a battle the kingdom was lost.".*;
+    const sixth_expected = "For want of a battle the kingdom was lost.\n".*;
     const sixth_expected_slice = &sixth_expected;
-    const seventh_expected = "And all for the want of a nail.".*;
+    const seventh_expected = "And all for the want of a nail.\n".*;
     const seventh_expected_slice = &seventh_expected;
     const expected_array = [_][]const u8 { first_expected_slice,
         second_expected_slice, third_expected_slice, fourth_expected_slice,
@@ -167,13 +167,13 @@ test "four pieces modernized" {
         third_slice, fourth_slice };
     const input_slice = &input_array;
 
-    const first_expected = "For want of a pin the gun was lost.".*;
+    const first_expected = "For want of a pin the gun was lost.\n".*;
     const first_expected_slice = &first_expected;
-    const second_expected = "For want of a gun the soldier was lost.".*;
+    const second_expected = "For want of a gun the soldier was lost.\n".*;
     const second_expected_slice = &second_expected;
-    const third_expected = "For want of a soldier the battle was lost.".*;
+    const third_expected = "For want of a soldier the battle was lost.\n".*;
     const third_expected_slice = &third_expected;
-    const fourth_expected = "And all for the want of a pin.".*;
+    const fourth_expected = "And all for the want of a pin.\n".*;
     const fourth_expected_slice = &fourth_expected;
     const expected_array = [_][]const u8 { first_expected_slice,
         second_expected_slice, third_expected_slice, fourth_expected_slice };
