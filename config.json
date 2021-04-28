@@ -342,7 +342,7 @@
         "difficulty": 1
       },
       {
-        "uuid": "bf256ae9-9e65-48bf-8f27-fde487c05856",
+        "uuid": "ba0ab298-3fb4-47e1-87f0-0644a405502e",
         "slug": "secret-handshake",
         "name": "Secret Handshake",
         "practices": [
@@ -366,7 +366,7 @@
         "difficulty": 1
       },
       {
-        "uuid": "bf256ae9-9e65-48bf-8f27-fde487c05856",
+        "uuid": "93a9b5bd-b495-4a7d-86fe-b71fd0343336",
         "slug": "isogram",
         "name": "Isogram",
         "practices": [
