@@ -23,7 +23,7 @@ description = "year divisible by 100, not divisible by 400 in common year"
 include = true
 
 [9d70f938-537c-40a6-ba19-f50739ce8bac]
-description = "year divisible by 100 but not by 3 is still not a leap yea"r
+description = "year divisible by 100 but not by 3 is still not a leap year"
 include = true
 
 [42ee56ad-d3e6-48f1-8e3f-c84078d916fc]
