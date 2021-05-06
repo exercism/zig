@@ -3,6 +3,10 @@
   "authors": [
     "massivelivefun"
   ],
+  "contributors": [
+    "ErikSchierboom",
+    "iHiD"
+  ],
   "files": {
     "example": [
       ".meta/example.zig"
