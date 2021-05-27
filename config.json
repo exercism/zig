@@ -236,7 +236,7 @@
         "uuid": "8f48a213-9a28-4a7e-93f9-f2b1fbe46e58",
         "slug": "pangram",
         "name": "Pangram",
-        "topics": [
+        "practices": [
           "bitwise-operations",
           "builtin-functions",
           "conditionals",
