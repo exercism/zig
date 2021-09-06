@@ -28,9 +28,6 @@
           "type-coercion"
         ],
         "prerequisites": [
-          "functions",
-          "slices",
-          "type-coercion"
         ],
         "difficulty": 1
       },
