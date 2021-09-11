@@ -431,7 +431,7 @@
     },
     {
       "title": "Cross-compile",
-      "content": "Zig can build for a plethora of targets and is a first class use case.",
+      "content": "Zig can build for a plethora of targets and cross-compiling is a first class use case.",
       "icon": "cross-platform"
     },
     {
