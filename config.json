@@ -426,7 +426,7 @@
     },
     {
       "title": "Safety",
-      "content": "Zig let's you write fast, clear code capable of handling all error conditions.",
+      "content": "Zig lets you write fast, clear code capable of handling all error conditions.",
       "icon": "safe"
     },
     {
