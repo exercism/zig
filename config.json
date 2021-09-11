@@ -408,7 +408,38 @@
     ]
   },
   "concepts": [],
-  "key_features": [],
+  "key_features": [
+    {
+      "title": "Simple",
+      "content": "Zig let's you focus on debugging your application rather than debugging your programming language knowledge.",
+      "icon": "easy"
+    },
+    {
+      "title": "Comptime",
+      "content": "Zig has a a fresh approach to metaprogramming based on compile-time code execution and lazy evaluation",
+      "icon": "powerful"
+    },
+    {
+      "title": "Performance",
+      "content": "Zig produces fast and memory efficient executables: you are free to manage memory yourself.",
+      "icon": "fast"
+    },
+    {
+      "title": "Safety",
+      "content": "Zig let's you write fast, clear code capable of handling all error conditions.",
+      "icon": "safe"
+    },
+    {
+      "title": "Cross-compile",
+      "content": "Zig can build for a plethora of targets and is a first class use case.",
+      "icon": "cross-platform"
+    },
+    {
+      "title": "Community",
+      "content": "The Zig community is decentralized and development is funded by the non-profit Zig Software Foundation.",
+      "icon": "community"
+    }
+  ],
   "tags": [
     "paradigm/imperative",
     "paradigm/procedural",
