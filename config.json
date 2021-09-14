@@ -416,7 +416,7 @@
     },
     {
       "title": "Comptime",
-      "content": "Zig has a a fresh approach to metaprogramming based on compile-time code execution and lazy evaluation",
+      "content": "Zig has a fresh approach to metaprogramming based on compile-time code execution and lazy evaluation",
       "icon": "powerful"
     },
     {
