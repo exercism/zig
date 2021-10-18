@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@1e204e9a9253d643386038d443f96446fa156a97
 
       - name: Check for invalid UUIDs
         # Can be removed once `configlet lint` gains this ability.
@@ -23,7 +23,7 @@ jobs:
     name: Check exercises
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@1e204e9a9253d643386038d443f96446fa156a97
 
     - name: Install Zig
       run: |
@@ -38,7 +38,7 @@ jobs:
     name: Check exercises on mac
     runs-on: macos-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@1e204e9a9253d643386038d443f96446fa156a97
 
     - name: Install Zig
       run: |
