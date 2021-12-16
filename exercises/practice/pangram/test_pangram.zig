@@ -4,50 +4,50 @@ const testing = std.testing;
 const pangram = @import("pangram.zig");
 
 test "empty sentence" {
-    comptime testing.expect(!pangram.isPangram(""));
+    comptime try testing.expect(!pangram.isPangram(""));
 }
 
 test "perfect lower case" {
-    comptime testing.expect(
+    comptime try testing.expect(
         pangram.isPangram("abcdefghijklmnopqrstuvwxyz"));
 }
 
 test "only lower case" {
-    comptime testing.expect(pangram.isPangram(
+    comptime try testing.expect(pangram.isPangram(
         "the quick brown fox jumps over the lazy dog"));
 }
 
 test "missing letter x" {
-    comptime testing.expect(!pangram.isPangram(
+    comptime try testing.expect(!pangram.isPangram(
         "a quick movement of the enemy will jeopardize five gunboats"));
 }
 
 test "missing letter h" {
-    comptime testing.expect(!pangram.isPangram(
+    comptime try testing.expect(!pangram.isPangram(
         "five boxing wizards jump quickly at it"));
 }
 
 test "with underscores" {
-    comptime testing.expect(pangram.isPangram(
+    comptime try testing.expect(pangram.isPangram(
         "the_quick_brown_fox_jumps_over_the_lazy_dog"));
 }
 
 test "with numbers" {
-    comptime testing.expect(pangram.isPangram(
+    comptime try testing.expect(pangram.isPangram(
         "the 1 quick brown fox jumps over the 2 lazy dogs"));
 }
 
 test "missing letters replaced by numbers" {
-    comptime testing.expect(!pangram.isPangram(
+    comptime try testing.expect(!pangram.isPangram(
         "7h3 qu1ck brown fox jumps ov3r 7h3 lazy dog"));
 }
 
 test "missing letters replaced by numbers" {
-    comptime testing.expect(pangram.isPangram(
+    comptime try testing.expect(pangram.isPangram(
         "\"Five quacking Zephyrs jolt my wax bed.\""));
 }
 
 test "case insensitive" {
-    comptime testing.expect(!pangram.isPangram(
+    comptime try testing.expect(!pangram.isPangram(
         "the quick brown fox jumps over with lazy FX"));
 }

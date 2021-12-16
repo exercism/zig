@@ -11,7 +11,7 @@ test "zero pieces" {
 
     const actual = try proverb.recite(testing.allocator, input_slice);
 
-    testing.expectEqualSlices([]const u8, expected, actual);
+    try testing.expectEqualSlices([]const u8, expected, actual);
 
     // The free here doesn't actually free memory since a zero sized heap
     // allocation doesn't actually point to anything important. So the free
@@ -34,7 +34,7 @@ test "one piece" {
     const actual = try proverb.recite(testing.allocator, input_slice);
 
     for (expected) |expected_slice, i| {
-        testing.expectEqualSlices(u8, expected_slice, actual[i]);
+        try testing.expectEqualSlices(u8, expected_slice, actual[i]);
     }
 
     for (actual) |inner_slice| {
@@ -62,7 +62,7 @@ test "two pieces" {
     const actual = try proverb.recite(testing.allocator, input_slice);
 
     for (expected) |expected_slice, i| {
-        testing.expectEqualSlices(u8, expected_slice, actual[i]);
+        try testing.expectEqualSlices(u8, expected_slice, actual[i]);
     }
 
     for (actual) |inner_slice| {
@@ -95,7 +95,7 @@ test "three pieces" {
     const actual = try proverb.recite(testing.allocator, input_slice);
 
     for (expected) |expected_slice, i| {
-        testing.expectEqualSlices(u8, expected_slice, actual[i]);
+        try testing.expectEqualSlices(u8, expected_slice, actual[i]);
     }
 
     for (actual) |inner_slice| {
@@ -145,7 +145,7 @@ test "full proverb" {
     const actual = try proverb.recite(testing.allocator, input_slice);
 
     for (expected) |expected_slice, i| {
-        testing.expectEqualSlices(u8, expected_slice, actual[i]);
+        try testing.expectEqualSlices(u8, expected_slice, actual[i]);
     }
 
     for (actual) |inner_slice| {
@@ -182,7 +182,7 @@ test "four pieces modernized" {
     const actual = try proverb.recite(testing.allocator, input_slice);
 
     for (expected) |expected_slice, i| {
-        testing.expectEqualSlices(u8, expected_slice, actual[i]);
+        try testing.expectEqualSlices(u8, expected_slice, actual[i]);
     }
 
     for (actual) |inner_slice| {
