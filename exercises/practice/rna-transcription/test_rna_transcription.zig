@@ -8,7 +8,7 @@ const RNAError = rna_transcription.RNAError;
 fn test_transcription(
     dna: []const u8,
     expected: []const u8
-) (rna_transcription.RNAError || mem.Allocator.Error)!void {
+) !void {
     const rna = try rna_transcription.toRna(testing.allocator, dna);
     try testing.expectEqualStrings(expected, rna);
     testing.allocator.free(rna);
@@ -16,7 +16,7 @@ fn test_transcription(
 
 fn test_failure(
     dna: []const u8
-) (rna_transcription.RNAError || mem.Allocator.Error)!void {
+) !void {
     const expected = RNAError.IllegalDNANucleotide;
     const actual = rna_transcription.toRna(testing.allocator, dna);
     try testing.expectError(expected, actual);
