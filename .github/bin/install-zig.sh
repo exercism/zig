@@ -14,8 +14,10 @@ case "${os}" in
   *)        ext='tar.xz' ;;
 esac
 
+arch="$(uname -m)"
+
 version='0.8.1'
-url="https://ziglang.org/download/${version}/zig-${os}-x86_64-${version}.${ext}"
+url="https://ziglang.org/download/${version}/zig-${os}-${arch}-${version}.${ext}"
 
 curlopts=(
   --silent
