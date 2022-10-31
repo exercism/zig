@@ -16,7 +16,7 @@ esac
 
 arch="$(uname -m)"
 
-version='0.9.1'
+version='0.10.1'
 url="https://ziglang.org/download/${version}/zig-${os}-${arch}-${version}.${ext}"
 
 curlopts=(
