@@ -1,19 +1,19 @@
 {
-  "blurb": "Given a decimal number, convert it to the appropriate sequence of events for a secret handshake.",
   "authors": [
     "massivelivefun"
   ],
   "files": {
-    "example": [
-      ".meta/example.zig"
-    ],
     "solution": [
       "secret_handshake.zig"
     ],
     "test": [
       "test_secret_handshake.zig"
+    ],
+    "example": [
+      ".meta/example.zig"
     ]
   },
+  "blurb": "Given a decimal number, convert it to the appropriate sequence of events for a secret handshake.",
   "source": "Bert, in Mary Poppins",
   "source_url": "http://www.imdb.com/title/tt0058331/quotes/qt0437047"
 }
