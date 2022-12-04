@@ -6,18 +6,18 @@
     "ErikSchierboom",
     "iHiD"
   ],
-  "blurb": "Determine if a triangle is equilateral, isosceles, or scalene.",
   "files": {
-    "example": [
-      ".meta/example.zig"
-    ],
     "solution": [
       "triangle.zig"
     ],
     "test": [
       "test_triangle.zig"
+    ],
+    "example": [
+      ".meta/example.zig"
     ]
   },
+  "blurb": "Determine if a triangle is equilateral, isosceles, or scalene.",
   "source": "The Ruby Koans triangle project, parts 1 & 2",
   "source_url": "http://rubykoans.com"
 }

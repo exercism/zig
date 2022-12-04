@@ -6,18 +6,18 @@
     "ErikSchierboom",
     "iHiD"
   ],
-  "blurb": "Given an age in seconds, calculate how old someone is in terms of a given planet's solar years.",
   "files": {
-    "example": [
-      ".meta/example.zig"
-    ],
     "solution": [
       "space_age.zig"
     ],
     "test": [
       "test_space_age.zig"
+    ],
+    "example": [
+      ".meta/example.zig"
     ]
   },
+  "blurb": "Given an age in seconds, calculate how old someone is in terms of a given planet's solar years.",
   "source": "Partially inspired by Chapter 1 in Chris Pine's online Learn to Program tutorial.",
   "source_url": "http://pine.fm/LearnToProgram/?Chapter=01"
 }

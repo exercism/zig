@@ -1,5 +1,4 @@
 {
-  "blurb": "Given a DNA strand, return its RNA Complement Transcription.",
   "authors": [
     "massivelivefun"
   ],
@@ -8,17 +7,17 @@
     "iHiD"
   ],
   "files": {
-    "example": [
-      ".meta/example.zig"
-    ],
     "solution": [
       "rna_transcription.zig"
     ],
     "test": [
       "test_rna_transcription.zig"
+    ],
+    "example": [
+      ".meta/example.zig"
     ]
   },
+  "blurb": "Given a DNA strand, return its RNA Complement Transcription.",
   "source": "Hyperphysics",
-  "source_url": "http://hyperphysics.phy-astr.gsu.edu/hbase/Organic/transcription.html",
-  "title": "RNA Transcription"
+  "source_url": "http://hyperphysics.phy-astr.gsu.edu/hbase/Organic/transcription.html"
 }

@@ -2,18 +2,18 @@
   "authors": [
     "massivelivefun"
   ],
-  "blurb": "Implement a binary search algorithm.",
   "files": {
-    "example": [
-      ".meta/example.zig"
-    ],
     "solution": [
       "binary_search.zig"
     ],
     "test": [
       "test_binary_search.zig"
+    ],
+    "example": [
+      ".meta/example.zig"
     ]
   },
+  "blurb": "Implement a binary search algorithm.",
   "source": "Wikipedia",
   "source_url": "http://en.wikipedia.org/wiki/Binary_search_algorithm"
 }
