@@ -6,7 +6,7 @@ pub const RNAError = error {
 };
 
 pub fn toRna(
-    allocator: *mem.Allocator,
+    allocator: mem.Allocator,
     dna: []const u8
 ) ![]const u8 {
     var rna_slice = try allocator.alloc(u8, dna.len);

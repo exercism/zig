@@ -3,7 +3,7 @@ const fmt = std.fmt;
 const mem = std.mem;
 
 pub fn recite(
-    allocator: *mem.Allocator,
+    allocator: mem.Allocator,
     words: []const []const u8
 ) (fmt.AllocPrintError || mem.Allocator.Error)![][]u8 {
 
