@@ -9,7 +9,7 @@ pub const Signal = enum(u2) {
 };
 
 pub fn calculateHandshake(
-    allocator: *mem.Allocator,
+    allocator: mem.Allocator,
     number: isize
 ) mem.Allocator.Error![]const Signal {
     var list = std.ArrayList(Signal).init(allocator);
