@@ -7,7 +7,7 @@ execute_test () {
         cd "${1}"
         # Get the exercise name from the directory
         EXERCISE_NAME=$(echo "$1" | tr '-' '_')
-        
+
         echo "Running tests for ${EXERCISE_NAME}";
 
         # Copy the examples with the correct name for the exercise

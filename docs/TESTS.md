@@ -12,7 +12,7 @@ To run the tests, all you need to do is run the following command:
 $ zig test test.zig
 ```
 
-The command above has to be run in the exercise's root directory since its test file should be in the same spot. Additionally, all of the tests for any given exercise are enabled by default, and none of the tests are skippable. 
+The command above has to be run in the exercise's root directory since its test file should be in the same spot. Additionally, all of the tests for any given exercise are enabled by default, and none of the tests are skippable.
 
 Since all tests have these stipulations, you would have to [comment out][comments] tests that are not passing if you wish to go through each test one by one. Commenting out a test is as simple as starting each line with a `//`. Otherwise, when you're confident that your solution can pass the tests, you can un-comment those tests to see if it passes.
 

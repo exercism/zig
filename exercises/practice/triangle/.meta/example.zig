@@ -47,7 +47,7 @@ pub const Triangle = struct {
     }
 
     pub fn isEquilateral(self: Triangle) bool {
-        return (self.first == self.second) and 
+        return (self.first == self.second) and
                (self.second == self.third) and
                (self.first == self.third);
     }
