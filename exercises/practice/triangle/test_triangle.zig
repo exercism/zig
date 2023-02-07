@@ -5,17 +5,17 @@ const triangle = @import("triangle.zig");
 
 test "equilateral all sides are equal" {
     const actual = comptime try triangle.Triangle.init(2, 2, 2);
-    comptime try testing.expect(actual.isEquilateral());
+    try testing.expect(actual.isEquilateral());
 }
 
 test "equilateral any side is unequal" {
     const actual = comptime try triangle.Triangle.init(2, 3, 2);
-    comptime try testing.expect(!actual.isEquilateral());
+    try testing.expect(!actual.isEquilateral());
 }
 
 test "equilateral no sides are equal" {
     const actual = comptime try triangle.Triangle.init(5, 4, 6);
-    comptime try testing.expect(!actual.isEquilateral());
+    try testing.expect(!actual.isEquilateral());
 }
 
 test "equilateral all zero sies is not a triangle" {
@@ -25,32 +25,32 @@ test "equilateral all zero sies is not a triangle" {
 
 test "equilateral sides may be floats" {
     const actual = comptime try triangle.Triangle.init(0.5, 0.5, 0.5);
-    comptime try testing.expect(actual.isEquilateral());
+    try testing.expect(actual.isEquilateral());
 }
 
 test "isosceles last two sides are equal" {
     const actual = comptime try triangle.Triangle.init(3, 4, 4);
-    comptime try testing.expect(actual.isIsosceles());
+    try testing.expect(actual.isIsosceles());
 }
 
 test "isosceles first two sides are equal" {
     const actual = comptime try triangle.Triangle.init(4, 4, 3);
-    comptime try testing.expect(actual.isIsosceles());
+    try testing.expect(actual.isIsosceles());
 }
 
 test "isosceles first and last sides are equal" {
     const actual = comptime try triangle.Triangle.init(4, 3, 4);
-    comptime try testing.expect(actual.isIsosceles());
+    try testing.expect(actual.isIsosceles());
 }
 
 test "equilateral triangles are also isosceles" {
     const actual = comptime try triangle.Triangle.init(4, 3, 4);
-    comptime try testing.expect(actual.isIsosceles());
+    try testing.expect(actual.isIsosceles());
 }
 
 test "isosceles no sides are equal" {
     const actual = comptime try triangle.Triangle.init(2, 3, 4);
-    comptime try testing.expect(!actual.isIsosceles());
+    try testing.expect(!actual.isIsosceles());
 }
 
 test "isosceles first triangle inequality violation" {
@@ -70,22 +70,22 @@ test "isosceles third triangle inequality violation" {
 
 test "isosceles sides may be floats" {
     const actual = comptime try triangle.Triangle.init(0.5, 0.4, 0.5);
-    comptime try testing.expect(actual.isIsosceles());
+    try testing.expect(actual.isIsosceles());
 }
 
 test "scalene no sides are equal" {
     const actual = comptime try triangle.Triangle.init(5, 4, 6);
-    comptime try testing.expect(actual.isScalene());
+    try testing.expect(actual.isScalene());
 }
 
 test "scalene all sides are equal" {
     const actual = comptime try triangle.Triangle.init(4, 4, 4);
-    comptime try testing.expect(!actual.isScalene());
+    try testing.expect(!actual.isScalene());
 }
 
 test "scalene first and second sides are equal" {
     const actual = comptime try triangle.Triangle.init(4, 4, 3);
-    comptime try testing.expect(!actual.isScalene());
+    try testing.expect(!actual.isScalene());
 }
 
 test "scalene may not violate triangle inequality" {
@@ -95,5 +95,5 @@ test "scalene may not violate triangle inequality" {
 
 test "scalene sides may be floats" {
     const actual = comptime try triangle.Triangle.init(0.5, 0.4, 0.6);
-    comptime try testing.expect(actual.isScalene());
+    try testing.expect(actual.isScalene());
 }
