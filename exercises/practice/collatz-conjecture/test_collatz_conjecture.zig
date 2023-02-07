@@ -7,25 +7,25 @@ const ComputationError = collatz_conjecture.ComputationError;
 test "zero steps for one" {
     const expected = 0;
     const actual = comptime try collatz_conjecture.steps(1);
-    comptime try testing.expectEqual(expected, actual);
+    try testing.expectEqual(expected, actual);
 }
 
 test "divide if even" {
     const expected = 4;
     const actual = comptime try collatz_conjecture.steps(16);
-    comptime try testing.expectEqual(expected, actual);
+    try testing.expectEqual(expected, actual);
 }
 
 test "even and odd steps" {
     const expected = 9;
     const actual = comptime try collatz_conjecture.steps(12);
-    comptime try testing.expectEqual(expected, actual);
+    try testing.expectEqual(expected, actual);
 }
 
 test "large number of even and odd steps" {
     const expected = 152;
     const actual = comptime try collatz_conjecture.steps(1000000);
-    comptime try testing.expectEqual(expected, actual);
+    try testing.expectEqual(expected, actual);
 }
 
 test "zero is an error" {
