@@ -12,7 +12,7 @@ pub const Planet = enum(u4) {
 pub const SpaceAge = struct {
     seconds: f64,
 
-    const EARTH_YEAR_IN_SECONDS = 31557600;
+    const earth_year_in_seconds = 31557600;
 
     pub fn init(seconds: isize) SpaceAge {
         return SpaceAge {
@@ -21,7 +21,7 @@ pub const SpaceAge = struct {
     }
 
     fn getOrbitalPeriodInSecondsFromEarthYearsOf(planet: Planet) f64 {
-        return EARTH_YEAR_IN_SECONDS *
+        return earth_year_in_seconds *
             getOrbitalPeriodInEarthYearsOf(planet);
     }
 
