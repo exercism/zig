@@ -83,7 +83,7 @@ test "scalene all sides are equal" {
     comptime try testing.expect(!actual.isScalene());
 }
 
-test "scalene two sides are equal" {
+test "scalene first and second sides are equal" {
     const actual = comptime try triangle.Triangle.init(4, 4, 3);
     comptime try testing.expect(!actual.isScalene());
 }
