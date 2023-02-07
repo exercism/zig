@@ -3,7 +3,7 @@ const mem = std.mem;
 const testing = std.testing;
 
 const rna_transcription = @import("rna_transcription.zig");
-const RNAError = rna_transcription.RNAError;
+const RnaError = rna_transcription.RnaError;
 
 fn testTranscription(
     dna: []const u8,
@@ -17,7 +17,7 @@ fn testTranscription(
 fn testFailure(
     dna: []const u8
 ) !void {
-    const expected = RNAError.IllegalDNANucleotide;
+    const expected = RnaError.IllegalDnaNucleotide;
     const actual = rna_transcription.toRna(testing.allocator, dna);
     try testing.expectError(expected, actual);
 }

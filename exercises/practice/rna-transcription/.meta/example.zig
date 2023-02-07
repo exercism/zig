@@ -1,8 +1,8 @@
 const std = @import("std");
 const mem = std.mem;
 
-pub const RNAError = error {
-    IllegalDNANucleotide,
+pub const RnaError = error {
+    IllegalDnaNucleotide,
 };
 
 pub fn toRna(
@@ -18,7 +18,7 @@ pub fn toRna(
             'T' => rna_slice[i] = 'A',
             else => {
                 allocator.free(rna_slice);
-                return RNAError.IllegalDNANucleotide;
+                return RnaError.IllegalDnaNucleotide;
             },
         }
     }

@@ -1,17 +1,17 @@
-pub const DNAError = error {
-    EmptyDNAStrands,
-    UnequalDNAStrands,
+pub const DnaError = error {
+    EmptyDnaStrands,
+    UnequalDnaStrands,
 };
 
 pub fn compute(
     first: []const u8,
     second: []const u8
-) DNAError!usize {
+) DnaError!usize {
     if (first.len == 0 or second.len == 0) {
-        return DNAError.EmptyDNAStrands;
+        return DnaError.EmptyDnaStrands;
     }
     if (first.len != second.len) {
-        return DNAError.UnequalDNAStrands;
+        return DnaError.UnequalDnaStrands;
     }
     var hamming_distance: usize = 0;
     for (first) |rune, i| {

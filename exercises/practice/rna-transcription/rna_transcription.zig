@@ -3,6 +3,6 @@
 pub fn toRna(
     allocator: mem.Allocator,
     dna: []const u8
-) (RNAError || mem.Allocator.Error)![]const u8 {
+) (RnaError || mem.Allocator.Error)![]const u8 {
     @panic("please implement the toRna function");
 }
