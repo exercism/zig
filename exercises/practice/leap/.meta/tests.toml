@@ -21,7 +21,7 @@ description = "year divisible by 100, not divisible by 400 in common year"
 description = "year divisible by 100 but not by 3 is still not a leap year"
 
 [42ee56ad-d3e6-48f1-8e3f-c84078d916fc]
-description = "year divisible by 400 in leap year"
+description = "year divisible by 400 is leap year"
 
 [57902c77-6fe9-40de-8302-587b5c27121e]
 description = "year divisible by 400 but not by 125 is still a leap year"
