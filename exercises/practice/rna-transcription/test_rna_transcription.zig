@@ -5,7 +5,7 @@ const testing = std.testing;
 const rna_transcription = @import("rna_transcription.zig");
 const RNAError = rna_transcription.RNAError;
 
-fn test_transcription(
+fn testTranscription(
     dna: []const u8,
     expected: []const u8
 ) !void {
@@ -14,7 +14,7 @@ fn test_transcription(
     testing.allocator.free(rna);
 }
 
-fn test_failure(
+fn testFailure(
     dna: []const u8
 ) !void {
     const expected = RNAError.IllegalDNANucleotide;
@@ -24,25 +24,25 @@ fn test_failure(
 
 
 test "empty rna sequence" {
-    try test_transcription("", "");
+    try testTranscription("", "");
 }
 
 test "rna complement of cytosine is guanine" {
-    try test_transcription("C", "G");
+    try testTranscription("C", "G");
 }
 
 test "rna complement of guanine is cytosine" {
-    try test_transcription("G", "C");
+    try testTranscription("G", "C");
 }
 
 test "rna complement of thymine is adenine" {
-    try test_transcription("T", "A");
+    try testTranscription("T", "A");
 }
 
 test "rna complement of adenine is uracil" {
-    try test_transcription("A", "U");
+    try testTranscription("A", "U");
 }
 
 test "rna complement" {
-    try test_transcription("ACGTGGTCTTAA", "UGCACCAGAAUU");
+    try testTranscription("ACGTGGTCTTAA", "UGCACCAGAAUU");
 }

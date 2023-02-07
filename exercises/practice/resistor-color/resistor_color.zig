@@ -1,4 +1,4 @@
-pub fn color_code(color: ColorBand) isize {
+pub fn colorCode(color: ColorBand) isize {
     @panic("determine the value of a colorband on a resistor");
 }
 

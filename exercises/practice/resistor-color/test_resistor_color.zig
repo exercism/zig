@@ -6,19 +6,19 @@ const ColorBand = resistor_color.ColorBand;
 
 test "test black" {
     const expected = 0;
-    const actual = comptime resistor_color.color_code(.black);
+    const actual = comptime resistor_color.colorCode(.black);
     comptime try testing.expectEqual(expected, actual);
 }
 
 test "test white" {
     const expected = 9;
-    const actual = comptime resistor_color.color_code(.white);
+    const actual = comptime resistor_color.colorCode(.white);
     comptime try testing.expectEqual(expected, actual);
 }
 
 test "test orange" {
     const expected = 3;
-    const actual = comptime resistor_color.color_code(.orange);
+    const actual = comptime resistor_color.colorCode(.orange);
     comptime try testing.expectEqual(expected, actual);
 }
 
