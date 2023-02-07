@@ -16,7 +16,7 @@ const band_colors = [_]ColorBand{
     .green, .blue, .violet, .grey, .white,
 };
 
-pub fn color_code(color: ColorBand) isize {
+pub fn colorCode(color: ColorBand) isize {
     return @enumToInt(color);
 }
 

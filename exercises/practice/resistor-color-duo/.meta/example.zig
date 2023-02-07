@@ -15,7 +15,7 @@ pub const RuntimeError = error {
     IllegalArgument,
 };
 
-pub fn color_code(colors: []const ColorBand) RuntimeError!isize {
+pub fn colorCode(colors: []const ColorBand) RuntimeError!isize {
     if (colors.len < 2) {
         return RuntimeError.IllegalArgument;
     }
