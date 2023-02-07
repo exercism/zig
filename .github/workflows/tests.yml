@@ -20,4 +20,4 @@ jobs:
       run: ./.github/bin/install-zig.sh
 
     - name: Test exercises
-      run: ./_test/run-tests.sh
+      run: ./bin/run-tests.sh
