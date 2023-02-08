@@ -2,10 +2,6 @@
   "authors": [
     "massivelivefun"
   ],
-  "contributors": [
-    "ErikSchierboom",
-    "iHiD"
-  ],
   "files": {
     "solution": [
       "resistor_color_duo.zig"
