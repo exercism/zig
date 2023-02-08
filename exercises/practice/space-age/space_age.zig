@@ -9,13 +9,11 @@ pub const SpaceAge = struct {
     }
 
     fn getOrbitalPeriodInSecondsFromEarthYearsOf(planet: Planet) f64 {
-        @panic("please implement the
-            getOrbitalPeriodInSecondsFromEarthYearsOf method");
+        @panic("please implement the getOrbitalPeriodInSecondsFromEarthYearsOf method");
     }
 
     fn getOrbitalPeriodInEarthYearsOf(planet: Planet) f64 {
-        @panic("please implement the
-            getOrbitalPeriodInEarthYearsOf method");
+        @panic("please implement the getOrbitalPeriodInEarthYearsOf method");
     }
 
     pub fn onMercury(self: SpaceAge) f64 {
