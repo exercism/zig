@@ -2,10 +2,6 @@
   "authors": [
     "massivelivefun"
   ],
-  "contributors": [
-    "ErikSchierboom",
-    "iHiD"
-  ],
   "files": {
     "solution": [
       "collatz_conjecture.zig"
