@@ -7,7 +7,7 @@
 * [ZigLearn][zig-learn] is an excellent primer that explains the language features that Zig has to offer.
 * [Zig SHOWTIME][zig-showtime] is a livestreamed show where members of the Zig community share code and ideas.
 
-[awesome-zig]: https://github.com/nrdmn/awesome-zig
+[awesome-zig]: https://github.com/C-BJ/awesome-zig
 [documentation]: https://ziglang.org/documentation/master/
 [zig-launch]: https://ziglaunch.org/
 [zig-learn]: https://ziglearn.org/

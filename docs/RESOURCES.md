@@ -9,7 +9,7 @@
   It provides a great way to get in touch with the Zig community at large, and get some quick, direct help for any Zig related problem.
 * [The Zig SHOWTIME Newsletter][newsletter] announces new episodes, important events, and links to interesting new Zig projects.
 
-[awesome-zig]: https://github.com/nrdmn/awesome-zig
+[awesome-zig]: https://github.com/C-BJ/awesome-zig
 [discord]: https://discordapp.com
 [discord-zig]: https://discord.com/invite/gxsFFjE
 [documentation]: https://ziglang.org/documentation/master
