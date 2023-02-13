@@ -407,6 +407,20 @@
           "slices"
         ],
         "difficulty": 1
+      },
+      {
+        "uuid": "386c397f-d9d5-4647-8bf8-671abd5cc8a1",
+        "slug": "armstrong-numbers",
+        "name": "Armstrong Numbers",
+        "practices": [
+          "integers",
+          "math"
+        ],
+        "prerequisites": [
+          "integers",
+          "math"
+        ],
+        "difficulty": 1
       }
     ]
   },
