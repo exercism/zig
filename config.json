@@ -299,6 +299,20 @@
         "difficulty": 1
       },
       {
+        "uuid": "044ff920-f4a6-408a-b2a2-6923b0764178",
+        "slug": "bob",
+        "name": "Bob",
+        "practices": [
+          "conditionals",
+          "strings"
+        ],
+        "prerequisites": [
+          "conditionals",
+          "strings"
+        ],
+        "difficulty": 1
+      },
+      {
         "uuid": "6eb542c3-c14f-430a-81ce-ba9f2c0551c2",
         "slug": "queen-attack",
         "name": "Queen Attack",
