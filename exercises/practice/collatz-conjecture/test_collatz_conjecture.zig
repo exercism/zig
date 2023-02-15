@@ -24,7 +24,7 @@ test "even and odd steps" {
 
 test "large number of even and odd steps" {
     const expected = 152;
-    const actual = comptime try collatz_conjecture.steps(1000000);
+    const actual = comptime try collatz_conjecture.steps(1_000_000);
     try testing.expectEqual(expected, actual);
 }
 
