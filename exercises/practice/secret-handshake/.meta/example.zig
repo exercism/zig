@@ -31,7 +31,7 @@ pub fn calculateHandshake(
         var i: usize = 0;
         var j: usize = list.items.len - 1;
         while (i < j) : ({ i += 1; j -= 1; }) {
-            var temp = list.items[i];
+            const temp = list.items[i];
             list.items[i] = list.items[j];
             list.items[j] = temp;
         }
