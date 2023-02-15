@@ -8,10 +8,7 @@ pub const Signal = enum(u2) {
     jump,
 };
 
-pub fn calculateHandshake(
-    allocator: mem.Allocator,
-    number: isize
-) mem.Allocator.Error![]const Signal {
+pub fn calculateHandshake(allocator: mem.Allocator, number: isize) mem.Allocator.Error![]const Signal {
     var list = std.ArrayList(Signal).init(allocator);
     defer list.deinit();
     if (isFlipped(number, 0b1)) {
@@ -30,7 +27,10 @@ pub fn calculateHandshake(
     if (isFlipped(number, 0b10000) and list.items.len > 1) {
         var i: usize = 0;
         var j: usize = list.items.len - 1;
-        while (i < j) : ({ i += 1; j -= 1; }) {
+        while (i < j) : ({
+            i += 1;
+            j -= 1;
+        }) {
             const temp = list.items[i];
             list.items[i] = list.items[j];
             list.items[j] = temp;
