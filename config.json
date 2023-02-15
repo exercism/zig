@@ -421,6 +421,20 @@
         "difficulty": 1
       },
       {
+        "uuid": "4c13a4fb-d673-4a2c-8e70-54173f52d98c",
+        "slug": "allergies",
+        "name": "Allergies",
+        "practices": [
+          "bitwise-operations",
+          "enums"
+        ],
+        "prerequisites": [
+          "bitwise-operations",
+          "enums"
+        ],
+        "difficulty": 1
+      },
+      {
         "uuid": "7b7db815-5e14-477e-8012-f7719561dd8f",
         "slug": "proverb",
         "name": "Proverb",
