@@ -39,10 +39,18 @@ test "seven-digit number that is not an armstrong number" {
     try testing.expect(!armstrong_numbers.isArmstrongNumber(9_926_314));
 }
 
-test "nineteen-digit number that is not an armstrong number" {
-    try testing.expect(!armstrong_numbers.isArmstrongNumber(9_999_999_999_999_999_999));
+test "33-digit number that is an armstrong number" {
+    try testing.expect(armstrong_numbers.isArmstrongNumber(186_709_961_001_538_790_100_634_132_976_990));
 }
 
-test "twenty-digit number that is not an armstrong number" {
-    try testing.expect(!armstrong_numbers.isArmstrongNumber(18_446_744_073_709_551_615));
+test "38-digit number that is not an armstrong number" {
+    try testing.expect(!armstrong_numbers.isArmstrongNumber(99_999_999_999_999_999_999_999_999_999_999_999_999));
+}
+
+test "the largest and last armstrong number" {
+    try testing.expect(armstrong_numbers.isArmstrongNumber(115_132_219_018_763_992_565_095_597_973_971_522_401));
+}
+
+test "the largest 128-bit unsigned integer is not an armstrong number" {
+    try testing.expect(!armstrong_numbers.isArmstrongNumber(340_282_366_920_938_463_463_374_607_431_768_211_455));
 }
