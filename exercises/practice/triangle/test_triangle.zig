@@ -88,6 +88,16 @@ test "scalene first and second sides are equal" {
     try testing.expect(!actual.isScalene());
 }
 
+test "scalene first and third sides are equal" {
+    const actual = comptime try triangle.Triangle.init(3, 4, 3);
+    try testing.expect(!actual.isScalene());
+}
+
+test "scalene second and third sides are equal" {
+    const actual = comptime try triangle.Triangle.init(4, 3, 3);
+    try testing.expect(!actual.isScalene());
+}
+
 test "scalene may not violate triangle inequality" {
     const actual = triangle.Triangle.init(7, 3, 2);
     try testing.expectError(triangle.TriangleError.InvalidInequality, actual);
