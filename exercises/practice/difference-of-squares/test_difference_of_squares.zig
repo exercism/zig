@@ -16,7 +16,7 @@ test "square of sum up to 5" {
 }
 
 test "square of sum up to 100" {
-    const expected = 25502500;
+    const expected = 25_502_500;
     const actual = comptime difference_of_squares.squareOfSum(100);
     try testing.expectEqual(expected, actual);
 }
@@ -34,7 +34,7 @@ test "sum of squares up to 5" {
 }
 
 test "sum of squares up to 100" {
-    const expected = 338350;
+    const expected = 338_350;
     const actual = comptime difference_of_squares.sumOfSquares(100);
     try testing.expectEqual(expected, actual);
 }
@@ -52,7 +52,7 @@ test "difference of squares up to 5" {
 }
 
 test "difference of squares up to 100" {
-    const expected = 25164150;
+    const expected = 25_164_150;
     const actual = comptime difference_of_squares.differenceOfSquares(100);
     try testing.expectEqual(expected, actual);
 }

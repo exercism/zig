@@ -13,7 +13,7 @@ pub const Coordinate = struct {
     }
 
     pub fn score(self: Coordinate) isize {
-        var d = math.sqrt(self.x_coord * self.x_coord +
+        const d = math.sqrt(self.x_coord * self.x_coord +
             self.y_coord * self.y_coord);
         if (d > 10) {
             return 0;

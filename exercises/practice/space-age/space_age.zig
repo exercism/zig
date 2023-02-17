@@ -1,7 +1,7 @@
 // An enum should be helpful for this exercise.
 
 pub const SpaceAge = struct {
-    // This struct, as well as it's fields and methods, needs to be
+    // This struct, as well as its fields and methods, needs to be
     // implemented.
 
     pub fn init(seconds: isize) SpaceAge {
