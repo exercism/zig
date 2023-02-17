@@ -2,20 +2,9 @@ const std = @import("std");
 const math = std.math;
 
 /// Returns the number of digits in `n`.
-/// Uses only integer comparison (no repeated divison, nor log10).
-/// Optimized for small numbers (no binary search).
 fn countDigits(n: u64) u64 {
-    var power_of_ten: u64 = 1;
-    var count: u8 = 1;
-    const max_digits = 20;
-    while (count < max_digits) {
-        power_of_ten *= 10;
-        if (n < power_of_ten) {
-            return count;
-        }
-        count += 1;
-    }
-    return max_digits;
+    if (n == 0) return 1;
+    return 1 + @floatToInt(u64, @trunc(@log10(@intToFloat(f64, n))));
 }
 
 pub fn isArmstrongNumber(num: u64) bool {
