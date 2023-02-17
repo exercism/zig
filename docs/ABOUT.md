@@ -5,9 +5,9 @@ Its main attributes involve helping programmers to develop **robust**, **optimal
 All the while, Zig aims to remedy the design problems of older languages with features that promote safety through the use of [optionals][optionals], a unique take on [error handling][error-handling], and [compile-time execution][compile-time].
 
 From the ground up, Zig was designed to be competitive with other systems programming languages and not be reliant on them.
-With bold claims such as, "Zig is faster than C" featured on it's home page, being independent from other languages is a major design philosophy that it champions.
+With bold claims such as, "Zig is faster than C" featured on its home page, being independent from other languages is a major design philosophy that it champions.
 
-Zig has a lot of faculties that really makes it double down on it's notion of independence.
+Zig has a lot of faculties that really makes it double down on its notion of independence.
 The standard library that Zig provides harbors many common functions that perform fast to ensure that a reliance on FFI and external libraries is not essential.
 Zig also provides a well-rounded [build system][build-system] so that Zig is not dependent on alternative build tools, such as make, cmake, or ninja.
 
