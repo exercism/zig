@@ -71,3 +71,9 @@ test "can attack on fourth diagonal" {
     const black = try queen_attack.Queen.init(0, 6);
     try testing.expect(try white.canAttack(black));
 }
+
+test "cannot attack if falling diagonals are only the same when reflected across the longest falling diagonal" {
+    const white = try queen_attack.Queen.init(4, 1);
+    const black = try queen_attack.Queen.init(2, 5);
+    try testing.expect(!try white.canAttack(black));
+}
