@@ -1,5 +1,5 @@
 pub const Triangle = struct {
-    // This struct, as well as it's fields and methods, needs to be implemented.
+    // This struct, as well as its fields and methods, needs to be implemented.
 
     pub fn init(
         first: f64,

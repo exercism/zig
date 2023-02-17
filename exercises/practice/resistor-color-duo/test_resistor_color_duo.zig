@@ -25,6 +25,13 @@ test "yellow and violet" {
     try testing.expectEqual(expected, actual);
 }
 
+test "white and red" {
+    const array = [_]ColorBand{.white, .red};
+    const expected = 92;
+    const actual = comptime try resistor_color_duo.colorCode(&array);
+    try testing.expectEqual(expected, actual);
+}
+
 test "orange and orange" {
     const array = [_]ColorBand{.orange, .orange};
     const expected = 33;
@@ -35,6 +42,13 @@ test "orange and orange" {
 test "ignore additional colors" {
     const array = [_]ColorBand{.green, .brown, .orange};
     const expected = 51;
+    const actual = comptime try resistor_color_duo.colorCode(&array);
+    try testing.expectEqual(expected, actual);
+}
+
+test "black and brown, one-digit" {
+    const array = [_]ColorBand{.black, .brown};
+    const expected = 1;
     const actual = comptime try resistor_color_duo.colorCode(&array);
     try testing.expectEqual(expected, actual);
 }
