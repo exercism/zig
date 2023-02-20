@@ -7,10 +7,10 @@ pub fn isArmstrongNumber(num: u128) bool {
     // For example, it produces 16 for the 15-digit 999_999_999_999_998.
     const num_digits = 1 + math.log10(num);
     var n = num;
-    var sum: u128 = 0;
+    var armstrong_sum: u128 = 0;
     while (n > 0) {
-        sum +|= math.pow(u128, n % 10, num_digits);
+        armstrong_sum +|= math.pow(u128, n % 10, num_digits);
         n /= 10;
     }
-    return sum == num;
+    return armstrong_sum == num;
 }
