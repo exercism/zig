@@ -1,5 +1,5 @@
 pub fn squareOfSum(number: isize) isize {
-    var result = @divExact(number * (number + 1), 2);
+    const result = @divExact(number * (number + 1), 2);
     return result * result;
 }
 

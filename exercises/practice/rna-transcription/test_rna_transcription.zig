@@ -14,15 +14,6 @@ fn testTranscription(
     testing.allocator.free(rna);
 }
 
-fn testFailure(
-    dna: []const u8
-) !void {
-    const expected = RnaError.IllegalDnaNucleotide;
-    const actual = rna_transcription.toRna(testing.allocator, dna);
-    try testing.expectError(expected, actual);
-}
-
-
 test "empty rna sequence" {
     try testTranscription("", "");
 }
