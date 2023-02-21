@@ -51,6 +51,6 @@ test "the largest and last armstrong number" {
     try testing.expect(isArmstrongNumber(115_132_219_018_763_992_565_095_597_973_971_522_401));
 }
 
-test "the largest 128-bit unsigned integer is not an armstrong number" {
+test "the largest 128-bit unsigned integer value is not an armstrong number" {
     try testing.expect(!isArmstrongNumber(340_282_366_920_938_463_463_374_607_431_768_211_455));
 }
