@@ -235,6 +235,18 @@
         "difficulty": 1
       },
       {
+        "uuid": "ca72ff14-470d-4679-ad36-82ea9d2890bc",
+        "slug": "luhn",
+        "name": "Luhn",
+        "practices": [
+          "strings"
+        ],
+        "prerequisites": [
+          "strings"
+        ],
+        "difficulty": 1
+      },
+      {
         "uuid": "3819c81e-db22-4aac-b745-5eec450b7b4d",
         "slug": "darts",
         "name": "Darts",
