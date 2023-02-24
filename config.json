@@ -193,6 +193,18 @@
         "difficulty": 1
       },
       {
+        "uuid": "d9242387-064a-4ba8-8b04-b5cfe68ae9a2",
+        "slug": "isbn-verifier",
+        "name": "ISBN Verifier",
+        "practices": [
+          "strings"
+        ],
+        "prerequisites": [
+          "strings"
+        ],
+        "difficulty": 1
+      },
+      {
         "uuid": "f49a0baa-a309-4814-a123-f41a2d770bdd",
         "slug": "resistor-color",
         "name": "Resistor Color",
