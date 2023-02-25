@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "ee7"
+  ],
+  "files": {
+    "solution": [
+      "nucleotide_count.zig"
+    ],
+    "test": [
+      "test_nucleotide_count.zig"
+    ],
+    "example": [
+      ".meta/example.zig"
+    ]
+  },
+  "blurb": "Given a DNA string, compute how many times each nucleotide occurs in the string.",
+  "source": "The Calculating DNA Nucleotides_problem at Rosalind",
+  "source_url": "https://rosalind.info/problems/dna/"
+}
