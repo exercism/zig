@@ -299,6 +299,24 @@
         "difficulty": 1
       },
       {
+        "uuid": "2fbd5bd8-a839-42a3-9293-4ad577766a12",
+        "slug": "perfect-numbers",
+        "name": "Perfect Numbers",
+        "practices": [
+          "enums",
+          "error-sets",
+          "integers",
+          "math"
+        ],
+        "prerequisites": [
+          "enums",
+          "error-sets",
+          "integers",
+          "math"
+        ],
+        "difficulty": 1
+      },
+      {
         "uuid": "044ff920-f4a6-408a-b2a2-6923b0764178",
         "slug": "bob",
         "name": "Bob",
