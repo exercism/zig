@@ -15,10 +15,10 @@ The home page for Zig is [ziglang.org][ziglang.org].
 Zig provides a complete summary of the language's current features, grammars, and philosophies at [ziglang.org/documentation/master/][ziglang.org/docs].
 It's highly recommended that newcomers use a mix of the documentation and other [community resources][zig-community] to learn Zig in a well-rounded fashion.
 
-[build-system]: https://ziglang.org/#Zig-Build-System
-[compile-time]: https://ziglang.org/#Compile-time-reflection-and-compile-time-code-execution
-[error-handling]: https://ziglang.org/#A-fresh-take-on-error-handling
-[optionals]: https://ziglang.org/#Optional-type-instead-of-null-pointers
+[build-system]: https://ziglang.org/learn/overview/#zig-build-system
+[compile-time]: https://ziglang.org/learn/overview/#compile-time-reflection-and-compile-time-code-execution
+[error-handling]: https://ziglang.org/learn/overview/#a-fresh-take-on-error-handling
+[optionals]: https://ziglang.org/learn/overview/#optional-type-instead-of-null-pointers
 [ziglang.org]: https://ziglang.org/
 [ziglang.org/docs]: https://ziglang.org/documentation/master/
 [zig-community]: https://github.com/ziglang/zig/wiki/Community
