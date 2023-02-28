@@ -475,7 +475,7 @@
     "paradigm/imperative",
     "paradigm/procedural",
     "typing/static",
-    "typing/weak",
+    "typing/strong",
     "execution_mode/compiled",
     "platform/windows",
     "platform/mac",
