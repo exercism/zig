@@ -20,7 +20,7 @@ To see the features of Zig's native formatter use the following command:
 zig fmt --help
 ```
 
-### Zig Zen - Rules to code by!
+### Zig Zen - Rules to code by
 
 Sometimes some direction goes a long way when completing any task, even when writing code.
 Thankfully we have a fun command built right into the Zig compiler to remind ourselves of some of the goals that go into writing good Zig code.
