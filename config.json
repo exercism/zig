@@ -100,21 +100,13 @@
           "arrays",
           "builtin-functions",
           "enums",
-          "error-sets",
-          "functions",
-          "pointers",
-          "slices",
-          "type-coercion"
+          "functions"
         ],
         "prerequisites": [
           "arrays",
           "builtin-functions",
           "enums",
-          "error-sets",
-          "functions",
-          "pointers",
-          "slices",
-          "type-coercion"
+          "functions"
         ],
         "difficulty": 1
       },
