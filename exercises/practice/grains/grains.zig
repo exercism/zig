@@ -1,4 +1,5 @@
 pub fn square(index: isize) ChessboardError!u64 {
+    _ = index;
     @panic("please implement the square function");
 }
 
