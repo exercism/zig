@@ -1,24 +1,24 @@
 pub const Triangle = struct {
     // This struct, as well as its fields and methods, needs to be implemented.
 
-    pub fn init(first: f64, second: f64, third: f64) TriangleError!Triangle {
-        _ = first;
-        _ = second;
-        _ = third;
+    pub fn init(a: f64, b: f64, c: f64) TriangleError!Triangle {
+        _ = a;
+        _ = b;
+        _ = c;
         @compileError("please implement the init method");
     }
 
-    fn verifyIfDegenerateAttributesExist(first: f64, second: f64, third: f64) TriangleError!void {
-        _ = first;
-        _ = second;
-        _ = third;
+    fn verifyIfDegenerateAttributesExist(a: f64, b: f64, c: f64) TriangleError!void {
+        _ = a;
+        _ = b;
+        _ = c;
         @compileError("optional verifyIfDegenerateAttributesExist method");
     }
 
-    fn verifyIfTriangleInequalityHolds(first: f64, second: f64, third: f64) TriangleError!void {
-        _ = first;
-        _ = second;
-        _ = third;
+    fn verifyIfTriangleInequalityHolds(a: f64, b: f64, c: f64) TriangleError!void {
+        _ = a;
+        _ = b;
+        _ = c;
         @compileError("please implement the verifyIfTriangleInequalityHolds method");
     }
 
