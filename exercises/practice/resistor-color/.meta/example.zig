@@ -12,8 +12,8 @@ pub const ColorBand = enum(u4) {
 };
 
 const band_colors = [_]ColorBand{
-    .black, .brown, .red, .orange, .yellow,
-    .green, .blue, .violet, .grey, .white,
+    .black, .brown, .red,    .orange, .yellow,
+    .green, .blue,  .violet, .grey,   .white,
 };
 
 pub fn colorCode(color: ColorBand) isize {

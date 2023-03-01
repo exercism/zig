@@ -1,14 +1,11 @@
 const std = @import("std");
 const mem = std.mem;
 
-pub const RnaError = error {
+pub const RnaError = error{
     IllegalDnaNucleotide,
 };
 
-pub fn toRna(
-    allocator: mem.Allocator,
-    dna: []const u8
-) ![]const u8 {
+pub fn toRna(allocator: mem.Allocator, dna: []const u8) ![]const u8 {
     var rna_slice = try allocator.alloc(u8, dna.len);
     for (dna) |dna_nucleotide, i| {
         switch (dna_nucleotide) {
