@@ -1,4 +1,4 @@
-pub const Planet = enum(u4) {
+pub const Planet = enum {
     mercury,
     venus,
     earth,
