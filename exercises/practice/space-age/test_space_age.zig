@@ -4,9 +4,9 @@ const expectApproxEqAbs = std.testing.expectApproxEqAbs;
 const space_age = @import("space_age.zig");
 const Planet = space_age.Planet;
 
-fn testAge(planet: Planet, earth_age_in_seconds: usize, expected_age_in_earth_years: f64) !void {
+fn testAge(planet: Planet, seconds: usize, expected_age_in_earth_years: f64) !void {
     const tolerance = 0.02;
-    const actual = planet.age(earth_age_in_seconds);
+    const actual = planet.age(seconds);
     try expectApproxEqAbs(expected_age_in_earth_years, actual, tolerance);
 }
 
