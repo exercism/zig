@@ -1,14 +1,10 @@
-pub const SearchError = error {
+pub const SearchError = error{
     EmptyBuffer,
     NullBuffer,
     ValueAbsent,
 };
 
-pub fn binarySearch(
-    comptime T: type,
-    target: T,
-    buffer: ?[]const T
-) SearchError!usize {
+pub fn binarySearch(comptime T: type, target: T, buffer: ?[]const T) SearchError!usize {
     if (buffer == null) {
         return SearchError.NullBuffer;
     }
