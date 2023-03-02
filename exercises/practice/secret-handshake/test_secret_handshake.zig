@@ -32,14 +32,14 @@ test "jump for 1000" {
 }
 
 test "combine two actions" {
-    const expected = &[_]secret_handshake.Signal{.wink, .double_blink};
+    const expected = &[_]secret_handshake.Signal{ .wink, .double_blink };
     const actual = try secret_handshake.calculateHandshake(testing.allocator, 3);
     defer testing.allocator.free(actual);
     try testing.expectEqualSlices(secret_handshake.Signal, expected, actual);
 }
 
 test "reverse two actions" {
-    const expected = &[_]secret_handshake.Signal{.double_blink, .wink};
+    const expected = &[_]secret_handshake.Signal{ .double_blink, .wink };
     const actual = try secret_handshake.calculateHandshake(testing.allocator, 19);
     defer testing.allocator.free(actual);
     try testing.expectEqualSlices(secret_handshake.Signal, expected, actual);
@@ -60,16 +60,14 @@ test "reversing no actions still gives no actions" {
 }
 
 test "all possible actions" {
-    const expected = &[_]secret_handshake.Signal{
-        .wink, .double_blink, .close_your_eyes, .jump};
+    const expected = &[_]secret_handshake.Signal{ .wink, .double_blink, .close_your_eyes, .jump };
     const actual = try secret_handshake.calculateHandshake(testing.allocator, 15);
     defer testing.allocator.free(actual);
     try testing.expectEqualSlices(secret_handshake.Signal, expected, actual);
 }
 
 test "reverse all possible actions" {
-    const expected = &[_]secret_handshake.Signal{
-        .jump, .close_your_eyes, .double_blink, .wink};
+    const expected = &[_]secret_handshake.Signal{ .jump, .close_your_eyes, .double_blink, .wink };
     const actual = try secret_handshake.calculateHandshake(testing.allocator, 31);
     defer testing.allocator.free(actual);
     try testing.expectEqualSlices(secret_handshake.Signal, expected, actual);

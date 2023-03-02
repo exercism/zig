@@ -1,3 +1,4 @@
-pub fn colorCode(colors: []const ColorBand) anyerror!isize {
-    @panic("please implement the color_code function");
+pub fn colorCode(colors: [2]ColorBand) isize {
+    _ = colors;
+    @compileError("please input the colorCode function");
 }
