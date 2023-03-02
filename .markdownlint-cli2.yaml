@@ -1,0 +1,22 @@
+# For information on configuring markdownlint, see:
+# https://github.com/DavidAnson/markdownlint
+config:
+  MD003:
+    style: 'atx'    # Forbid setext-style headers and closed-ATX-style headers
+  MD004:
+    style: 'dash'   # Require `-` for every unordered list item
+  MD013: false      # Permit long lines
+  MD029:
+    style: 'one'    # Require each ordered list item to begin with `1.`
+  MD035:
+    style: '---'    # Require `---` for every horizontal rule
+  MD046:
+    style: 'fenced' # Forbid using indentation for code blocks
+
+globs:
+  - "**/*.md"
+
+# Ignore files that are synced
+ignores:
+  - "exercises/practice/*/.docs/instructions.md"
+  - "exercises/practice/*/.docs/introduction.md"
