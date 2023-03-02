@@ -1,0 +1,14 @@
+name: markdownlint
+
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  markdownlint:
+    name: Lint markdown files
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c
+
+      - name: Run markdownlint
+        uses: DavidAnson/markdownlint-cli2-action@5b7c9f74fec47e6b15667b2cc23c63dff11e449e
