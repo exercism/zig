@@ -6,8 +6,7 @@ const QueenError = queen_attack.QueenError;
 
 test "queen with a valid position" {
     const queen = try queen_attack.Queen.init(2, 2);
-    try testing.expectEqual(
-        @as(queen_attack.Queen, .{.x = 2, .y = 2}), queen);
+    try testing.expectEqual(@as(queen_attack.Queen, .{ .x = 2, .y = 2 }), queen);
 }
 
 test "queen must have positive row" {

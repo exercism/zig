@@ -24,8 +24,8 @@ test "test orange" {
 
 test "test colors" {
     const expected = &[_]ColorBand{
-        .black, .brown, .red, .orange, .yellow,
-        .green, .blue, .violet, .grey, .white,
+        .black, .brown, .red,    .orange, .yellow,
+        .green, .blue,  .violet, .grey,   .white,
     };
     const actual = comptime resistor_color.colors();
     try testing.expectEqualSlices(ColorBand, expected, actual);

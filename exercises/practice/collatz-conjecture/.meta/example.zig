@@ -1,4 +1,4 @@
-pub const ComputationError = error {
+pub const ComputationError = error{
     IllegalArgument,
 };
 
