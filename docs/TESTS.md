@@ -12,7 +12,7 @@ Especially when any written code which passes their tests are perfectly acceptab
 To run the tests, all you need to do is run the following command:
 
 ```bash
-$ zig test test_exercise_name.zig
+zig test test_exercise_name.zig
 ```
 
 replacing `exercise_name` with the name of the exercise.
