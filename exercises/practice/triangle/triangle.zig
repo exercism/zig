@@ -5,35 +5,35 @@ pub const Triangle = struct {
         _ = first;
         _ = second;
         _ = third;
-        @panic("please implement the init method");
+        @compileError("please implement the init method");
     }
 
     fn verifyIfDegenerateAttributesExist(first: f64, second: f64, third: f64) TriangleError!void {
         _ = first;
         _ = second;
         _ = third;
-        @panic("optional verifyIfDegenerateAttributesExist method");
+        @compileError("optional verifyIfDegenerateAttributesExist method");
     }
 
     fn verifyIfTriangleInequalityHolds(first: f64, second: f64, third: f64) TriangleError!void {
         _ = first;
         _ = second;
         _ = third;
-        @panic("please implement the verifyIfTriangleInequalityHolds method");
+        @compileError("please implement the verifyIfTriangleInequalityHolds method");
     }
 
     pub fn isEquilateral(self: Triangle) bool {
         _ = self;
-        @panic("please implement the isEquilateral method");
+        @compileError("please implement the isEquilateral method");
     }
 
     pub fn isIsosceles(self: Triangle) bool {
         _ = self;
-        @panic("please implement the isIsosceles method");
+        @compileError("please implement the isIsosceles method");
     }
 
     pub fn isScalene(self: Triangle) bool {
         _ = self;
-        @panic("please implement the isScalene method");
+        @compileError("please implement the isScalene method");
     }
 };

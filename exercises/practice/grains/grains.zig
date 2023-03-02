@@ -1,8 +1,8 @@
 pub fn square(index: isize) ChessboardError!u64 {
     _ = index;
-    @panic("please implement the square function");
+    @compileError("please implement the square function");
 }
 
 pub fn total() u64 {
-    @panic("please implement the total function");
+    @compileError("please implement the total function");
 }
