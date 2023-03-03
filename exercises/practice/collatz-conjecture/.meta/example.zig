@@ -2,8 +2,8 @@ pub const ComputationError = error{
     IllegalArgument,
 };
 
-pub fn steps(start: isize) ComputationError!usize {
-    if (start <= 0) {
+pub fn steps(start: usize) ComputationError!usize {
+    if (start == 0) {
         return ComputationError.IllegalArgument;
     }
     var number = start;

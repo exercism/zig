@@ -33,9 +33,3 @@ test "zero is an error" {
     const actual = comptime collatz_conjecture.steps(0);
     try testing.expectError(expected, actual);
 }
-
-test "negative value is an error" {
-    const expected = ComputationError.IllegalArgument;
-    const actual = comptime collatz_conjecture.steps(-15);
-    try testing.expectError(expected, actual);
-}
