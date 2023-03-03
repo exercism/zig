@@ -43,9 +43,8 @@ if [ -d "exercises/practice" ]; then
     cp -r exercises/practice build
     cd build/
 else
-    printf '%s\n' "The exercises/practice folder is missing..."
-    printf '%s\n' "Nothing wrong with that, just means there's nothing to test."
-    exit 0
+    printf '%s\n' "The exercises/practice folder is missing..." >&2
+    exit 1
 fi
 
 # Allow specifying which tests to run as arguments
@@ -54,6 +53,9 @@ if [ $# -gt 0 ]; then
         # Check if the file exists
         if [ -e $exercise ]; then
             execute_test "$exercise"
+        else
+            printf '%s\n' "The specified exercise '${exercise}' does not exist" >&2
+            exit 1
         fi
     done
 else
