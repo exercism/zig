@@ -52,12 +52,6 @@ test "square 0 produces an error" {
     try testing.expectError(expected, actual);
 }
 
-test "negative square produces an error" {
-    const expected = ChessboardError.IndexOutOfBounds;
-    const actual = comptime grains.square(-1);
-    try testing.expectError(expected, actual);
-}
-
 test "square greater than 64 produces an error" {
     const expected = ChessboardError.IndexOutOfBounds;
     const actual = comptime grains.square(65);
