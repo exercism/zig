@@ -43,9 +43,8 @@ if [ -d "exercises/practice" ]; then
     cp -r exercises/practice build
     cd build/
 else
-    printf '%s\n' "The exercises/practice folder is missing..."
-    printf '%s\n' "Nothing wrong with that, just means there's nothing to test."
-    exit 0
+    printf '%s\n' "The exercises/practice folder is missing..." >&2
+    exit 1
 fi
 
 # Allow specifying which tests to run as arguments
