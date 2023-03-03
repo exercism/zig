@@ -53,6 +53,9 @@ if [ $# -gt 0 ]; then
         # Check if the file exists
         if [ -e $exercise ]; then
             execute_test "$exercise"
+        else
+            printf '%s\n' "The specified exercise '${exercise}' does not exist" >&2
+            exit 1
         fi
     done
 else
