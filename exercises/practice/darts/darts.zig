@@ -6,7 +6,7 @@ pub const Coordinate = struct {
         _ = y_coord;
         @compileError("please implement the init method");
     }
-    pub fn score(self: Coordinate) isize {
+    pub fn score(self: Coordinate) usize {
         _ = self;
         @compileError("please implement the score method");
     }

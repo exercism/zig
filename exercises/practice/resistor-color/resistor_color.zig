@@ -1,4 +1,4 @@
-pub fn colorCode(color: ColorBand) isize {
+pub fn colorCode(color: ColorBand) usize {
     @compileError("determine the value of a colorband on a resistor");
 }
 
