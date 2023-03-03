@@ -1,3 +1,4 @@
-pub fn steps(number: isize) anyerror!usize {
-    @panic("please implement the steps function");
+pub fn steps(number: usize) anyerror!usize {
+    _ = number;
+    @compileError("please implement the steps function");
 }

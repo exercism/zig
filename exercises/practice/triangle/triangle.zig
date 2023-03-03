@@ -1,27 +1,39 @@
 pub const Triangle = struct {
     // This struct, as well as its fields and methods, needs to be implemented.
 
-    pub fn init(first: f64, second: f64, third: f64) TriangleError!Triangle {
-        @panic("please implement the init method");
+    pub fn init(a: f64, b: f64, c: f64) TriangleError!Triangle {
+        _ = a;
+        _ = b;
+        _ = c;
+        @compileError("please implement the init method");
     }
 
-    fn verifyIfDegenerateAttributesExist(first: f64, second: f64, third: f64) TriangleError!void {
-        @panic("optional verifyIfDegenerateAttributesExist method");
+    fn verifyIfDegenerateAttributesExist(a: f64, b: f64, c: f64) TriangleError!void {
+        _ = a;
+        _ = b;
+        _ = c;
+        @compileError("optional verifyIfDegenerateAttributesExist method");
     }
 
-    fn verifyIfTriangleInequalityHolds(first: f64, second: f64, third: f64) TriangleError!void {
-        @panic("please implement the verifyIfTriangleInequalityHolds method");
+    fn verifyIfTriangleInequalityHolds(a: f64, b: f64, c: f64) TriangleError!void {
+        _ = a;
+        _ = b;
+        _ = c;
+        @compileError("please implement the verifyIfTriangleInequalityHolds method");
     }
 
     pub fn isEquilateral(self: Triangle) bool {
-        @panic("please implement the isEquilateral method");
+        _ = self;
+        @compileError("please implement the isEquilateral method");
     }
 
     pub fn isIsosceles(self: Triangle) bool {
-        @panic("please implement the isIsosceles method");
+        _ = self;
+        @compileError("please implement the isIsosceles method");
     }
 
     pub fn isScalene(self: Triangle) bool {
-        @panic("please implement the isScalene method");
+        _ = self;
+        @compileError("please implement the isScalene method");
     }
 };
