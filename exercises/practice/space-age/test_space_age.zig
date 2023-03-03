@@ -5,7 +5,7 @@ const space_age = @import("space_age.zig");
 const Planet = space_age.Planet;
 
 fn testAge(planet: Planet, seconds: usize, expected_age_in_earth_years: f64) !void {
-    const tolerance = 0.02;
+    const tolerance = 0.01;
     const actual = planet.age(seconds);
     try expectApproxEqAbs(expected_age_in_earth_years, actual, tolerance);
 }

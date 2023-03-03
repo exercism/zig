@@ -11,7 +11,7 @@ pub const Planet = enum {
     pub fn age(self: Planet, seconds: usize) f64 {
         const x: f64 = switch (self) {
             .mercury => 0.2408467,
-            .venus => 0.61419726,
+            .venus => 0.61519726,
             .earth => 1.0,
             .mars => 1.8808158,
             .jupiter => 11.862615,
