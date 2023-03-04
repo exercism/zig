@@ -9,21 +9,9 @@ pub const Triangle = struct {
     c: f64,
 
     pub fn init(a: f64, b: f64, c: f64) TriangleError!Triangle {
-        try verifyIfDegenerateAttributesExist(a, b, c);
-        try verifyIfTriangleInequalityHolds(a, b, c);
+        if ((a + b == c) or (a + c == b) or (b + c == a)) return TriangleError.Degenerate;
+        if ((a + b < c) or (a + c < b) or (b + c < a)) return TriangleError.InvalidInequality;
         return Triangle{ .a = a, .b = b, .c = c };
-    }
-
-    fn verifyIfDegenerateAttributesExist(a: f64, b: f64, c: f64) TriangleError!void {
-        if ((a + b == c) or (a + c == b) or (b + c == a)) {
-            return TriangleError.Degenerate;
-        }
-    }
-
-    fn verifyIfTriangleInequalityHolds(a: f64, b: f64, c: f64) TriangleError!void {
-        if ((a + b < c) or (a + c < b) or (b + c < a)) {
-            return TriangleError.InvalidInequality;
-        }
     }
 
     pub fn isEquilateral(self: Triangle) bool {

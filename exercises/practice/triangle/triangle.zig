@@ -8,20 +8,6 @@ pub const Triangle = struct {
         @compileError("please implement the init method");
     }
 
-    fn verifyIfDegenerateAttributesExist(a: f64, b: f64, c: f64) TriangleError!void {
-        _ = a;
-        _ = b;
-        _ = c;
-        @compileError("optional verifyIfDegenerateAttributesExist method");
-    }
-
-    fn verifyIfTriangleInequalityHolds(a: f64, b: f64, c: f64) TriangleError!void {
-        _ = a;
-        _ = b;
-        _ = c;
-        @compileError("please implement the verifyIfTriangleInequalityHolds method");
-    }
-
     pub fn isEquilateral(self: Triangle) bool {
         _ = self;
         @compileError("please implement the isEquilateral method");
