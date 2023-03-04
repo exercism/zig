@@ -7,25 +7,25 @@ pub const QueenError = error{
 };
 
 pub const Queen = struct {
-    x: i8,
-    y: i8,
+    row: i8,
+    col: i8,
 
-    pub fn init(x: i8, y: i8) QueenError!Queen {
-        if (x < 0 or x > 7 or y < 0 or y > 7) {
+    pub fn init(row: i8, col: i8) QueenError!Queen {
+        if (row < 0 or row > 7 or col < 0 or col > 7) {
             return QueenError.InitializationFailure;
         }
         return Queen{
-            .x = x,
-            .y = y,
+            .row = row,
+            .col = col,
         };
     }
 
     pub fn canAttack(self: Queen, other: Queen) QueenError!bool {
-        if (self.x == other.x and self.y == other.y) {
+        if (self.row == other.row and self.col == other.col) {
             return QueenError.InvalidAttack;
         }
-        return (self.x == other.x) or (self.y == other.y) or
-            (math.absInt(self.x - other.x) catch unreachable ==
-            math.absInt(self.y - other.y) catch unreachable);
+        return (self.row == other.row) or (self.col == other.col) or
+            (math.absInt(self.row - other.row) catch unreachable ==
+            math.absInt(self.col - other.col) catch unreachable);
     }
 };
