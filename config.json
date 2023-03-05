@@ -383,6 +383,28 @@
         "difficulty": 1
       },
       {
+        "uuid": "0590d6df-afbe-4983-92d4-8fe6797ad5fa",
+        "slug": "acronym",
+        "name": "Acronym",
+        "practices": [
+          "allocators",
+          "conditionals",
+          "control-flow",
+          "error-sets",
+          "functions",
+          "slices"
+        ],
+        "prerequisites": [
+          "allocators",
+          "conditionals",
+          "control-flow",
+          "error-sets",
+          "functions",
+          "slices"
+        ],
+        "difficulty": 1
+      },
+      {
         "uuid": "7b7db815-5e14-477e-8012-f7719561dd8f",
         "slug": "proverb",
         "name": "Proverb",
