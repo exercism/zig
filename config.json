@@ -427,6 +427,30 @@
           "importing"
         ],
         "difficulty": 1
+      },
+      {
+        "uuid": "547282a5-e97f-4277-8983-7ff9ceccf701",
+        "slug": "allergies",
+        "name": "Allergies",
+        "practices": [
+          "allocators",
+          "bitwise-operations",
+          "conditionals",
+          "control-flow",
+          "enums",
+          "functions",
+          "importing"
+        ],
+        "prerequisites": [
+          "allocators",
+          "bitwise-operations",
+          "conditionals",
+          "control-flow",
+          "enums",
+          "functions",
+          "importing"
+        ],
+        "difficulty": 1
       }
     ]
   },
