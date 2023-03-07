@@ -28,7 +28,10 @@ curlopts=(
 )
 
 file="zig.${ext}"
+echo "Downloading Zig release archive..." >&2
 curl "${curlopts[@]}" --output "${file}" "${url}"
+echo "Extracting archive..." >&2
 tar xJf "${file}"
 mkdir -p "${HOME}/bin"
 ln -s "$(pwd)"/zig-*/zig "${HOME}/bin/zig"
+echo "Success. Installed Zig version ${version}."
