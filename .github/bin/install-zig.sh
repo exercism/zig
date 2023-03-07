@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -eo pipefail
+
 case "$(uname)" in
   Darwin*)   os='macos'   ;;
   Linux*)    os='linux'   ;;
