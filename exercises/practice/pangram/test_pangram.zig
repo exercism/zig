@@ -35,7 +35,7 @@ test "missing letters replaced by numbers" {
     try testing.expect(!pangram.isPangram("7h3 qu1ck brown fox jumps ov3r 7h3 lazy dog"));
 }
 
-test "missing letters replaced by numbers" {
+test "mixed case and punctuation" {
     try testing.expect(pangram.isPangram("\"Five quacking Zephyrs jolt my wax bed.\""));
 }
 
