@@ -15,11 +15,11 @@ test "only lower case" {
     try testing.expect(pangram.isPangram("the quick brown fox jumps over the lazy dog"));
 }
 
-test "missing letter x" {
+test "missing the letter 'x'" {
     try testing.expect(!pangram.isPangram("a quick movement of the enemy will jeopardize five gunboats"));
 }
 
-test "missing letter h" {
+test "missing the letter 'h'" {
     try testing.expect(!pangram.isPangram("five boxing wizards jump quickly at it"));
 }
 
@@ -35,7 +35,7 @@ test "missing letters replaced by numbers" {
     try testing.expect(!pangram.isPangram("7h3 qu1ck brown fox jumps ov3r 7h3 lazy dog"));
 }
 
-test "missing letters replaced by numbers" {
+test "mixed case and punctuation" {
     try testing.expect(pangram.isPangram("\"Five quacking Zephyrs jolt my wax bed.\""));
 }
 
