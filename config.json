@@ -427,6 +427,28 @@
           "importing"
         ],
         "difficulty": 1
+      },
+      {
+        "uuid": "47ef24ce-745a-4dfe-a7a8-370d8a324d52",
+        "slug": "linked-list",
+        "name": "Linked List",
+        "practices": [
+          "comptime",
+          "data-structures",
+          "generics",
+          "optionals",
+          "pointers",
+          "structs"
+        ],
+        "prerequisites": [
+          "comptime",
+          "data-structures",
+          "generics",
+          "optionals",
+          "pointers",
+          "structs"
+        ],
+        "difficulty": 4
       }
     ]
   },
