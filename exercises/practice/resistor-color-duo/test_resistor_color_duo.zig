@@ -4,6 +4,12 @@ const testing = std.testing;
 const resistor_color_duo = @import("resistor_color_duo.zig");
 const ColorBand = resistor_color_duo.ColorBand;
 
+// Adding "return error.SkipZigTest" to the top of each test results in a compiler error
+// This wrapper function around error.SkipZigTest appeases the compiler
+fn skipTest() !void {
+    return error.SkipZigTest;
+}
+
 test "brown and black" {
     const array = [_]ColorBand{ .brown, .black };
     const expected: usize = 10;
@@ -12,6 +18,9 @@ test "brown and black" {
 }
 
 test "blue and grey" {
+    // Delete or comment out below line to run test
+    try skipTest();
+
     const array = [_]ColorBand{ .blue, .grey };
     const expected: usize = 68;
     const actual = resistor_color_duo.colorCode(array);
@@ -19,6 +28,9 @@ test "blue and grey" {
 }
 
 test "yellow and violet" {
+    // Delete or comment out below line to run test
+    try skipTest();
+
     const array = [_]ColorBand{ .yellow, .violet };
     const expected: usize = 47;
     const actual = resistor_color_duo.colorCode(array);
@@ -26,6 +38,9 @@ test "yellow and violet" {
 }
 
 test "white and red" {
+    // Delete or comment out below line to run test
+    try skipTest();
+
     const array = [_]ColorBand{ .white, .red };
     const expected: usize = 92;
     const actual = resistor_color_duo.colorCode(array);
@@ -33,6 +48,9 @@ test "white and red" {
 }
 
 test "orange and orange" {
+    // Delete or comment out below line to run test
+    try skipTest();
+
     const array = [_]ColorBand{ .orange, .orange };
     const expected: usize = 33;
     const actual = resistor_color_duo.colorCode(array);
@@ -40,6 +58,9 @@ test "orange and orange" {
 }
 
 test "black and brown, one-digit" {
+    // Delete or comment out below line to run test
+    try skipTest();
+
     const array = [_]ColorBand{ .black, .brown };
     const expected: usize = 1;
     const actual = resistor_color_duo.colorCode(array);
