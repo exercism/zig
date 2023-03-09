@@ -18,7 +18,7 @@ test "equilateral no sides are equal" {
     try testing.expect(!actual.isEquilateral());
 }
 
-test "equilateral all zero sies is not a triangle" {
+test "equilateral all zero sides is not a triangle" {
     const actual = triangle.Triangle.init(0, 0, 0);
     try testing.expectError(triangle.TriangleError.Degenerate, actual);
 }
