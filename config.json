@@ -318,6 +318,22 @@
         ],
         "difficulty": 1
       },
+        {
+        "uuid": "b9533606-bbbd-4110-8adc-54ccf94af1a6",
+        "slug": "sieve",
+        "name": "Sieve",
+        "practices": [
+          "integers",
+          "math",
+          "slices"
+        ],
+        "prerequisites": [
+          "integers",
+          "math",
+          "slices"
+        ],
+        "difficulty": 1
+      },
       {
         "uuid": "866a09d8-6949-4363-b83f-7b9fefb53893",
         "slug": "two-fer",
