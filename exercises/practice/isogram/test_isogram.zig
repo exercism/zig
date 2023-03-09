@@ -19,7 +19,7 @@ test "word with one duplicated character from the end of the alphabet" {
     try testing.expect(!isogram.isIsogram("zzyzx"));
 }
 
-test "word with one duplicated character from the end of the alphabet" {
+test "longest reported english isogram" {
     try testing.expect(isogram.isIsogram("subdermatoglyphic"));
 }
 
