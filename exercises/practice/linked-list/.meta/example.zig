@@ -53,6 +53,7 @@ pub fn LinkedList(comptime T: type) type {
         }
 
         /// Removes the given `node` from `list`.
+        /// Only modifies `list` when it contains `node`.
         pub fn delete(list: *Self, node: *Node) void {
             var it = list.first;
             while (it) |n| : (it = n.next) {
