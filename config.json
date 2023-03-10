@@ -361,6 +361,24 @@
         "difficulty": 1
       },
       {
+        "uuid": "b9533606-bbbd-4110-8adc-54ccf94af1a6",
+        "slug": "sieve",
+        "name": "Sieve",
+        "practices": [
+          "algorithms",
+          "integers",
+          "math",
+          "slices"
+        ],
+        "prerequisites": [
+          "algorithms",
+          "integers",
+          "math",
+          "slices"
+        ],
+        "difficulty": 1
+      },
+      {
         "uuid": "f47bbe16-dd61-4542-8634-30ea14cc4f56",
         "slug": "binary-search",
         "name": "Binary Search",
