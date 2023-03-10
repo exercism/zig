@@ -5,36 +5,36 @@ const sieve = @import("sieve.zig");
 const buffer_len = 200; // There are 168 primes under 1000.
 
 test "no primes under two" {
-    var buffer: [buffer_len]usize = undefined;
-    const expected = [_]usize{};
+    var buffer: [buffer_len]u32 = undefined;
+    const expected = [_]u32{};
     const actual = sieve.primes(&buffer, 1);
-    try testing.expectEqualSlices(usize, &expected, actual);
+    try testing.expectEqualSlices(u32, &expected, actual);
 }
 
 test "find first prime" {
-    var buffer: [buffer_len]usize = undefined;
-    const expected = [_]usize{2};
+    var buffer: [buffer_len]u32 = undefined;
+    const expected = [_]u32{2};
     const actual = sieve.primes(&buffer, 2);
-    try testing.expectEqualSlices(usize, &expected, actual);
+    try testing.expectEqualSlices(u32, &expected, actual);
 }
 
 test "find primes up to 10" {
-    var buffer: [buffer_len]usize = undefined;
-    const expected = [_]usize{ 2, 3, 5, 7 };
+    var buffer: [buffer_len]u32 = undefined;
+    const expected = [_]u32{ 2, 3, 5, 7 };
     const actual = sieve.primes(&buffer, 10);
-    try testing.expectEqualSlices(usize, &expected, actual);
+    try testing.expectEqualSlices(u32, &expected, actual);
 }
 
 test "limit is prime" {
-    var buffer: [buffer_len]usize = undefined;
-    const expected = [_]usize{ 2, 3, 5, 7, 11, 13 };
+    var buffer: [buffer_len]u32 = undefined;
+    const expected = [_]u32{ 2, 3, 5, 7, 11, 13 };
     const actual = sieve.primes(&buffer, 13);
-    try testing.expectEqualSlices(usize, &expected, actual);
+    try testing.expectEqualSlices(u32, &expected, actual);
 }
 
 test "find primes up to 1000" {
-    var buffer: [buffer_len]usize = undefined;
-    const expected = [_]usize{
+    var buffer: [buffer_len]u32 = undefined;
+    const expected = [_]u32{
         2,   3,   5,   7,   11,  13,  17,  19,  23,  29,
         31,  37,  41,  43,  47,  53,  59,  61,  67,  71,
         73,  79,  83,  89,  97,  101, 103, 107, 109, 113,
@@ -54,5 +54,5 @@ test "find primes up to 1000" {
         947, 953, 967, 971, 977, 983, 991, 997,
     };
     const actual = sieve.primes(&buffer, 1000);
-    try testing.expectEqualSlices(usize, &expected, actual);
+    try testing.expectEqualSlices(u32, &expected, actual);
 }
