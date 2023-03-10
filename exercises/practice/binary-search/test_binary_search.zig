@@ -45,11 +45,11 @@ test "identifies that a value is not included in the array" {
     try testing.expectError(SearchError.ValueAbsent, binarySearch(i32, 7, &[_]i32{ 1, 3, 4, 6, 8, 9, 11 }));
 }
 
-test "a value smaller than the arrays smallest value is not found" {
+test "a value smaller than the array's smallest value is not found" {
     try testing.expectError(SearchError.ValueAbsent, binarySearch(u32, 0, &[_]u32{ 1, 3, 4, 6, 8, 9, 11 }));
 }
 
-test "a value larger than the arrays largest value is not found" {
+test "a value larger than the array's largest value is not found" {
     try testing.expectError(SearchError.ValueAbsent, binarySearch(i64, 13, &[_]i64{ 1, 3, 4, 6, 8, 9, 11 }));
 }
 
