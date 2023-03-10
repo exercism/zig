@@ -1,4 +1,6 @@
-const assert = @import("std").debug.assert;
+const std = @import("std");
+const assert = std.debug.assert;
+const sqrt = std.math.sqrt;
 
 /// Returns bools, where `result[i]` is `true` iff `i` is a prime number.
 fn eratosthenes(comptime n: u32) []const bool {
@@ -11,8 +13,7 @@ fn eratosthenes(comptime n: u32) []const bool {
     }
 
     i = 3;
-    const sqrt_n = @floatToInt(u32, @sqrt(@as(f64, n))); // Optimization: stop at sqrt(n)
-    while (i <= sqrt_n) : (i += 2) {
+    while (i <= sqrt(n)) : (i += 2) { // Optimization: stop at sqrt(n)
         if (result[i]) {
             var j = i * i; // Optimization: start at i*i
             while (j < n) : (j += 2 * i) {
