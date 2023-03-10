@@ -23,8 +23,7 @@ pub fn primes(buffer: []u32, comptime limit: u32) []const u32 {
     };
     _ = buffer;
     if (limit >= primes_under_1000[primes_under_1000.len - 1]) return &primes_under_1000;
-    for (primes_under_1000) |p, i| {
-        if (p > limit) return primes_under_1000[0..i];
-    }
-    unreachable;
+    var i: usize = 0;
+    while (primes_under_1000[i] <= limit) : (i += 1) {}
+    return primes_under_1000[0..i];
 }
