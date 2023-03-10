@@ -323,11 +323,13 @@
         "slug": "sieve",
         "name": "Sieve",
         "practices": [
+          "algorithms",
           "integers",
           "math",
           "slices"
         ],
         "prerequisites": [
+          "algorithms",
           "integers",
           "math",
           "slices"
