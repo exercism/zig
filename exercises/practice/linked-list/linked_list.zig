@@ -1,41 +1,20 @@
-// A doubly linked list
 pub fn LinkedList(comptime T: type) type {
+    _ = T;
     return struct {
-        const Self = @This();
+        // Please implement the Node struct.
+        pub const Node = struct {};
 
-        // A node of the doubly linked list.
-        pub const Node = struct {
-            data: T,
-        };
+        // Please implement the fields of the linked list, and the below methods.
+        // You will need to change some of the below return types.
 
-        len: usize = 0,
+        pub fn push() void {}
 
-        // Appends the given `node` to `list`.
-        pub fn push(list: *Self, node: *Node) void {
-            _ = list;
-            _ = node;
-        }
+        pub fn pop() void {}
 
-        // Removes the final node of `list` and returns it.
-        pub fn pop(list: *Self) ?*Node {
-            _ = list;
-        }
+        pub fn shift() void {}
 
-        // Removes the first node of `list` and returns it.
-        pub fn shift(list: *Self) ?*Node {
-            _ = list;
-        }
+        pub fn unshift() void {}
 
-        // Prepends the given `node` to `list`.
-        pub fn unshift(list: *Self, node: *Node) void {
-            _ = list;
-            _ = node;
-        }
-
-        // Removes the given `node` from `list`.
-        pub fn delete(list: *Self, node: *Node) void {
-            _ = list;
-            _ = node;
-        }
+        pub fn delete() void {}
     };
 }
