@@ -23,16 +23,27 @@ fn eratosthenes(comptime n: u32) []const bool {
     return &result;
 }
 
-pub fn primes(buffer: []u32, comptime limit: u32) []const u32 {
-    comptime assert(limit <= 1000);
-    const p = comptime eratosthenes(1000);
-    var i: u32 = 2;
-    var j: usize = 0;
-    while (i <= limit) : (i += 1) {
-        if (p[i]) {
-            buffer[j] = i;
+/// Returns the prime numbers up to `limit`.
+fn genPrimes(comptime limit: u32, comptime count: u32) []const u32 {
+    const bools = comptime eratosthenes(limit);
+    var result: [count]u32 = undefined;
+    var j = 0;
+    @setEvalBranchQuota(2000);
+    for (bools) |b, i| {
+        if (b) {
+            result[j] = i;
             j += 1;
         }
     }
-    return buffer[0..j];
+    return &result;
+}
+
+pub fn primes(buffer: []u32, comptime limit: u32) []const u32 {
+    comptime assert(limit <= 1000);
+    const primes_under_1000 = comptime genPrimes(1000, 168);
+    _ = buffer;
+    if (limit >= primes_under_1000[primes_under_1000.len - 1]) return primes_under_1000;
+    var i: usize = 0;
+    while (primes_under_1000[i] <= limit) : (i += 1) {}
+    return primes_under_1000[0..i];
 }
