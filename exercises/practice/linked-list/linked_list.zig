@@ -1,7 +1,7 @@
 pub fn LinkedList(comptime T: type) type {
     _ = T;
     return struct {
-        // Please implement the Node struct (replacing each `void`).
+        // Please implement the doubly linked `Node` (replacing each `void`).
         pub const Node = struct {
             prev: void,
             next: void,
@@ -12,6 +12,9 @@ pub fn LinkedList(comptime T: type) type {
         first: void,
         last: void,
         len: void,
+
+        // Please implement the below methods.
+        // You need to add the parameters to each method.
 
         pub fn push() void {
             // Please implement this method.
