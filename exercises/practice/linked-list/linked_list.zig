@@ -13,18 +13,27 @@ pub fn LinkedList(comptime T: type) type {
         last: void,
         len: void,
 
-        // Please implement the below methods.
-        // The `pop` and `shift` methods should return an optional pointer to a Node.
+        pub fn push() void {
+            // Please implement this method.
+        }
 
-        pub fn push() void {}
+        pub fn pop() void {
+            // Please implement this method.
+            // It must return an optional pointer to a Node.
+        }
 
-        pub fn pop() void {}
+        pub fn shift() void {
+            // Please implement this method.
+            // It must return an optional pointer to a Node.
+        }
 
-        pub fn shift() void {}
+        pub fn unshift() void {
+            // Please implement this method.
+        }
 
-        pub fn unshift() void {}
-
-        // The `delete` method must only modify the list when it contains the given node.
-        pub fn delete() void {}
+        pub fn delete() void {
+            // Please implement this method.
+            // It must modify the list only when it contains the given node.
+        }
     };
 }
