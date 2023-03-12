@@ -1,7 +1,7 @@
 pub const Triangle = struct {
     // This struct, as well as its fields and methods, needs to be implemented.
 
-    pub fn init(a: f64, b: f64, c: f64) TriangleError!Triangle {
+    pub fn init(a: f64, b: f64, c: f64) ?Triangle {
         _ = a;
         _ = b;
         _ = c;

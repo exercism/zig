@@ -264,6 +264,7 @@
           "error-sets",
           "functions",
           "methods",
+          "optionals",
           "structs"
         ],
         "prerequisites": [
@@ -272,6 +273,7 @@
           "error-sets",
           "functions",
           "methods",
+          "optionals",
           "structs"
         ],
         "difficulty": 1
