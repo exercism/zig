@@ -3,6 +3,12 @@ const testing = std.testing;
 
 const proverb = @import("proverb.zig");
 
+// Adding "return error.SkipZigTest" to the top of each test results in a compiler error
+// This wrapper function around error.SkipZigTest appeases the compiler
+fn skipTest() !void {
+    return error.SkipZigTest;
+}
+
 test "zero pieces" {
     const array_long = [_][]const u8{};
     const input_slice = &array_long;
@@ -21,6 +27,9 @@ test "zero pieces" {
 }
 
 test "one piece" {
+    // Delete or comment out below line to run test
+    try skipTest();
+
     const first_input = "nail".*;
     const first_slice = &first_input;
     const input_array = [_][]const u8{first_slice};
@@ -44,6 +53,9 @@ test "one piece" {
 }
 
 test "two pieces" {
+    // Delete or comment out below line to run test
+    try skipTest();
+
     const first_input = "nail".*;
     const first_slice = &first_input;
     const second_input = "shoe".*;
@@ -71,6 +83,9 @@ test "two pieces" {
 }
 
 test "three pieces" {
+    // Delete or comment out below line to run test
+    try skipTest();
+
     const first_input = "nail".*;
     const first_slice = &first_input;
     const second_input = "shoe".*;
@@ -102,6 +117,9 @@ test "three pieces" {
 }
 
 test "full proverb" {
+    // Delete or comment out below line to run test
+    try skipTest();
+
     const first_input = "nail".*;
     const first_slice = &first_input;
     const second_input = "shoe".*;
@@ -149,6 +167,9 @@ test "full proverb" {
 }
 
 test "four pieces modernized" {
+    // Delete or comment out below line to run test
+    try skipTest();
+
     const first_input = "pin".*;
     const first_slice = &first_input;
     const second_input = "gun".*;

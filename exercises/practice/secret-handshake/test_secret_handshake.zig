@@ -3,6 +3,12 @@ const testing = std.testing;
 
 const secret_handshake = @import("secret_handshake.zig");
 
+// Adding "return error.SkipZigTest" to the top of each test results in a compiler error
+// This wrapper function around error.SkipZigTest appeases the compiler
+fn skipTest() !void {
+    return error.SkipZigTest;
+}
+
 test "wink for 1" {
     const expected = &[_]secret_handshake.Signal{.wink};
     const actual = try secret_handshake.calculateHandshake(testing.allocator, 1);
@@ -11,6 +17,9 @@ test "wink for 1" {
 }
 
 test "double blink for 10" {
+    // Delete or comment out below line to run test
+    try skipTest();
+
     const expected = &[_]secret_handshake.Signal{.double_blink};
     const actual = try secret_handshake.calculateHandshake(testing.allocator, 2);
     defer testing.allocator.free(actual);
@@ -18,6 +27,9 @@ test "double blink for 10" {
 }
 
 test "close your eyes for 100" {
+    // Delete or comment out below line to run test
+    try skipTest();
+
     const expected = &[_]secret_handshake.Signal{.close_your_eyes};
     const actual = try secret_handshake.calculateHandshake(testing.allocator, 4);
     defer testing.allocator.free(actual);
@@ -25,6 +37,9 @@ test "close your eyes for 100" {
 }
 
 test "jump for 1000" {
+    // Delete or comment out below line to run test
+    try skipTest();
+
     const expected = &[_]secret_handshake.Signal{.jump};
     const actual = try secret_handshake.calculateHandshake(testing.allocator, 8);
     defer testing.allocator.free(actual);
@@ -32,6 +47,9 @@ test "jump for 1000" {
 }
 
 test "combine two actions" {
+    // Delete or comment out below line to run test
+    try skipTest();
+
     const expected = &[_]secret_handshake.Signal{ .wink, .double_blink };
     const actual = try secret_handshake.calculateHandshake(testing.allocator, 3);
     defer testing.allocator.free(actual);
@@ -39,6 +57,9 @@ test "combine two actions" {
 }
 
 test "reverse two actions" {
+    // Delete or comment out below line to run test
+    try skipTest();
+
     const expected = &[_]secret_handshake.Signal{ .double_blink, .wink };
     const actual = try secret_handshake.calculateHandshake(testing.allocator, 19);
     defer testing.allocator.free(actual);
@@ -46,6 +67,9 @@ test "reverse two actions" {
 }
 
 test "reversing one action gives the same action" {
+    // Delete or comment out below line to run test
+    try skipTest();
+
     const expected = &[_]secret_handshake.Signal{.jump};
     const actual = try secret_handshake.calculateHandshake(testing.allocator, 24);
     defer testing.allocator.free(actual);
@@ -53,6 +77,9 @@ test "reversing one action gives the same action" {
 }
 
 test "reversing no actions still gives no actions" {
+    // Delete or comment out below line to run test
+    try skipTest();
+
     const expected = &[_]secret_handshake.Signal{};
     const actual = try secret_handshake.calculateHandshake(testing.allocator, 16);
     defer testing.allocator.free(actual);
@@ -60,6 +87,9 @@ test "reversing no actions still gives no actions" {
 }
 
 test "all possible actions" {
+    // Delete or comment out below line to run test
+    try skipTest();
+
     const expected = &[_]secret_handshake.Signal{ .wink, .double_blink, .close_your_eyes, .jump };
     const actual = try secret_handshake.calculateHandshake(testing.allocator, 15);
     defer testing.allocator.free(actual);
@@ -67,6 +97,9 @@ test "all possible actions" {
 }
 
 test "reverse all possible actions" {
+    // Delete or comment out below line to run test
+    try skipTest();
+
     const expected = &[_]secret_handshake.Signal{ .jump, .close_your_eyes, .double_blink, .wink };
     const actual = try secret_handshake.calculateHandshake(testing.allocator, 31);
     defer testing.allocator.free(actual);
@@ -74,6 +107,9 @@ test "reverse all possible actions" {
 }
 
 test "do nothing for zero" {
+    // Delete or comment out below line to run test
+    try skipTest();
+
     const expected = &[_]secret_handshake.Signal{};
     const actual = try secret_handshake.calculateHandshake(testing.allocator, 0);
     defer testing.allocator.free(actual);
