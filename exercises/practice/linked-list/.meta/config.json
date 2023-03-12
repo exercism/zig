@@ -1,0 +1,18 @@
+{
+  "authors": [
+    "ee7"
+  ],
+  "files": {
+    "solution": [
+      "linked_list.zig"
+    ],
+    "test": [
+      "test_linked_list.zig"
+    ],
+    "example": [
+      ".meta/example.zig"
+    ]
+  },
+  "blurb": "Implement a doubly linked list.",
+  "source": "Classic computer science topic"
+}
