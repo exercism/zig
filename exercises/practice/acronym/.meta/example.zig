@@ -10,8 +10,9 @@ pub fn abbreviate(allocator: mem.Allocator, words: []const u8) mem.Allocator.Err
     while (i < words.len) : (i += 1) {
         if (!ascii.isAlpha(words[i])) continue;
 
-        if (i == 0 or words[i - 1] == ' ' or words[i - 1] == '-' or words[i - 1] == '_')
+        if (i == 0 or words[i - 1] == ' ' or words[i - 1] == '-' or words[i - 1] == '_') {
             try letters.append(ascii.toUpper(words[i]));
+        }
     }
 
     return letters.toOwnedSlice();
