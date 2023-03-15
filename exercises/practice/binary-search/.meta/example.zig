@@ -3,7 +3,7 @@ pub fn binarySearch(comptime T: type, target: T, items: []const T) ?usize {
     var right = items.len;
 
     while (left < right) {
-        const mid = left + ((right - left) / 2); // Avoid overflow.
+        const mid = left + (right - left) / 2; // Avoid overflow.
         if (items[mid] == target) {
             return mid;
         } else if (items[mid] < target) {
