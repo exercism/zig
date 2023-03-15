@@ -384,16 +384,16 @@
         "name": "Binary Search",
         "practices": [
           "control-flow",
-          "error-sets",
           "generics",
           "functions",
+          "optionals",
           "type-coercion"
         ],
         "prerequisites": [
           "control-flow",
-          "error-sets",
           "generics",
           "functions",
+          "optionals",
           "type-coercion"
         ],
         "difficulty": 1
