@@ -10,7 +10,7 @@ pub fn binarySearch(comptime T: type, target: T, buffer: []const T) SearchError!
     var right = buffer.len;
 
     while (left < right) {
-        const mid = left + ((right - left) / 2); // Avoid overflow.
+        const mid = left + (right - left) / 2; // Avoid overflow.
         if (buffer[mid] == target) {
             return mid;
         } else if (buffer[mid] < target) {
