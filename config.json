@@ -387,7 +387,6 @@
           "error-sets",
           "generics",
           "functions",
-          "optionals",
           "type-coercion"
         ],
         "prerequisites": [
@@ -395,7 +394,6 @@
           "error-sets",
           "generics",
           "functions",
-          "optionals",
           "type-coercion"
         ],
         "difficulty": 1
