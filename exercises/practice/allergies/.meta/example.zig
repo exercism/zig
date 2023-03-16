@@ -1,4 +1,4 @@
-const EnumSet = @import("std").EnumSet;
+const std = @import("std");
 
 pub const Allergen = enum(u8) {
     const Self = @This();
@@ -16,9 +16,12 @@ pub const Allergen = enum(u8) {
         return score & @enumToInt(allergen) != 0;
     }
 
-    pub fn list(score: u64) EnumSet(Self) {
-        var result = EnumSet(Self).initEmpty();
-        inline for (@typeInfo(Self).Enum.fields) |field| {
+    pub fn list(score: u64) std.EnumSet(Self) {
+        // TODO: With Zig 0.11.0, consider using `EnumSet(Self).initEmpty()`,
+        // which was added by https://github.com/ziglang/zig/commit/a792e13fc089
+        const fields = @typeInfo(Self).Enum.fields;
+        var result = std.EnumSet(Self){ .bits = std.StaticBitSet(fields.len).initEmpty() };
+        inline for (fields) |field| {
             const allergen = @intToEnum(Allergen, field.value);
             if (score & field.value != 0) result.insert(allergen);
         }

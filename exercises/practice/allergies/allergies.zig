@@ -1,4 +1,5 @@
-const EnumSet = @import("std").EnumSet;
+const std = @import("std");
+const EnumSet = std.EnumSet;
 
 pub const Allergen = enum {
     eggs,
