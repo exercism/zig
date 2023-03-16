@@ -17,14 +17,9 @@ pub const Allergen = enum(u8) {
     }
 
     pub fn list(score: u64) std.EnumSet(Self) {
-        // TODO: With Zig 0.11.0, consider using `EnumSet(Self).initEmpty()`,
-        // which was added by https://github.com/ziglang/zig/commit/a792e13fc089
-        const fields = @typeInfo(Self).Enum.fields;
-        var result = std.EnumSet(Self){ .bits = std.StaticBitSet(fields.len).initEmpty() };
-        inline for (fields) |field| {
-            const allergen = @intToEnum(Allergen, field.value);
-            if (score & field.value != 0) result.insert(allergen);
-        }
-        return result;
+        const len = @typeInfo(Self).Enum.fields.len;
+        const tag_type = @typeInfo(Self).Enum.tag_type;
+        const bits = @bitCast(std.bit_set.IntegerBitSet(len), @truncate(tag_type, score));
+        return std.EnumSet(Self){ .bits = bits };
     }
 };
