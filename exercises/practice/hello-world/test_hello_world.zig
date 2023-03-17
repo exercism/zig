@@ -3,8 +3,8 @@ const testing = std.testing;
 
 const hello_world = @import("hello_world.zig");
 
-test "say hi" {
+test "say hi!" {
     const expected = "Hello, World!";
-    const actual = comptime hello_world.hello();
+    const actual = hello_world.hello();
     try testing.expectEqualStrings(expected, actual);
 }

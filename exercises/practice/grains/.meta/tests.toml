@@ -35,6 +35,7 @@ description = "returns the number of grains on the square -> square 0 raises an 
 
 [61974483-eeb2-465e-be54-ca5dde366453]
 description = "returns the number of grains on the square -> negative square raises an exception"
+include = false
 
 [a95e4374-f32c-45a7-a10d-ffec475c012f]
 description = "returns the number of grains on the square -> square greater than 64 raises an exception"
