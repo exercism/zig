@@ -17,12 +17,11 @@ pub const Allergen = enum(u8) {
     pub fn in(allergen: Self, score: u8) bool {
         return score & @enumToInt(allergen) != 0;
     }
-};
 
-pub fn Allergens(score: u64) EnumSet(Allergen) {
-    const T = Allergen;
-    const len = @typeInfo(T).Enum.fields.len;
-    const tag_type = @typeInfo(T).Enum.tag_type;
-    const bits = @bitCast(IntegerBitSet(len), @truncate(tag_type, score));
-    return .{ .bits = bits };
-}
+    pub fn initEnumSet(score: u64) EnumSet(Self) {
+        const len = @typeInfo(Self).Enum.fields.len;
+        const tag_type = @typeInfo(Self).Enum.tag_type;
+        const bits = @bitCast(IntegerBitSet(len), @truncate(tag_type, score));
+        return .{ .bits = bits };
+    }
+};

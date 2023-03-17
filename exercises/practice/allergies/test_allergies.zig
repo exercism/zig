@@ -3,7 +3,6 @@ const testing = std.testing;
 
 const allergies = @import("allergies.zig");
 const Allergen = allergies.Allergen;
-const Allergens = allergies.Allergens;
 
 test "eggs: not allergic to anything" {
     try testing.expect(!Allergen.eggs.in(0));
@@ -165,52 +164,52 @@ test "cats: allergic to everything" {
     try testing.expect(Allergen.cats.in(255));
 }
 
-test "Allergens: no allergies" {
+test "initEnumSet: no allergies" {
     const expected_count: usize = 0;
-    const actual = Allergens(0);
+    const actual = Allergen.initEnumSet(0);
     try testing.expectEqual(expected_count, actual.count());
 }
 
-test "Allergens: just eggs" {
+test "initEnumSet: just eggs" {
     const expected_count: usize = 1;
-    const actual = Allergens(1);
+    const actual = Allergen.initEnumSet(1);
     try testing.expectEqual(expected_count, actual.count());
     try testing.expect(actual.contains(.eggs));
 }
 
-test "Allergens: just peanuts" {
+test "initEnumSet: just peanuts" {
     const expected_count: usize = 1;
-    const actual = Allergens(2);
+    const actual = Allergen.initEnumSet(2);
     try testing.expectEqual(expected_count, actual.count());
     try testing.expect(actual.contains(.peanuts));
 }
 
-test "Allergens: just strawberries" {
+test "initEnumSet: just strawberries" {
     const expected_count: usize = 1;
-    const actual = Allergens(8);
+    const actual = Allergen.initEnumSet(8);
     try testing.expectEqual(expected_count, actual.count());
     try testing.expect(actual.contains(.strawberries));
 }
 
-test "Allergens: eggs and peanuts" {
+test "initEnumSet: eggs and peanuts" {
     const expected_count: usize = 2;
-    const actual = Allergens(3);
+    const actual = Allergen.initEnumSet(3);
     try testing.expectEqual(expected_count, actual.count());
     try testing.expect(actual.contains(.eggs));
     try testing.expect(actual.contains(.peanuts));
 }
 
-test "Allergens: more than eggs but not peanuts" {
+test "initEnumSet: more than eggs but not peanuts" {
     const expected_count: usize = 2;
-    const actual = Allergens(5);
+    const actual = Allergen.initEnumSet(5);
     try testing.expectEqual(expected_count, actual.count());
     try testing.expect(actual.contains(.eggs));
     try testing.expect(actual.contains(.shellfish));
 }
 
-test "Allergens: lots of stuff" {
+test "initEnumSet: lots of stuff" {
     const expected_count: usize = 5;
-    const actual = Allergens(248);
+    const actual = Allergen.initEnumSet(248);
     try testing.expectEqual(expected_count, actual.count());
     try testing.expect(actual.contains(.strawberries));
     try testing.expect(actual.contains(.tomatoes));
@@ -219,9 +218,9 @@ test "Allergens: lots of stuff" {
     try testing.expect(actual.contains(.cats));
 }
 
-test "Allergens: everything" {
+test "initEnumSet: everything" {
     const expected_count: usize = 8;
-    const actual = Allergens(255);
+    const actual = Allergen.initEnumSet(255);
     try testing.expectEqual(expected_count, actual.count());
     try testing.expect(actual.contains(.eggs));
     try testing.expect(actual.contains(.peanuts));
@@ -233,9 +232,9 @@ test "Allergens: everything" {
     try testing.expect(actual.contains(.cats));
 }
 
-test "Allergens: no allergen score parts" {
+test "initEnumSet: no allergen score parts" {
     const expected_count: usize = 7;
-    const actual = Allergens(509);
+    const actual = Allergen.initEnumSet(509);
     try testing.expectEqual(expected_count, actual.count());
     try testing.expect(actual.contains(.eggs));
     try testing.expect(actual.contains(.shellfish));
@@ -246,9 +245,9 @@ test "Allergens: no allergen score parts" {
     try testing.expect(actual.contains(.cats));
 }
 
-test "Allergens: no allergen score parts without highest valid score" {
+test "initEnumSet: no allergen score parts without highest valid score" {
     const expected_count: usize = 1;
-    const actual = Allergens(257);
+    const actual = Allergen.initEnumSet(257);
     try testing.expectEqual(expected_count, actual.count());
     try testing.expect(actual.contains(.eggs));
 }
