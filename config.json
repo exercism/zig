@@ -487,6 +487,22 @@
           "structs"
         ],
         "difficulty": 4
+      },
+      {
+        "slug": "rational-numbers",
+        "name": "Rational Numbers",
+        "uuid": "80e71617-01a6-42c1-b565-f495ab34be31",
+        "practices": ["structs", "rich-comparisons", "comptime", "functions"],
+        "prerequisites": [
+          "basics",
+          "comptime",
+          "conditionals",
+          "structs",
+          "numbers",
+          "strings",
+          "functions"
+        ],
+        "difficulty": 5
       }
     ]
   },

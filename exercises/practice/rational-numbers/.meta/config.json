@@ -1,0 +1,20 @@
+{
+    "authors": [
+        "theodesp"
+    ],
+    "files": {
+      "solution": [
+        "rational_numbers.zig"
+      ],
+      "test": [
+        "rational_numbers_test.zig"
+      ],
+      "example": [
+        ".meta/example.zig"
+      ]
+    },
+    "blurb": "Implement rational numbers.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Rational_number"
+  }
+  
