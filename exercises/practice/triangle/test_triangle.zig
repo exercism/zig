@@ -20,7 +20,7 @@ test "equilateral no sides are equal" {
 
 test "equilateral all zero sides is not a triangle" {
     const actual = triangle.Triangle.init(0, 0, 0);
-    try testing.expectError(triangle.TriangleError.Degenerate, actual);
+    try testing.expectError(triangle.TriangleError.Invalid, actual);
 }
 
 test "equilateral sides may be floats" {
@@ -55,17 +55,17 @@ test "isosceles no sides are equal" {
 
 test "isosceles first triangle inequality violation" {
     const actual = triangle.Triangle.init(1, 1, 3);
-    try testing.expectError(triangle.TriangleError.InvalidInequality, actual);
+    try testing.expectError(triangle.TriangleError.Invalid, actual);
 }
 
 test "isosceles second triangle inequality violation" {
     const actual = triangle.Triangle.init(1, 3, 1);
-    try testing.expectError(triangle.TriangleError.InvalidInequality, actual);
+    try testing.expectError(triangle.TriangleError.Invalid, actual);
 }
 
 test "isosceles third triangle inequality violation" {
     const actual = triangle.Triangle.init(3, 1, 1);
-    try testing.expectError(triangle.TriangleError.InvalidInequality, actual);
+    try testing.expectError(triangle.TriangleError.Invalid, actual);
 }
 
 test "isosceles sides may be floats" {
@@ -100,7 +100,7 @@ test "scalene second and third sides are equal" {
 
 test "scalene may not violate triangle inequality" {
     const actual = triangle.Triangle.init(7, 3, 2);
-    try testing.expectError(triangle.TriangleError.InvalidInequality, actual);
+    try testing.expectError(triangle.TriangleError.Invalid, actual);
 }
 
 test "scalene sides may be floats" {
