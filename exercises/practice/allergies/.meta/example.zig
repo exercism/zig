@@ -1,4 +1,6 @@
 const std = @import("std");
+const EnumSet = std.EnumSet;
+const IntegerBitSet = std.bit_set.IntegerBitSet;
 
 pub const Allergen = enum(u8) {
     const Self = @This();
@@ -16,10 +18,10 @@ pub const Allergen = enum(u8) {
         return score & @enumToInt(allergen) != 0;
     }
 
-    pub fn list(score: u64) std.EnumSet(Self) {
+    pub fn list(score: u64) EnumSet(Self) {
         const len = @typeInfo(Self).Enum.fields.len;
         const tag_type = @typeInfo(Self).Enum.tag_type;
-        const bits = @bitCast(std.bit_set.IntegerBitSet(len), @truncate(tag_type, score));
-        return std.EnumSet(Self){ .bits = bits };
+        const bits = @bitCast(IntegerBitSet(len), @truncate(tag_type, score));
+        return EnumSet(Self){ .bits = bits };
     }
 };
