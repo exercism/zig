@@ -164,52 +164,52 @@ test "cats: allergic to everything" {
     try testing.expect(Allergen.cats.in(255));
 }
 
-test "list: no allergies" {
+test "initEnumSet: no allergies" {
     const expected_count: usize = 0;
-    const actual = Allergen.list(0);
+    const actual = Allergen.initEnumSet(0);
     try testing.expectEqual(expected_count, actual.count());
 }
 
-test "list: just eggs" {
+test "initEnumSet: just eggs" {
     const expected_count: usize = 1;
-    const actual = Allergen.list(1);
+    const actual = Allergen.initEnumSet(1);
     try testing.expectEqual(expected_count, actual.count());
     try testing.expect(actual.contains(.eggs));
 }
 
-test "list: just peanuts" {
+test "initEnumSet: just peanuts" {
     const expected_count: usize = 1;
-    const actual = Allergen.list(2);
+    const actual = Allergen.initEnumSet(2);
     try testing.expectEqual(expected_count, actual.count());
     try testing.expect(actual.contains(.peanuts));
 }
 
-test "list: just strawberries" {
+test "initEnumSet: just strawberries" {
     const expected_count: usize = 1;
-    const actual = Allergen.list(8);
+    const actual = Allergen.initEnumSet(8);
     try testing.expectEqual(expected_count, actual.count());
     try testing.expect(actual.contains(.strawberries));
 }
 
-test "list: eggs and peanuts" {
+test "initEnumSet: eggs and peanuts" {
     const expected_count: usize = 2;
-    const actual = Allergen.list(3);
+    const actual = Allergen.initEnumSet(3);
     try testing.expectEqual(expected_count, actual.count());
     try testing.expect(actual.contains(.eggs));
     try testing.expect(actual.contains(.peanuts));
 }
 
-test "list: more than eggs but not peanuts" {
+test "initEnumSet: more than eggs but not peanuts" {
     const expected_count: usize = 2;
-    const actual = Allergen.list(5);
+    const actual = Allergen.initEnumSet(5);
     try testing.expectEqual(expected_count, actual.count());
     try testing.expect(actual.contains(.eggs));
     try testing.expect(actual.contains(.shellfish));
 }
 
-test "list: lots of stuff" {
+test "initEnumSet: lots of stuff" {
     const expected_count: usize = 5;
-    const actual = Allergen.list(248);
+    const actual = Allergen.initEnumSet(248);
     try testing.expectEqual(expected_count, actual.count());
     try testing.expect(actual.contains(.strawberries));
     try testing.expect(actual.contains(.tomatoes));
@@ -218,9 +218,9 @@ test "list: lots of stuff" {
     try testing.expect(actual.contains(.cats));
 }
 
-test "list: everything" {
+test "initEnumSet: everything" {
     const expected_count: usize = 8;
-    const actual = Allergen.list(255);
+    const actual = Allergen.initEnumSet(255);
     try testing.expectEqual(expected_count, actual.count());
     try testing.expect(actual.contains(.eggs));
     try testing.expect(actual.contains(.peanuts));
@@ -232,9 +232,9 @@ test "list: everything" {
     try testing.expect(actual.contains(.cats));
 }
 
-test "list: no allergen score parts" {
+test "initEnumSet: no allergen score parts" {
     const expected_count: usize = 7;
-    const actual = Allergen.list(509);
+    const actual = Allergen.initEnumSet(509);
     try testing.expectEqual(expected_count, actual.count());
     try testing.expect(actual.contains(.eggs));
     try testing.expect(actual.contains(.shellfish));
@@ -245,9 +245,9 @@ test "list: no allergen score parts" {
     try testing.expect(actual.contains(.cats));
 }
 
-test "list: no allergen score parts without highest valid score" {
+test "initEnumSet: no allergen score parts without highest valid score" {
     const expected_count: usize = 1;
-    const actual = Allergen.list(257);
+    const actual = Allergen.initEnumSet(257);
     try testing.expectEqual(expected_count, actual.count());
     try testing.expect(actual.contains(.eggs));
 }
