@@ -1,6 +1,5 @@
 pub const TriangleError = error{
-    Degenerate,
-    InvalidInequality,
+    Invalid,
 };
 
 pub const Triangle = struct {
@@ -9,8 +8,7 @@ pub const Triangle = struct {
     c: f64,
 
     pub fn init(a: f64, b: f64, c: f64) TriangleError!Triangle {
-        if ((a + b == c) or (a + c == b) or (b + c == a)) return TriangleError.Degenerate;
-        if ((a + b < c) or (a + c < b) or (b + c < a)) return TriangleError.InvalidInequality;
+        if ((a + b <= c) or (a + c <= b) or (b + c <= a)) return TriangleError.Invalid;
         return Triangle{ .a = a, .b = b, .c = c };
     }
 

@@ -384,7 +384,6 @@
         "name": "Binary Search",
         "practices": [
           "control-flow",
-          "error-sets",
           "generics",
           "functions",
           "optionals",
@@ -392,11 +391,32 @@
         ],
         "prerequisites": [
           "control-flow",
-          "error-sets",
           "generics",
           "functions",
           "optionals",
           "type-coercion"
+        ],
+        "difficulty": 1
+      },
+      {
+        "uuid": "0590d6df-afbe-4983-92d4-8fe6797ad5fa",
+        "slug": "acronym",
+        "name": "Acronym",
+        "practices": [
+          "allocators",
+          "conditionals",
+          "control-flow",
+          "error-sets",
+          "functions",
+          "slices"
+        ],
+        "prerequisites": [
+          "allocators",
+          "conditionals",
+          "control-flow",
+          "error-sets",
+          "functions",
+          "slices"
         ],
         "difficulty": 1
       },
@@ -445,6 +465,28 @@
           "importing"
         ],
         "difficulty": 1
+      },
+      {
+        "uuid": "47ef24ce-745a-4dfe-a7a8-370d8a324d52",
+        "slug": "linked-list",
+        "name": "Linked List",
+        "practices": [
+          "comptime",
+          "data-structures",
+          "generics",
+          "optionals",
+          "pointers",
+          "structs"
+        ],
+        "prerequisites": [
+          "comptime",
+          "data-structures",
+          "generics",
+          "optionals",
+          "pointers",
+          "structs"
+        ],
+        "difficulty": 4
       }
     ]
   },
