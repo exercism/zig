@@ -4,6 +4,7 @@ const IntegerBitSet = std.bit_set.IntegerBitSet;
 
 pub const Allergen = enum(u8) {
     const Self = @This();
+    const tag_type = @typeInfo(Self).Enum.tag_type;
 
     eggs = 1,
     peanuts = 2,
@@ -14,13 +15,12 @@ pub const Allergen = enum(u8) {
     pollen = 64,
     cats = 128,
 
-    pub fn in(allergen: Self, score: u8) bool {
+    pub fn in(allergen: Self, score: tag_type) bool {
         return score & @enumToInt(allergen) != 0;
     }
 
     pub fn initEnumSet(score: u64) EnumSet(Self) {
         const len = @typeInfo(Self).Enum.fields.len;
-        const tag_type = @typeInfo(Self).Enum.tag_type;
         const bits = IntegerBitSet(len){ .mask = @truncate(tag_type, score) };
         return .{ .bits = bits };
     }
