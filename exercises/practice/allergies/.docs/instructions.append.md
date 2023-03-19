@@ -4,6 +4,9 @@
 
 It may be helpful to look at the implementation of [`std.enums.EnumSet`][enumset].
 
+If you want, you could instead implement your own `EnumSet` type.
+You would need to implement the `count()` and `contains()` functions to satisfy the tests.
+
 ## Compatibility
 
 The development version of Zig contains [new `EnumSet` functions][new-enumset-functions], but Exercism currently uses Zig 0.10.1 (the latest release) to run the tests.
