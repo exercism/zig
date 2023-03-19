@@ -21,7 +21,7 @@ pub const Allergen = enum(u8) {
     pub fn initEnumSet(score: u64) EnumSet(Self) {
         const len = @typeInfo(Self).Enum.fields.len;
         const tag_type = @typeInfo(Self).Enum.tag_type;
-        const bits = @bitCast(IntegerBitSet(len), @truncate(tag_type, score));
+        const bits = IntegerBitSet(len){ .mask = @truncate(tag_type, score) };
         return .{ .bits = bits };
     }
 };
