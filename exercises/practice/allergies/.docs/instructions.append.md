@@ -10,7 +10,9 @@ You would need to implement the `count()` and `contains()` functions to satisfy 
 ## Compatibility
 
 The development version of Zig contains [new `EnumSet` functions][new-enumset-functions], but Exercism currently uses Zig 0.10.1 (the latest release) to run the tests.
+
 That means that, for example, a correct solution that uses the new `initEmpty()` will fail the tests on Exercism (at least until Zig 0.11.0 is released).
+
 Sorry.
 
 [enumset]: https://github.com/ziglang/zig/blob/0.10.1/lib/std/enums.zig#L220-L246
