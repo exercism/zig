@@ -17,7 +17,7 @@ pub const Allergen = enum {
         @compileError("please implement the in function");
     }
 
-    pub fn initEnumSet(score: u64) EnumSet(Allergen) {
+    pub fn initEnumSet(score: usize) EnumSet(Allergen) {
         _ = score;
         @compileError("please implement the initEnumSet function");
     }

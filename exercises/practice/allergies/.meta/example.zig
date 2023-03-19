@@ -19,7 +19,7 @@ pub const Allergen = enum(u8) {
         return score & @enumToInt(allergen) != 0;
     }
 
-    pub fn initEnumSet(score: u64) EnumSet(Self) {
+    pub fn initEnumSet(score: usize) EnumSet(Self) {
         const len = @typeInfo(Self).Enum.fields.len;
         const bits = IntegerBitSet(len){ .mask = @truncate(tag_type, score) };
         return .{ .bits = bits };
