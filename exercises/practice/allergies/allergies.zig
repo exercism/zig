@@ -10,13 +10,13 @@ pub const Allergen = enum {
     chocolate,
     pollen,
     cats,
-
-    pub fn isAllergicTo(score: u8, allergen: Allergen) bool {
-        _ = score;
-        _ = allergen;
-        @compileError("please implement the isAllergicTo function");
-    }
 };
+
+pub fn isAllergicTo(score: u8, allergen: Allergen) bool {
+    _ = score;
+    _ = allergen;
+    @compileError("please implement the isAllergicTo function");
+}
 
 pub fn initAllergenSet(score: usize) EnumSet(Allergen) {
     _ = score;

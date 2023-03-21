@@ -2,7 +2,7 @@ const std = @import("std");
 const testing = std.testing;
 
 const allergies = @import("allergies.zig");
-const isAllergicTo = allergies.Allergen.isAllergicTo;
+const isAllergicTo = allergies.isAllergicTo;
 const initAllergenSet = allergies.initAllergenSet;
 
 test "eggs: not allergic to anything" {
