@@ -16,9 +16,9 @@ pub const Allergen = enum {
         _ = allergen;
         @compileError("please implement the isAllergicTo function");
     }
-
-    pub fn initEnumSet(score: usize) EnumSet(Allergen) {
-        _ = score;
-        @compileError("please implement the initEnumSet function");
-    }
 };
+
+pub fn initAllergenSet(score: usize) EnumSet(Allergen) {
+    _ = score;
+    @compileError("please implement the initAllergenSet function");
+}

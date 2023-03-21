@@ -18,10 +18,11 @@ pub const Allergen = enum(u8) {
     pub fn isAllergicTo(score: tag_type, allergen: Self) bool {
         return score & @enumToInt(allergen) != 0;
     }
-
-    pub fn initEnumSet(score: usize) EnumSet(Self) {
-        const len = @typeInfo(Self).Enum.fields.len;
-        const bits = IntegerBitSet(len){ .mask = @truncate(tag_type, score) };
-        return .{ .bits = bits };
-    }
 };
+
+pub fn initAllergenSet(score: usize) EnumSet(Allergen) {
+    const len = @typeInfo(Allergen).Enum.fields.len;
+    const tag_type = @typeInfo(Allergen).Enum.tag_type;
+    const bits = IntegerBitSet(len){ .mask = @truncate(tag_type, score) };
+    return .{ .bits = bits };
+}
