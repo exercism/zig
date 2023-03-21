@@ -11,10 +11,10 @@ pub const Allergen = enum {
     pollen,
     cats,
 
-    pub fn in(allergen: Allergen, score: u8) bool {
-        _ = allergen;
+    pub fn isAllergicTo(score: u8, allergen: Allergen) bool {
         _ = score;
-        @compileError("please implement the in function");
+        _ = allergen;
+        @compileError("please implement the isAllergicTo function");
     }
 
     pub fn initEnumSet(score: usize) EnumSet(Allergen) {

@@ -3,165 +3,166 @@ const testing = std.testing;
 
 const allergies = @import("allergies.zig");
 const Allergen = allergies.Allergen;
+const isAllergicTo = Allergen.isAllergicTo;
 
 test "eggs: not allergic to anything" {
-    try testing.expect(!Allergen.eggs.in(0));
+    try testing.expect(!isAllergicTo(0, .eggs));
 }
 
 test "eggs: allergic only to eggs" {
-    try testing.expect(Allergen.eggs.in(1));
+    try testing.expect(isAllergicTo(1, .eggs));
 }
 
 test "eggs: allergic to eggs and something else" {
-    try testing.expect(Allergen.eggs.in(3));
+    try testing.expect(isAllergicTo(3, .eggs));
 }
 
 test "eggs: allergic to something, but not eggs" {
-    try testing.expect(!Allergen.eggs.in(2));
+    try testing.expect(!isAllergicTo(2, .eggs));
 }
 
 test "eggs: allergic to everything" {
-    try testing.expect(Allergen.eggs.in(255));
+    try testing.expect(isAllergicTo(255, .eggs));
 }
 
 test "peanuts: not allergic to anything" {
-    try testing.expect(!Allergen.peanuts.in(0));
+    try testing.expect(!isAllergicTo(0, .peanuts));
 }
 
 test "peanuts: allergic only to peanuts" {
-    try testing.expect(Allergen.peanuts.in(2));
+    try testing.expect(isAllergicTo(2, .peanuts));
 }
 
 test "peanuts: allergic to peanuts and something else" {
-    try testing.expect(Allergen.peanuts.in(7));
+    try testing.expect(isAllergicTo(7, .peanuts));
 }
 
 test "peanuts: allergic to something, but not peanuts" {
-    try testing.expect(!Allergen.peanuts.in(5));
+    try testing.expect(!isAllergicTo(5, .peanuts));
 }
 
 test "peanuts: allergic to everything" {
-    try testing.expect(Allergen.peanuts.in(255));
+    try testing.expect(isAllergicTo(255, .peanuts));
 }
 
 test "shellfish: not allergic to anything" {
-    try testing.expect(!Allergen.shellfish.in(0));
+    try testing.expect(!isAllergicTo(0, .shellfish));
 }
 
 test "shellfish: allergic only to shellfish" {
-    try testing.expect(Allergen.shellfish.in(4));
+    try testing.expect(isAllergicTo(4, .shellfish));
 }
 
 test "shellfish: allergic to shellfish and something else" {
-    try testing.expect(Allergen.shellfish.in(14));
+    try testing.expect(isAllergicTo(14, .shellfish));
 }
 
 test "shellfish: allergic to something, but not shellfish" {
-    try testing.expect(!Allergen.shellfish.in(10));
+    try testing.expect(!isAllergicTo(10, .shellfish));
 }
 
 test "shellfish: allergic to everything" {
-    try testing.expect(Allergen.shellfish.in(255));
+    try testing.expect(isAllergicTo(255, .shellfish));
 }
 
 test "strawberries: not allergic to anything" {
-    try testing.expect(!Allergen.strawberries.in(0));
+    try testing.expect(!isAllergicTo(0, .strawberries));
 }
 
 test "strawberries: allergic only to strawberries" {
-    try testing.expect(Allergen.strawberries.in(8));
+    try testing.expect(isAllergicTo(8, .strawberries));
 }
 
 test "strawberries: allergic to strawberries and something else" {
-    try testing.expect(Allergen.strawberries.in(28));
+    try testing.expect(isAllergicTo(28, .strawberries));
 }
 
 test "strawberries: allergic to something, but not strawberries" {
-    try testing.expect(!Allergen.strawberries.in(20));
+    try testing.expect(!isAllergicTo(20, .strawberries));
 }
 
 test "strawberries: allergic to everything" {
-    try testing.expect(Allergen.strawberries.in(255));
+    try testing.expect(isAllergicTo(255, .strawberries));
 }
 
 test "tomatoes: not allergic to anything" {
-    try testing.expect(!Allergen.tomatoes.in(0));
+    try testing.expect(!isAllergicTo(0, .tomatoes));
 }
 
 test "tomatoes: allergic only to tomatoes" {
-    try testing.expect(Allergen.tomatoes.in(16));
+    try testing.expect(isAllergicTo(16, .tomatoes));
 }
 
 test "tomatoes: allergic to tomatoes and something else" {
-    try testing.expect(Allergen.tomatoes.in(56));
+    try testing.expect(isAllergicTo(56, .tomatoes));
 }
 
 test "tomatoes: allergic to something, but not tomatoes" {
-    try testing.expect(!Allergen.tomatoes.in(40));
+    try testing.expect(!isAllergicTo(40, .tomatoes));
 }
 
 test "tomatoes: allergic to everything" {
-    try testing.expect(Allergen.tomatoes.in(255));
+    try testing.expect(isAllergicTo(255, .tomatoes));
 }
 
 test "chocolate: not allergic to anything" {
-    try testing.expect(!Allergen.chocolate.in(0));
+    try testing.expect(!isAllergicTo(0, .chocolate));
 }
 
 test "chocolate: allergic only to chocolate" {
-    try testing.expect(Allergen.chocolate.in(32));
+    try testing.expect(isAllergicTo(32, .chocolate));
 }
 
 test "chocolate: allergic to chocolate and something else" {
-    try testing.expect(Allergen.chocolate.in(112));
+    try testing.expect(isAllergicTo(112, .chocolate));
 }
 
 test "chocolate: allergic to something, but not chocolate" {
-    try testing.expect(!Allergen.chocolate.in(80));
+    try testing.expect(!isAllergicTo(80, .chocolate));
 }
 
 test "chocolate: allergic to everything" {
-    try testing.expect(Allergen.chocolate.in(255));
+    try testing.expect(isAllergicTo(255, .chocolate));
 }
 
 test "pollen: not allergic to anything" {
-    try testing.expect(!Allergen.pollen.in(0));
+    try testing.expect(!isAllergicTo(0, .pollen));
 }
 
 test "pollen: allergic only to pollen" {
-    try testing.expect(Allergen.pollen.in(64));
+    try testing.expect(isAllergicTo(64, .pollen));
 }
 
 test "pollen: allergic to pollen and something else" {
-    try testing.expect(Allergen.pollen.in(224));
+    try testing.expect(isAllergicTo(224, .pollen));
 }
 
 test "pollen: allergic to something, but not pollen" {
-    try testing.expect(!Allergen.pollen.in(160));
+    try testing.expect(!isAllergicTo(160, .pollen));
 }
 
 test "pollen: allergic to everything" {
-    try testing.expect(Allergen.pollen.in(255));
+    try testing.expect(isAllergicTo(255, .pollen));
 }
 
 test "cats: not allergic to anything" {
-    try testing.expect(!Allergen.cats.in(0));
+    try testing.expect(!isAllergicTo(0, .cats));
 }
 
 test "cats: allergic only to cats" {
-    try testing.expect(Allergen.cats.in(128));
+    try testing.expect(isAllergicTo(128, .cats));
 }
 
 test "cats: allergic to cats and something else" {
-    try testing.expect(Allergen.cats.in(192));
+    try testing.expect(isAllergicTo(192, .cats));
 }
 
 test "cats: allergic to something, but not cats" {
-    try testing.expect(!Allergen.cats.in(64));
+    try testing.expect(!isAllergicTo(64, .cats));
 }
 
 test "cats: allergic to everything" {
-    try testing.expect(Allergen.cats.in(255));
+    try testing.expect(isAllergicTo(255, .cats));
 }
 
 test "initEnumSet: no allergies" {

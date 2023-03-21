@@ -15,7 +15,7 @@ pub const Allergen = enum(u8) {
     pollen = 64,
     cats = 128,
 
-    pub fn in(allergen: Self, score: tag_type) bool {
+    pub fn isAllergicTo(score: tag_type, allergen: Self) bool {
         return score & @enumToInt(allergen) != 0;
     }
 
