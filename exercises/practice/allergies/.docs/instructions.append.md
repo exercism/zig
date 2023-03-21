@@ -12,10 +12,5 @@ That means that, for example, a correct solution that uses the new `initEmpty()`
 
 Sorry.
 
-### Bonus
-
-If you want, you could implement your own `EnumSet` type.
-You would need to implement the `count()` and `contains()` functions to satisfy the tests.
-
 [enumset]: https://github.com/ziglang/zig/blob/0.10.1/lib/std/enums.zig#L220-L246
 [new-enumset-functions]: https://github.com/ziglang/zig/commit/a792e13fc08982e79cb1b08d14322be76b8cf77a
