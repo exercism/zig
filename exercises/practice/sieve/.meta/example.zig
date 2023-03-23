@@ -2,7 +2,7 @@ const std = @import("std");
 const assert = std.debug.assert;
 const sqrt = std.math.sqrt;
 
-/// Returns bools, where `result[i]` is `true` iff `i` is a prime number.
+/// Returns bools, where the value at index `i` is `true` iff `i` is a prime number.
 fn eratosthenes(comptime n: u32) []const bool {
     var result = [_]bool{false} ** (n + 1);
     result[2] = true;
