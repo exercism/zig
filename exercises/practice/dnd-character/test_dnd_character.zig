@@ -5,97 +5,97 @@ const dnd_character = @import("dnd_character.zig");
 const Character = dnd_character.Character;
 
 test "ability modifier for score 3 is -4" {
-    const expected: isize = -4;
+    const expected: i8 = -4;
     const actual = dnd_character.modifier(3);
     try testing.expectEqual(expected, actual);
 }
 
 test "ability modifier for score 4 is -3" {
-    const expected: isize = -3;
+    const expected: i8 = -3;
     const actual = dnd_character.modifier(4);
     try testing.expectEqual(expected, actual);
 }
 
 test "ability modifier for score 5 is -3" {
-    const expected: isize = -3;
+    const expected: i8 = -3;
     const actual = dnd_character.modifier(5);
     try testing.expectEqual(expected, actual);
 }
 
 test "ability modifier for score 6 is -2" {
-    const expected: isize = -2;
+    const expected: i8 = -2;
     const actual = dnd_character.modifier(6);
     try testing.expectEqual(expected, actual);
 }
 
 test "ability modifier for score 7 is -2" {
-    const expected: isize = -2;
+    const expected: i8 = -2;
     const actual = dnd_character.modifier(7);
     try testing.expectEqual(expected, actual);
 }
 
 test "ability modifier for score 8 is -1" {
-    const expected: isize = -1;
+    const expected: i8 = -1;
     const actual = dnd_character.modifier(8);
     try testing.expectEqual(expected, actual);
 }
 
 test "ability modifier for score 9 is -1" {
-    const expected: isize = -1;
+    const expected: i8 = -1;
     const actual = dnd_character.modifier(9);
     try testing.expectEqual(expected, actual);
 }
 
 test "ability modifier for score 10 is 0" {
-    const expected: isize = 0;
+    const expected: i8 = 0;
     const actual = dnd_character.modifier(10);
     try testing.expectEqual(expected, actual);
 }
 
 test "ability modifier for score 11 is 0" {
-    const expected: isize = 0;
+    const expected: i8 = 0;
     const actual = dnd_character.modifier(11);
     try testing.expectEqual(expected, actual);
 }
 
 test "ability modifier for score 12 is +1" {
-    const expected: isize = 1;
+    const expected: i8 = 1;
     const actual = dnd_character.modifier(12);
     try testing.expectEqual(expected, actual);
 }
 
 test "ability modifier for score 13 is +1" {
-    const expected: isize = 1;
+    const expected: i8 = 1;
     const actual = dnd_character.modifier(13);
     try testing.expectEqual(expected, actual);
 }
 
 test "ability modifier for score 14 is +2" {
-    const expected: isize = 2;
+    const expected: i8 = 2;
     const actual = dnd_character.modifier(14);
     try testing.expectEqual(expected, actual);
 }
 
 test "ability modifier for score 15 is +2" {
-    const expected: isize = 2;
+    const expected: i8 = 2;
     const actual = dnd_character.modifier(15);
     try testing.expectEqual(expected, actual);
 }
 
 test "ability modifier for score 16 is +3" {
-    const expected: isize = 3;
+    const expected: i8 = 3;
     const actual = dnd_character.modifier(16);
     try testing.expectEqual(expected, actual);
 }
 
 test "ability modifier for score 17 is +3" {
-    const expected: isize = 3;
+    const expected: i8 = 3;
     const actual = dnd_character.modifier(17);
     try testing.expectEqual(expected, actual);
 }
 
 test "ability modifier for score 18 is +4" {
-    const expected: isize = 4;
+    const expected: i8 = 4;
     const actual = dnd_character.modifier(18);
     try testing.expectEqual(expected, actual);
 }
