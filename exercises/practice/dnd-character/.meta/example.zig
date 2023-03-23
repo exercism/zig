@@ -5,13 +5,13 @@ const rand = std.rand;
 pub const Character = struct {
     const Self = @This();
 
-    strength: i8,
-    dexterity: i8,
-    constitution: i8,
-    intelligence: i8,
-    wisdom: i8,
-    charisma: i8,
-    hitpoints: i8,
+    strength: u8,
+    dexterity: u8,
+    constitution: u8,
+    intelligence: u8,
+    wisdom: u8,
+    charisma: u8,
+    hitpoints: u8,
 
     pub fn init() Self {
         const constitution = ability();
@@ -22,24 +22,24 @@ pub const Character = struct {
             .intelligence = ability(),
             .wisdom = ability(),
             .charisma = ability(),
-            .hitpoints = 10 + modifier(constitution),
+            .hitpoints = @intCast(u8, 10 + modifier(constitution)),
         };
     }
 };
 
-pub fn modifier(n: i8) i8 {
-    return @divFloor(n - 10, 2);
+pub fn modifier(n: u8) i8 {
+    return @divFloor(@intCast(i8, n) - 10, 2);
 }
 
 var prng = rand.DefaultPrng.init(42);
 const random = prng.random();
 
-pub fn ability() i8 {
-    var lowest: i8 = math.maxInt(i8);
-    var i: u8 = 0;
-    var result: i8 = 0;
+pub fn ability() u8 {
+    var lowest: u8 = math.maxInt(u8);
+    var i: usize = 0;
+    var result: u8 = 0;
     while (i < 4) : (i += 1) {
-        const roll = random.intRangeAtMost(i8, 1, 6);
+        const roll = random.intRangeAtMost(u8, 1, 6);
         result += roll;
         lowest = @min(lowest, roll);
     }
