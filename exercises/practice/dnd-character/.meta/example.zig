@@ -1,6 +1,4 @@
 const std = @import("std");
-const math = std.math;
-const rand = std.rand;
 
 pub const Character = struct {
     const Self = @This();
@@ -31,11 +29,11 @@ pub fn modifier(n: u8) i8 {
     return @divFloor(@intCast(i8, n) - 10, 2);
 }
 
-var prng = rand.DefaultPrng.init(42);
+var prng = std.rand.DefaultPrng.init(42);
 const random = prng.random();
 
 pub fn ability() u8 {
-    var lowest: u8 = math.maxInt(u8);
+    var lowest: u8 = std.math.maxInt(u8);
     var i: usize = 0;
     var result: u8 = 0;
     while (i < 4) : (i += 1) {
