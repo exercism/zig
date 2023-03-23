@@ -467,6 +467,20 @@
         "difficulty": 1
       },
       {
+        "uuid": "4c13a4fb-d673-4a2c-8e70-54173f52d98c",
+        "slug": "allergies",
+        "name": "Allergies",
+        "practices": [
+          "bitwise-operations",
+          "enums"
+        ],
+        "prerequisites": [
+          "bitwise-operations",
+          "enums"
+        ],
+        "difficulty": 1
+      },
+      {
         "uuid": "47ef24ce-745a-4dfe-a7a8-370d8a324d52",
         "slug": "linked-list",
         "name": "Linked List",
