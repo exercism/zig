@@ -77,6 +77,18 @@
         "difficulty": 1
       },
       {
+        "uuid": "f73c7be1-ee3a-4fff-93f2-a8f5ab793ca1",
+        "slug": "yacht",
+        "name": "Yacht",
+        "practices": [
+          "games"
+        ],
+        "prerequisites": [
+          "games"
+        ],
+        "difficulty": 1
+      },
+      {
         "uuid": "3c5268f9-d8d7-46b4-a751-a4ff3774a3e1",
         "slug": "collatz-conjecture",
         "name": "Collatz Conjecture",
