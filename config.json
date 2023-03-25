@@ -495,6 +495,20 @@
         "difficulty": 1
       },
       {
+        "uuid": "809cf06c-442b-4214-83ee-de7cf7e1a6fb",
+        "slug": "word-count",
+        "name": "Word Count",
+        "practices": [
+          "allocators",
+          "hashmaps"
+        ],
+        "prerequisites": [
+          "allocators",
+          "hashmaps"
+        ],
+        "difficulty": 4
+      },
+      {
         "uuid": "47ef24ce-745a-4dfe-a7a8-370d8a324d52",
         "slug": "linked-list",
         "name": "Linked List",
