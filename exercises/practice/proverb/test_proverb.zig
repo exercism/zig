@@ -3,11 +3,11 @@ const testing = std.testing;
 
 const proverb = @import("proverb.zig");
 
-fn free(actual: [][]u8) void {
-    for (actual) |inner_slice| {
-        testing.allocator.free(inner_slice);
+fn free(slices: [][]u8) void {
+    for (slices) |s| {
+        testing.allocator.free(s);
     }
-    testing.allocator.free(actual);
+    testing.allocator.free(slices);
 }
 
 test "zero pieces" {
