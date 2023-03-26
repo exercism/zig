@@ -7,20 +7,15 @@ fn free(slices: [][]u8) void {
     for (slices) |s| {
         testing.allocator.free(s);
     }
-    testing.allocator.free(slices);
+    testing.allocator.free(slices); // No problem when `slices` has zero length.
 }
 
 test "zero pieces" {
     const input = [_][]const u8{};
-    const expected = input;
+    const expected = [_][]const u8{};
     const actual = try proverb.recite(testing.allocator, &input);
     try testing.expectEqualSlices([]const u8, &expected, actual);
-
-    // The free here doesn't actually free memory since a zero sized heap
-    // allocation doesn't actually point to anything important. So the free
-    // method on the allocator just quickly exits if what it points to has
-    // has a byte length of zero.
-    testing.allocator.free(actual);
+    free(actual);
 }
 
 test "one piece" {
