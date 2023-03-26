@@ -3,6 +3,13 @@ const testing = std.testing;
 
 const proverb = @import("proverb.zig");
 
+fn free(actual: [][]u8) void {
+    for (actual) |inner_slice| {
+        testing.allocator.free(inner_slice);
+    }
+    testing.allocator.free(actual);
+}
+
 test "zero pieces" {
     const input = [_][]const u8{};
 
@@ -34,10 +41,7 @@ test "one piece" {
         try testing.expectEqualSlices(u8, expected_slice, actual[i]);
     }
 
-    for (actual) |inner_slice| {
-        testing.allocator.free(inner_slice);
-    }
-    testing.allocator.free(actual);
+    free(actual);
 }
 
 test "two pieces" {
@@ -57,10 +61,7 @@ test "two pieces" {
         try testing.expectEqualSlices(u8, expected_slice, actual[i]);
     }
 
-    for (actual) |inner_slice| {
-        testing.allocator.free(inner_slice);
-    }
-    testing.allocator.free(actual);
+    free(actual);
 }
 
 test "three pieces" {
@@ -82,10 +83,7 @@ test "three pieces" {
         try testing.expectEqualSlices(u8, expected_slice, actual[i]);
     }
 
-    for (actual) |inner_slice| {
-        testing.allocator.free(inner_slice);
-    }
-    testing.allocator.free(actual);
+    free(actual);
 }
 
 test "full proverb" {
@@ -115,10 +113,7 @@ test "full proverb" {
         try testing.expectEqualSlices(u8, expected_slice, actual[i]);
     }
 
-    for (actual) |inner_slice| {
-        testing.allocator.free(inner_slice);
-    }
-    testing.allocator.free(actual);
+    free(actual);
 }
 
 test "four pieces modernized" {
@@ -142,8 +137,5 @@ test "four pieces modernized" {
         try testing.expectEqualSlices(u8, expected_slice, actual[i]);
     }
 
-    for (actual) |inner_slice| {
-        testing.allocator.free(inner_slice);
-    }
-    testing.allocator.free(actual);
+    free(actual);
 }
