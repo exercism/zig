@@ -12,11 +12,8 @@ fn free(slices: [][]u8) void {
 
 test "zero pieces" {
     const input = [_][]const u8{};
-
     const expected = input;
-
     const actual = try proverb.recite(testing.allocator, &input);
-
     try testing.expectEqualSlices([]const u8, &expected, actual);
 
     // The free here doesn't actually free memory since a zero sized heap
