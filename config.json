@@ -36,6 +36,22 @@
     "concept": [],
     "practice": [
       {
+        "uuid": "52281bbe-e1f6-4423-8092-6a8940a50ced",
+        "slug": "all-your-base",
+        "name": "All Your Base",
+        "practices": [
+          "allocators",
+          "integers",
+          "math"
+        ],
+        "prerequisites": [
+          "allocators",
+          "integers",
+          "math"
+        ],
+        "difficulty": 1
+      },
+      {
         "uuid": "25a0331e-612f-48c1-8a3f-9b0e9601a2fa",
         "slug": "hello-world",
         "name": "Hello, World!",
