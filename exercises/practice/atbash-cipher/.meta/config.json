@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "ee7"
+  ],
+  "files": {
+    "solution": [
+      "atbash_cipher.zig"
+    ],
+    "test": [
+      "test_atbash_cipher.zig"
+    ],
+    "example": [
+      ".meta/example.zig"
+    ]
+  },
+  "blurb": "Create an implementation of the atbash cipher, an ancient encryption system created in the Middle East.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Atbash"
+}

@@ -36,6 +36,20 @@
     "concept": [],
     "practice": [
       {
+        "uuid": "0e524507-7144-400e-a0c4-da150a4a2604",
+        "slug": "atbash-cipher",
+        "name": "Atbash cipher",
+        "practices": [
+          "allocators",
+          "strings"
+        ],
+        "prerequisites": [
+          "allocators",
+          "strings"
+        ],
+        "difficulty": 1
+      },
+      {
         "uuid": "25a0331e-612f-48c1-8a3f-9b0e9601a2fa",
         "slug": "hello-world",
         "name": "Hello, World!",
