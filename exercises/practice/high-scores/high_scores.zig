@@ -17,7 +17,7 @@ pub const HighScores = struct {
         @compileError("please implement the personalBest method");
     }
 
-    pub fn personalTopThree(self: HighScores, buffer: *[3]u32) []u32 {
+    pub fn personalTopThree(self: HighScores, buffer: []u32) []u32 {
         _ = self;
         _ = buffer;
         @compileError("please implement the personalTopThree method");

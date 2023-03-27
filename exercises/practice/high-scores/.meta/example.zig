@@ -15,13 +15,10 @@ pub const HighScores = struct {
         return std.mem.max(u32, self.scores);
     }
 
-    pub fn personalTopThree(self: HighScores, buffer: *[3]u32) []u32 {
-        std.debug.assert(self.scores.len <= 100);
-        var sorted: [100]u32 = undefined;
-        std.mem.copy(u32, &sorted, self.scores);
-        std.sort.sort(u32, sorted[0..self.scores.len], {}, std.sort.desc(u32));
-        var i = @min(self.scores.len, 3);
-        std.mem.copy(u32, buffer, sorted[0..i]);
-        return buffer[0..i];
+    pub fn personalTopThree(self: HighScores, buffer: []u32) []u32 {
+        std.debug.assert(buffer.len >= self.scores.len);
+        std.mem.copy(u32, buffer, self.scores);
+        std.sort.sort(u32, buffer, {}, std.sort.desc(u32));
+        return buffer[0..@min(buffer.len, 3)];
     }
 };
