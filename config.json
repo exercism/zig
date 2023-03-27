@@ -36,6 +36,24 @@
     "concept": [],
     "practice": [
       {
+        "uuid": "fafe82fb-a54a-40d3-b082-4429e080e435",
+        "slug": "high-scores",
+        "name": "High scores",
+        "practices": [
+          "integers",
+          "slices",
+          "sorting",
+          "structs"
+        ],
+        "prerequisites": [
+          "integers",
+          "slices",
+          "sorting",
+          "structs"
+        ],
+        "difficulty": 1
+      },
+      {
         "uuid": "25a0331e-612f-48c1-8a3f-9b0e9601a2fa",
         "slug": "hello-world",
         "name": "Hello, World!",
