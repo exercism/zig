@@ -379,13 +379,11 @@
         "slug": "dnd-character",
         "name": "D&D Character",
         "practices": [
-          "games",
           "integers",
           "math",
           "randomness"
         ],
         "prerequisites": [
-          "games",
           "integers",
           "math",
           "randomness"
