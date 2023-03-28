@@ -1,8 +1,6 @@
 const std = @import("std");
 
 pub const Character = struct {
-    const Self = @This();
-
     strength: u8,
     dexterity: u8,
     constitution: u8,
@@ -11,9 +9,9 @@ pub const Character = struct {
     charisma: u8,
     hitpoints: u8,
 
-    pub fn init() Self {
+    pub fn init() Character {
         const constitution = ability();
-        return Self{
+        return .{
             .strength = ability(),
             .dexterity = ability(),
             .constitution = constitution,
