@@ -1,5 +1,5 @@
-pub fn modifier(n: i8) i8 {
-    _ = n;
+pub fn modifier(score: i8) i8 {
+    _ = score;
     @compileError("please implement the modifier function");
 }
 

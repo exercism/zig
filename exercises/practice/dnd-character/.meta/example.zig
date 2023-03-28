@@ -16,8 +16,8 @@ pub fn ability() u8 {
     return result;
 }
 
-pub fn modifier(n: u8) i8 {
-    return @divFloor(@intCast(i8, n) - 10, 2);
+pub fn modifier(score: u8) i8 {
+    return @divFloor(@intCast(i8, score) - 10, 2);
 }
 
 pub const Character = struct {
