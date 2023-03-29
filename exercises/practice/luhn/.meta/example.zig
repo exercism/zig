@@ -2,10 +2,9 @@ const std = @import("std");
 
 fn createLookup() [10]u8 {
     var result: [10]u8 = undefined;
-    var i: u8 = 0;
-    while (i < 10) : (i += 1) {
-        const d = 2 * i;
-        result[i] = if (d > 9) d - 9 else d;
+    for (result) |*item, i| {
+        const d = 2 * @intCast(u8, i);
+        item.* = if (d > 9) d - 9 else d;
     }
     return result;
 }
