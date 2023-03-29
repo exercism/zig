@@ -1,8 +1,7 @@
 const std = @import("std");
 const testing = std.testing;
 
-const isbn_verifier = @import("isbn_verifier.zig");
-const isValidIsbn10 = isbn_verifier.isValidIsbn10;
+const isValidIsbn10 = @import("isbn_verifier.zig").isValidIsbn10;
 
 test "valid ISBN" {
     try testing.expect(isValidIsbn10("3-598-21508-8"));
