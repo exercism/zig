@@ -1,3 +1,5 @@
+const std = @import("std");
+
 fn createLookup() [10]u8 {
     var result: [10]u8 = undefined;
     var i: u8 = 0;
@@ -10,6 +12,7 @@ fn createLookup() [10]u8 {
 
 pub fn isValid(s: []const u8) bool {
     const lookup = comptime createLookup();
+    comptime std.debug.assert(std.mem.eql(u8, &lookup, &[10]u8{ 0, 2, 4, 6, 8, 1, 3, 5, 7, 9 }));
     var sum: usize = 0;
     var n_digits: usize = 0;
     var i = s.len;
