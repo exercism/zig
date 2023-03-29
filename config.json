@@ -387,6 +387,22 @@
         "difficulty": 1
       },
       {
+        "uuid": "2f4c1391-6e16-40bd-a4a9-883f51066cf3",
+        "slug": "dnd-character",
+        "name": "D&D Character",
+        "practices": [
+          "integers",
+          "math",
+          "randomness"
+        ],
+        "prerequisites": [
+          "integers",
+          "math",
+          "randomness"
+        ],
+        "difficulty": 1
+      },
+      {
         "uuid": "b9533606-bbbd-4110-8adc-54ccf94af1a6",
         "slug": "sieve",
         "name": "Sieve",
