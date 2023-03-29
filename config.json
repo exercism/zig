@@ -255,9 +255,13 @@
         "slug": "luhn",
         "name": "Luhn",
         "practices": [
+          "integers",
+          "math",
           "strings"
         ],
         "prerequisites": [
+          "integers",
+          "math",
           "strings"
         ],
         "difficulty": 1
