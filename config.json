@@ -197,9 +197,13 @@
         "slug": "isbn-verifier",
         "name": "ISBN Verifier",
         "practices": [
+          "integers",
+          "math",
           "strings"
         ],
         "prerequisites": [
+          "integers",
+          "math",
           "strings"
         ],
         "difficulty": 1
