@@ -1,4 +1,4 @@
-pub fn isPaired(s: []const u8) bool {
+pub fn isBalanced(s: []const u8) bool {
     _ = s;
-    @compileError("please implement the isPaired function");
+    @compileError("please implement the isBalanced function");
 }

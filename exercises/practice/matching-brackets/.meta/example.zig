@@ -1,6 +1,6 @@
 /// Returns whether the characters `(`, `[`, and `{` are matched and correctly nested in `s`.
 /// However, returns `false` if a stack of unmatched characters would exceed a length of 10.
-pub fn isPaired(s: []const u8) bool {
+pub fn isBalanced(s: []const u8) bool {
     var stack: [10]u8 = undefined;
     var i: usize = 0;
     for (s) |c| {
