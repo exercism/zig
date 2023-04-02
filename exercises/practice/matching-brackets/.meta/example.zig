@@ -2,7 +2,7 @@
 /// However, returns `false` if a stack of unmatched characters would exceed a length of 10.
 pub fn isPaired(s: []const u8) bool {
     var stack: [10]u8 = undefined;
-    var i: u8 = 0;
+    var i: usize = 0;
     for (s) |c| {
         switch (c) {
             '(', '[', '{' => {
