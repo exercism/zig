@@ -287,18 +287,6 @@
         "difficulty": 1
       },
       {
-        "uuid": "3878b8dc-4c63-4c7d-9800-bd99ad38650d",
-        "slug": "matching-brackets",
-        "name": "Matching Brackets",
-        "practices": [
-          "strings"
-        ],
-        "prerequisites": [
-          "strings"
-        ],
-        "difficulty": 1
-      },
-      {
         "uuid": "d36abb68-78cc-4c99-8693-00e02eb9011e",
         "slug": "triangle",
         "name": "Triangle",
@@ -469,6 +457,18 @@
           "functions",
           "optionals",
           "type-coercion"
+        ],
+        "difficulty": 1
+      },
+      {
+        "uuid": "3878b8dc-4c63-4c7d-9800-bd99ad38650d",
+        "slug": "matching-brackets",
+        "name": "Matching Brackets",
+        "practices": [
+          "strings"
+        ],
+        "prerequisites": [
+          "strings"
         ],
         "difficulty": 1
       },

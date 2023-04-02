@@ -4,82 +4,102 @@ const testing = std.testing;
 const isBalanced = @import("matching_brackets.zig").isBalanced;
 
 test "paired square brackets" {
-    try testing.expect(isBalanced("[]"));
+    const actual = try isBalanced(testing.allocator, "[]");
+    try testing.expect(actual);
 }
 
 test "empty string" {
-    try testing.expect(isBalanced(""));
+    const actual = try isBalanced(testing.allocator, "");
+    try testing.expect(actual);
 }
 
 test "unpaired brackets" {
-    try testing.expect(!isBalanced("[["));
+    const actual = try isBalanced(testing.allocator, "[[");
+    try testing.expect(!actual);
 }
 
 test "wrong ordered brackets" {
-    try testing.expect(!isBalanced("}{"));
+    const actual = try isBalanced(testing.allocator, "}{");
+    try testing.expect(!actual);
 }
 
 test "wrong closing bracket" {
-    try testing.expect(!isBalanced("{]"));
+    const actual = try isBalanced(testing.allocator, "{]");
+    try testing.expect(!actual);
 }
 
 test "paired with whitespace" {
-    try testing.expect(isBalanced("{ }"));
+    const actual = try isBalanced(testing.allocator, "{ }");
+    try testing.expect(actual);
 }
 
 test "partially paired brackets" {
-    try testing.expect(!isBalanced("{[])"));
+    const actual = try isBalanced(testing.allocator, "{[])");
+    try testing.expect(!actual);
 }
 
 test "simple nested brackets" {
-    try testing.expect(isBalanced("{[]}"));
+    const actual = try isBalanced(testing.allocator, "{[]}");
+    try testing.expect(actual);
 }
 
 test "several paired brackets" {
-    try testing.expect(isBalanced("{}[]"));
+    const actual = try isBalanced(testing.allocator, "{}[]");
+    try testing.expect(actual);
 }
 
 test "paired and nested brackets" {
-    try testing.expect(isBalanced("([{}({}[])])"));
+    const actual = try isBalanced(testing.allocator, "([{}({}[])])");
+    try testing.expect(actual);
 }
 
 test "unopened closing brackets" {
-    try testing.expect(!isBalanced("{[)][]}"));
+    const actual = try isBalanced(testing.allocator, "{[)][]}");
+    try testing.expect(!actual);
 }
 
 test "unpaired and nested brackets" {
-    try testing.expect(!isBalanced("([{])"));
+    const actual = try isBalanced(testing.allocator, "([{])");
+    try testing.expect(!actual);
 }
 
 test "paired and wrong nested brackets" {
-    try testing.expect(!isBalanced("[({]})"));
+    const actual = try isBalanced(testing.allocator, "[({]})");
+    try testing.expect(!actual);
 }
 
 test "paired and wrong nested brackets but innermost are correct" {
-    try testing.expect(!isBalanced("[({}])"));
+    const actual = try isBalanced(testing.allocator, "[({}])");
+    try testing.expect(!actual);
 }
 
 test "paired and incomplete brackets" {
-    try testing.expect(!isBalanced("{}["));
+    const actual = try isBalanced(testing.allocator, "{}[");
+    try testing.expect(!actual);
 }
 
 test "too many closing brackets" {
-    try testing.expect(!isBalanced("[]]"));
+    const actual = try isBalanced(testing.allocator, "[]]");
+    try testing.expect(!actual);
 }
 
 test "early unexpected brackets" {
-    try testing.expect(!isBalanced(")()"));
+    const actual = try isBalanced(testing.allocator, ")()");
+    try testing.expect(!actual);
 }
 
 test "early mismatched brackets" {
-    try testing.expect(!isBalanced("{)()"));
+    const actual = try isBalanced(testing.allocator, "{)()");
+    try testing.expect(!actual);
 }
 
 test "math expression" {
-    try testing.expect(isBalanced("(((185 + 223.85) * 15) - 543)/2"));
+    const actual = try isBalanced(testing.allocator, "(((185 + 223.85) * 15) - 543)/2");
+    try testing.expect(actual);
 }
 
 test "complex latex expression" {
     const s = "\\left(\\begin{array}{cc} \\frac{1}{3} & x\\\\ \\mathrm{e}^{x} &... x^2 \\end{array}\\right)";
-    try testing.expect(isBalanced(s));
+    const actual = try isBalanced(testing.allocator, s);
+    try testing.expect(actual);
 }
