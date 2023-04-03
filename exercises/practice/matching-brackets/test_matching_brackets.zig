@@ -103,3 +103,9 @@ test "complex latex expression" {
     const actual = try isBalanced(testing.allocator, s);
     try testing.expect(actual);
 }
+
+test "maximum required level of nesting" {
+    const s = "(((_[[[_{{{_()_}}}_]]]_)))";
+    const actual = try isBalanced(testing.allocator, s);
+    try testing.expect(actual);
+}
