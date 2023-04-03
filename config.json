@@ -193,6 +193,22 @@
         "difficulty": 1
       },
       {
+        "uuid": "d9242387-064a-4ba8-8b04-b5cfe68ae9a2",
+        "slug": "isbn-verifier",
+        "name": "ISBN Verifier",
+        "practices": [
+          "integers",
+          "math",
+          "strings"
+        ],
+        "prerequisites": [
+          "integers",
+          "math",
+          "strings"
+        ],
+        "difficulty": 1
+      },
+      {
         "uuid": "f49a0baa-a309-4814-a123-f41a2d770bdd",
         "slug": "resistor-color",
         "name": "Resistor Color",
@@ -231,6 +247,22 @@
           "builtin-functions",
           "enums",
           "functions"
+        ],
+        "difficulty": 1
+      },
+      {
+        "uuid": "ca72ff14-470d-4679-ad36-82ea9d2890bc",
+        "slug": "luhn",
+        "name": "Luhn",
+        "practices": [
+          "integers",
+          "math",
+          "strings"
+        ],
+        "prerequisites": [
+          "integers",
+          "math",
+          "strings"
         ],
         "difficulty": 1
       },
@@ -371,6 +403,22 @@
           "error-sets",
           "slices",
           "type-coercion"
+        ],
+        "difficulty": 1
+      },
+      {
+        "uuid": "2f4c1391-6e16-40bd-a4a9-883f51066cf3",
+        "slug": "dnd-character",
+        "name": "D&D Character",
+        "practices": [
+          "integers",
+          "math",
+          "randomness"
+        ],
+        "prerequisites": [
+          "integers",
+          "math",
+          "randomness"
         ],
         "difficulty": 1
       },
