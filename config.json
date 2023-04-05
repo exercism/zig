@@ -461,6 +461,18 @@
         "difficulty": 1
       },
       {
+        "uuid": "3878b8dc-4c63-4c7d-9800-bd99ad38650d",
+        "slug": "matching-brackets",
+        "name": "Matching Brackets",
+        "practices": [
+          "strings"
+        ],
+        "prerequisites": [
+          "strings"
+        ],
+        "difficulty": 1
+      },
+      {
         "uuid": "0590d6df-afbe-4983-92d4-8fe6797ad5fa",
         "slug": "acronym",
         "name": "Acronym",
