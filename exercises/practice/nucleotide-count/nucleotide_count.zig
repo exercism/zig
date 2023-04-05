@@ -1,6 +1,12 @@
 pub const NucleotideError = error{Invalid};
 
-pub fn countNucleotides(s: []const u8) NucleotideError![4]u8 {
+pub const Nucleotides = struct {
+    a: u32,
+    c: u32,
+    g: u32,
+    t: u32,
+};
+
+pub fn countNucleotides(s: []const u8) NucleotideError!Nucleotides {
     _ = s;
-    @compileError("please implement the countNucleotides function");
 }
