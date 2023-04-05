@@ -1,14 +1,14 @@
 pub const NucleotideError = error{Invalid};
 
-pub const Nucleotides = struct {
+pub const Counts = struct {
     a: u32 = 0,
     c: u32 = 0,
     g: u32 = 0,
     t: u32 = 0,
 };
 
-pub fn countNucleotides(s: []const u8) NucleotideError!Nucleotides {
-    var result = Nucleotides{};
+pub fn countNucleotides(s: []const u8) NucleotideError!Counts {
+    var result = Counts{};
     for (s) |c| {
         switch (c) {
             'A' => result.a += 1,
