@@ -5,31 +5,38 @@ const nucleotide_count = @import("nucleotide_count.zig");
 const countNucleotides = nucleotide_count.countNucleotides;
 
 test "empty strand" {
-    const expected = nucleotide_count.Nucleotides{ .a = 0, .c = 0, .g = 0, .t = 0 };
     const actual = try countNucleotides("");
-    try testing.expectEqual(expected, actual);
+    try testing.expectEqual(@as(u32, 0), actual.a);
+    try testing.expectEqual(@as(u32, 0), actual.c);
+    try testing.expectEqual(@as(u32, 0), actual.g);
+    try testing.expectEqual(@as(u32, 0), actual.t);
 }
 
 test "can count one nucleotide in single-character input" {
-    const expected = nucleotide_count.Nucleotides{ .a = 0, .c = 0, .g = 1, .t = 0 };
     const actual = try countNucleotides("G");
-    try testing.expectEqual(expected, actual);
+    try testing.expectEqual(@as(u32, 0), actual.a);
+    try testing.expectEqual(@as(u32, 0), actual.c);
+    try testing.expectEqual(@as(u32, 1), actual.g);
+    try testing.expectEqual(@as(u32, 0), actual.t);
 }
 
 test "strand with repeated nucleotide" {
-    const expected = nucleotide_count.Nucleotides{ .a = 0, .c = 0, .g = 7, .t = 0 };
     const actual = try countNucleotides("GGGGGGG");
-    try testing.expectEqual(expected, actual);
+    try testing.expectEqual(@as(u32, 0), actual.a);
+    try testing.expectEqual(@as(u32, 0), actual.c);
+    try testing.expectEqual(@as(u32, 7), actual.g);
+    try testing.expectEqual(@as(u32, 0), actual.t);
 }
 
 test "strand with multiple nucleotides" {
-    const expected = nucleotide_count.Nucleotides{ .a = 20, .c = 12, .g = 17, .t = 21 };
     const actual = try countNucleotides("AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC");
-    try testing.expectEqual(expected, actual);
+    try testing.expectEqual(@as(u32, 20), actual.a);
+    try testing.expectEqual(@as(u32, 12), actual.c);
+    try testing.expectEqual(@as(u32, 17), actual.g);
+    try testing.expectEqual(@as(u32, 21), actual.t);
 }
 
 test "strand with invalid nucleotides" {
-    const expected = nucleotide_count.NucleotideError.Invalid;
     const actual = countNucleotides("AGXXACT");
-    try testing.expectError(expected, actual);
+    try testing.expectError(nucleotide_count.NucleotideError.Invalid, actual);
 }
