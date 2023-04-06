@@ -314,11 +314,13 @@
         "name": "Nucleotide Count",
         "practices": [
           "error-sets",
-          "strings"
+          "strings",
+          "structs"
         ],
         "prerequisites": [
           "error-sets",
-          "strings"
+          "strings",
+          "structs"
         ],
         "difficulty": 1
       },
