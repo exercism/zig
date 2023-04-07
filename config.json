@@ -193,6 +193,22 @@
         "difficulty": 1
       },
       {
+        "uuid": "d9242387-064a-4ba8-8b04-b5cfe68ae9a2",
+        "slug": "isbn-verifier",
+        "name": "ISBN Verifier",
+        "practices": [
+          "integers",
+          "math",
+          "strings"
+        ],
+        "prerequisites": [
+          "integers",
+          "math",
+          "strings"
+        ],
+        "difficulty": 1
+      },
+      {
         "uuid": "f49a0baa-a309-4814-a123-f41a2d770bdd",
         "slug": "resistor-color",
         "name": "Resistor Color",
@@ -235,6 +251,22 @@
         "difficulty": 1
       },
       {
+        "uuid": "ca72ff14-470d-4679-ad36-82ea9d2890bc",
+        "slug": "luhn",
+        "name": "Luhn",
+        "practices": [
+          "integers",
+          "math",
+          "strings"
+        ],
+        "prerequisites": [
+          "integers",
+          "math",
+          "strings"
+        ],
+        "difficulty": 1
+      },
+      {
         "uuid": "3819c81e-db22-4aac-b745-5eec450b7b4d",
         "slug": "darts",
         "name": "Darts",
@@ -272,6 +304,22 @@
           "error-sets",
           "functions",
           "methods",
+          "structs"
+        ],
+        "difficulty": 1
+      },
+      {
+        "uuid": "7a68dc3d-03e4-4d68-bccd-8249dcd33978",
+        "slug": "nucleotide-count",
+        "name": "Nucleotide Count",
+        "practices": [
+          "error-sets",
+          "strings",
+          "structs"
+        ],
+        "prerequisites": [
+          "error-sets",
+          "strings",
           "structs"
         ],
         "difficulty": 1
@@ -393,6 +441,22 @@
         "difficulty": 1
       },
       {
+        "uuid": "2f4c1391-6e16-40bd-a4a9-883f51066cf3",
+        "slug": "dnd-character",
+        "name": "D&D Character",
+        "practices": [
+          "integers",
+          "math",
+          "randomness"
+        ],
+        "prerequisites": [
+          "integers",
+          "math",
+          "randomness"
+        ],
+        "difficulty": 1
+      },
+      {
         "uuid": "b9533606-bbbd-4110-8adc-54ccf94af1a6",
         "slug": "sieve",
         "name": "Sieve",
@@ -427,6 +491,18 @@
           "functions",
           "optionals",
           "type-coercion"
+        ],
+        "difficulty": 1
+      },
+      {
+        "uuid": "3878b8dc-4c63-4c7d-9800-bd99ad38650d",
+        "slug": "matching-brackets",
+        "name": "Matching Brackets",
+        "practices": [
+          "strings"
+        ],
+        "prerequisites": [
+          "strings"
         ],
         "difficulty": 1
       },
