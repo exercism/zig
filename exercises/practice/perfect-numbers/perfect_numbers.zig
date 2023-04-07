@@ -4,9 +4,8 @@ pub const Classification = enum {
     abundant,
 };
 
-pub const ClassifyError = error{IllegalArgument};
-
-pub fn classify(n: usize) ClassifyError!Classification {
+/// Asserts that `n` is nonzero.
+pub fn classify(n: usize) Classification {
     _ = n;
     @compileError("please implement the classify function");
 }

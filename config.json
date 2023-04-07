@@ -351,14 +351,14 @@
         "slug": "perfect-numbers",
         "name": "Perfect Numbers",
         "practices": [
+          "asserting",
           "enums",
-          "error-sets",
           "integers",
           "math"
         ],
         "prerequisites": [
+          "asserting",
           "enums",
-          "error-sets",
           "integers",
           "math"
         ],
