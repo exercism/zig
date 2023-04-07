@@ -309,6 +309,22 @@
         "difficulty": 1
       },
       {
+        "uuid": "7a68dc3d-03e4-4d68-bccd-8249dcd33978",
+        "slug": "nucleotide-count",
+        "name": "Nucleotide Count",
+        "practices": [
+          "error-sets",
+          "strings",
+          "structs"
+        ],
+        "prerequisites": [
+          "error-sets",
+          "strings",
+          "structs"
+        ],
+        "difficulty": 1
+      },
+      {
         "uuid": "280bd414-898d-4ab9-8a7c-f9c0d1e382f6",
         "slug": "space-age",
         "name": "Space Age",
