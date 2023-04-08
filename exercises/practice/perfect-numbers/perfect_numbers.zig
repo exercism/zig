@@ -5,7 +5,7 @@ pub const Classification = enum {
 };
 
 /// Asserts that `n` is nonzero.
-pub fn classify(n: usize) Classification {
+pub fn classify(n: u64) Classification {
     _ = n;
     @compileError("please implement the classify function");
 }

@@ -8,9 +8,9 @@ pub const Classification = enum {
 
 /// Returns the sum of the divisors of `n` (excluding `n` itself).
 /// For example, the aliquot sum of 15 is (1 + 3 + 5) = 9.
-fn aliquotSum(n: usize) usize {
+fn aliquotSum(n: u64) u64 {
     if (n == 1) return 0;
-    var result: usize = 1;
+    var result: u64 = 1;
     var i: usize = 2;
     const isqrt_n = std.math.sqrt(n);
     while (i <= isqrt_n) : (i += 1) {
@@ -23,7 +23,7 @@ fn aliquotSum(n: usize) usize {
 
 /// Returns whether `n` is less than, equal to, or greater than its aliquot sum.
 /// Asserts that `n` is nonzero.
-pub fn classify(comptime n: usize) Classification {
+pub fn classify(comptime n: u64) Classification {
     comptime std.debug.assert(n != 0);
     const aliquot_sum = aliquotSum(n);
     if (aliquot_sum < n) return Classification.deficient;
