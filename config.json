@@ -44,8 +44,7 @@
           "slices",
           "type-coercion"
         ],
-        "prerequisites": [
-        ],
+        "prerequisites": [],
         "difficulty": 1
       },
       {
