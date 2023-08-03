@@ -506,6 +506,24 @@
         "difficulty": 1
       },
       {
+        "uuid": "3342ce3f-5569-4a11-944b-ef7c7e678fa2",
+        "slug": "raindrops",
+        "name": "Raindrops",
+        "practices": [
+          "integers",
+          "math",
+          "slices",
+          "strings"
+        ],
+        "prerequisites": [
+          "integers",
+          "math",
+          "slices",
+          "strings"
+        ],
+        "difficulty": 1
+      },
+      {
         "uuid": "0590d6df-afbe-4983-92d4-8fe6797ad5fa",
         "slug": "acronym",
         "name": "Acronym",
