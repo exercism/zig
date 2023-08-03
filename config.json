@@ -510,9 +510,15 @@
         "slug": "raindrops",
         "name": "Raindrops",
         "practices": [
+          "integers",
+          "math",
+          "slices",
           "strings"
         ],
         "prerequisites": [
+          "integers",
+          "math",
+          "slices",
           "strings"
         ],
         "difficulty": 1
