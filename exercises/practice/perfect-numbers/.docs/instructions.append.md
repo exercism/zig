@@ -2,7 +2,7 @@
 
 ## Assert
 
-For this exercise, let's say that we want the caller to be responsible for calling `classify` only with an integer greater than 0.
+For this exercise, let's say that we want the caller to be responsible for calling `classify` only with a nonzero input.
 So please make the `classify` function assert that its input is nonzero.
 For more details, see the [Zig Language Reference][zig-reference] and the implementation of [`std.debug.assert`][assert].
 
