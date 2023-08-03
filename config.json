@@ -380,6 +380,24 @@
         "difficulty": 1
       },
       {
+        "uuid": "2fbd5bd8-a839-42a3-9293-4ad577766a12",
+        "slug": "perfect-numbers",
+        "name": "Perfect Numbers",
+        "practices": [
+          "asserting",
+          "enums",
+          "integers",
+          "math"
+        ],
+        "prerequisites": [
+          "asserting",
+          "enums",
+          "integers",
+          "math"
+        ],
+        "difficulty": 1
+      },
+      {
         "uuid": "866a09d8-6949-4363-b83f-7b9fefb53893",
         "slug": "two-fer",
         "name": "Two Fer",
