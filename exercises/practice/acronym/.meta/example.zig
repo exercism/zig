@@ -8,7 +8,7 @@ pub fn abbreviate(allocator: mem.Allocator, words: []const u8) mem.Allocator.Err
 
     var i: usize = 0;
     while (i < words.len) : (i += 1) {
-        if (!ascii.isAlpha(words[i])) continue;
+        if (!ascii.isAlphabetic(words[i])) continue;
 
         if (i == 0 or words[i - 1] == ' ' or words[i - 1] == '-' or words[i - 1] == '_') {
             try letters.append(ascii.toUpper(words[i]));
