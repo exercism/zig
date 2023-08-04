@@ -30,7 +30,7 @@ test "one piece" {
     const actual = try proverb.recite(testing.allocator, &input);
     defer free(actual);
 
-    for (expected) |expected_slice, i| {
+    for (expected, 0..) |expected_slice, i| {
         try testing.expectEqualSlices(u8, expected_slice, actual[i]);
     }
 }
@@ -49,7 +49,7 @@ test "two pieces" {
     const actual = try proverb.recite(testing.allocator, &input);
     defer free(actual);
 
-    for (expected) |expected_slice, i| {
+    for (expected, 0..) |expected_slice, i| {
         try testing.expectEqualSlices(u8, expected_slice, actual[i]);
     }
 }
@@ -70,7 +70,7 @@ test "three pieces" {
     const actual = try proverb.recite(testing.allocator, &input);
     defer free(actual);
 
-    for (expected) |expected_slice, i| {
+    for (expected, 0..) |expected_slice, i| {
         try testing.expectEqualSlices(u8, expected_slice, actual[i]);
     }
 }
@@ -99,7 +99,7 @@ test "full proverb" {
     const actual = try proverb.recite(testing.allocator, &input);
     defer free(actual);
 
-    for (expected) |expected_slice, i| {
+    for (expected, 0..) |expected_slice, i| {
         try testing.expectEqualSlices(u8, expected_slice, actual[i]);
     }
 }
@@ -122,7 +122,7 @@ test "four pieces modernized" {
     const actual = try proverb.recite(testing.allocator, &input);
     defer free(actual);
 
-    for (expected) |expected_slice, i| {
+    for (expected, 0..) |expected_slice, i| {
         try testing.expectEqualSlices(u8, expected_slice, actual[i]);
     }
 }

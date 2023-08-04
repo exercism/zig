@@ -17,7 +17,7 @@ pub fn ability() u8 {
 }
 
 pub fn modifier(score: u8) i8 {
-    return @divFloor(@intCast(i8, score) - 10, 2);
+    return @divFloor(@as(i8, @intCast(score)) - 10, 2);
 }
 
 pub const Character = struct {
@@ -38,7 +38,7 @@ pub const Character = struct {
             .intelligence = ability(),
             .wisdom = ability(),
             .charisma = ability(),
-            .hitpoints = @intCast(u8, 10 + modifier(constitution)),
+            .hitpoints = @as(u8, @intCast(10 + modifier(constitution))),
         };
     }
 };

@@ -4,7 +4,7 @@ pub fn isValidIsbn10(s: []const u8) bool {
     var sum: usize = 0;
     var n: usize = 10;
 
-    for (s) |c, i| {
+    for (s, 0..) |c, i| {
         switch (c) {
             '0'...'9' => sum += (c - '0') * n,
             'X' => if (i == s.len - 1) {
