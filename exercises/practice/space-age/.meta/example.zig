@@ -20,6 +20,6 @@ pub const Planet = enum {
             .neptune => 164.79132,
         };
         const earth_year_in_seconds = 31_557_600;
-        return @intToFloat(f64, seconds) / (earth_year_in_seconds * x);
+        return @as(f64, @floatFromInt(seconds)) / (earth_year_in_seconds * x);
     }
 };

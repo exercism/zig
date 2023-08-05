@@ -32,7 +32,7 @@ fn genPrimes(comptime limit: u32) []const u32 {
     const upper_bound_count = @ceil(1.25506 * @as(f64, limit) / @log(@as(f64, limit)));
     var result: [upper_bound_count]u32 = undefined;
     var j = 0;
-    for (bools) |b, i| {
+    for (bools, 0..) |b, i| {
         if (b) {
             result[j] = i;
             j += 1;

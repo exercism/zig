@@ -16,7 +16,7 @@
     "highlightjs_language": "zig"
   },
   "test_runner": {
-    "average_run_time": 5.0
+    "average_run_time": 5
   },
   "files": {
     "solution": [
@@ -44,8 +44,7 @@
           "slices",
           "type-coercion"
         ],
-        "prerequisites": [
-        ],
+        "prerequisites": [],
         "difficulty": 1
       },
       {
@@ -381,6 +380,38 @@
         "difficulty": 1
       },
       {
+        "uuid": "2fbd5bd8-a839-42a3-9293-4ad577766a12",
+        "slug": "perfect-numbers",
+        "name": "Perfect Numbers",
+        "practices": [
+          "asserting",
+          "enums",
+          "integers",
+          "math"
+        ],
+        "prerequisites": [
+          "asserting",
+          "enums",
+          "integers",
+          "math"
+        ],
+        "difficulty": 1
+      },
+      {
+        "uuid": "c4f19b16-4da3-4c81-bbf6-babde6ace276",
+        "slug": "reverse-string",
+        "name": "Reverse String",
+        "practices": [
+          "slices",
+          "strings"
+        ],
+        "prerequisites": [
+          "slices",
+          "strings"
+        ],
+        "difficulty": 1
+      },
+      {
         "uuid": "866a09d8-6949-4363-b83f-7b9fefb53893",
         "slug": "two-fer",
         "name": "Two Fer",
@@ -484,6 +515,24 @@
           "strings"
         ],
         "prerequisites": [
+          "strings"
+        ],
+        "difficulty": 1
+      },
+      {
+        "uuid": "3342ce3f-5569-4a11-944b-ef7c7e678fa2",
+        "slug": "raindrops",
+        "name": "Raindrops",
+        "practices": [
+          "integers",
+          "math",
+          "slices",
+          "strings"
+        ],
+        "prerequisites": [
+          "integers",
+          "math",
+          "slices",
           "strings"
         ],
         "difficulty": 1
