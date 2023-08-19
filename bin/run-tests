@@ -36,15 +36,15 @@ main() {
   script_dir="$(cd "$(dirname "$0")" >/dev/null 2>&1 && pwd)"
   cd "${script_dir}"/..
 
-  # Clear up any previous run
-  rm -rf build
-
-  if [[ -d "exercises/practice" ]]; then
-    cp -r exercises/practice build
-  else
+  if [[ ! -d "exercises/practice" ]]; then
     printf '%s\n' "The exercises/practice folder is missing..." >&2
     exit 1
   fi
+
+  # Clear up any previous run
+  rm -rf build
+
+  cp -r exercises/practice build
 
   (
     cd build/
