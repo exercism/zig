@@ -29,45 +29,49 @@ execute_test() {
   fi
 }
 
-# Move to the root directory of the repo so you can run this script from anywhere
-script_dir="$(cd "$(dirname "$0")" >/dev/null 2>&1 && pwd)"
-cd "${script_dir}"/..
+main() {
+  # Move to the root directory of the repo so you can run this script from anywhere
+  script_dir="$(cd "$(dirname "$0")" >/dev/null 2>&1 && pwd)"
+  cd "${script_dir}"/..
 
-# Clear up any previous run
-if [[ -d build ]]; then
-  rm -rf build
-fi
+  # Clear up any previous run
+  if [[ -d build ]]; then
+    rm -rf build
+  fi
 
-if [[ -d "exercises/practice" ]]; then
-  cp -r exercises/practice build
-  cd build/
-else
-  printf '%s\n' "The exercises/practice folder is missing..." >&2
-  exit 1
-fi
+  if [[ -d "exercises/practice" ]]; then
+    cp -r exercises/practice build
+    cd build/
+  else
+    printf '%s\n' "The exercises/practice folder is missing..." >&2
+    exit 1
+  fi
 
-# Allow specifying which tests to run as arguments
-if [[ $# -gt 0 ]]; then
-  for exercise in "$@"; do
-    # Check if the file exists
-    if [[ -e "${exercise}" ]]; then
-      execute_test "$exercise"
-    else
-      printf '%s\n' "The specified exercise '${exercise}' does not exist" >&2
-      exit 1
-    fi
-  done
-else
-  for exercise in *; do
-    # Check if the file exists
-    if [[ -e "${exercise}" ]]; then
-      execute_test "${exercise}"
-    fi
-  done
-fi
+  # Allow specifying which tests to run as arguments
+  if [[ $# -gt 0 ]]; then
+    for exercise in "$@"; do
+      # Check if the file exists
+      if [[ -e "${exercise}" ]]; then
+        execute_test "$exercise"
+      else
+        printf '%s\n' "The specified exercise '${exercise}' does not exist" >&2
+        exit 1
+      fi
+    done
+  else
+    for exercise in *; do
+      # Check if the file exists
+      if [[ -e "${exercise}" ]]; then
+        execute_test "${exercise}"
+      fi
+    done
+  fi
 
-# Clean up duplicate exercises
-cd ..
-if [[ -d build ]]; then
-  rm -rf build
-fi
+  # Clean up duplicate exercises
+  cd ..
+  if [[ -d build ]]; then
+    rm -rf build
+  fi
+}
+
+main "$@"
