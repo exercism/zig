@@ -6,6 +6,7 @@ execute_test() {
     (
       cd "${1}"
       # Get the exercise name from the directory
+      local exercise_name
       exercise_name=$(echo "$1" | tr '-' '_')
 
       echo "Running tests for ${exercise_name}"
@@ -31,6 +32,7 @@ execute_test() {
 
 main() {
   # Move to the root directory of the repo so you can run this script from anywhere
+  local script_dir
   script_dir="$(cd "$(dirname "$0")" >/dev/null 2>&1 && pwd)"
   cd "${script_dir}"/..
 
