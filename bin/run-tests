@@ -41,34 +41,35 @@ main() {
 
   if [[ -d "exercises/practice" ]]; then
     cp -r exercises/practice build
-    cd build/
   else
     printf '%s\n' "The exercises/practice folder is missing..." >&2
     exit 1
   fi
 
-  # Allow specifying which tests to run as arguments
-  if [[ $# -gt 0 ]]; then
-    for exercise in "$@"; do
-      # Check if the dir exists
-      if [[ -d "${exercise}" ]]; then
-        execute_test "$exercise"
-      else
-        printf '%s\n' "The specified exercise '${exercise}' does not exist" >&2
-        exit 1
-      fi
-    done
-  else
-    for exercise in *; do
-      # Check if the dir exists
-      if [[ -d "${exercise}" ]]; then
-        execute_test "${exercise}"
-      fi
-    done
-  fi
+  (
+    cd build/
+    # Allow specifying which tests to run as arguments
+    if [[ $# -gt 0 ]]; then
+      for exercise in "$@"; do
+        # Check if the dir exists
+        if [[ -d "${exercise}" ]]; then
+          execute_test "$exercise"
+        else
+          printf '%s\n' "The specified exercise '${exercise}' does not exist" >&2
+          exit 1
+        fi
+      done
+    else
+      for exercise in *; do
+        # Check if the dir exists
+        if [[ -d "${exercise}" ]]; then
+          execute_test "${exercise}"
+        fi
+      done
+    fi
+  )
 
   # Clean up duplicate exercises
-  cd ..
   rm -rf build
 }
 
