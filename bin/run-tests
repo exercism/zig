@@ -12,7 +12,7 @@ execute_test() {
       echo "Running tests for ${exercise_name}"
 
       # Copy the examples with the correct name for the exercise
-      if [[ -e "./.meta/example.zig" ]]; then
+      if [[ -f "./.meta/example.zig" ]]; then
         mv ./.meta/example.zig "${exercise_name}".zig
         # No building required, just test it
         if [ -L "${HOME}/bin/zig" ]; then
@@ -53,7 +53,7 @@ main() {
   if [[ $# -gt 0 ]]; then
     for exercise in "$@"; do
       # Check if the dir exists
-      if [[ -e "${exercise}" ]]; then
+      if [[ -d "${exercise}" ]]; then
         execute_test "$exercise"
       else
         printf '%s\n' "The specified exercise '${exercise}' does not exist" >&2
@@ -63,7 +63,7 @@ main() {
   else
     for exercise in *; do
       # Check if the dir exists
-      if [[ -e "${exercise}" ]]; then
+      if [[ -d "${exercise}" ]]; then
         execute_test "${exercise}"
       fi
     done
