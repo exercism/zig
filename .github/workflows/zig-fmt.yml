@@ -14,4 +14,4 @@ jobs:
 
     - name: Check that Zig code is formatted
       run: |
-        "${HOME}/bin/zig" fmt --check .
+        zig fmt --check .
