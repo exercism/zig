@@ -48,25 +48,23 @@ main() {
 
   (
     cd build/
+
     # Allow specifying which tests to run as arguments
     if [[ $# -gt 0 ]]; then
-      for exercise in "$@"; do
-        # Check if the dir exists
-        if [[ -d "${exercise}" ]]; then
-          execute_test "$exercise"
-        else
-          printf '%s\n' "The specified exercise '${exercise}' does not exist" >&2
+      local exercises=("$@")
+      for exercise in "${exercises[@]}"; do
+        if [[ ! -d "${exercise}" ]]; then
+          printf '%s\n' "The specified exercise '${1}' does not exist" >&2
           exit 1
         fi
       done
     else
-      for exercise in *; do
-        # Check if the dir exists
-        if [[ -d "${exercise}" ]]; then
-          execute_test "${exercise}"
-        fi
-      done
+      local exercises=(*)
     fi
+
+    for exercise in "${exercises[@]}"; do
+      execute_test "${exercise}"
+    done
   )
 
   # Clean up duplicate exercises
