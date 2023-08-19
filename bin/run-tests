@@ -3,26 +3,24 @@ set -eo pipefail
 
 execute_test() {
   local zig_path="${2}"
-  if [[ -d "${1}" ]]; then
-    (
-      cd "${1}"
-      # Get the exercise name from the directory
-      local exercise_name
-      exercise_name=$(echo "$1" | tr '-' '_')
+  (
+    cd "${1}"
+    # Get the exercise name from the directory
+    local exercise_name
+    exercise_name=$(echo "$1" | tr '-' '_')
 
-      echo "Running tests for ${exercise_name}"
+    echo "Running tests for ${exercise_name}"
 
-      # Copy the examples with the correct name for the exercise
-      if [[ -f "./.meta/example.zig" ]]; then
-        mv ./.meta/example.zig "${exercise_name}".zig
-        # No building required, just test it
-        "${zig_path}" test "test_${exercise_name}.zig"
-        printf '\n'
-      else
-        printf '%s\n' "${exercise_name} missing contents, skipping test..."
-      fi
-    )
-  fi
+    # Copy the examples with the correct name for the exercise
+    if [[ -f "./.meta/example.zig" ]]; then
+      mv ./.meta/example.zig "${exercise_name}".zig
+      # No building required, just test it
+      "${zig_path}" test "test_${exercise_name}.zig"
+      printf '\n'
+    else
+      printf '%s\n' "${exercise_name} missing contents, skipping test..."
+    fi
+  )
 }
 
 main() {
