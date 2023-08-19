@@ -52,7 +52,7 @@ main() {
   # Allow specifying which tests to run as arguments
   if [[ $# -gt 0 ]]; then
     for exercise in "$@"; do
-      # Check if the file exists
+      # Check if the dir exists
       if [[ -e "${exercise}" ]]; then
         execute_test "$exercise"
       else
@@ -62,7 +62,7 @@ main() {
     done
   else
     for exercise in *; do
-      # Check if the file exists
+      # Check if the dir exists
       if [[ -e "${exercise}" ]]; then
         execute_test "${exercise}"
       fi
