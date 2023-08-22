@@ -9,7 +9,7 @@ execute_test() {
     local exercise_name
     exercise_name=$(echo "$1" | tr '-' '_')
 
-    printf '%s\n' "Running tests for ${exercise_name}"
+    printf '%s\n' "Running tests for ${exercise_name}..."
 
     # Copy the examples with the correct name for the exercise
     if [[ -f "./.meta/example.zig" ]]; then
