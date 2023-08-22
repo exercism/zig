@@ -30,7 +30,7 @@ main() {
   cd "${script_dir}"/..
 
   if [[ ! -d "exercises/practice" ]]; then
-    printf '%s\n' "The exercises/practice folder is missing..." >&2
+    printf '%s\n' "Error: the exercises/practice folder is missing..." >&2
     exit 1
   fi
 
@@ -55,7 +55,7 @@ main() {
       local exercises=("$@")
       for exercise in "${exercises[@]}"; do
         if [[ ! -d "${exercise}" ]]; then
-          printf '%s\n' "The specified exercise '${1}' does not exist" >&2
+          printf '%s\n' "Error: the specified exercise '${1}' does not exist" >&2
           exit 1
         fi
       done
