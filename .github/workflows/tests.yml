@@ -9,7 +9,7 @@ jobs:
   test-exercises:
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest]
+        os: [ubuntu-22.04, macos-12]
 
     name: Check exercises (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
