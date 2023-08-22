@@ -2,72 +2,74 @@
 set -eo pipefail
 
 execute_test() {
-  if [ -d "${1}" ]; then
-    (
-      cd "${1}"
-      # Get the exercise name from the directory
-      exercise_name=$(echo "$1" | tr '-' '_')
+  local zig_path="${2}"
+  (
+    cd "${1}"
+    # Get the exercise name from the directory
+    local exercise_name
+    exercise_name=$(echo "$1" | tr '-' '_')
 
-      echo "Running tests for ${exercise_name}"
+    printf '%s\n' "Running tests for ${exercise_name}"
 
-      # Copy the examples with the correct name for the exercise
-      if [ -e "./.meta/example.zig" ]; then
-        mv ./.meta/example.zig "${exercise_name}".zig
-        # No building required, just test it
-        if [ -L "${HOME}/bin/zig" ]; then
-          # Zig track repo symlinks zig to this location
-          "${HOME}/bin/zig" test "test_${exercise_name}.zig"
-        else
-          # Otherwise zig should be on your $PATH
-          zig test "test_${exercise_name}.zig"
-        fi
-        printf '\n'
-      else
-        printf '%s\n' "${exercise_name} missing contents, skipping test..."
-      fi
-    )
-  fi
+    # Copy the examples with the correct name for the exercise
+    if [[ -f "./.meta/example.zig" ]]; then
+      mv ./.meta/example.zig "${exercise_name}".zig
+      # No building required, just test it
+      "${zig_path}" test "test_${exercise_name}.zig"
+      printf '\n'
+    else
+      printf '%s\n' "${exercise_name} missing contents, skipping test..."
+    fi
+  )
 }
 
-# Move to the root directory of the repo so you can run this script from anywhere
-script_dir="$(cd "$(dirname "$0")" >/dev/null 2>&1 && pwd)"
-cd "${script_dir}"/..
+main() {
+  # Move to the root directory of the repo so you can run this script from anywhere
+  local script_dir
+  script_dir="$(cd "$(dirname "$0")" >/dev/null 2>&1 && pwd)"
+  cd "${script_dir}"/..
 
-# Clear up any previous run
-if [ -d build ]; then
+  if [[ ! -d "exercises/practice" ]]; then
+    printf '%s\n' "The exercises/practice folder is missing..." >&2
+    exit 1
+  fi
+
+  # Clear up any previous run
   rm -rf build
-fi
 
-if [ -d "exercises/practice" ]; then
   cp -r exercises/practice build
-  cd build/
-else
-  printf '%s\n' "The exercises/practice folder is missing..." >&2
-  exit 1
-fi
 
-# Allow specifying which tests to run as arguments
-if [ $# -gt 0 ]; then
-  for exercise in "$@"; do
-    # Check if the file exists
-    if [ -e "${exercise}" ]; then
-      execute_test "$exercise"
+  if [ -L "${HOME}/bin/zig" ]; then
+    # Zig track repo symlinks zig to this location
+    local zig_path="${HOME}/bin/zig"
+  else
+    # Otherwise zig should be on your $PATH
+    local zig_path='zig'
+  fi
+
+  (
+    cd build/
+
+    # Allow specifying which tests to run as arguments
+    if [[ $# -gt 0 ]]; then
+      local exercises=("$@")
+      for exercise in "${exercises[@]}"; do
+        if [[ ! -d "${exercise}" ]]; then
+          printf '%s\n' "The specified exercise '${1}' does not exist" >&2
+          exit 1
+        fi
+      done
     else
-      printf '%s\n' "The specified exercise '${exercise}' does not exist" >&2
-      exit 1
+      local exercises=(*)
     fi
-  done
-else
-  for exercise in *; do
-    # Check if the file exists
-    if [ -e "${exercise}" ]; then
-      execute_test "${exercise}"
-    fi
-  done
-fi
 
-# Clean up duplicate exercises
-cd ..
-if [ -d build ]; then
+    for exercise in "${exercises[@]}"; do
+      execute_test "${exercise}" "${zig_path}"
+    done
+  )
+
+  # Clean up duplicate exercises
   rm -rf build
-fi
+}
+
+main "$@"
