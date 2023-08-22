@@ -33,7 +33,13 @@ file="zig.${ext}"
 echo "Downloading Zig release archive..." >&2
 curl "${curlopts[@]}" --output "${file}" "${url}"
 echo "Extracting archive..." >&2
-tar xJf "${file}"
-mkdir -p "${HOME}/bin"
-ln -s "$(pwd)"/zig-*/zig "${HOME}/bin/zig"
+
+case "${os}" in
+  linux|macos) tar xJf "${file}"  ;;
+  windows)     unzip -q "${file}" ;;
+esac
+
+# Add zig directory to `GITHUB_PATH`.
+echo "$(pwd)"/zig-*/ >> "${GITHUB_PATH}"
+
 echo "Success. Installed Zig version ${version}."

@@ -9,7 +9,7 @@ jobs:
   test-exercises:
     strategy:
       matrix:
-        os: [ubuntu-22.04, macos-12]
+        os: [ubuntu-22.04, macos-12, windows-2022]
 
     name: Check exercises (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
@@ -17,7 +17,9 @@ jobs:
     - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
 
     - name: Install Zig
+      shell: bash
       run: ./.github/bin/install-zig
 
     - name: Test exercises
+      shell: bash
       run: ./bin/run-tests
