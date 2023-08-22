@@ -35,8 +35,8 @@ curl "${curlopts[@]}" --output "${file}" "${url}"
 echo "Extracting archive..." >&2
 
 case "${os}" in
-  linux | macos) tar xJf "${file}"  ;;
-  windows)       unzip -q "${file}" ;;
+  linux|macos) tar xJf "${file}"  ;;
+  windows)     unzip -q "${file}" ;;
 esac
 
 # Add zig directory to `GITHUB_PATH`.
