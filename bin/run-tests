@@ -2,7 +2,6 @@
 set -eo pipefail
 
 execute_test() {
-  local zig_path="${2}"
   (
     cd "${1}"
     # Get the exercise name from the directory
@@ -15,7 +14,7 @@ execute_test() {
     if [[ -f "./.meta/example.zig" ]]; then
       mv ./.meta/example.zig "${exercise_name}".zig
       # No building required, just test it
-      "${zig_path}" test "test_${exercise_name}.zig"
+      zig test "test_${exercise_name}.zig"
       printf '\n'
     else
       printf '%s\n' "Error: ${exercise_name} lacks its '.meta/example.zig' file" >&2
@@ -40,14 +39,6 @@ main() {
 
   cp -r exercises/practice build
 
-  if [ -L "${HOME}/bin/zig" ]; then
-    # Zig track repo symlinks zig to this location
-    local zig_path="${HOME}/bin/zig"
-  else
-    # Otherwise zig should be on your $PATH
-    local zig_path='zig'
-  fi
-
   (
     cd build/
 
@@ -65,7 +56,7 @@ main() {
     fi
 
     for exercise in "${exercises[@]}"; do
-      execute_test "${exercise}" "${zig_path}"
+      execute_test "${exercise}"
     done
   )
 
