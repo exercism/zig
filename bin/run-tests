@@ -17,7 +17,8 @@ execute_test() {
       zig test "test_${exercise_name}.zig"
       printf '\n'
     else
-      printf '%s\n' "${exercise_name} missing contents, skipping test..."
+      printf '%s\n' "Error: ${exercise_name} lacks its '.meta/example.zig' file" >&2
+      exit 1
     fi
   )
 }
