@@ -10,10 +10,9 @@ pub fn sum(allocator: mem.Allocator, factors: []const u32, limit: u32) mem.Alloc
         if (f == 0) continue;
         var m: u64 = f;
         while (m < limit) : (m += f) {
-            if (!multiples.contains(m)) {
-                try multiples.putNoClobber(m, {});
-                result += m;
-            }
+            if (multiples.contains(m)) continue;
+            try multiples.putNoClobber(m, {});
+            result += m;
         }
     }
     return result;
