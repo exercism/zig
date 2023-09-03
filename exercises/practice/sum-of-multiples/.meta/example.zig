@@ -9,12 +9,11 @@ pub fn sum(allocator: mem.Allocator, factors: []const u32, limit: u32) mem.Alloc
     for (factors) |f| {
         if (f == 0) continue;
         var m: u64 = f;
-        while (m < limit) {
+        while (m < limit) : (m += f) {
             if (!multiples.contains(m)) {
                 try multiples.putNoClobber(m, {});
                 result += m;
             }
-            m += f;
         }
     }
     return result;
