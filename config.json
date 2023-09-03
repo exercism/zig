@@ -92,6 +92,20 @@
         "difficulty": 1
       },
       {
+        "uuid": "75372668-762c-4c5e-98c4-1093e3a92a88",
+        "slug": "scrabble-score",
+        "name": "Scrabble Score",
+        "practices": [
+          "games",
+          "strings"
+        ],
+        "prerequisites": [
+          "games",
+          "strings"
+        ],
+        "difficulty": 1
+      },
+      {
         "uuid": "8f48a213-9a28-4a7e-93f9-f2b1fbe46e58",
         "slug": "pangram",
         "name": "Pangram",
