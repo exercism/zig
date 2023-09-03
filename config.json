@@ -36,20 +36,6 @@
     "concept": [],
     "practice": [
       {
-        "uuid": "a9ba66ae-85d1-490e-a421-e2e35f90231e",
-        "slug": "sum-of-multiples",
-        "name": "Sum of Multiples",
-        "practices": [
-          "integers",
-          "math"
-        ],
-        "prerequisites": [
-          "integers",
-          "math"
-        ],
-        "difficulty": 1
-      },
-      {
         "uuid": "25a0331e-612f-48c1-8a3f-9b0e9601a2fa",
         "slug": "hello-world",
         "name": "Hello, World!",
@@ -644,6 +630,20 @@
         "prerequisites": [
           "bitwise-operations",
           "enums"
+        ],
+        "difficulty": 1
+      },
+      {
+        "uuid": "a9ba66ae-85d1-490e-a421-e2e35f90231e",
+        "slug": "sum-of-multiples",
+        "name": "Sum of Multiples",
+        "practices": [
+          "integers",
+          "math"
+        ],
+        "prerequisites": [
+          "integers",
+          "math"
         ],
         "difficulty": 1
       },
