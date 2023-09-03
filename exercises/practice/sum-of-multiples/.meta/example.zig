@@ -8,13 +8,13 @@ pub fn sum(allocator: mem.Allocator, factors: []const u32, limit: u32) !u64 {
     var result: u64 = 0;
     for (factors) |f| {
         if (f != 0) {
-            var n: u64 = f;
-            while (n < limit) {
-                if (!multiples.contains(n)) {
-                    try multiples.putNoClobber(n, {});
-                    result += n;
+            var m: u64 = f;
+            while (m < limit) {
+                if (!multiples.contains(m)) {
+                    try multiples.putNoClobber(m, {});
+                    result += m;
                 }
-                n += f;
+                m += f;
             }
         }
     }
