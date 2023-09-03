@@ -638,10 +638,12 @@
         "slug": "sum-of-multiples",
         "name": "Sum of Multiples",
         "practices": [
+          "allocators",
           "integers",
           "math"
         ],
         "prerequisites": [
+          "allocators",
           "integers",
           "math"
         ],
