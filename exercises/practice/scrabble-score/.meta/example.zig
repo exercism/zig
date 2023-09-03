@@ -4,8 +4,8 @@ const points = [26]u4{
     1, 1, 1, 4, 4, 8, 4, 10,
 };
 
-pub fn score(s: []const u8) usize {
-    var result: usize = 0;
+pub fn score(s: []const u8) u32 {
+    var result: u32 = 0;
     for (s) |c| {
         const i = switch (c) {
             'a'...'z' => c - 'a',
