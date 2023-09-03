@@ -12,5 +12,5 @@ pub const ColorBand = enum(u4) {
 };
 
 pub fn colorCode(colors: [2]ColorBand) usize {
-    return @as(usize, @enumToInt(colors[0])) * 10 + @as(usize, @enumToInt(colors[1]));
+    return @as(usize, @intFromEnum(colors[0])) * 10 + @as(usize, @intFromEnum(colors[1]));
 }
