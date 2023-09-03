@@ -7,15 +7,14 @@ pub fn sum(allocator: mem.Allocator, factors: []const u32, limit: u32) mem.Alloc
 
     var result: u64 = 0;
     for (factors) |f| {
-        if (f != 0) {
-            var m: u64 = f;
-            while (m < limit) {
-                if (!multiples.contains(m)) {
-                    try multiples.putNoClobber(m, {});
-                    result += m;
-                }
-                m += f;
+        if (f == 0) continue;
+        var m: u64 = f;
+        while (m < limit) {
+            if (!multiples.contains(m)) {
+                try multiples.putNoClobber(m, {});
+                result += m;
             }
+            m += f;
         }
     }
     return result;
