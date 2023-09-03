@@ -132,6 +132,7 @@ test "solutions using include-exclude must extend to cardinality greater than 3"
 }
 
 test "sum is greater than maximum value of u32" {
+    // Note that for a u32 `limit`, the maximum sum of multiples fits in a u64.
     const expected: u64 = 4_500_000_000;
     const factors = [_]u32{100_000_000};
     const limit = 1_000_000_000;
