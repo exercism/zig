@@ -48,20 +48,6 @@
         "difficulty": 1
       },
       {
-        "uuid": "75372668-762c-4c5e-98c4-1093e3a92a88",
-        "slug": "scrabble-score",
-        "name": "Scrabble Score",
-        "practices": [
-          "games",
-          "strings"
-        ],
-        "prerequisites": [
-          "games",
-          "strings"
-        ],
-        "difficulty": 1
-      },
-      {
         "uuid": "5e8e92f6-e8c7-49f1-8ebf-a93f73998d47",
         "slug": "leap",
         "name": "Leap",
@@ -102,6 +88,20 @@
           "builtin-functions",
           "control-flow",
           "functions"
+        ],
+        "difficulty": 1
+      },
+      {
+        "uuid": "75372668-762c-4c5e-98c4-1093e3a92a88",
+        "slug": "scrabble-score",
+        "name": "Scrabble Score",
+        "practices": [
+          "games",
+          "strings"
+        ],
+        "prerequisites": [
+          "games",
+          "strings"
         ],
         "difficulty": 1
       },
