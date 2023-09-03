@@ -130,3 +130,11 @@ test "solutions using include-exclude must extend to cardinality greater than 3"
     const actual = try sum(testing.allocator, &factors, limit);
     try testing.expectEqual(expected, actual);
 }
+
+test "sum is greater than maximum value of u32" {
+    const expected: u64 = 4_500_000_000;
+    const factors = [_]u32{100_000_000};
+    const limit = 1_000_000_000;
+    const actual = try sum(testing.allocator, &factors, limit);
+    try testing.expectEqual(expected, actual);
+}
