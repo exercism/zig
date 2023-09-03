@@ -10,8 +10,10 @@ pub fn sum(allocator: mem.Allocator, factors: []const u32, limit: u32) !u64 {
         if (f != 0) {
             var n: u64 = f;
             while (n < limit) {
-                if (!intset.contains(n)) result += n;
-                try intset.put(n, {});
+                if (!intset.contains(n)) {
+                    try intset.putNoClobber(n, {});
+                    result += n;
+                }
                 n += f;
             }
         }
