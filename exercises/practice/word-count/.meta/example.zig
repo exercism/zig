@@ -19,6 +19,8 @@ fn incOrPut(self: *StringMap, word: *Word) mem.Allocator.Error!void {
     word.clearRetainingCapacity();
 }
 
+/// Returns the counts of the words in `s`.
+/// Caller owns the returned memory.
 pub fn countWords(allocator: mem.Allocator, s: []const u8) mem.Allocator.Error!StringMap {
     var result = StringMap.init(allocator);
     errdefer result.deinit();
