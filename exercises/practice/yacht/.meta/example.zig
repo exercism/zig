@@ -29,7 +29,7 @@ fn sumOnly(dice: Dice, n: @typeInfo(Category).Enum.tag_type) usize {
 
 fn sort(dice: Dice) Dice {
     var d = dice;
-    std.sort.sort(DiceInt, &d, {}, std.sort.asc(DiceInt));
+    std.mem.sort(DiceInt, &d, {}, std.sort.asc(DiceInt));
     return d;
 }
 
@@ -67,7 +67,7 @@ fn scoreYacht(d: Dice) usize {
 
 pub fn score(dice: Dice, category: Category) usize {
     return switch (category) {
-        .ones, .twos, .threes, .fours, .fives, .sixes => sumOnly(dice, @enumToInt(category) + 1),
+        .ones, .twos, .threes, .fours, .fives, .sixes => sumOnly(dice, @intFromEnum(category) + 1),
         .full_house => scoreFullHouse(dice),
         .four_of_a_kind => scoreFourOfAKind(dice),
         .little_straight => scoreStraight(dice, Dice{ 1, 2, 3, 4, 5 }),
