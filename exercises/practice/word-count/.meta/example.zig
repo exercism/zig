@@ -26,7 +26,7 @@ pub fn countWords(allocator: mem.Allocator, s: []const u8) !StringMap {
     var word = Word.init(allocator);
     defer word.deinit();
 
-    for (s) |c, i| {
+    for (s, 0..) |c, i| {
         switch (c) {
             '0'...'9' => try word.append(c),
             'A'...'Z' => try word.append('a' + c - 'A'),
