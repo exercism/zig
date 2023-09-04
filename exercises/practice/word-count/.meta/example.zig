@@ -6,7 +6,7 @@ const Word = std.ArrayList(u8);
 /// If `self` contains the key `word`, increments its value by 1.
 /// Otherwise, dupes `word` and puts it into `self`, setting its value to 1.
 /// Clears `word`.
-fn incOrPut(self: *StringMap, word: *Word) !void {
+fn incOrPut(self: *StringMap, word: *Word) mem.Allocator.Error!void {
     const res = try self.getOrPut(word.items);
     if (res.found_existing) {
         res.value_ptr.* += 1;
@@ -19,7 +19,7 @@ fn incOrPut(self: *StringMap, word: *Word) !void {
     word.clearRetainingCapacity();
 }
 
-pub fn countWords(allocator: mem.Allocator, s: []const u8) !StringMap {
+pub fn countWords(allocator: mem.Allocator, s: []const u8) mem.Allocator.Error!StringMap {
     var result = StringMap.init(allocator);
     errdefer result.deinit();
 
