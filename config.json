@@ -634,6 +634,22 @@
         "difficulty": 1
       },
       {
+        "uuid": "a9ba66ae-85d1-490e-a421-e2e35f90231e",
+        "slug": "sum-of-multiples",
+        "name": "Sum of Multiples",
+        "practices": [
+          "allocators",
+          "integers",
+          "math"
+        ],
+        "prerequisites": [
+          "allocators",
+          "integers",
+          "math"
+        ],
+        "difficulty": 1
+      },
+      {
         "uuid": "47ef24ce-745a-4dfe-a7a8-370d8a324d52",
         "slug": "linked-list",
         "name": "Linked List",
