@@ -27,7 +27,7 @@ fn sumOnly(dice: Dice, n: @typeInfo(Category).Enum.tag_type) u32 {
     return result;
 }
 
-fn sort(dice: Dice) Dice {
+fn sorted(dice: Dice) Dice {
     var d = dice;
     std.mem.sort(DiceInt, &d, {}, std.sort.asc(DiceInt));
     return d;
@@ -40,7 +40,7 @@ fn sum(dice: Dice) u32 {
 }
 
 fn scoreFullHouse(dice: Dice) u32 {
-    const d = sort(dice);
+    const d = sorted(dice);
     const cond =
         (d[0] == d[1] and d[1] == d[2] and d[2] != d[3] and d[3] == d[4]) or
         (d[0] == d[1] and d[1] != d[2] and d[2] == d[3] and d[3] == d[4]);
@@ -48,7 +48,7 @@ fn scoreFullHouse(dice: Dice) u32 {
 }
 
 fn scoreFourOfAKind(dice: Dice) u32 {
-    const d = sort(dice);
+    const d = sorted(dice);
     if (d[1] == d[2] and d[2] == d[3]) {
         if (d[0] == d[1]) return @as(u32, d[0]) * 4;
         if (d[3] == d[4]) return @as(u32, d[1]) * 4;
@@ -57,7 +57,7 @@ fn scoreFourOfAKind(dice: Dice) u32 {
 }
 
 fn scoreStraight(dice: Dice, straight: Dice) u32 {
-    const d = sort(dice);
+    const d = sorted(dice);
     return if (std.mem.eql(DiceInt, &d, &straight)) 30 else 0;
 }
 
