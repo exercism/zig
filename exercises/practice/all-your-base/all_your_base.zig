@@ -9,10 +9,10 @@ pub const BaseError = error{
 
 pub fn rebase(
     allocator: mem.Allocator,
-    digits: []const usize,
-    from_base: usize,
-    to_base: usize,
-) (mem.Allocator.Error || BaseError)![]usize {
+    digits: []const u32,
+    from_base: u32,
+    to_base: u32,
+) (mem.Allocator.Error || BaseError)![]u32 {
     _ = allocator;
     _ = digits;
     _ = from_base;

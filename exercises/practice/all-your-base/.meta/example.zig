@@ -7,9 +7,9 @@ pub const BaseError = error{
     InvalidDigit,
 };
 
-fn toBase10(digits: []const usize, from_base: usize) usize {
-    var result: usize = 0;
-    var power: usize = 1;
+fn toBase10(digits: []const u32, from_base: u32) u32 {
+    var result: u32 = 0;
+    var power: u32 = 1;
     var i: usize = digits.len;
     while (i > 0) {
         i -= 1;
@@ -22,30 +22,30 @@ fn toBase10(digits: []const usize, from_base: usize) usize {
 
 fn fromBase10(
     allocator: mem.Allocator,
-    num: usize,
-    to_base: usize,
-) mem.Allocator.Error![]usize {
+    num: u32,
+    to_base: u32,
+) mem.Allocator.Error![]u32 {
     if (num == 0) {
-        var res = [_]usize{0};
+        var res = [_]u32{0};
         return &res;
     }
-    var list = std.ArrayList(usize).init(allocator);
+    var list = std.ArrayList(u32).init(allocator);
     var n = num;
     while (n > 0) {
         try list.append(n % to_base);
         n /= to_base;
     }
     var result = try list.toOwnedSlice();
-    mem.reverse(usize, result);
+    mem.reverse(u32, result);
     return result;
 }
 
 pub fn rebase(
     allocator: mem.Allocator,
-    digits: []const usize,
-    from_base: usize,
-    to_base: usize,
-) (mem.Allocator.Error || BaseError)![]usize {
+    digits: []const u32,
+    from_base: u32,
+    to_base: u32,
+) (mem.Allocator.Error || BaseError)![]u32 {
     if (from_base < 2) return BaseError.InvalidInputBase;
     if (to_base < 2) return BaseError.InvalidOutputBase;
 
