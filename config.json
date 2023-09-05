@@ -80,9 +80,13 @@
         "slug": "yacht",
         "name": "Yacht",
         "practices": [
+          "arrays",
+          "enums",
           "games"
         ],
         "prerequisites": [
+          "arrays",
+          "enums",
           "games"
         ],
         "difficulty": 1
