@@ -1,6 +1,6 @@
 const std = @import("std");
 
-pub const Category = enum(u4) {
+pub const Category = enum {
     ones,
     twos,
     threes,
