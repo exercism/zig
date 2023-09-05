@@ -3,15 +3,15 @@ pub fn isIsogram(str: []const u8) bool {
     for (str) |value| {
         switch (value) {
             'a'...'z' => {
-                if (mask & @as(u32, 1) << @truncate(u5, value - 'a') == 0) {
-                    mask |= @as(u32, 1) << @truncate(u5, value - 'a');
+                if (mask & @as(u32, 1) << @as(u5, @truncate(value - 'a')) == 0) {
+                    mask |= @as(u32, 1) << @as(u5, @truncate(value - 'a'));
                 } else {
                     return false;
                 }
             },
             'A'...'Z' => {
-                if (mask & @as(u32, 1) << @truncate(u5, value - 'A') == 0) {
-                    mask |= @as(u32, 1) << @truncate(u5, value - 'A');
+                if (mask & @as(u32, 1) << @as(u5, @truncate(value - 'A')) == 0) {
+                    mask |= @as(u32, 1) << @as(u5, @truncate(value - 'A'));
                 } else {
                     return false;
                 }
