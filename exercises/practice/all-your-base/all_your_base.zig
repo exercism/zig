@@ -1,5 +1,4 @@
 const std = @import("std");
-const mem = std.mem;
 
 pub const BaseError = error{
     InvalidInputBase,
@@ -8,12 +7,12 @@ pub const BaseError = error{
 };
 
 pub fn rebase(
-    allocator: mem.Allocator,
+    buffer: []u32,
     digits: []const u32,
     from_base: u32,
     to_base: u32,
-) (mem.Allocator.Error || BaseError)![]u32 {
-    _ = allocator;
+) BaseError![]u32 {
+    _ = buffer;
     _ = digits;
     _ = from_base;
     _ = to_base;
