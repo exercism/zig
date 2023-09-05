@@ -10,10 +10,8 @@ pub const BaseError = error{
 fn toBase10(digits: []const u32, from_base: u32) u32 {
     var result: u32 = 0;
     var power: u32 = 1;
-    var i: usize = digits.len;
-    while (i > 0) {
-        i -= 1;
-        const d = digits[i];
+    var iter = mem.reverseIterator(digits);
+    while (iter.next()) |d| {
         result += d * power;
         power *= from_base;
     }
