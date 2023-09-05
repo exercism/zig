@@ -27,6 +27,7 @@ fn sumOnly(dice: Dice, n: @typeInfo(Category).Enum.tag_type) u32 {
     return result;
 }
 
+/// Returns a copy of `dice`, sorted in ascending order.
 fn sorted(dice: Dice) Dice {
     var d = dice;
     std.mem.sort(DiceInt, &d, {}, std.sort.asc(DiceInt));
