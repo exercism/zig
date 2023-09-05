@@ -634,6 +634,22 @@
         "difficulty": 1
       },
       {
+        "uuid": "f73c7be1-ee3a-4fff-93f2-a8f5ab793ca1",
+        "slug": "yacht",
+        "name": "Yacht",
+        "practices": [
+          "arrays",
+          "enums",
+          "games"
+        ],
+        "prerequisites": [
+          "arrays",
+          "enums",
+          "games"
+        ],
+        "difficulty": 1
+      },
+      {
         "uuid": "a9ba66ae-85d1-490e-a421-e2e35f90231e",
         "slug": "sum-of-multiples",
         "name": "Sum of Multiples",
