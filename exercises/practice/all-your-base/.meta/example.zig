@@ -35,7 +35,7 @@ fn fromBase10(
         try list.append(n % to_base);
         n /= to_base;
     }
-    var result = list.toOwnedSlice();
+    var result = try list.toOwnedSlice();
     mem.reverse(usize, result);
     return result;
 }
