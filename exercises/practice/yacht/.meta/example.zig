@@ -70,8 +70,8 @@ pub fn score(dice: Dice, category: Category) u32 {
         .ones, .twos, .threes, .fours, .fives, .sixes => sumOnly(dice, @intFromEnum(category) + 1),
         .full_house => scoreFullHouse(dice),
         .four_of_a_kind => scoreFourOfAKind(dice),
-        .little_straight => scoreStraight(dice, Dice{ 1, 2, 3, 4, 5 }),
-        .big_straight => scoreStraight(dice, Dice{ 2, 3, 4, 5, 6 }),
+        .little_straight => scoreStraight(dice, .{ 1, 2, 3, 4, 5 }),
+        .big_straight => scoreStraight(dice, .{ 2, 3, 4, 5, 6 }),
         .choice => sum(dice),
         .yacht => scoreYacht(dice),
     };
