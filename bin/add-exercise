@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+if [ $# -ne 1 ]; then
+    echo "Usage: bin/add-exercise <exercise-slug>"
+    exit 1
+fi
+
+command -v jq >/dev/null 2>&1 || {
+    echo >&2 "jq is required but not installed. Please install it and make sure it's in your PATH."
+    exit 1
+}
+command -v curl >/dev/null 2>&1 || {
+    echo >&2 "curl is required but not installed. Please install it and make sure it's in your PATH."
+    exit 1
+}
+
+bin/fetch-configlet
+
+# Add entry for exercise in config.json
+slug="${1}"
+name=$(echo "${slug}" | sed 's/\b\w/\u&/g')
+uuid=$(bin/configlet uuid)
+jq --arg slug "${slug}" --arg uuid "${uuid}" --arg name "${name}" \
+    '.exercises.practice += [{slug: $slug, name: $name, uuid: $uuid, practices: [], prerequisites: [], difficulty: 1}]' \
+    config.json | sed 's/"average_run_time": 5/"average_run_time": 5.0/' > config.json.tmp && mv config.json.tmp config.json
+
+# Sync the exercise
+bin/configlet sync --update --yes --tests include --filepaths --metadata --docs --exercise "${slug}"
+
+exercise_dir="exercises/practice/${slug}"
+exercise_files=$(jq -r '.files[][]' "${exercise_dir}/.meta/config.json")
+
+for file in ${exercise_files}; do
+    touch "${exercise_dir}/${file}"
+done

@@ -16,7 +16,7 @@
     "highlightjs_language": "zig"
   },
   "test_runner": {
-    "average_run_time": 5.0
+    "average_run_time": 5
   },
   "files": {
     "solution": [
@@ -58,8 +58,7 @@
           "slices",
           "type-coercion"
         ],
-        "prerequisites": [
-        ],
+        "prerequisites": [],
         "difficulty": 1
       },
       {
@@ -103,6 +102,20 @@
           "builtin-functions",
           "control-flow",
           "functions"
+        ],
+        "difficulty": 1
+      },
+      {
+        "uuid": "75372668-762c-4c5e-98c4-1093e3a92a88",
+        "slug": "scrabble-score",
+        "name": "Scrabble Score",
+        "practices": [
+          "games",
+          "strings"
+        ],
+        "prerequisites": [
+          "games",
+          "strings"
         ],
         "difficulty": 1
       },
@@ -207,6 +220,22 @@
         "difficulty": 1
       },
       {
+        "uuid": "d9242387-064a-4ba8-8b04-b5cfe68ae9a2",
+        "slug": "isbn-verifier",
+        "name": "ISBN Verifier",
+        "practices": [
+          "integers",
+          "math",
+          "strings"
+        ],
+        "prerequisites": [
+          "integers",
+          "math",
+          "strings"
+        ],
+        "difficulty": 1
+      },
+      {
         "uuid": "f49a0baa-a309-4814-a123-f41a2d770bdd",
         "slug": "resistor-color",
         "name": "Resistor Color",
@@ -249,6 +278,22 @@
         "difficulty": 1
       },
       {
+        "uuid": "ca72ff14-470d-4679-ad36-82ea9d2890bc",
+        "slug": "luhn",
+        "name": "Luhn",
+        "practices": [
+          "integers",
+          "math",
+          "strings"
+        ],
+        "prerequisites": [
+          "integers",
+          "math",
+          "strings"
+        ],
+        "difficulty": 1
+      },
+      {
         "uuid": "3819c81e-db22-4aac-b745-5eec450b7b4d",
         "slug": "darts",
         "name": "Darts",
@@ -286,6 +331,22 @@
           "error-sets",
           "functions",
           "methods",
+          "structs"
+        ],
+        "difficulty": 1
+      },
+      {
+        "uuid": "7a68dc3d-03e4-4d68-bccd-8249dcd33978",
+        "slug": "nucleotide-count",
+        "name": "Nucleotide Count",
+        "practices": [
+          "error-sets",
+          "strings",
+          "structs"
+        ],
+        "prerequisites": [
+          "error-sets",
+          "strings",
           "structs"
         ],
         "difficulty": 1
@@ -347,6 +408,38 @@
         "difficulty": 1
       },
       {
+        "uuid": "2fbd5bd8-a839-42a3-9293-4ad577766a12",
+        "slug": "perfect-numbers",
+        "name": "Perfect Numbers",
+        "practices": [
+          "asserting",
+          "enums",
+          "integers",
+          "math"
+        ],
+        "prerequisites": [
+          "asserting",
+          "enums",
+          "integers",
+          "math"
+        ],
+        "difficulty": 1
+      },
+      {
+        "uuid": "c4f19b16-4da3-4c81-bbf6-babde6ace276",
+        "slug": "reverse-string",
+        "name": "Reverse String",
+        "practices": [
+          "slices",
+          "strings"
+        ],
+        "prerequisites": [
+          "slices",
+          "strings"
+        ],
+        "difficulty": 1
+      },
+      {
         "uuid": "866a09d8-6949-4363-b83f-7b9fefb53893",
         "slug": "two-fer",
         "name": "Two Fer",
@@ -389,6 +482,22 @@
         "difficulty": 1
       },
       {
+        "uuid": "2f4c1391-6e16-40bd-a4a9-883f51066cf3",
+        "slug": "dnd-character",
+        "name": "D&D Character",
+        "practices": [
+          "integers",
+          "math",
+          "randomness"
+        ],
+        "prerequisites": [
+          "integers",
+          "math",
+          "randomness"
+        ],
+        "difficulty": 1
+      },
+      {
         "uuid": "b9533606-bbbd-4110-8adc-54ccf94af1a6",
         "slug": "sieve",
         "name": "Sieve",
@@ -423,6 +532,36 @@
           "functions",
           "optionals",
           "type-coercion"
+        ],
+        "difficulty": 1
+      },
+      {
+        "uuid": "3878b8dc-4c63-4c7d-9800-bd99ad38650d",
+        "slug": "matching-brackets",
+        "name": "Matching Brackets",
+        "practices": [
+          "strings"
+        ],
+        "prerequisites": [
+          "strings"
+        ],
+        "difficulty": 1
+      },
+      {
+        "uuid": "3342ce3f-5569-4a11-944b-ef7c7e678fa2",
+        "slug": "raindrops",
+        "name": "Raindrops",
+        "practices": [
+          "integers",
+          "math",
+          "slices",
+          "strings"
+        ],
+        "prerequisites": [
+          "integers",
+          "math",
+          "slices",
+          "strings"
         ],
         "difficulty": 1
       },
@@ -507,6 +646,70 @@
           "enums"
         ],
         "difficulty": 1
+      },
+      {
+        "uuid": "f73c7be1-ee3a-4fff-93f2-a8f5ab793ca1",
+        "slug": "yacht",
+        "name": "Yacht",
+        "practices": [
+          "arrays",
+          "enums",
+          "games"
+        ],
+        "prerequisites": [
+          "arrays",
+          "enums",
+          "games"
+        ],
+        "difficulty": 1
+      },
+      {
+        "uuid": "52281bbe-e1f6-4423-8092-6a8940a50ced",
+        "slug": "all-your-base",
+        "name": "All Your Base",
+        "practices": [
+          "allocators",
+          "error-sets",
+          "integers",
+          "math"
+        ],
+        "prerequisites": [
+          "allocators",
+          "error-sets",
+          "integers",
+          "math"
+        ],
+        "difficulty": 1
+      },
+      {
+        "uuid": "a9ba66ae-85d1-490e-a421-e2e35f90231e",
+        "slug": "sum-of-multiples",
+        "name": "Sum of Multiples",
+        "practices": [
+          "allocators",
+          "integers",
+          "math"
+        ],
+        "prerequisites": [
+          "allocators",
+          "integers",
+          "math"
+        ],
+        "difficulty": 1
+      },
+      {
+        "uuid": "809cf06c-442b-4214-83ee-de7cf7e1a6fb",
+        "slug": "word-count",
+        "name": "Word Count",
+        "practices": [
+          "allocators",
+          "hashmaps"
+        ],
+        "prerequisites": [
+          "allocators",
+          "hashmaps"
+        ],
+        "difficulty": 4
       },
       {
         "uuid": "47ef24ce-745a-4dfe-a7a8-370d8a324d52",

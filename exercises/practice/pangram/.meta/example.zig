@@ -7,9 +7,9 @@ pub fn isPangram(str: []const u8) bool {
     }
     var ascii_bit_set: u32 = 0;
     for (str) |c| {
-        if (ascii.isASCII(c) and ascii.isAlpha(c)) {
+        if (ascii.isASCII(c) and ascii.isAlphabetic(c)) {
             ascii_bit_set |= @as(u32, 1) <<
-                @truncate(u5, ascii.toLower(c) - 'a');
+                @as(u5, @truncate(ascii.toLower(c) - 'a'));
         }
     }
     return ascii_bit_set == 0x03ffffff;

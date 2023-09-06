@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
-        uses: actions/checkout@24cb9080177205b6e8c946b17badbe402adc938f
+        uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac
 
       - name: Run markdownlint
-        uses: DavidAnson/markdownlint-cli2-action@5b7c9f74fec47e6b15667b2cc23c63dff11e449e
+        uses: DavidAnson/markdownlint-cli2-action@3aaa38e446fbd2c288af4291aa0f55d64651050f

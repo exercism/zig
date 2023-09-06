@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "ee7"
+  ],
+  "files": {
+    "solution": [
+      "all_your_base.zig"
+    ],
+    "test": [
+      "test_all_your_base.zig"
+    ],
+    "example": [
+      ".meta/example.zig"
+    ]
+  },
+  "blurb": "Convert a number, represented as a sequence of digits in one base, to any other base."
+}

@@ -1,0 +1,18 @@
+{
+  "authors": [
+    "ee7"
+  ],
+  "files": {
+    "solution": [
+      "matching_brackets.zig"
+    ],
+    "test": [
+      "test_matching_brackets.zig"
+    ],
+    "example": [
+      ".meta/example.zig"
+    ]
+  },
+  "blurb": "Make sure the brackets and braces all match.",
+  "source": "Ginna Baker"
+}
