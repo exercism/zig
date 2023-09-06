@@ -18,11 +18,7 @@ fn toBase10(digits: []const u32, input_base: u32) u32 {
     return result;
 }
 
-fn fromBase10(
-    allocator: mem.Allocator,
-    num: u32,
-    output_base: u32,
-) mem.Allocator.Error![]u32 {
+fn fromBase10(allocator: mem.Allocator, num: u32, output_base: u32) mem.Allocator.Error![]u32 {
     if (num == 0) {
         var res = [_]u32{0};
         return &res;
