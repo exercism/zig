@@ -19,7 +19,7 @@ test "detects two anagrams" {
     const actual = try findAnagrams(testing.allocator, word, &candidates);
     defer testing.allocator.free(actual);
 
-    for (expected) |expected_slice, i| {
+    for (expected, 0..) |expected_slice, i| {
         try testing.expectEqualSlices(u8, expected_slice, actual[i]);
     }
 }
@@ -40,7 +40,7 @@ test "detects anagram" {
     const actual = try findAnagrams(testing.allocator, word, &candidates);
     defer testing.allocator.free(actual);
 
-    for (expected) |expected_slice, i| {
+    for (expected, 0..) |expected_slice, i| {
         try testing.expectEqualSlices(u8, expected_slice, actual[i]);
     }
 }
@@ -52,7 +52,7 @@ test "detects three anagrams" {
     const actual = try findAnagrams(testing.allocator, word, &candidates);
     defer testing.allocator.free(actual);
 
-    for (expected) |expected_slice, i| {
+    for (expected, 0..) |expected_slice, i| {
         try testing.expectEqualSlices(u8, expected_slice, actual[i]);
     }
 }
@@ -64,7 +64,7 @@ test "detects multiple anagrams with different case" {
     const actual = try findAnagrams(testing.allocator, word, &candidates);
     defer testing.allocator.free(actual);
 
-    for (expected) |expected_slice, i| {
+    for (expected, 0..) |expected_slice, i| {
         try testing.expectEqualSlices(u8, expected_slice, actual[i]);
     }
 }
@@ -85,7 +85,7 @@ test "detects anagrams case-insensitively" {
     const actual = try findAnagrams(testing.allocator, word, &candidates);
     defer testing.allocator.free(actual);
 
-    for (expected) |expected_slice, i| {
+    for (expected, 0..) |expected_slice, i| {
         try testing.expectEqualSlices(u8, expected_slice, actual[i]);
     }
 }
@@ -97,7 +97,7 @@ test "detects anagrams using case-insensitive subject" {
     const actual = try findAnagrams(testing.allocator, word, &candidates);
     defer testing.allocator.free(actual);
 
-    for (expected) |expected_slice, i| {
+    for (expected, 0..) |expected_slice, i| {
         try testing.expectEqualSlices(u8, expected_slice, actual[i]);
     }
 }
@@ -109,7 +109,7 @@ test "detects anagrams using case-insensitive possible matches" {
     const actual = try findAnagrams(testing.allocator, word, &candidates);
     defer testing.allocator.free(actual);
 
-    for (expected) |expected_slice, i| {
+    for (expected, 0..) |expected_slice, i| {
         try testing.expectEqualSlices(u8, expected_slice, actual[i]);
     }
 }
@@ -175,7 +175,7 @@ test "words other than themselves can be anagrams" {
     const actual = try findAnagrams(testing.allocator, word, &candidates);
     defer testing.allocator.free(actual);
 
-    for (expected) |expected_slice, i| {
+    for (expected, 0..) |expected_slice, i| {
         try testing.expectEqualSlices(u8, expected_slice, actual[i]);
     }
 }
