@@ -655,11 +655,13 @@
         "name": "All Your Base",
         "practices": [
           "allocators",
+          "error-sets",
           "integers",
           "math"
         ],
         "prerequisites": [
           "allocators",
+          "error-sets",
           "integers",
           "math"
         ],
