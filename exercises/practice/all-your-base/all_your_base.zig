@@ -1,7 +1,7 @@
 const std = @import("std");
 const mem = std.mem;
 
-pub const BaseError = error{
+pub const ConversionError = error{
     InvalidInputBase,
     InvalidOutputBase,
     InvalidDigit,
@@ -14,7 +14,7 @@ pub fn convert(
     digits: []const u32,
     input_base: u32,
     output_base: u32,
-) (mem.Allocator.Error || BaseError)![]u32 {
+) (mem.Allocator.Error || ConversionError)![]u32 {
     _ = allocator;
     _ = digits;
     _ = input_base;

@@ -3,7 +3,7 @@ const testing = std.testing;
 
 const all_your_base = @import("all_your_base.zig");
 const convert = all_your_base.convert;
-const BaseError = all_your_base.BaseError;
+const ConversionError = all_your_base.ConversionError;
 
 test "single bit one to decimal" {
     const expected = [_]u32{1};
@@ -123,7 +123,7 @@ test "leading zeros" {
 }
 
 test "input base is one" {
-    const expected = BaseError.InvalidInputBase;
+    const expected = ConversionError.InvalidInputBase;
     const digits = [_]u32{0};
     const input_base = 1;
     const output_base = 10;
@@ -132,7 +132,7 @@ test "input base is one" {
 }
 
 test "input base is zero" {
-    const expected = BaseError.InvalidInputBase;
+    const expected = ConversionError.InvalidInputBase;
     const digits = [_]u32{};
     const input_base = 0;
     const output_base = 10;
@@ -141,7 +141,7 @@ test "input base is zero" {
 }
 
 test "invalid positive digit" {
-    const expected = BaseError.InvalidDigit;
+    const expected = ConversionError.InvalidDigit;
     const digits = [_]u32{ 1, 2, 1, 0, 1, 0 };
     const input_base = 2;
     const output_base = 10;
@@ -150,7 +150,7 @@ test "invalid positive digit" {
 }
 
 test "output base is one" {
-    const expected = BaseError.InvalidOutputBase;
+    const expected = ConversionError.InvalidOutputBase;
     const digits = [_]u32{ 1, 0, 1, 0, 1, 0 };
     const input_base = 2;
     const output_base = 1;
@@ -159,7 +159,7 @@ test "output base is one" {
 }
 
 test "output base is zero" {
-    const expected = BaseError.InvalidOutputBase;
+    const expected = ConversionError.InvalidOutputBase;
     const digits = [_]u32{7};
     const input_base = 10;
     const output_base = 0;
