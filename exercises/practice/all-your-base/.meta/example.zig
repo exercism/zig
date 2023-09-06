@@ -36,7 +36,7 @@ fn fromBase10(allocator: mem.Allocator, num: u32, output_base: u32) mem.Allocato
 
 /// Converts `digits` from `input_base` to `output_base`, returning a slice of digits.
 /// Caller owns the returned memory.
-pub fn rebase(
+pub fn convert(
     allocator: mem.Allocator,
     digits: []const u32,
     input_base: u32,
