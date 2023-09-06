@@ -10,12 +10,12 @@ pub const BaseError = error{
 pub fn rebase(
     allocator: mem.Allocator,
     digits: []const u32,
-    from_base: u32,
-    to_base: u32,
+    input_base: u32,
+    output_base: u32,
 ) (mem.Allocator.Error || BaseError)![]u32 {
     _ = allocator;
     _ = digits;
-    _ = from_base;
-    _ = to_base;
+    _ = input_base;
+    _ = output_base;
     @compileError("please implement the rebase function");
 }
