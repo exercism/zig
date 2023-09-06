@@ -650,6 +650,24 @@
         "difficulty": 1
       },
       {
+        "uuid": "52281bbe-e1f6-4423-8092-6a8940a50ced",
+        "slug": "all-your-base",
+        "name": "All Your Base",
+        "practices": [
+          "allocators",
+          "error-sets",
+          "integers",
+          "math"
+        ],
+        "prerequisites": [
+          "allocators",
+          "error-sets",
+          "integers",
+          "math"
+        ],
+        "difficulty": 1
+      },
+      {
         "uuid": "a9ba66ae-85d1-490e-a421-e2e35f90231e",
         "slug": "sum-of-multiples",
         "name": "Sum of Multiples",
