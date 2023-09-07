@@ -5,9 +5,8 @@ const random = prng.random();
 
 pub fn ability() u8 {
     var lowest: u8 = std.math.maxInt(u8);
-    var i: usize = 0;
     var result: u8 = 0;
-    while (i < 4) : (i += 1) {
+    for (0..4) |_| {
         const roll = random.intRangeAtMost(u8, 1, 6);
         result += roll;
         lowest = @min(lowest, roll);
