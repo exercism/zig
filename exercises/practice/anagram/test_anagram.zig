@@ -1,10 +1,10 @@
 const std = @import("std");
 const testing = std.testing;
 
-const findAnagrams = @import("anagram.zig").findAnagrams;
+const detectAnagrams = @import("anagram.zig").detectAnagrams;
 
 fn testAnagrams(expected: []const []const u8, word: []const u8, candidates: []const []const u8) !void {
-    const actual = try findAnagrams(testing.allocator, word, candidates);
+    const actual = try detectAnagrams(testing.allocator, word, candidates);
     defer testing.allocator.free(actual);
     try testing.expectEqualDeep(expected, actual);
 }

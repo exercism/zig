@@ -1,7 +1,7 @@
 const std = @import("std");
 const mem = std.mem;
 
-pub fn findAnagrams(
+pub fn detectAnagrams(
     allocator: mem.Allocator,
     word: []const u8,
     candidates: []const []const u8,
@@ -9,5 +9,5 @@ pub fn findAnagrams(
     _ = allocator;
     _ = word;
     _ = candidates;
-    @compileError("please implement the findAnagrams function");
+    @compileError("please implement the detectAnagrams function");
 }

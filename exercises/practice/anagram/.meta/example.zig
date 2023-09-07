@@ -13,7 +13,7 @@ fn count(s: []const u8) [26]u4 {
     return result;
 }
 
-pub fn findAnagrams(
+pub fn detectAnagrams(
     allocator: mem.Allocator,
     word: []const u8,
     candidates: []const []const u8,
