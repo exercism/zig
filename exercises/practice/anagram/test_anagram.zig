@@ -9,7 +9,9 @@ test "no matches" {
     const candidates = [_][]const u8{ "hello", "world", "zombies", "pants" };
     const actual = try findAnagrams(testing.allocator, word, &candidates);
     defer testing.allocator.free(actual);
-    try testing.expectEqualSlices([]const u8, &expected, actual);
+    for (expected, actual) |e, a| {
+        try testing.expectEqualSlices(u8, e, a);
+    }
 }
 
 test "detects two anagrams" {
@@ -18,9 +20,8 @@ test "detects two anagrams" {
     const candidates = [_][]const u8{ "lemons", "cherry", "melons" };
     const actual = try findAnagrams(testing.allocator, word, &candidates);
     defer testing.allocator.free(actual);
-
-    for (expected, 0..) |expected_slice, i| {
-        try testing.expectEqualSlices(u8, expected_slice, actual[i]);
+    for (expected, actual) |e, a| {
+        try testing.expectEqualSlices(u8, e, a);
     }
 }
 
@@ -30,7 +31,9 @@ test "does not detect anagram subsets" {
     const candidates = [_][]const u8{ "dog", "goody" };
     const actual = try findAnagrams(testing.allocator, word, &candidates);
     defer testing.allocator.free(actual);
-    try testing.expectEqualSlices([]const u8, &expected, actual);
+    for (expected, actual) |e, a| {
+        try testing.expectEqualSlices(u8, e, a);
+    }
 }
 
 test "detects anagram" {
@@ -39,9 +42,8 @@ test "detects anagram" {
     const candidates = [_][]const u8{ "enlists", "google", "inlets", "banana" };
     const actual = try findAnagrams(testing.allocator, word, &candidates);
     defer testing.allocator.free(actual);
-
-    for (expected, 0..) |expected_slice, i| {
-        try testing.expectEqualSlices(u8, expected_slice, actual[i]);
+    for (expected, actual) |e, a| {
+        try testing.expectEqualSlices(u8, e, a);
     }
 }
 
@@ -51,9 +53,8 @@ test "detects three anagrams" {
     const candidates = [_][]const u8{ "gallery", "ballerina", "regally", "clergy", "largely", "leading" };
     const actual = try findAnagrams(testing.allocator, word, &candidates);
     defer testing.allocator.free(actual);
-
-    for (expected, 0..) |expected_slice, i| {
-        try testing.expectEqualSlices(u8, expected_slice, actual[i]);
+    for (expected, actual) |e, a| {
+        try testing.expectEqualSlices(u8, e, a);
     }
 }
 
@@ -63,9 +64,8 @@ test "detects multiple anagrams with different case" {
     const candidates = [_][]const u8{ "Eons", "ONES" };
     const actual = try findAnagrams(testing.allocator, word, &candidates);
     defer testing.allocator.free(actual);
-
-    for (expected, 0..) |expected_slice, i| {
-        try testing.expectEqualSlices(u8, expected_slice, actual[i]);
+    for (expected, actual) |e, a| {
+        try testing.expectEqualSlices(u8, e, a);
     }
 }
 
@@ -75,7 +75,9 @@ test "does not detect non-anagrams with identical checksum" {
     const candidates = [_][]const u8{"last"};
     const actual = try findAnagrams(testing.allocator, word, &candidates);
     defer testing.allocator.free(actual);
-    try testing.expectEqualSlices([]const u8, &expected, actual);
+    for (expected, actual) |e, a| {
+        try testing.expectEqualSlices(u8, e, a);
+    }
 }
 
 test "detects anagrams case-insensitively" {
@@ -84,9 +86,8 @@ test "detects anagrams case-insensitively" {
     const candidates = [_][]const u8{ "cashregister", "Carthorse", "radishes" };
     const actual = try findAnagrams(testing.allocator, word, &candidates);
     defer testing.allocator.free(actual);
-
-    for (expected, 0..) |expected_slice, i| {
-        try testing.expectEqualSlices(u8, expected_slice, actual[i]);
+    for (expected, actual) |e, a| {
+        try testing.expectEqualSlices(u8, e, a);
     }
 }
 
@@ -96,9 +97,8 @@ test "detects anagrams using case-insensitive subject" {
     const candidates = [_][]const u8{ "cashregister", "carthorse", "radishes" };
     const actual = try findAnagrams(testing.allocator, word, &candidates);
     defer testing.allocator.free(actual);
-
-    for (expected, 0..) |expected_slice, i| {
-        try testing.expectEqualSlices(u8, expected_slice, actual[i]);
+    for (expected, actual) |e, a| {
+        try testing.expectEqualSlices(u8, e, a);
     }
 }
 
@@ -108,9 +108,8 @@ test "detects anagrams using case-insensitive possible matches" {
     const candidates = [_][]const u8{ "cashregister", "Carthorse", "radishes" };
     const actual = try findAnagrams(testing.allocator, word, &candidates);
     defer testing.allocator.free(actual);
-
-    for (expected, 0..) |expected_slice, i| {
-        try testing.expectEqualSlices(u8, expected_slice, actual[i]);
+    for (expected, actual) |e, a| {
+        try testing.expectEqualSlices(u8, e, a);
     }
 }
 
@@ -120,7 +119,9 @@ test "does not detect an anagram if the original word is repeated" {
     const candidates = [_][]const u8{"go Go GO"};
     const actual = try findAnagrams(testing.allocator, word, &candidates);
     defer testing.allocator.free(actual);
-    try testing.expectEqualSlices([]const u8, &expected, actual);
+    for (expected, actual) |e, a| {
+        try testing.expectEqualSlices(u8, e, a);
+    }
 }
 
 test "anagrams must use all letters exactly once" {
@@ -129,7 +130,9 @@ test "anagrams must use all letters exactly once" {
     const candidates = [_][]const u8{"patter"};
     const actual = try findAnagrams(testing.allocator, word, &candidates);
     defer testing.allocator.free(actual);
-    try testing.expectEqualSlices([]const u8, &expected, actual);
+    for (expected, actual) |e, a| {
+        try testing.expectEqualSlices(u8, e, a);
+    }
 }
 
 test "words are not anagrams of themselves (case-insensitive)" {
@@ -138,7 +141,9 @@ test "words are not anagrams of themselves (case-insensitive)" {
     const candidates = [_][]const u8{ "BANANA", "Banana", "banana" };
     const actual = try findAnagrams(testing.allocator, word, &candidates);
     defer testing.allocator.free(actual);
-    try testing.expectEqualSlices([]const u8, &expected, actual);
+    for (expected, actual) |e, a| {
+        try testing.expectEqualSlices(u8, e, a);
+    }
 }
 
 test "words are not anagrams of themselves" {
@@ -147,7 +152,9 @@ test "words are not anagrams of themselves" {
     const candidates = [_][]const u8{"BANANA"};
     const actual = try findAnagrams(testing.allocator, word, &candidates);
     defer testing.allocator.free(actual);
-    try testing.expectEqualSlices([]const u8, &expected, actual);
+    for (expected, actual) |e, a| {
+        try testing.expectEqualSlices(u8, e, a);
+    }
 }
 
 test "words are not anagrams of themselves even if letter case is partially different" {
@@ -156,7 +163,9 @@ test "words are not anagrams of themselves even if letter case is partially diff
     const candidates = [_][]const u8{"Banana"};
     const actual = try findAnagrams(testing.allocator, word, &candidates);
     defer testing.allocator.free(actual);
-    try testing.expectEqualSlices([]const u8, &expected, actual);
+    for (expected, actual) |e, a| {
+        try testing.expectEqualSlices(u8, e, a);
+    }
 }
 
 test "words are not anagrams of themselves even if letter case is completely different" {
@@ -165,7 +174,9 @@ test "words are not anagrams of themselves even if letter case is completely dif
     const candidates = [_][]const u8{"banana"};
     const actual = try findAnagrams(testing.allocator, word, &candidates);
     defer testing.allocator.free(actual);
-    try testing.expectEqualSlices([]const u8, &expected, actual);
+    for (expected, actual) |e, a| {
+        try testing.expectEqualSlices(u8, e, a);
+    }
 }
 
 test "words other than themselves can be anagrams" {
@@ -174,8 +185,7 @@ test "words other than themselves can be anagrams" {
     const candidates = [_][]const u8{ "LISTEN", "Silent" };
     const actual = try findAnagrams(testing.allocator, word, &candidates);
     defer testing.allocator.free(actual);
-
-    for (expected, 0..) |expected_slice, i| {
-        try testing.expectEqualSlices(u8, expected_slice, actual[i]);
+    for (expected, actual) |e, a| {
+        try testing.expectEqualSlices(u8, e, a);
     }
 }
