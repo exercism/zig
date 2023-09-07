@@ -7,7 +7,7 @@ fn testAnagrams(expected: []const []const u8, word: []const u8, candidates: []co
     const actual = try findAnagrams(testing.allocator, word, candidates);
     defer testing.allocator.free(actual);
     for (expected, actual) |e, a| {
-        try testing.expectEqualSlices(u8, e, a);
+        try testing.expectEqualStrings(e, a);
     }
 }
 
