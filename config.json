@@ -689,10 +689,12 @@
         "name": "Anagram",
         "practices": [
           "allocators",
+          "hashmaps",
           "slices"
         ],
         "prerequisites": [
           "allocators",
+          "hashmaps",
           "slices"
         ],
         "difficulty": 1
