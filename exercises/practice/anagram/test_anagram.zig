@@ -6,10 +6,7 @@ const findAnagrams = @import("anagram.zig").findAnagrams;
 fn testAnagrams(expected: []const []const u8, word: []const u8, candidates: []const []const u8) !void {
     const actual = try findAnagrams(testing.allocator, word, candidates);
     defer testing.allocator.free(actual);
-    try testing.expectEqual(expected.len, actual.len);
-    for (expected, actual) |e, a| {
-        try testing.expectEqualStrings(e, a);
-    }
+    try testing.expectEqualDeep(expected, actual);
 }
 
 test "no matches" {
