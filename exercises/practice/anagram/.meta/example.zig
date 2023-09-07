@@ -2,6 +2,7 @@ const std = @import("std");
 const mem = std.mem;
 const StringMap = std.StringHashMap(void);
 
+/// Returns the case-insensitive counts of English letters in `s`.
 fn count(s: []const u8) [26]u4 {
     var result = [_]u4{0} ** 26;
     for (s) |c| {
@@ -14,6 +15,8 @@ fn count(s: []const u8) [26]u4 {
     return result;
 }
 
+/// Returns the items in `candidates` that are anagrams of `word`.
+/// Caller owns the returned memory.
 pub fn detectAnagrams(
     allocator: mem.Allocator,
     word: []const u8,
