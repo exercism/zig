@@ -104,13 +104,6 @@ test "anagrams must use all letters exactly once" {
     try testAnagrams(&expected, word, &candidates);
 }
 
-test "words are not anagrams of themselves (case-insensitive)" {
-    const expected = [_][]const u8{};
-    const word = "BANANA";
-    const candidates = [_][]const u8{ "BANANA", "Banana", "banana" };
-    try testAnagrams(&expected, word, &candidates);
-}
-
 test "words are not anagrams of themselves" {
     const expected = [_][]const u8{};
     const word = "BANANA";
