@@ -3,10 +3,21 @@ const testing = std.testing;
 
 const detectAnagrams = @import("anagram.zig").detectAnagrams;
 
+fn freeKeysAndDeinit(self: *std.StringHashMap(void)) void {
+    var iter = self.keyIterator();
+    while (iter.next()) |key_ptr| {
+        self.allocator.free(key_ptr.*);
+    }
+    self.deinit();
+}
+
 fn testAnagrams(expected: []const []const u8, word: []const u8, candidates: []const []const u8) !void {
-    const actual = try detectAnagrams(testing.allocator, word, candidates);
-    defer testing.allocator.free(actual);
-    try testing.expectEqualDeep(expected, actual);
+    var actual = try detectAnagrams(testing.allocator, word, candidates);
+    defer freeKeysAndDeinit(&actual);
+    try testing.expectEqual(expected.len, actual.count());
+    for (expected) |e| {
+        try testing.expect(actual.contains(e));
+    }
 }
 
 test "no matches" {

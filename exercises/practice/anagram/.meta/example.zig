@@ -1,5 +1,6 @@
 const std = @import("std");
 const mem = std.mem;
+const StringMap = std.StringHashMap(void);
 
 fn count(s: []const u8) [26]u4 {
     var result = [_]u4{0} ** 26;
@@ -17,14 +18,19 @@ pub fn detectAnagrams(
     allocator: mem.Allocator,
     word: []const u8,
     candidates: []const []const u8,
-) ![][]const u8 {
-    var list = std.ArrayList([]const u8).init(allocator);
+) !StringMap {
+    var result = StringMap.init(allocator);
+    errdefer result.deinit();
     const target_count = count(word);
+
     for (candidates) |cand| {
         const cand_count = count(cand);
         if (mem.eql(u4, &target_count, &cand_count) and !std.ascii.eqlIgnoreCase(word, cand)) {
-            try list.append(cand);
+            const dupe = try allocator.dupe(u8, cand);
+            errdefer allocator.free(dupe);
+            try result.put(dupe, {});
         }
     }
-    return list.toOwnedSlice();
+
+    return result;
 }
