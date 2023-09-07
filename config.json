@@ -36,20 +36,6 @@
     "concept": [],
     "practice": [
       {
-        "uuid": "74d33b36-1c1c-45ca-9c8b-da9f1f97ea0b",
-        "slug": "anagram",
-        "name": "Anagram",
-        "practices": [
-          "allocators",
-          "slices"
-        ],
-        "prerequisites": [
-          "allocators",
-          "slices"
-        ],
-        "difficulty": 1
-      },
-      {
         "uuid": "25a0331e-612f-48c1-8a3f-9b0e9601a2fa",
         "slug": "hello-world",
         "name": "Hello, World!",
@@ -694,6 +680,20 @@
           "allocators",
           "integers",
           "math"
+        ],
+        "difficulty": 1
+      },
+      {
+        "uuid": "74d33b36-1c1c-45ca-9c8b-da9f1f97ea0b",
+        "slug": "anagram",
+        "name": "Anagram",
+        "practices": [
+          "allocators",
+          "slices"
+        ],
+        "prerequisites": [
+          "allocators",
+          "slices"
         ],
         "difficulty": 1
       },
