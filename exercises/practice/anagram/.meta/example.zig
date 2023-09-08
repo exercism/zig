@@ -1,6 +1,6 @@
 const std = @import("std");
 const mem = std.mem;
-const StringSet = std.StringHashMap(void);
+const StringSet = std.BufSet;
 
 /// Returns the case-insensitive counts of English letters in `s`.
 fn count(s: []const u8) [26]u4 {
@@ -29,9 +29,7 @@ pub fn detectAnagrams(
     for (candidates) |cand| {
         const cand_count = count(cand);
         if (mem.eql(u4, &target_count, &cand_count) and !std.ascii.eqlIgnoreCase(word, cand)) {
-            const dupe = try allocator.dupe(u8, cand);
-            errdefer allocator.free(dupe);
-            try result.put(dupe, {});
+            try result.insert(cand);
         }
     }
 

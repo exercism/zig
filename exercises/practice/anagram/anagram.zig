@@ -1,6 +1,6 @@
 const std = @import("std");
 const mem = std.mem;
-const StringSet = std.StringHashMap(void);
+const StringSet = std.BufSet;
 
 /// Returns the items in `candidates` that are anagrams of `word`.
 /// Caller owns the returned memory.
