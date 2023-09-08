@@ -1,6 +1,5 @@
 const std = @import("std");
 const mem = std.mem;
-const StringSet = std.BufSet;
 
 /// Returns the case-insensitive counts of English letters in `s`.
 fn count(s: []const u8) [26]u4 {
@@ -21,8 +20,8 @@ pub fn detectAnagrams(
     allocator: mem.Allocator,
     word: []const u8,
     candidates: []const []const u8,
-) !StringSet {
-    var result = StringSet.init(allocator);
+) !std.BufSet {
+    var result = std.BufSet.init(allocator);
     errdefer result.deinit();
     const target_count = count(word);
 
