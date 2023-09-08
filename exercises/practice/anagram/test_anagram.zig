@@ -11,7 +11,11 @@ fn freeKeysAndDeinit(self: *std.StringHashMap(void)) void {
     self.deinit();
 }
 
-fn testAnagrams(expected: []const []const u8, word: []const u8, candidates: []const []const u8) !void {
+fn testAnagrams(
+    expected: []const []const u8,
+    word: []const u8,
+    candidates: []const []const u8,
+) !void {
     var actual = try detectAnagrams(testing.allocator, word, candidates);
     defer freeKeysAndDeinit(&actual);
     try testing.expectEqual(expected.len, actual.count());
