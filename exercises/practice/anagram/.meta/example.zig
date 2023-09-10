@@ -14,7 +14,7 @@ fn count(s: []const u8) [26]u4 {
     return result;
 }
 
-/// Returns the items in `candidates` that are anagrams of `word`.
+/// Returns the set of strings in `candidates` that are anagrams of `word`.
 /// Caller owns the returned memory.
 pub fn detectAnagrams(
     allocator: mem.Allocator,
