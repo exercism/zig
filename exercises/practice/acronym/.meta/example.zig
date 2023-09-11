@@ -4,7 +4,7 @@ const ascii = std.ascii;
 
 pub fn abbreviate(allocator: mem.Allocator, words: []const u8) mem.Allocator.Error![]u8 {
     var letters = std.ArrayList(u8).init(allocator);
-    defer letters.deinit();
+    errdefer letters.deinit();
 
     var i: usize = 0;
     while (i < words.len) : (i += 1) {

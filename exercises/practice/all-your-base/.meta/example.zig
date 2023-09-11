@@ -24,6 +24,7 @@ fn fromBase10(allocator: mem.Allocator, num: u32, output_base: u32) mem.Allocato
         return &res;
     }
     var list = std.ArrayList(u32).init(allocator);
+    errdefer list.deinit();
     var n = num;
     while (n > 0) {
         try list.append(n % output_base);
