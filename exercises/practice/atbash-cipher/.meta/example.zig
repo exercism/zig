@@ -14,6 +14,7 @@ fn atbash(c: u8) u8 {
 pub fn encode(allocator: mem.Allocator, s: []const u8) mem.Allocator.Error![]u8 {
     const group_len = 5;
     var list = std.ArrayList(u8).init(allocator);
+    errdefer list.deinit();
     var count: usize = 0;
     for (s) |c| {
         switch (c) {
@@ -35,6 +36,7 @@ pub fn encode(allocator: mem.Allocator, s: []const u8) mem.Allocator.Error![]u8 
 pub fn decode(allocator: mem.Allocator, s: []const u8) mem.Allocator.Error![]u8 {
     // The returned slice is guaranteed to be shorter than `s`.
     var list = try std.ArrayList(u8).initCapacity(allocator, s.len);
+    errdefer list.deinit();
     for (s) |c| {
         switch (c) {
             '0'...'9', 'A'...'Z', 'a'...'z' => list.appendAssumeCapacity(atbash(c)),
