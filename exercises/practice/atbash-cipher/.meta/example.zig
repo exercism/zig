@@ -33,10 +33,11 @@ pub fn encode(allocator: mem.Allocator, s: []const u8) mem.Allocator.Error![]u8 
 
 /// Caller owns the returned memory.
 pub fn decode(allocator: mem.Allocator, s: []const u8) mem.Allocator.Error![]u8 {
-    var list = std.ArrayList(u8).init(allocator);
+    // The returned slice is guaranteed to be shorter than `s`.
+    var list = try std.ArrayList(u8).initCapacity(allocator, s.len);
     for (s) |c| {
         switch (c) {
-            '0'...'9', 'A'...'Z', 'a'...'z' => try list.append(atbash(c)),
+            '0'...'9', 'A'...'Z', 'a'...'z' => list.appendAssumeCapacity(atbash(c)),
             else => continue,
         }
     }
