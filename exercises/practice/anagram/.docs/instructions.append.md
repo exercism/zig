@@ -10,7 +10,7 @@ The `BufSet` does that itself.
 For more details on hash maps in Zig, see:
 
 - [Hexops - Zig hashmaps explained][zig-hashmaps-explained]
-- [zighelp.org - Hash Maps][zighelp]
+- [Zighelp - Hash Maps][zighelp]
 - [`buf_set.zig`][buf-set]
 
 [buf-set]: https://github.com/ziglang/zig/blob/0.11.0/lib/std/buf_set.zig
