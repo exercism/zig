@@ -10,6 +10,7 @@ fn atbash(c: u8) u8 {
     };
 }
 
+/// Caller owns the returned memory.
 pub fn encode(allocator: mem.Allocator, s: []const u8) mem.Allocator.Error![]u8 {
     const group_len = 5;
     var list = std.ArrayList(u8).init(allocator);
@@ -30,6 +31,7 @@ pub fn encode(allocator: mem.Allocator, s: []const u8) mem.Allocator.Error![]u8 
     return list.toOwnedSlice();
 }
 
+/// Caller owns the returned memory.
 pub fn decode(allocator: mem.Allocator, s: []const u8) mem.Allocator.Error![]u8 {
     var list = std.ArrayList(u8).init(allocator);
     for (s) |c| {
