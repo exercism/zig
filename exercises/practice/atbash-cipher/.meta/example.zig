@@ -4,7 +4,7 @@ const mem = std.mem;
 fn atbash(c: u8) u8 {
     return switch (c) {
         '0'...'9' => c,
-        'A'...'Z' => 'a' + 'Z' - c,
+        'A'...'Z' => 'a' + 'Z' - c, // Converts to lowercase.
         'a'...'z' => 'a' + 'z' - c,
         else => unreachable,
     };
