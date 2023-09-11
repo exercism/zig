@@ -15,7 +15,7 @@ pub fn encode(allocator: mem.Allocator, s: []const u8) mem.Allocator.Error![]u8 
     const group_len = 5;
     var list = std.ArrayList(u8).init(allocator);
     errdefer list.deinit();
-    var count: usize = 0;
+    var count: u32 = 0;
     for (s) |c| {
         switch (c) {
             '0'...'9', 'A'...'Z', 'a'...'z' => {
