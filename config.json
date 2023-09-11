@@ -684,6 +684,22 @@
         "difficulty": 1
       },
       {
+        "uuid": "74d33b36-1c1c-45ca-9c8b-da9f1f97ea0b",
+        "slug": "anagram",
+        "name": "Anagram",
+        "practices": [
+          "allocators",
+          "hashmaps",
+          "slices"
+        ],
+        "prerequisites": [
+          "allocators",
+          "hashmaps",
+          "slices"
+        ],
+        "difficulty": 1
+      },
+      {
         "uuid": "809cf06c-442b-4214-83ee-de7cf7e1a6fb",
         "slug": "word-count",
         "name": "Word Count",
