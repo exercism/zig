@@ -19,16 +19,13 @@ fn toBase10(digits: []const u32, input_base: u32) u32 {
 }
 
 fn fromBase10(allocator: mem.Allocator, num: u32, output_base: u32) mem.Allocator.Error![]u32 {
-    if (num == 0) {
-        var res = [_]u32{0};
-        return &res;
-    }
     var list = std.ArrayList(u32).init(allocator);
     var n = num;
     while (n > 0) {
         try list.append(n % output_base);
         n /= output_base;
     }
+    if (list.items.len == 0) try list.append(0);
     var result = try list.toOwnedSlice();
     mem.reverse(u32, result);
     return result;
