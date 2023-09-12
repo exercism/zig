@@ -91,6 +91,7 @@ test "empty list" {
     const input_base = 2;
     const output_base = 10;
     const actual = try convert(testing.allocator, &digits, input_base, output_base);
+    defer testing.allocator.free(actual);
     try testing.expectEqualSlices(u32, &expected, actual);
 }
 
@@ -100,6 +101,7 @@ test "single zero" {
     const input_base = 10;
     const output_base = 2;
     const actual = try convert(testing.allocator, &digits, input_base, output_base);
+    defer testing.allocator.free(actual);
     try testing.expectEqualSlices(u32, &expected, actual);
 }
 
@@ -109,6 +111,7 @@ test "multiple zeros" {
     const input_base = 10;
     const output_base = 2;
     const actual = try convert(testing.allocator, &digits, input_base, output_base);
+    defer testing.allocator.free(actual);
     try testing.expectEqualSlices(u32, &expected, actual);
 }
 
