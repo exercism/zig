@@ -18,10 +18,11 @@ fn toBase10(digits: []const u32, input_base: u32) u32 {
     return result;
 }
 
+var zero = [_]u32{0};
+
 fn fromBase10(allocator: mem.Allocator, num: u32, output_base: u32) mem.Allocator.Error![]u32 {
     if (num == 0) {
-        var res = [_]u32{0};
-        return &res;
+        return &zero;
     }
     var list = std.ArrayList(u32).init(allocator);
     var n = num;
