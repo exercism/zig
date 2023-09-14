@@ -85,6 +85,23 @@ test "15-bit integer" {
     try testing.expectEqualSlices(u32, &expected, actual);
 }
 
+test "empty list - second call returns different memory" {
+    // The `convert` doc comment says that the caller owns the returned memory.
+    // `convert` must always return memory that can be freed.
+    // Test that `convert` does not return a slice that references a global array.
+    const expected = [_]u32{0};
+    const digits = [_]u32{0};
+    const input_base = 10;
+    const output_base = 2;
+    const actual = try convert(testing.allocator, &digits, input_base, output_base);
+    defer testing.allocator.free(actual);
+    try testing.expectEqualSlices(u32, &expected, actual);
+    actual[0] = 1; // Modify the output!
+    const again = try convert(testing.allocator, &digits, input_base, output_base);
+    defer testing.allocator.free(again);
+    try testing.expectEqualSlices(u32, &expected, again);
+}
+
 test "empty list" {
     const expected = [_]u32{0};
     const digits = [_]u32{};
