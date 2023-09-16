@@ -90,7 +90,7 @@ test "empty list - second call returns different memory" {
     // `convert` must always return memory that can be freed.
     // Test that `convert` does not return a slice that references a global array.
     const expected = [_]u32{0};
-    const digits = [_]u32{0};
+    const digits = [_]u32{};
     const input_base = 10;
     const output_base = 2;
     const actual = try convert(testing.allocator, &digits, input_base, output_base);
