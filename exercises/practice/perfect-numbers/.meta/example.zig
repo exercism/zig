@@ -11,9 +11,8 @@ pub const Classification = enum {
 fn aliquotSum(n: u64) u64 {
     if (n == 1) return 0;
     var result: u64 = 1;
-    var i: usize = 2;
     const isqrt_n = std.math.sqrt(n);
-    while (i <= isqrt_n) : (i += 1) {
+    for (2..isqrt_n + 1) |i| {
         if (n % i == 0) result += i + (n / i);
     }
     // When `n` is a square number, we added the same divisor twice inside the loop.

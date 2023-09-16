@@ -6,8 +6,7 @@ pub fn recite(allocator: mem.Allocator, words: []const []const u8) (fmt.AllocPri
     var main_slice = try allocator.alloc([]u8, words.len);
 
     if (words.len > 1) {
-        var i: usize = 0;
-        while (i < words.len - 1) : (i += 1) {
+        for (0..words.len - 1) |i| {
             main_slice[i] = try fmt.allocPrint(allocator, "For want of a {s} the {s} was lost.\n", .{ words[i], words[i + 1] });
         }
     }

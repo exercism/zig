@@ -105,8 +105,7 @@ fn isValidAbilityScore(n: isize) bool {
 }
 
 test "random ability is within range" {
-    var i: usize = 0;
-    while (i < 20) : (i += 1) {
+    for (0..20) |_| {
         const actual = dnd_character.ability();
         try testing.expect(isValidAbilityScore(actual));
     }
@@ -123,8 +122,7 @@ fn isValid(c: Character) bool {
 }
 
 test "random character is valid" {
-    var i: usize = 0;
-    while (i < 20) : (i += 1) {
+    for (0..20) |_| {
         const character = Character.init();
         try testing.expect(isValid(character));
     }
