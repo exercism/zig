@@ -13,17 +13,17 @@ fn atbash(c: u8) u8 {
 /// Caller owns the returned memory.
 pub fn encode(allocator: mem.Allocator, s: []const u8) mem.Allocator.Error![]u8 {
     const group_len = 5;
-    var list = std.ArrayList(u8).init(allocator);
+    var list = try std.ArrayList(u8).initCapacity(allocator, s.len + s.len / group_len);
     errdefer list.deinit();
     var count: u32 = 0;
     for (s) |c| {
         switch (c) {
             '0'...'9', 'A'...'Z', 'a'...'z' => {
                 if (count == group_len) {
-                    try list.append(' ');
+                    list.appendAssumeCapacity(' ');
                     count = 0;
                 }
-                try list.append(atbash(c));
+                list.appendAssumeCapacity(atbash(c));
                 count += 1;
             },
             else => continue,
