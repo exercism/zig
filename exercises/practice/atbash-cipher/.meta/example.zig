@@ -10,7 +10,7 @@ fn atbash(c: u8) u8 {
     };
 }
 
-/// Caller owns the returned memory.
+/// Encodes `s` using the Atbash cipher. Caller owns the returned memory.
 pub fn encode(allocator: mem.Allocator, s: []const u8) mem.Allocator.Error![]u8 {
     const group_len = 5;
     var list = try std.ArrayList(u8).initCapacity(allocator, s.len + s.len / group_len);
@@ -32,7 +32,7 @@ pub fn encode(allocator: mem.Allocator, s: []const u8) mem.Allocator.Error![]u8 
     return list.toOwnedSlice();
 }
 
-/// Caller owns the returned memory.
+/// Decodes `s` using the Atbash cipher. Caller owns the returned memory.
 /// Caller guarantees that `s` consists only of digits, lowercase, and spaces.
 pub fn decode(allocator: mem.Allocator, s: []const u8) mem.Allocator.Error![]u8 {
     // The returned slice is guaranteed to be shorter than `s`.
