@@ -18,7 +18,7 @@ pub const HighScores = struct {
     pub fn personalTopThree(self: HighScores, buffer: []u32) []u32 {
         std.debug.assert(buffer.len >= self.scores.len);
         std.mem.copy(u32, buffer, self.scores);
-        std.sort.sort(u32, buffer, {}, std.sort.desc(u32));
+        std.mem.sort(u32, buffer, {}, std.sort.desc(u32));
         return buffer[0..@min(buffer.len, 3)];
     }
 };
