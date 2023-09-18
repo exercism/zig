@@ -39,7 +39,7 @@ pub fn decode(allocator: mem.Allocator, s: []const u8) mem.Allocator.Error![]u8 
     errdefer list.deinit();
     for (s) |c| {
         switch (c) {
-            '0'...'9', 'A'...'Z', 'a'...'z' => list.appendAssumeCapacity(atbash(c)),
+            '0'...'9', 'a'...'z' => list.appendAssumeCapacity(atbash(c)),
             else => continue,
         }
     }
