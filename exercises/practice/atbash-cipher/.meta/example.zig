@@ -33,6 +33,7 @@ pub fn encode(allocator: mem.Allocator, s: []const u8) mem.Allocator.Error![]u8 
 }
 
 /// Caller owns the returned memory.
+/// Caller guarantees that `s` consists only of digits, lowercase, and spaces.
 pub fn decode(allocator: mem.Allocator, s: []const u8) mem.Allocator.Error![]u8 {
     // The returned slice is guaranteed to be shorter than `s`.
     var list = try std.ArrayList(u8).initCapacity(allocator, s.len);
@@ -40,7 +41,8 @@ pub fn decode(allocator: mem.Allocator, s: []const u8) mem.Allocator.Error![]u8 
     for (s) |c| {
         switch (c) {
             '0'...'9', 'a'...'z' => list.appendAssumeCapacity(atbash(c)),
-            else => continue,
+            ' ' => continue,
+            else => unreachable,
         }
     }
     return list.toOwnedSlice();
