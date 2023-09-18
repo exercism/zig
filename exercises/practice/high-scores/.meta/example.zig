@@ -15,6 +15,8 @@ pub const HighScores = struct {
         return std.mem.max(u32, self.scores);
     }
 
+    /// Writes (at most) the three highest scores from `self` into `buffer`.
+    /// Asserts `buffer.len == self.scores.len`.
     pub fn personalTopThree(self: HighScores, buffer: []u32) []u32 {
         std.debug.assert(buffer.len == self.scores.len);
         std.mem.copy(u32, buffer, self.scores);
