@@ -2,8 +2,8 @@ pub const HighScores = struct {
     // Please implement the field(s) of this struct.
     foo: void,
 
-    pub fn init(s: []const u32) HighScores {
-        _ = s;
+    pub fn init(scores: []const u32) HighScores {
+        _ = scores;
         @compileError("please implement the init method");
     }
 

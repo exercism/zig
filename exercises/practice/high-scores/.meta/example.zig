@@ -3,8 +3,8 @@ const std = @import("std");
 pub const HighScores = struct {
     scores: []const u32,
 
-    pub fn init(s: []const u32) HighScores {
-        return .{ .scores = s };
+    pub fn init(scores: []const u32) HighScores {
+        return .{ .scores = scores };
     }
 
     pub fn latest(self: HighScores) u32 {
