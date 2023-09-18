@@ -35,7 +35,7 @@ pub fn encode(allocator: mem.Allocator, s: []const u8) mem.Allocator.Error![]u8 
 /// Decodes `s` using the Atbash cipher. Caller owns the returned memory.
 /// Caller guarantees that `s` consists only of digits, lowercase, and spaces.
 pub fn decode(allocator: mem.Allocator, s: []const u8) mem.Allocator.Error![]u8 {
-    // The returned slice is guaranteed to be shorter than `s`.
+    // The length of the returned slice is at most the length of `s`.
     var list = try std.ArrayList(u8).initCapacity(allocator, s.len);
     errdefer list.deinit();
     for (s) |c| {
