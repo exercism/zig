@@ -3,7 +3,9 @@ const std = @import("std");
 pub const HighScores = struct {
     scores: []const u32,
 
+    /// Asserts `scores.len > 0`.
     pub fn init(scores: []const u32) HighScores {
+        std.debug.assert(scores.len > 0);
         return .{ .scores = scores };
     }
 
