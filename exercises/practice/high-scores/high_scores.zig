@@ -17,6 +17,7 @@ pub const HighScores = struct {
         @compileError("please implement the personalBest method");
     }
 
+    /// Writes (at most) the three highest scores from `self` into `buffer`.
     pub fn personalTopThree(self: HighScores, buffer: []u32) []u32 {
         _ = self;
         _ = buffer;
