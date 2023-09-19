@@ -8,7 +8,7 @@ pub const Signal = enum(u2) {
     jump,
 };
 
-pub fn calculateHandshake(allocator: mem.Allocator, number: usize) mem.Allocator.Error![]const Signal {
+pub fn calculateHandshake(allocator: mem.Allocator, number: u5) mem.Allocator.Error![]const Signal {
     var list = std.ArrayList(Signal).init(allocator);
     errdefer list.deinit();
     if (isFlipped(number, 0b1)) {
@@ -39,6 +39,6 @@ pub fn calculateHandshake(allocator: mem.Allocator, number: usize) mem.Allocator
     return list.toOwnedSlice();
 }
 
-inline fn isFlipped(number: usize, bit_mask: usize) bool {
+inline fn isFlipped(number: u5, bit_mask: u5) bool {
     return (number & bit_mask) > 0;
 }
