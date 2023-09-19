@@ -10,11 +10,11 @@ pub const Signal = enum {
 };
 
 pub fn calculateHandshake(allocator: mem.Allocator, number: u5) mem.Allocator.Error![]const Signal {
-    var list = std.ArrayList(Signal).init(allocator);
+    var list = try std.ArrayList(Signal).initCapacity(allocator, 4);
     errdefer list.deinit();
     inline for (comptime std.enums.values(Signal)) |signal| {
         if (1 << @intFromEnum(signal) & number > 0) {
-            if (signal == .reverse) mem.reverse(Signal, list.items) else try list.append(signal);
+            if (signal == .reverse) mem.reverse(Signal, list.items) else list.appendAssumeCapacity(signal);
         }
     }
     return list.toOwnedSlice();
