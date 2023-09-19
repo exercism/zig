@@ -486,7 +486,7 @@
       {
         "uuid": "0e524507-7144-400e-a0c4-da150a4a2604",
         "slug": "atbash-cipher",
-        "name": "Atbash cipher",
+        "name": "Atbash Cipher",
         "practices": [
           "allocators",
           "strings"
