@@ -23,18 +23,8 @@ pub fn calculateHandshake(allocator: mem.Allocator, number: u5) mem.Allocator.Er
     if (isFlipped(number, 0b1000)) {
         try list.append(Signal.jump);
     }
-    // Reverse the ArrayList's contents.
-    if (isFlipped(number, 0b10000) and list.items.len > 1) {
-        var i: usize = 0;
-        var j: usize = list.items.len - 1;
-        while (i < j) : ({
-            i += 1;
-            j -= 1;
-        }) {
-            const temp = list.items[i];
-            list.items[i] = list.items[j];
-            list.items[j] = temp;
-        }
+    if (isFlipped(number, 0b10000)) {
+        mem.reverse(Signal, list.items);
     }
     return list.toOwnedSlice();
 }
