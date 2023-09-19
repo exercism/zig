@@ -20,6 +20,7 @@ fn toBase10(digits: []const u32, input_base: u32) u32 {
 
 fn fromBase10(allocator: mem.Allocator, num: u32, output_base: u32) mem.Allocator.Error![]u32 {
     var list = std.ArrayList(u32).init(allocator);
+    errdefer list.deinit();
     var n = num;
     while (n > 0) {
         try list.append(n % output_base);

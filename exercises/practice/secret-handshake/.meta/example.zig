@@ -10,7 +10,7 @@ pub const Signal = enum(u2) {
 
 pub fn calculateHandshake(allocator: mem.Allocator, number: isize) mem.Allocator.Error![]const Signal {
     var list = std.ArrayList(Signal).init(allocator);
-    defer list.deinit();
+    errdefer list.deinit();
     if (isFlipped(number, 0b1)) {
         try list.append(Signal.wink);
     }
