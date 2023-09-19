@@ -15,7 +15,11 @@ pub fn calculateHandshake(allocator: mem.Allocator, n: u5) mem.Allocator.Error![
     errdefer list.deinit();
     inline for (signals) |signal| {
         if (1 << @intFromEnum(signal) & n > 0) {
-            if (signal == .reverse) mem.reverse(Signal, list.items) else list.appendAssumeCapacity(signal);
+            if (signal == .reverse) {
+                mem.reverse(Signal, list.items);
+            } else {
+                list.appendAssumeCapacity(signal);
+            }
         }
     }
     return list.toOwnedSlice();
