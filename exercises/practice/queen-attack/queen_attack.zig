@@ -1,4 +1,6 @@
 pub const Queen = struct {
+    // Please implement the fields of this struct.
+
     pub fn init(row: u3, col: u3) Queen {
         _ = row;
         _ = col;
