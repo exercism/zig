@@ -378,15 +378,15 @@
         "slug": "queen-attack",
         "name": "Queen Attack",
         "practices": [
+          "asserting",
           "control-flow",
-          "error-sets",
           "importing",
           "methods",
           "structs"
         ],
         "prerequisites": [
+          "asserting",
           "control-flow",
-          "error-sets",
           "importing",
           "methods",
           "structs"
