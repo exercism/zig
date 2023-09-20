@@ -1,18 +1,14 @@
 const std = @import("std");
 
 pub const QueenError = error{
-    InitializationFailure,
     InvalidAttack,
 };
 
 pub const Queen = struct {
-    row: u8,
-    col: u8,
+    row: u3,
+    col: u3,
 
-    pub fn init(row: u8, col: u8) QueenError!Queen {
-        if (row > 7 or col > 7) {
-            return QueenError.InitializationFailure;
-        }
+    pub fn init(row: u3, col: u3) Queen {
         return Queen{
             .row = row,
             .col = col,
