@@ -19,18 +19,8 @@ test "queen with a valid position" {
     }
 }
 
-test "queen must have positive row" {
-    const queen = queen_attack.Queen.init(-2, 2);
-    try testing.expectError(QueenError.InitializationFailure, queen);
-}
-
 test "queen must have row on board" {
     const queen = queen_attack.Queen.init(8, 4);
-    try testing.expectError(QueenError.InitializationFailure, queen);
-}
-
-test "queen must have positive column" {
-    const queen = queen_attack.Queen.init(2, -2);
     try testing.expectError(QueenError.InitializationFailure, queen);
 }
 

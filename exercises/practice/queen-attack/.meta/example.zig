@@ -1,5 +1,4 @@
 const std = @import("std");
-const math = std.math;
 
 pub const QueenError = error{
     InitializationFailure,
@@ -7,11 +6,11 @@ pub const QueenError = error{
 };
 
 pub const Queen = struct {
-    row: i8,
-    col: i8,
+    row: u8,
+    col: u8,
 
-    pub fn init(row: i8, col: i8) QueenError!Queen {
-        if (row < 0 or row > 7 or col < 0 or col > 7) {
+    pub fn init(row: u8, col: u8) QueenError!Queen {
+        if (row > 7 or col > 7) {
             return QueenError.InitializationFailure;
         }
         return Queen{
@@ -24,8 +23,12 @@ pub const Queen = struct {
         if (self.row == other.row and self.col == other.col) {
             return QueenError.InvalidAttack;
         }
-        return (self.row == other.row) or (self.col == other.col) or
-            (math.absInt(self.row - other.row) catch unreachable ==
-            math.absInt(self.col - other.col) catch unreachable);
+        return self.row == other.row or self.col == other.col or
+            absDiff(u8, self.row, other.row) == absDiff(u8, self.col, other.col);
     }
 };
+
+// Returns the absolute difference of `a` and `b`.
+fn absDiff(comptime T: type, a: T, b: T) T {
+    return if (a > b) a - b else b - a;
+}

@@ -3,7 +3,7 @@ pub const QueenError = error{
 };
 
 pub const Queen = struct {
-    pub fn init(row: i8, col: i8) QueenError!Queen {
+    pub fn init(row: u8, col: u8) QueenError!Queen {
         _ = row;
         _ = col;
         @compileError("please implement the init method");
