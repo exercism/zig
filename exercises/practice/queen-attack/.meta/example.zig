@@ -11,11 +11,11 @@ pub const Queen = struct {
         };
     }
 
-    /// Asserts that `self` and `other` are on different squares.
-    pub fn canAttack(self: Queen, other: Queen) bool {
-        std.debug.assert(self.row != other.row or self.col != other.col);
-        return self.row == other.row or self.col == other.col or
-            absDiff(u3, self.row, other.row) == absDiff(u3, self.col, other.col);
+    /// Asserts that `a` and `b` are on different squares.
+    pub fn canAttack(a: Queen, b: Queen) bool {
+        std.debug.assert(a.row != b.row or a.col != b.col);
+        return a.row == b.row or a.col == b.col or
+            absDiff(u3, a.row, b.row) == absDiff(u3, a.col, b.col);
     }
 };
 
