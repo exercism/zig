@@ -5,7 +5,7 @@ pub const Queen = struct {
     col: u3,
 
     pub fn init(row: u3, col: u3) Queen {
-        return Queen{ .row = row, .col = col };
+        return .{ .row = row, .col = col };
     }
 
     /// Asserts that `a` and `b` are on different squares.
