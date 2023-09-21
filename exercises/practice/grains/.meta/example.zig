@@ -1,5 +1,4 @@
 const std = @import("std");
-const math = std.math;
 
 pub const ChessboardError = error{IndexOutOfBounds};
 
@@ -12,5 +11,5 @@ pub fn square(index: usize) ChessboardError!u64 {
 }
 
 pub fn total() u64 {
-    return math.maxInt(u64);
+    return std.math.maxInt(u64);
 }
