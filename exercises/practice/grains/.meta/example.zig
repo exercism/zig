@@ -2,7 +2,7 @@ const std = @import("std");
 
 pub const ChessboardError = error{IndexOutOfBounds};
 
-pub fn square(index: usize) ChessboardError!u64 {
+pub fn square(index: u7) ChessboardError!u64 {
     const number_of_chess_squares = 64;
     if (index > number_of_chess_squares or index == 0) {
         return ChessboardError.IndexOutOfBounds;
