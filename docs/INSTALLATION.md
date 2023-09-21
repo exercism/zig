@@ -3,6 +3,13 @@
 There are many ways to install Zig, and the number of ways to install Zig are steadily increasing as the language matures.
 Fortunately, all of the popular installation methods are listed on the [Zig install page][install-zig].
 
+## Zig version
+
+Exercism currently supports Zig 0.11.0 (released on 2023-08-04) only.
+
+An exercise may be compatible with a different Zig version, but that isn't guaranteed.
+Zig has not yet reached version 1.0, and breaking changes are common.
+
 ## Additional utilities
 
 ### Zig fmt - Generating well-formatted code
