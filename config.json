@@ -190,17 +190,17 @@
         "slug": "grains",
         "name": "Grains",
         "practices": [
+          "asserting",
           "bitwise-operations",
           "builtin-functions",
           "conditionals",
-          "error-sets",
           "functions"
         ],
         "prerequisites": [
+          "asserting",
           "bitwise-operations",
           "builtin-functions",
           "conditionals",
-          "error-sets",
           "functions"
         ],
         "difficulty": 1
