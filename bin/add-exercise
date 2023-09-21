@@ -20,6 +20,7 @@ bin/fetch-configlet
 
 # Add entry for exercise in config.json
 slug="${1}"
+# shellcheck disable=SC2001
 name=$(echo "${slug}" | sed 's/\b\w/\u&/g')
 uuid=$(bin/configlet uuid)
 jq --arg slug "${slug}" --arg uuid "${uuid}" --arg name "${name}" \
