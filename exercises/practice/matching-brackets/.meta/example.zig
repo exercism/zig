@@ -11,10 +11,10 @@ fn toOpening(c: u8) u8 {
 }
 
 /// Returns whether the characters `(`, `[`, and `{` are matched and correctly nested in `s`.
-/// Caller guarantees that the nesting depth of those characters in `s` is at most 10.
+/// Caller guarantees that the nesting depth of those characters in `s` is at most 100.
 // The tests use `try`, so this function returns `!bool` even though it cannot return an error.
 pub fn isBalanced(_: mem.Allocator, s: []const u8) !bool {
-    var stack: [10]u8 = undefined;
+    var stack: [100]u8 = undefined;
     var i: usize = 0;
 
     for (s) |c| {
