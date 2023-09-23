@@ -1,11 +1,11 @@
 const std = @import("std");
 const mem = std.mem;
 
-fn toOpening(c: u8) u8 {
+fn toClosing(c: u8) u8 {
     return switch (c) {
-        ')' => '(',
-        ']' => '[',
-        '}' => '{',
+        '(' => ')',
+        '[' => ']',
+        '{' => '}',
         else => unreachable,
     };
 }
@@ -20,11 +20,11 @@ pub fn isBalanced(_: mem.Allocator, s: []const u8) !bool {
     for (s) |c| {
         switch (c) {
             '(', '[', '{' => {
-                stack[i] = c;
+                stack[i] = toClosing(c);
                 i += 1;
             },
             ')', ']', '}' => {
-                if (i > 0 and stack[i - 1] == toOpening(c)) i -= 1 else return false;
+                if (i > 0 and stack[i - 1] == c) i -= 1 else return false;
             },
             else => continue,
         }
