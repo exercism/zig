@@ -6,7 +6,8 @@ pub fn isIsogram(s: []const u8) bool {
             'a'...'z' => c - 'a',
             else => continue,
         };
-        if (letters[i]) return false else letters[i] = true;
+        if (letters[i]) return false;
+        letters[i] = true;
     }
     return true;
 }
