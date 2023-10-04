@@ -6,15 +6,11 @@ pub fn steps(start: usize) ComputationError!usize {
     if (start == 0) {
         return ComputationError.IllegalArgument;
     }
-    var number = start;
-    var count: usize = 0;
-    while (number > 1) {
-        if (@mod(number, 2) == 0) {
-            number = @divTrunc(number, 2);
-        } else {
-            number = 3 * number + 1;
-        }
-        count += 1;
+    var n = start;
+    var result: usize = 0;
+    while (n > 1) {
+        n = if (n % 2 == 0) n / 2 else 3 * n + 1;
+        result += 1;
     }
-    return count;
+    return result;
 }
