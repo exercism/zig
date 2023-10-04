@@ -5,7 +5,7 @@ pub const Coordinate = struct {
     y: f32,
 
     pub fn init(x: f32, y: f32) Self {
-        return Self{ .x = x, .y = y };
+        return .{ .x = x, .y = y };
     }
 
     pub fn score(self: Self) u32 {
