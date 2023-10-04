@@ -8,3 +8,5 @@ updates:
     schedule:
       interval: 'monthly'
       time: '05:00'
+    commit-message:
+      prefix: '.github'
