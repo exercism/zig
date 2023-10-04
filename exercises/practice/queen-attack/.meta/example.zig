@@ -1,31 +1,22 @@
 const std = @import("std");
-const math = std.math;
-
-pub const QueenError = error{
-    InitializationFailure,
-    InvalidAttack,
-};
 
 pub const Queen = struct {
-    row: i8,
-    col: i8,
+    row: u3,
+    col: u3,
 
-    pub fn init(row: i8, col: i8) QueenError!Queen {
-        if (row < 0 or row > 7 or col < 0 or col > 7) {
-            return QueenError.InitializationFailure;
-        }
-        return Queen{
-            .row = row,
-            .col = col,
-        };
+    pub fn init(row: u3, col: u3) Queen {
+        return .{ .row = row, .col = col };
     }
 
-    pub fn canAttack(self: Queen, other: Queen) QueenError!bool {
-        if (self.row == other.row and self.col == other.col) {
-            return QueenError.InvalidAttack;
-        }
-        return (self.row == other.row) or (self.col == other.col) or
-            (math.absInt(self.row - other.row) catch unreachable ==
-            math.absInt(self.col - other.col) catch unreachable);
+    /// Asserts that `a` and `b` are on different squares.
+    pub fn canAttack(a: Queen, b: Queen) bool {
+        std.debug.assert(a.row != b.row or a.col != b.col);
+        return a.row == b.row or a.col == b.col or
+            absDiff(u3, a.row, b.row) == absDiff(u3, a.col, b.col);
     }
 };
+
+// Returns the absolute difference of `a` and `b`.
+fn absDiff(comptime T: type, a: T, b: T) T {
+    return if (a > b) a - b else b - a;
+}
