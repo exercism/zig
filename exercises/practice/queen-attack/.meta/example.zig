@@ -14,7 +14,7 @@ pub const Queen = struct {
         if (row < 0 or row > 7 or col < 0 or col > 7) {
             return QueenError.InitializationFailure;
         }
-        return Queen{
+        return .{
             .row = row,
             .col = col,
         };
