@@ -9,7 +9,7 @@ pub const Triangle = struct {
 
     pub fn init(a: f64, b: f64, c: f64) TriangleError!Triangle {
         if ((a + b <= c) or (a + c <= b) or (b + c <= a)) return TriangleError.Invalid;
-        return Triangle{ .a = a, .b = b, .c = c };
+        return .{ .a = a, .b = b, .c = c };
     }
 
     pub fn isEquilateral(self: Triangle) bool {
