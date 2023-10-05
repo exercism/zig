@@ -1,16 +1,17 @@
-const std = @import("std");
-const ascii = std.ascii;
+pub fn isPangram(s: []const u8) bool {
+    if (s.len < 26) return false;
 
-pub fn isPangram(str: []const u8) bool {
-    if (str.len < 26) {
-        return false;
+    var letters = [_]bool{false} ** 26;
+    for (s) |c| {
+        const i = switch (c) {
+            'A'...'Z' => c - 'A',
+            'a'...'z' => c - 'a',
+            else => continue,
+        };
+        letters[i] = true;
     }
-    var ascii_bit_set: u32 = 0;
-    for (str) |c| {
-        if (ascii.isASCII(c) and ascii.isAlphabetic(c)) {
-            ascii_bit_set |= @as(u32, 1) <<
-                @as(u5, @truncate(ascii.toLower(c) - 'a'));
-        }
+    for (letters) |b| {
+        if (!b) return false;
     }
-    return ascii_bit_set == 0x03ffffff;
+    return true;
 }
