@@ -89,7 +89,7 @@ test "detects anagrams using case-insensitive possible matches" {
 test "does not detect an anagram if the original word is repeated" {
     const expected = [_][]const u8{};
     const word = "go";
-    const candidates = [_][]const u8{"go Go GO"};
+    const candidates = [_][]const u8{"goGoGO"};
     try testAnagrams(&expected, word, &candidates);
 }
 
