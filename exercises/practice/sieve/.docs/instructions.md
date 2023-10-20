@@ -25,4 +25,4 @@ The tests don't check that you've implemented the algorithm, only that you've co
 A good first test is to check that you do not use division or remainder operations.
 
 [eratosthenes]: https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
-```
+~~~~
