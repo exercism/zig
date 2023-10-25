@@ -23,4 +23,4 @@ In a **doubly linked list** each node links to both the node that comes before, 
 If you want to dig deeper into linked lists, check out [this article][intro-linked-list] that explains it using nice drawings.
 
 [intro-linked-list]: https://medium.com/basecs/whats-a-linked-list-anyway-part-1-d8b7e6508b9d
-```
+~~~~

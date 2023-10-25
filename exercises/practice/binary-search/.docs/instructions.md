@@ -7,7 +7,7 @@ It allows us to quickly narrow down the possible locations of our item until we 
 
 ~~~~exercism/caution
 Binary search only works when a list has been sorted.
-```
+~~~~
 
 The algorithm looks like this:
 
