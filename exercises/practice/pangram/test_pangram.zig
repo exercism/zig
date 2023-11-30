@@ -42,3 +42,7 @@ test "mixed case and punctuation" {
 test "a-m and A-M are 26 different characters but not a pangram" {
     try testing.expect(!pangram.isPangram("abcdefghijklm ABCDEFGHIJKLM"));
 }
+
+test "non-alphanumeric printable ASCII" {
+    try testing.expect(!pangram.isPangram(" !\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"));
+}
