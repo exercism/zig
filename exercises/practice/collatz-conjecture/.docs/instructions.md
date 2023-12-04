@@ -8,7 +8,11 @@ If n is odd, multiply n by 3 and add 1 to get 3n + 1.
 Repeat the process indefinitely.
 The conjecture states that no matter which number you start with, you will always reach 1 eventually.
 
+## Task 1
 Given a number n, return the number of steps required to reach 1.
+
+## Task 2
+Add an error set `ComputationError` which would contain the `IllegalArgument` error. Return `ComputationError.IllegalArgument` if input `n` is equal to zero.
 
 ## Examples
 
