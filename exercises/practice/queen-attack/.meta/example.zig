@@ -1,5 +1,4 @@
 const std = @import("std");
-const math = std.math;
 
 pub const QueenError = error{
     InitializationFailure,
@@ -24,8 +23,8 @@ pub const Queen = struct {
         if (self.row == other.row and self.col == other.col) {
             return QueenError.InvalidAttack;
         }
-        return (self.row == other.row) or (self.col == other.col) or
-            (math.absInt(self.row - other.row) catch unreachable ==
-            math.absInt(self.col - other.col) catch unreachable);
+        const row_diff = self.row - other.row;
+        const col_diff = self.col - other.col;
+        return (row_diff == 0) or (col_diff == 0) or (row_diff == col_diff) or (row_diff == -col_diff);
     }
 };
