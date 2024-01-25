@@ -27,7 +27,7 @@ fn fromBase10(allocator: mem.Allocator, num: u32, output_base: u32) mem.Allocato
         n /= output_base;
     }
     if (list.items.len == 0) try list.append(0);
-    var result = try list.toOwnedSlice();
+    const result = try list.toOwnedSlice();
     mem.reverse(u32, result);
     return result;
 }
