@@ -3,7 +3,6 @@ const mem = std.mem;
 const testing = std.testing;
 
 const rna_transcription = @import("rna_transcription.zig");
-const RnaError = rna_transcription.RnaError;
 
 fn testTranscription(dna: []const u8, expected: []const u8) !void {
     const rna = try rna_transcription.toRna(testing.allocator, dna);

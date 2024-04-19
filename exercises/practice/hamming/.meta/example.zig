@@ -11,8 +11,8 @@ pub fn compute(first: []const u8, second: []const u8) DnaError!usize {
         return DnaError.UnequalDnaStrands;
     }
     var hamming_distance: usize = 0;
-    for (first, 0..) |rune, i| {
-        if (rune != second[i]) {
+    for (first, 0..) |c, i| {
+        if (c != second[i]) {
             hamming_distance += 1;
         }
     }

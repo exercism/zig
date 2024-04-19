@@ -33,7 +33,6 @@
     ]
   },
   "exercises": {
-    "concept": [],
     "practice": [
       {
         "uuid": "fafe82fb-a54a-40d3-b082-4429e080e435",
@@ -57,6 +56,7 @@
         "uuid": "25a0331e-612f-48c1-8a3f-9b0e9601a2fa",
         "slug": "hello-world",
         "name": "Hello, World!",
+        "uuid": "25a0331e-612f-48c1-8a3f-9b0e9601a2fa",
         "practices": [
           "functions",
           "slices",
@@ -66,9 +66,9 @@
         "difficulty": 1
       },
       {
-        "uuid": "5e8e92f6-e8c7-49f1-8ebf-a93f73998d47",
         "slug": "leap",
         "name": "Leap",
+        "uuid": "5e8e92f6-e8c7-49f1-8ebf-a93f73998d47",
         "practices": [
           "conditionals",
           "functions"
@@ -80,9 +80,9 @@
         "difficulty": 1
       },
       {
-        "uuid": "7f1ae5db-82f6-44b0-a5b4-a206f29c4bb0",
         "slug": "difference-of-squares",
         "name": "Difference of Squares",
+        "uuid": "7f1ae5db-82f6-44b0-a5b4-a206f29c4bb0",
         "practices": [
           "builtin-functions",
           "functions"
@@ -94,9 +94,9 @@
         "difficulty": 1
       },
       {
-        "uuid": "3c5268f9-d8d7-46b4-a751-a4ff3774a3e1",
         "slug": "collatz-conjecture",
         "name": "Collatz Conjecture",
+        "uuid": "3c5268f9-d8d7-46b4-a751-a4ff3774a3e1",
         "practices": [
           "builtin-functions",
           "control-flow",
@@ -110,9 +110,9 @@
         "difficulty": 1
       },
       {
-        "uuid": "75372668-762c-4c5e-98c4-1093e3a92a88",
         "slug": "scrabble-score",
         "name": "Scrabble Score",
+        "uuid": "75372668-762c-4c5e-98c4-1093e3a92a88",
         "practices": [
           "games",
           "strings"
@@ -124,9 +124,9 @@
         "difficulty": 1
       },
       {
-        "uuid": "8f48a213-9a28-4a7e-93f9-f2b1fbe46e58",
         "slug": "pangram",
         "name": "Pangram",
+        "uuid": "8f48a213-9a28-4a7e-93f9-f2b1fbe46e58",
         "practices": [
           "bitwise-operations",
           "builtin-functions",
@@ -148,9 +148,9 @@
         "difficulty": 1
       },
       {
-        "uuid": "386c397f-d9d5-4647-8bf8-671abd5cc8a1",
         "slug": "armstrong-numbers",
         "name": "Armstrong Numbers",
+        "uuid": "386c397f-d9d5-4647-8bf8-671abd5cc8a1",
         "practices": [
           "integers",
           "math"
@@ -162,9 +162,9 @@
         "difficulty": 1
       },
       {
-        "uuid": "93a9b5bd-b495-4a7d-86fe-b71fd0343336",
         "slug": "isogram",
         "name": "Isogram",
+        "uuid": "93a9b5bd-b495-4a7d-86fe-b71fd0343336",
         "practices": [
           "builtin-functions",
           "bitwise-operations",
@@ -182,9 +182,9 @@
         "difficulty": 1
       },
       {
-        "uuid": "bd72bb30-583f-494c-818d-4394703293a1",
         "slug": "hamming",
         "name": "Hamming",
+        "uuid": "bd72bb30-583f-494c-818d-4394703293a1",
         "practices": [
           "conditionals",
           "control-flow",
@@ -204,9 +204,9 @@
         "difficulty": 1
       },
       {
-        "uuid": "dff58791-4373-46ec-933a-ea27a28b4486",
         "slug": "grains",
         "name": "Grains",
+        "uuid": "dff58791-4373-46ec-933a-ea27a28b4486",
         "practices": [
           "bitwise-operations",
           "builtin-functions",
@@ -224,9 +224,9 @@
         "difficulty": 1
       },
       {
-        "uuid": "d9242387-064a-4ba8-8b04-b5cfe68ae9a2",
         "slug": "isbn-verifier",
         "name": "ISBN Verifier",
+        "uuid": "d9242387-064a-4ba8-8b04-b5cfe68ae9a2",
         "practices": [
           "integers",
           "math",
@@ -240,9 +240,9 @@
         "difficulty": 1
       },
       {
-        "uuid": "f49a0baa-a309-4814-a123-f41a2d770bdd",
         "slug": "resistor-color",
         "name": "Resistor Color",
+        "uuid": "f49a0baa-a309-4814-a123-f41a2d770bdd",
         "practices": [
           "arrays",
           "builtin-functions",
@@ -264,9 +264,9 @@
         "difficulty": 1
       },
       {
-        "uuid": "52a244a4-205d-4fb3-8725-2f31fbc0a0b8",
         "slug": "resistor-color-duo",
         "name": "Resistor Color Duo",
+        "uuid": "52a244a4-205d-4fb3-8725-2f31fbc0a0b8",
         "practices": [
           "arrays",
           "builtin-functions",
@@ -282,9 +282,9 @@
         "difficulty": 1
       },
       {
-        "uuid": "ca72ff14-470d-4679-ad36-82ea9d2890bc",
         "slug": "luhn",
         "name": "Luhn",
+        "uuid": "ca72ff14-470d-4679-ad36-82ea9d2890bc",
         "practices": [
           "integers",
           "math",
@@ -298,9 +298,9 @@
         "difficulty": 1
       },
       {
-        "uuid": "3819c81e-db22-4aac-b745-5eec450b7b4d",
         "slug": "darts",
         "name": "Darts",
+        "uuid": "3819c81e-db22-4aac-b745-5eec450b7b4d",
         "practices": [
           "conditionals",
           "functions",
@@ -318,9 +318,9 @@
         "difficulty": 1
       },
       {
-        "uuid": "d36abb68-78cc-4c99-8693-00e02eb9011e",
         "slug": "triangle",
         "name": "Triangle",
+        "uuid": "d36abb68-78cc-4c99-8693-00e02eb9011e",
         "practices": [
           "bitwise-operations",
           "conditionals",
@@ -340,9 +340,9 @@
         "difficulty": 1
       },
       {
-        "uuid": "7a68dc3d-03e4-4d68-bccd-8249dcd33978",
         "slug": "nucleotide-count",
         "name": "Nucleotide Count",
+        "uuid": "7a68dc3d-03e4-4d68-bccd-8249dcd33978",
         "practices": [
           "error-sets",
           "strings",
@@ -356,9 +356,9 @@
         "difficulty": 1
       },
       {
-        "uuid": "280bd414-898d-4ab9-8a7c-f9c0d1e382f6",
         "slug": "space-age",
         "name": "Space Age",
+        "uuid": "280bd414-898d-4ab9-8a7c-f9c0d1e382f6",
         "practices": [
           "builtin-functions",
           "control-flow",
@@ -378,9 +378,9 @@
         "difficulty": 1
       },
       {
-        "uuid": "044ff920-f4a6-408a-b2a2-6923b0764178",
         "slug": "bob",
         "name": "Bob",
+        "uuid": "044ff920-f4a6-408a-b2a2-6923b0764178",
         "practices": [
           "conditionals",
           "strings"
@@ -392,9 +392,9 @@
         "difficulty": 1
       },
       {
-        "uuid": "6eb542c3-c14f-430a-81ce-ba9f2c0551c2",
         "slug": "queen-attack",
         "name": "Queen Attack",
+        "uuid": "6eb542c3-c14f-430a-81ce-ba9f2c0551c2",
         "practices": [
           "control-flow",
           "error-sets",
@@ -412,9 +412,9 @@
         "difficulty": 1
       },
       {
-        "uuid": "2fbd5bd8-a839-42a3-9293-4ad577766a12",
         "slug": "perfect-numbers",
         "name": "Perfect Numbers",
+        "uuid": "2fbd5bd8-a839-42a3-9293-4ad577766a12",
         "practices": [
           "asserting",
           "enums",
@@ -430,9 +430,9 @@
         "difficulty": 1
       },
       {
-        "uuid": "c4f19b16-4da3-4c81-bbf6-babde6ace276",
         "slug": "reverse-string",
         "name": "Reverse String",
+        "uuid": "c4f19b16-4da3-4c81-bbf6-babde6ace276",
         "practices": [
           "slices",
           "strings"
@@ -444,9 +444,9 @@
         "difficulty": 1
       },
       {
-        "uuid": "866a09d8-6949-4363-b83f-7b9fefb53893",
         "slug": "two-fer",
         "name": "Two Fer",
+        "uuid": "866a09d8-6949-4363-b83f-7b9fefb53893",
         "practices": [
           "conditionals",
           "error-sets",
@@ -464,9 +464,9 @@
         "difficulty": 1
       },
       {
-        "uuid": "9f715841-e4d0-491e-9ed7-af36c8eafb49",
         "slug": "rna-transcription",
         "name": "RNA Transcription",
+        "uuid": "9f715841-e4d0-491e-9ed7-af36c8eafb49",
         "practices": [
           "allocators",
           "conditionals",
@@ -486,9 +486,9 @@
         "difficulty": 1
       },
       {
-        "uuid": "2f4c1391-6e16-40bd-a4a9-883f51066cf3",
         "slug": "dnd-character",
         "name": "D&D Character",
+        "uuid": "2f4c1391-6e16-40bd-a4a9-883f51066cf3",
         "practices": [
           "integers",
           "math",
@@ -502,9 +502,9 @@
         "difficulty": 1
       },
       {
-        "uuid": "0e524507-7144-400e-a0c4-da150a4a2604",
         "slug": "atbash-cipher",
         "name": "Atbash Cipher",
+        "uuid": "0e524507-7144-400e-a0c4-da150a4a2604",
         "practices": [
           "allocators",
           "strings"
@@ -516,9 +516,9 @@
         "difficulty": 1
       },
       {
-        "uuid": "b9533606-bbbd-4110-8adc-54ccf94af1a6",
         "slug": "sieve",
         "name": "Sieve",
+        "uuid": "b9533606-bbbd-4110-8adc-54ccf94af1a6",
         "practices": [
           "algorithms",
           "integers",
@@ -534,9 +534,9 @@
         "difficulty": 1
       },
       {
-        "uuid": "f47bbe16-dd61-4542-8634-30ea14cc4f56",
         "slug": "binary-search",
         "name": "Binary Search",
+        "uuid": "f47bbe16-dd61-4542-8634-30ea14cc4f56",
         "practices": [
           "control-flow",
           "generics",
@@ -554,9 +554,9 @@
         "difficulty": 1
       },
       {
-        "uuid": "3878b8dc-4c63-4c7d-9800-bd99ad38650d",
         "slug": "matching-brackets",
         "name": "Matching Brackets",
+        "uuid": "3878b8dc-4c63-4c7d-9800-bd99ad38650d",
         "practices": [
           "strings"
         ],
@@ -566,9 +566,9 @@
         "difficulty": 1
       },
       {
-        "uuid": "3342ce3f-5569-4a11-944b-ef7c7e678fa2",
         "slug": "raindrops",
         "name": "Raindrops",
+        "uuid": "3342ce3f-5569-4a11-944b-ef7c7e678fa2",
         "practices": [
           "integers",
           "math",
@@ -584,9 +584,9 @@
         "difficulty": 1
       },
       {
-        "uuid": "0590d6df-afbe-4983-92d4-8fe6797ad5fa",
         "slug": "acronym",
         "name": "Acronym",
+        "uuid": "0590d6df-afbe-4983-92d4-8fe6797ad5fa",
         "practices": [
           "allocators",
           "conditionals",
@@ -606,9 +606,9 @@
         "difficulty": 1
       },
       {
-        "uuid": "7b7db815-5e14-477e-8012-f7719561dd8f",
         "slug": "proverb",
         "name": "Proverb",
+        "uuid": "7b7db815-5e14-477e-8012-f7719561dd8f",
         "practices": [
           "allocators",
           "conditionals",
@@ -628,9 +628,9 @@
         "difficulty": 1
       },
       {
-        "uuid": "ba0ab298-3fb4-47e1-87f0-0644a405502e",
         "slug": "secret-handshake",
         "name": "Secret Handshake",
+        "uuid": "ba0ab298-3fb4-47e1-87f0-0644a405502e",
         "practices": [
           "allocators",
           "bitwise-operations",
@@ -652,9 +652,9 @@
         "difficulty": 1
       },
       {
-        "uuid": "4c13a4fb-d673-4a2c-8e70-54173f52d98c",
         "slug": "allergies",
         "name": "Allergies",
+        "uuid": "4c13a4fb-d673-4a2c-8e70-54173f52d98c",
         "practices": [
           "bitwise-operations",
           "enums"
@@ -666,9 +666,9 @@
         "difficulty": 1
       },
       {
-        "uuid": "f73c7be1-ee3a-4fff-93f2-a8f5ab793ca1",
         "slug": "yacht",
         "name": "Yacht",
+        "uuid": "f73c7be1-ee3a-4fff-93f2-a8f5ab793ca1",
         "practices": [
           "arrays",
           "enums",
@@ -682,9 +682,9 @@
         "difficulty": 1
       },
       {
-        "uuid": "52281bbe-e1f6-4423-8092-6a8940a50ced",
         "slug": "all-your-base",
         "name": "All Your Base",
+        "uuid": "52281bbe-e1f6-4423-8092-6a8940a50ced",
         "practices": [
           "allocators",
           "error-sets",
@@ -700,9 +700,9 @@
         "difficulty": 1
       },
       {
-        "uuid": "a9ba66ae-85d1-490e-a421-e2e35f90231e",
         "slug": "sum-of-multiples",
         "name": "Sum of Multiples",
+        "uuid": "a9ba66ae-85d1-490e-a421-e2e35f90231e",
         "practices": [
           "allocators",
           "integers",
@@ -716,9 +716,9 @@
         "difficulty": 1
       },
       {
-        "uuid": "74d33b36-1c1c-45ca-9c8b-da9f1f97ea0b",
         "slug": "anagram",
         "name": "Anagram",
+        "uuid": "74d33b36-1c1c-45ca-9c8b-da9f1f97ea0b",
         "practices": [
           "allocators",
           "hashmaps",
@@ -732,9 +732,9 @@
         "difficulty": 1
       },
       {
-        "uuid": "809cf06c-442b-4214-83ee-de7cf7e1a6fb",
         "slug": "word-count",
         "name": "Word Count",
+        "uuid": "809cf06c-442b-4214-83ee-de7cf7e1a6fb",
         "practices": [
           "allocators",
           "hashmaps"
@@ -746,9 +746,9 @@
         "difficulty": 4
       },
       {
-        "uuid": "47ef24ce-745a-4dfe-a7a8-370d8a324d52",
         "slug": "linked-list",
         "name": "Linked List",
+        "uuid": "47ef24ce-745a-4dfe-a7a8-370d8a324d52",
         "practices": [
           "comptime",
           "data-structures",
@@ -769,7 +769,6 @@
       }
     ]
   },
-  "concepts": [],
   "key_features": [
     {
       "title": "Simple",
@@ -803,18 +802,18 @@
     }
   ],
   "tags": [
+    "execution_mode/compiled",
     "paradigm/imperative",
     "paradigm/procedural",
+    "platform/android",
+    "platform/ios",
+    "platform/linux",
+    "platform/mac",
+    "platform/web",
+    "platform/windows",
+    "runtime/standalone_executable",
     "typing/static",
     "typing/strong",
-    "execution_mode/compiled",
-    "platform/windows",
-    "platform/mac",
-    "platform/linux",
-    "platform/ios",
-    "platform/android",
-    "platform/web",
-    "runtime/standalone_executable",
     "used_for/backends",
     "used_for/cross_platform_development",
     "used_for/embedded_systems",

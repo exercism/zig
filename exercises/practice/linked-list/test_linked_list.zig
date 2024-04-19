@@ -68,7 +68,7 @@ test "pop, push, shift, and unshift can be used in any order" {
 }
 
 test "count an empty list" {
-    var list = List{};
+    const list = List{};
     try testing.expectEqual(@as(usize, 0), list.len);
 }
 

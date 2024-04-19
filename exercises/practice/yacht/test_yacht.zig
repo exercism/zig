@@ -75,9 +75,21 @@ test "full house two small, three big" {
     try testing.expectEqual(expected, actual);
 }
 
+test "full house two small, three big, alternative order" {
+    const expected: u32 = 14;
+    const actual = score([_]u3{ 4, 4, 2, 2, 2 }, .full_house);
+    try testing.expectEqual(expected, actual);
+}
+
 test "full house three small, two big" {
     const expected: u32 = 19;
     const actual = score([_]u3{ 5, 3, 3, 5, 3 }, .full_house);
+    try testing.expectEqual(expected, actual);
+}
+
+test "full house three small, two big, alternative order" {
+    const expected: u32 = 21;
+    const actual = score([_]u3{ 3, 5, 5, 3, 5 }, .full_house);
     try testing.expectEqual(expected, actual);
 }
 
@@ -102,6 +114,12 @@ test "yacht is not a full house" {
 test "four of a kind" {
     const expected: u32 = 24;
     const actual = score([_]u3{ 6, 6, 4, 6, 6 }, .four_of_a_kind);
+    try testing.expectEqual(expected, actual);
+}
+
+test "four of a kind alternative order" {
+    const expected: u32 = 16;
+    const actual = score([_]u3{ 4, 4, 6, 4, 4 }, .four_of_a_kind);
     try testing.expectEqual(expected, actual);
 }
 
