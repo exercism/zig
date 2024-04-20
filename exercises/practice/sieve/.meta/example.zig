@@ -1,53 +1,29 @@
-const std = @import("std");
-const assert = std.debug.assert;
-const sqrt = std.math.sqrt;
-
-/// Returns bools, where the value at index `i` is `true` iff `i` is a prime number.
-fn eratosthenes(comptime n: u32) []const bool {
-    var result = [_]bool{false} ** (n + 1);
-    result[2] = true;
-
-    var i = 3;
-    while (i <= n) : (i += 2) {
-        result[i] = true;
-    }
-
-    i = 3;
-    while (i <= sqrt(n)) : (i += 2) { // Optimization: stop at sqrt(n)
-        if (result[i]) {
-            var j = i * i; // Optimization: start at i*i
-            while (j < n) : (j += 2 * i) {
-                result[j] = false;
-            }
-        }
-    }
-    return &result;
-}
-
-/// Returns the prime numbers up to `limit`.
-fn genPrimes(comptime limit: u32) []const u32 {
-    @setEvalBranchQuota(limit * 3);
-    const bools = comptime eratosthenes(limit);
-    // See https://en.wikipedia.org/wiki/Prime-counting_function#Inequalities
-    const upper_bound_count = @ceil(1.25506 * @as(f64, limit) / @log(@as(f64, limit)));
-    var result: [upper_bound_count]u32 = undefined;
-    var j = 0;
-    for (bools, 0..) |b, i| {
-        if (b) {
-            result[j] = i;
-            j += 1;
-        }
-    }
-    return result[0..j];
-}
+const assert = @import("std").debug.assert;
 
 pub fn primes(buffer: []u32, comptime limit: u32) []const u32 {
-    const sieve_limit = 1000;
-    comptime assert(limit <= sieve_limit);
-    const p = comptime genPrimes(sieve_limit); // The primes up to the sieve limit.
+    comptime assert(limit <= 1000);
+    const primes_under_1000 = [_]u32{
+        2,   3,   5,   7,   11,  13,  17,  19,  23,  29,
+        31,  37,  41,  43,  47,  53,  59,  61,  67,  71,
+        73,  79,  83,  89,  97,  101, 103, 107, 109, 113,
+        127, 131, 137, 139, 149, 151, 157, 163, 167, 173,
+        179, 181, 191, 193, 197, 199, 211, 223, 227, 229,
+        233, 239, 241, 251, 257, 263, 269, 271, 277, 281,
+        283, 293, 307, 311, 313, 317, 331, 337, 347, 349,
+        353, 359, 367, 373, 379, 383, 389, 397, 401, 409,
+        419, 421, 431, 433, 439, 443, 449, 457, 461, 463,
+        467, 479, 487, 491, 499, 503, 509, 521, 523, 541,
+        547, 557, 563, 569, 571, 577, 587, 593, 599, 601,
+        607, 613, 617, 619, 631, 641, 643, 647, 653, 659,
+        661, 673, 677, 683, 691, 701, 709, 719, 727, 733,
+        739, 743, 751, 757, 761, 769, 773, 787, 797, 809,
+        811, 821, 823, 827, 829, 839, 853, 857, 859, 863,
+        877, 881, 883, 887, 907, 911, 919, 929, 937, 941,
+        947, 953, 967, 971, 977, 983, 991, 997,
+    };
     _ = buffer;
-    if (limit >= p[p.len - 1]) return p;
+    if (limit >= primes_under_1000[primes_under_1000.len - 1]) return &primes_under_1000;
     var i: usize = 0;
-    while (p[i] <= limit) : (i += 1) {}
-    return p[0..i];
+    while (primes_under_1000[i] <= limit) : (i += 1) {}
+    return primes_under_1000[0..i];
 }
