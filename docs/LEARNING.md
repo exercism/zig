@@ -1,7 +1,7 @@
 # Learning
 
 - [Ziglings][ziglings] is a highly recommended introduction to Zig, which asks you to fix tiny broken programs.
-- [Zighelp][zighelp] is another great introduction to Zig.
+- [zig.guide][zig-guide] is another great introduction to Zig.
 - [The Zig Language Reference][langref] is the main reference documentation.
 - [Learning Zig][learning-zig] is another great introduction to Zig.
 - [Awesome Zig][awesome-zig] is a collection of Zig projects.
@@ -11,5 +11,5 @@
 [langref]: https://ziglang.org/documentation/0.12.0/
 [learning-zig]: https://www.openmymind.net/learning_zig/
 [zig-showtime]: https://zig.show/
-[zighelp]: https://zighelp.org/
+[zig-guide]: https://zig.guide/
 [ziglings]: https://github.com/ratfactor/ziglings

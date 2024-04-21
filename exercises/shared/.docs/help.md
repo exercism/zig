@@ -6,7 +6,7 @@
 - [Ziggit][ziggit] is the main Zig forum.
 - [/r/Zig][sureddit] is the main Zig subreddit.
 - [Ziglings][ziglings] is a highly recommended introduction to Zig, which asks you to fix tiny broken programs.
-- [Zighelp][zighelp] is a great introduction to Zig.
+- [zig.guide][zig-guide] is a great introduction to Zig.
 - [Learning Zig][learning-zig] is another great introduction to Zig.
 - [The Zig Language Reference][langref] is the main reference documentation.
 
@@ -17,5 +17,5 @@
 [learning-zig]: https://www.openmymind.net/learning_zig/
 [sureddit]: https://www.reddit.com/r/Zig
 [ziggit]: https://ziggit.dev/
-[zighelp]: https://zighelp.org/
+[zig-guide]: https://zig.guide/
 [ziglings]: https://github.com/ratfactor/ziglings
