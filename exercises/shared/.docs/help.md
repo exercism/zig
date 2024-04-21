@@ -1,6 +1,6 @@
 # Help
 
-- [The Zig Programming Language Documentation][documentation] is a great overview of all of the language features that Zig provides to those who use it.
+- [The Zig Language Reference][langref] is a great overview of all of the language features that Zig provides to those who use it.
 - [Zig Learn][zig-learn] is an excellent primer that explains the language features that Zig has to offer.
 - [Ziglings][ziglings] is highly recommended.
   Learn Zig by fixing tiny broken programs.
@@ -12,8 +12,8 @@
 
 [discord]: https://discordapp.com
 [discord-zig]: https://discord.com/invite/gxsFFjE
-[documentation]: https://ziglang.org/documentation/0.12.0
 [irc]: https://webchat.freenode.net/?channels=%23zig
+[langref]: https://ziglang.org/documentation/0.12.0
 [reddit]: https://www.reddit.com/r/Zig
 [stack-overflow]: https://stackoverflow.com/questions/tagged/zig
 [zig-learn]: https://ziglearn.org/

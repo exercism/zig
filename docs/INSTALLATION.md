@@ -19,7 +19,7 @@ However, outside of solving exercises, such as making applications or libraries,
 Those assumption are especially important when others who would want to help out with your projects would have to read your code.
 
 To fix this problem the Zig compiler comes with a built-in lightweight [linter][linters] to format your code in a convenient manner.
-This code formatter aims to follow the [style guide][style-guide] already established by the [Zig documentation][documentation].
+This code formatter aims to follow the [Zig Style Guide][style-guide].
 
 To see the features of Zig's native formatter use the following command:
 
@@ -44,7 +44,6 @@ This third-party software provides editor completions and enhanced Zig code navi
 
 You can install ZLS [here][install-zls].
 
-[documentation]: https://ziglang.org/documentation/0.12.0/
 [install-zig]: https://ziglang.org/download/
 [linters]: https://en.wikipedia.org/wiki/Lint_(software)
 [style-guide]: https://ziglang.org/documentation/0.12.0/#Style-Guide
