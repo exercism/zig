@@ -1,19 +1,20 @@
 # About
 
-Zig is a general-purpose programming language equipped with well-rounded toolchains that aims to be simple and familiar, yet disparate from what programmers rely on today.
-Its main attributes involve helping programmers to develop **robust**, **optimal**, and **reusable** software.
-All the while, Zig aims to remedy the design problems of older languages with features that promote safety through the use of [optionals][optionals], a unique take on [error handling][error-handling], and [compile-time execution][compile-time].
+Zig is a general-purpose programming language and toolchain, which aims to help produce **robust**, **optimal**, and **reusable** software.
 
-From the ground up, Zig was designed to be competitive with other systems programming languages and not be reliant on them.
-With bold claims such as, "Zig is faster than C" featured on its home page, being independent from other languages is a major design philosophy that it champions.
+It does this by striving for simplicity: there's no hidden control flow, no hidden memory allocations, and no macros.
+However, there's still a modern design: a powerful type system with sum types and [optionals][optionals], explicit [error handling][error-handling], and [compile-time execution][compile-time].
 
-Zig has a lot of faculties that really makes it double down on its notion of independence.
-The standard library that Zig provides harbors many common functions that perform fast to ensure that a reliance on FFI and external libraries is not essential.
-Zig also provides a well-rounded [build system][build-system] so that Zig is not dependent on alternative build tools, such as make, cmake, or ninja.
+Zig tries to be a DSL for emitting optimal machine code.
 
-The home page for Zig is [ziglang.org][ziglang.org].
-Zig provides a complete summary of the language's current features, grammars, and philosophies in the [Zig Language Reference][langref].
-It's highly recommended that newcomers use a mix of the documentation and other [community resources][zig-community] to learn Zig in a well-rounded fashion.
+For more information, see [ziglang.org][ziglang.org].
+
+//Zig provides a complete summary of the language's current features, grammar, and philosophy in the [Zig Language Reference][langref].
+//It's highly recommended that newcomers use a mix of the documentation and other [community resources][zig-community] to learn Zig in a well-rounded fashion.
+
+// Compatibility with C is as good as it gets: Zig ships with C compiler toolchains, so you can just import a C header file and call functions.
+// Zig also provides a [build system][build-system] so that Zig isn't dependent on alternative build tools, such as make, cmake, or ninja.
+// And Zig is excellent at cross compilation.
 
 [build-system]: https://ziglang.org/learn/overview/#zig-build-system
 [compile-time]: https://ziglang.org/learn/overview/#compile-time-reflection-and-compile-time-code-execution
