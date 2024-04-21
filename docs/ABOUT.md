@@ -12,7 +12,7 @@ The standard library that Zig provides harbors many common functions that perfor
 Zig also provides a well-rounded [build system][build-system] so that Zig is not dependent on alternative build tools, such as make, cmake, or ninja.
 
 The home page for Zig is [ziglang.org][ziglang.org].
-Zig provides a complete summary of the language's current features, grammars, and philosophies at [ziglang.org/documentation/master/][ziglang.org/docs].
+Zig provides a complete summary of the language's current features, grammars, and philosophies in the [Zig Language Reference][ziglang.org/docs].
 It's highly recommended that newcomers use a mix of the documentation and other [community resources][zig-community] to learn Zig in a well-rounded fashion.
 
 [build-system]: https://ziglang.org/learn/overview/#zig-build-system
@@ -20,5 +20,5 @@ It's highly recommended that newcomers use a mix of the documentation and other 
 [error-handling]: https://ziglang.org/learn/overview/#a-fresh-take-on-error-handling
 [optionals]: https://ziglang.org/learn/overview/#optional-type-instead-of-null-pointers
 [ziglang.org]: https://ziglang.org/
-[ziglang.org/docs]: https://ziglang.org/documentation/master/
+[ziglang.org/docs]: https://ziglang.org/documentation/0.12.0/
 [zig-community]: https://github.com/ziglang/zig/wiki/Community

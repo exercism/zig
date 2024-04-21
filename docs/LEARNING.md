@@ -9,7 +9,7 @@
 - [Zig SHOWTIME][zig-showtime] is a livestreamed show where members of the Zig community share code and ideas.
 
 [awesome-zig]: https://github.com/catdevnull/awesome-zig
-[documentation]: https://ziglang.org/documentation/master/
+[documentation]: https://ziglang.org/documentation/0.12.0/
 [zighelp]: https://zighelp.org/
 [zig-showtime]: https://zig.show/
 [ziglings]: https://github.com/ratfactor/ziglings

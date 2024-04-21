@@ -12,7 +12,7 @@
 
 [discord]: https://discordapp.com
 [discord-zig]: https://discord.com/invite/gxsFFjE
-[documentation]: https://ziglang.org/documentation/master
+[documentation]: https://ziglang.org/documentation/0.12.0
 [irc]: https://webchat.freenode.net/?channels=%23zig
 [reddit]: https://www.reddit.com/r/Zig
 [stack-overflow]: https://stackoverflow.com/questions/tagged/zig

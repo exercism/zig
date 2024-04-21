@@ -44,8 +44,8 @@ This third-party software provides editor completions and enhanced Zig code navi
 
 You can install ZLS [here][install-zls].
 
-[documentation]: https://ziglang.org/documentation/master/
+[documentation]: https://ziglang.org/documentation/0.12.0/
 [install-zig]: https://ziglang.org/download/
 [linters]: https://en.wikipedia.org/wiki/Lint_(software)
-[style-guide]: https://ziglang.org/documentation/master/#Style-Guide
+[style-guide]: https://ziglang.org/documentation/0.12.0/#Style-Guide
 [install-zls]: https://install.zigtools.org/

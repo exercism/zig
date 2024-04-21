@@ -23,9 +23,9 @@ Since all tests have these stipulations, you would have to [comment out][comment
 Commenting out a test is as simple as starting each line with a `//`.
 Otherwise, when you're confident that your solution can pass the tests, you can un-comment those tests to see if it passes.
 
-[constants]: https://ziglang.org/documentation/master/#Assignment
-[comments]: https://ziglang.org/documentation/master/#Comments
-[functions]: https://ziglang.org/documentation/master/#Functions
-[et-cetera]: https://ziglang.org/documentation/master/
-[imports]: https://ziglang.org/documentation/master/#import
-[structs]: https://ziglang.org/documentation/master/#struct
+[constants]: https://ziglang.org/documentation/0.12.0/#Assignment
+[comments]: https://ziglang.org/documentation/0.12.0/#Comments
+[functions]: https://ziglang.org/documentation/0.12.0/#Functions
+[et-cetera]: https://ziglang.org/documentation/0.12.0/
+[imports]: https://ziglang.org/documentation/0.12.0/#import
+[structs]: https://ziglang.org/documentation/0.12.0/#struct
