@@ -1,20 +1,21 @@
 # Help
 
-- [The Zig Programming Language Documentation][documentation] is a great overview of all of the language features that Zig provides to those who use it.
-- [Zig Learn][zig-learn] is an excellent primer that explains the language features that Zig has to offer.
-- [Ziglings][ziglings] is highly recommended.
-  Learn Zig by fixing tiny broken programs.
-- [The Zig Programming Language Discord][discord-zig] is the main [Discord][discord].
-  It provides a great way to get in touch with the Zig community at large, and get some quick, direct help for any Zig related problem.
+- [The Zig Programming Language Discord][discord-zig] is the main Zig [Discord][discord].
+  It provides a great way to get in touch with the Zig community, and get some quick, direct help for any Zig-related problem.
 - [#zig][irc] on irc.freenode.net is the main Zig IRC channel.
-- [/r/Zig][reddit] is the main Zig subreddit.
-- [Stack Overflow][stack-overflow] can be used to discover code snippets and solutions to problems that may have already asked and maybe solved by others.
+- [Ziggit][ziggit] is the main Zig forum.
+- [/r/Zig][sureddit] is the main Zig subreddit.
+- [Ziglings][ziglings] is a highly recommended introduction to Zig, which asks you to fix tiny broken programs.
+- [zig.guide][zig-guide] is a great introduction to Zig.
+- [Learning Zig][learning-zig] is another great introduction to Zig.
+- [The Zig Language Reference][langref] is the main reference documentation.
 
 [discord]: https://discordapp.com
 [discord-zig]: https://discord.com/invite/gxsFFjE
-[documentation]: https://ziglang.org/documentation/master
 [irc]: https://webchat.freenode.net/?channels=%23zig
-[reddit]: https://www.reddit.com/r/Zig
-[stack-overflow]: https://stackoverflow.com/questions/tagged/zig
-[zig-learn]: https://ziglearn.org/
+[langref]: https://ziglang.org/documentation/0.12.0/
+[learning-zig]: https://www.openmymind.net/learning_zig/
+[sureddit]: https://www.reddit.com/r/Zig
+[ziggit]: https://ziggit.dev/
+[zig-guide]: https://zig.guide/
 [ziglings]: https://github.com/ratfactor/ziglings

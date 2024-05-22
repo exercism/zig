@@ -1,15 +1,15 @@
 # Learning
 
-- [The Zig Programming Language Documentation][documentation] is a great overview of all of the language features that Zig provides to those who use it.
-- [Awesome Zig][awesome-zig] is a good collection of Zig projects made by various people.
-  The collection features projects involving well developed Zig code.
-- [Zighelp][zighelp] is an excellent primer that explains the language features that Zig has to offer.
-- [Ziglings][ziglings] is highly recommended.
-  Learn Zig by fixing tiny broken programs.
+- [Ziglings][ziglings] is a highly recommended introduction to Zig, which asks you to fix tiny broken programs.
+- [zig.guide][zig-guide] is another great introduction to Zig.
+- [The Zig Language Reference][langref] is the main reference documentation.
+- [Learning Zig][learning-zig] is another great introduction to Zig.
+- [Awesome Zig][awesome-zig] is a collection of Zig projects.
 - [Zig SHOWTIME][zig-showtime] is a livestreamed show where members of the Zig community share code and ideas.
 
 [awesome-zig]: https://github.com/catdevnull/awesome-zig
-[documentation]: https://ziglang.org/documentation/master/
-[zighelp]: https://zighelp.org/
+[langref]: https://ziglang.org/documentation/0.12.0/
+[learning-zig]: https://www.openmymind.net/learning_zig/
 [zig-showtime]: https://zig.show/
+[zig-guide]: https://zig.guide/
 [ziglings]: https://github.com/ratfactor/ziglings

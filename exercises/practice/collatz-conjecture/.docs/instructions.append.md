@@ -13,8 +13,8 @@ For more details about errors in Zig, see:
 
 - [Learning Zig - Errors][learning-zig-errors]
 - [Ziglings - Exercise 21][ziglings-exercise-21]
-- [Zighelp - Errors][zighelp-errors]
+- [zig.guide - Errors][zig-guide-errors]
 
 [learning-zig-errors]: https://www.openmymind.net/learning_zig/language_overview_2/#errors
-[zighelp-errors]: https://zighelp.org/chapter-1/#errors
+[zig-guide-errors]: https://zig.guide/language-basics/errors
 [ziglings-exercise-21]: https://codeberg.org/ziglings/exercises/src/commit/0d46acfa02d0c29fdfb3651e82a77284dd8f2e00/exercises/021_errors.zig
