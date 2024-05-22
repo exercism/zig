@@ -17,4 +17,4 @@
 [reddit]: https://www.reddit.com/r/Zig
 [stack-overflow]: https://stackoverflow.com/questions/tagged/zig
 [zig-learn]: https://ziglearn.org/
-[ziglings]: https://github.com/ratfactor/ziglings
+[ziglings]: https://codeberg.org/ziglings/exercises

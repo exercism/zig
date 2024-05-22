@@ -12,4 +12,4 @@
 [documentation]: https://ziglang.org/documentation/master/
 [zighelp]: https://zighelp.org/
 [zig-showtime]: https://zig.show/
-[ziglings]: https://github.com/ratfactor/ziglings
+[ziglings]: https://codeberg.org/ziglings/exercises
