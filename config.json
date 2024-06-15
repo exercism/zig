@@ -105,6 +105,14 @@
         "difficulty": 1
       },
       {
+        "slug": "pig-latin",
+        "name": "Pig Latin",
+        "uuid": "52ff9f9b-0cf2-4c1d-ac92-f858dd846ce1",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "pangram",
         "name": "Pangram",
         "uuid": "8f48a213-9a28-4a7e-93f9-f2b1fbe46e58",
