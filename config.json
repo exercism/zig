@@ -129,6 +129,14 @@
         "difficulty": 1
       },
       {
+        "slug": "knapsack",
+        "name": "Knapsack",
+        "uuid": "ffa03fc8-0503-4524-ae40-9f3202349003",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "armstrong-numbers",
         "name": "Armstrong Numbers",
         "uuid": "386c397f-d9d5-4647-8bf8-671abd5cc8a1",
