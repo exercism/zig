@@ -163,6 +163,14 @@
         "difficulty": 1
       },
       {
+        "slug": "largest-series-product",
+        "name": "Largest Series Product",
+        "uuid": "1bc27002-2daa-4e09-b4a6-65053291c1dd",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "hamming",
         "name": "Hamming",
         "uuid": "bd72bb30-583f-494c-818d-4394703293a1",
