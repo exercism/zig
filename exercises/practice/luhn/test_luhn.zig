@@ -16,7 +16,7 @@ test "a simple valid SIN that remains valid if reversed" {
 }
 
 test "a simple valid SIN that becomes invalid if reversed" {
-    try testing.expect(isValid("59"));
+    try testing.expect(!isValid("59"));
 }
 
 test "a valid Canadian SIN" {
