@@ -151,6 +151,14 @@
         "difficulty": 1
       },
       {
+        "slug": "run-length-encoding",
+        "name": "Run Length Encoding",
+        "uuid": "71e5d918-6327-442a-98e8-3f9560b1ecd9",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "isogram",
         "name": "Isogram",
         "uuid": "93a9b5bd-b495-4a7d-86fe-b71fd0343336",
