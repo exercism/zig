@@ -91,6 +91,14 @@
         "difficulty": 1
       },
       {
+        "slug": "rotational-cipher",
+        "name": "Rotational Cipher",
+        "uuid": "f111103f-3276-4c30-86e5-916225d60af0",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "scrabble-score",
         "name": "Scrabble Score",
         "uuid": "75372668-762c-4c5e-98c4-1093e3a92a88",
