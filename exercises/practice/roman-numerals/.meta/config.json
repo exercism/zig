@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "mk2s"
+  ],
+  "files": {
+    "solution": [
+      "roman_numerals.zig"
+    ],
+    "test": [
+      "test_roman_numerals.zig"
+    ],
+    "example": [
+      ".meta/example.zig"
+    ]
+  },
+  "blurb": "Convert modern Arabic numbers into Roman numerals.",
+  "source": "The Roman Numeral Kata",
+  "source_url": "https://codingdojo.org/kata/RomanNumerals/"
+}
