@@ -73,6 +73,13 @@ test "first letter and ay are moved to the end of words that start with consonan
     try testing.expectEqualStrings(expected, actual);
 }
 
+test "first letter and ay are moved to the end of words that start with consonants -> word beginning with consonant and vowel containing qu" {
+    const expected: []const u8 = "iquidlay";
+    const actual = try pig_latin.translate(testing.allocator, "liquid");
+    defer testing.allocator.free(actual);
+    try testing.expectEqualStrings(expected, actual);
+}
+
 test "some letter clusters are treated like a single consonant-word beginning with ch" {
     const expected: []const u8 = "airchay";
     const actual = try pig_latin.translate(testing.allocator, "chair");
