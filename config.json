@@ -47,6 +47,14 @@
         "difficulty": 1
       },
       {
+        "slug": "house",
+        "name": "House",
+        "uuid": "af541c61-e752-49f3-aa0e-8d96a738d0f1",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
+      },
+      {
         "slug": "leap",
         "name": "Leap",
         "uuid": "5e8e92f6-e8c7-49f1-8ebf-a93f73998d47",
