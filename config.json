@@ -83,6 +83,14 @@
         "difficulty": 1
       },
       {
+        "slug": "bottle-song",
+        "name": "Bottle Song",
+        "uuid": "26b6fdd5-6e9d-4a5a-87d3-e9de104b6f3d",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "square-root",
         "name": "Square Root",
         "uuid": "b272305d-7c9c-4dfe-b15c-ca950d69ee69",
