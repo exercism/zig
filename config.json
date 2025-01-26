@@ -107,6 +107,14 @@
         "difficulty": 1
       },
       {
+        "slug": "pascals-triangle",
+        "name": "Pascal's Triangle",
+        "uuid": "91ffec02-b596-4a56-bbe1-59d1dd26fd76",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "rotational-cipher",
         "name": "Rotational Cipher",
         "uuid": "f111103f-3276-4c30-86e5-916225d60af0",
