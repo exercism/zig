@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "keiravillekode"
+  ],
+  "files": {
+    "solution": [
+      "food_chain.zig"
+    ],
+    "test": [
+      "test_food_chain.zig"
+    ],
+    "example": [
+      ".meta/example.zig"
+    ]
+  },
+  "blurb": "Generate the lyrics of the song 'I Know an Old Lady Who Swallowed a Fly'.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/There_Was_an_Old_Lady_Who_Swallowed_a_Fly"
+}
