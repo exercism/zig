@@ -115,6 +115,14 @@
         "difficulty": 3
       },
       {
+        "slug": "kindergarten-garden",
+        "name": "Kindergarten Garden",
+        "uuid": "8ffd8bb1-f57d-4c9e-adcc-76188a7e1603",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "scrabble-score",
         "name": "Scrabble Score",
         "uuid": "75372668-762c-4c5e-98c4-1093e3a92a88",
