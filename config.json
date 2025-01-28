@@ -161,6 +161,14 @@
         "difficulty": 1
       },
       {
+        "slug": "prime-factors",
+        "name": "Prime Factors",
+        "uuid": "0c48987b-b594-4bf6-8b65-ba696927cb04",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "knapsack",
         "name": "Knapsack",
         "uuid": "ffa03fc8-0503-4524-ae40-9f3202349003",
