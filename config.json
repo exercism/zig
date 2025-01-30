@@ -215,8 +215,16 @@
         "difficulty": 1
       },
       {
+        "slug": "sublist",
+        "name": "Sublist",
+        "uuid": "a2c7d511-7f80-410b-923f-0343d0770d81",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "run-length-encoding",
-        "name": "Run Length Encoding",
+        "name": "Run-Length Encoding",
         "uuid": "71e5d918-6327-442a-98e8-3f9560b1ecd9",
         "practices": [],
         "prerequisites": [],
