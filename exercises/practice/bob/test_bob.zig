@@ -123,12 +123,6 @@ test "alternate silence" {
     try testing.expectEqualStrings(expected, actual);
 }
 
-test "multiple line question" {
-    const expected = "Whatever.";
-    const actual = response("\nDoes this cryogenic chamber make me look fat?\nNo.");
-    try testing.expectEqualStrings(expected, actual);
-}
-
 test "starting with whitespace" {
     const expected = "Whatever.";
     const actual = response("         hmmmmmmm...");
@@ -150,5 +144,11 @@ test "other whitespace" {
 test "non-question ending with whitespace" {
     const expected = "Whatever.";
     const actual = response("This is a statement ending with whitespace      ");
+    try testing.expectEqualStrings(expected, actual);
+}
+
+test "multiple line question" {
+    const expected = "Sure.";
+    const actual = response("\nDoes this cryogenic chamber make\n me look fat?");
     try testing.expectEqualStrings(expected, actual);
 }
