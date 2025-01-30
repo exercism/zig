@@ -91,6 +91,14 @@
         "difficulty": 2
       },
       {
+        "slug": "food-chain",
+        "name": "Food Chain",
+        "uuid": "fe7bad93-d829-4308-9eed-68ad6e5d522f",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "collatz-conjecture",
         "name": "Collatz Conjecture",
         "uuid": "3c5268f9-d8d7-46b4-a751-a4ff3774a3e1",
