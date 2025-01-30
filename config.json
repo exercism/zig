@@ -61,8 +61,16 @@
         "difficulty": 1
       },
       {
+        "slug": "twelve-days",
+        "name": "Twelve Days",
+        "uuid": "1ae61ecf-2ce4-49bb-9e3f-8b8b7125b176",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "eliuds-eggs",
-        "name": "Eliuds Eggs",
+        "name": "Eliud's Eggs",
         "uuid": "493be46b-6cb3-4591-87db-b0a17e9238ee",
         "practices": [],
         "prerequisites": [],
