@@ -129,6 +129,14 @@
         "difficulty": 1
       },
       {
+        "slug": "book-store",
+        "name": "Book Store",
+        "uuid": "cc192edb-a5d5-4f0d-a585-324641235cd5",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 7
+      },
+      {
         "slug": "pig-latin",
         "name": "Pig Latin",
         "uuid": "52ff9f9b-0cf2-4c1d-ac92-f858dd846ce1",
