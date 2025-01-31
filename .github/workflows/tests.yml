@@ -9,12 +9,12 @@ jobs:
   test-exercises:
     strategy:
       matrix:
-        os: [ubuntu-22.04, macos-12, windows-2022]
+        os: [ubuntu-22.04, macos-13, windows-2022]
 
     name: Check exercises (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
     steps:
-    - uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+    - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
 
     - name: Install Zig
       shell: bash

@@ -13,6 +13,6 @@ For more details on hash maps in Zig, see:
 - [Zighelp - Hash Maps][zighelp]
 - [Zig Standard Library - `buf_set.zig`][buf-set]
 
-[buf-set]: https://github.com/ziglang/zig/blob/0.11.0/lib/std/buf_set.zig
+[buf-set]: https://github.com/ziglang/zig/blob/0.13.0/lib/std/buf_set.zig
 [zig-hashmaps-explained]: https://devlog.hexops.com/2022/zig-hashmaps-explained/
 [zighelp]: https://zighelp.org/chapter-2/#hash-maps

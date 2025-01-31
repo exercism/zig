@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "keiravillekode"
+  ],
+  "files": {
+    "solution": [
+      "sublist.zig"
+    ],
+    "test": [
+      "test_sublist.zig"
+    ],
+    "example": [
+      ".meta/example.zig"
+    ]
+  },
+  "blurb": "Write a function to determine if a list is a sublist of another list."
+}

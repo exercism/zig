@@ -47,6 +47,14 @@
         "difficulty": 1
       },
       {
+        "slug": "house",
+        "name": "House",
+        "uuid": "af541c61-e752-49f3-aa0e-8d96a738d0f1",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
+      },
+      {
         "slug": "leap",
         "name": "Leap",
         "uuid": "5e8e92f6-e8c7-49f1-8ebf-a93f73998d47",
@@ -61,6 +69,22 @@
         "difficulty": 1
       },
       {
+        "slug": "twelve-days",
+        "name": "Twelve Days",
+        "uuid": "1ae61ecf-2ce4-49bb-9e3f-8b8b7125b176",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
+        "slug": "eliuds-eggs",
+        "name": "Eliud's Eggs",
+        "uuid": "493be46b-6cb3-4591-87db-b0a17e9238ee",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "difference-of-squares",
         "name": "Difference of Squares",
         "uuid": "7f1ae5db-82f6-44b0-a5b4-a206f29c4bb0",
@@ -73,6 +97,30 @@
           "functions"
         ],
         "difficulty": 1
+      },
+      {
+        "slug": "bottle-song",
+        "name": "Bottle Song",
+        "uuid": "26b6fdd5-6e9d-4a5a-87d3-e9de104b6f3d",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
+        "slug": "square-root",
+        "name": "Square Root",
+        "uuid": "b272305d-7c9c-4dfe-b15c-ca950d69ee69",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
+        "slug": "food-chain",
+        "name": "Food Chain",
+        "uuid": "fe7bad93-d829-4308-9eed-68ad6e5d522f",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
       },
       {
         "slug": "collatz-conjecture",
@@ -91,6 +139,30 @@
         "difficulty": 1
       },
       {
+        "slug": "pascals-triangle",
+        "name": "Pascal's Triangle",
+        "uuid": "91ffec02-b596-4a56-bbe1-59d1dd26fd76",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
+        "slug": "rotational-cipher",
+        "name": "Rotational Cipher",
+        "uuid": "f111103f-3276-4c30-86e5-916225d60af0",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
+        "slug": "kindergarten-garden",
+        "name": "Kindergarten Garden",
+        "uuid": "8ffd8bb1-f57d-4c9e-adcc-76188a7e1603",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "scrabble-score",
         "name": "Scrabble Score",
         "uuid": "75372668-762c-4c5e-98c4-1093e3a92a88",
@@ -103,6 +175,30 @@
           "strings"
         ],
         "difficulty": 1
+      },
+      {
+        "slug": "book-store",
+        "name": "Book Store",
+        "uuid": "cc192edb-a5d5-4f0d-a585-324641235cd5",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 7
+      },
+      {
+        "slug": "pig-latin",
+        "name": "Pig Latin",
+        "uuid": "52ff9f9b-0cf2-4c1d-ac92-f858dd846ce1",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
+        "slug": "nth-prime",
+        "name": "Nth Prime",
+        "uuid": "799a17cb-9f29-481b-94be-b532f46c8024",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
       },
       {
         "slug": "pangram",
@@ -129,6 +225,22 @@
         "difficulty": 1
       },
       {
+        "slug": "prime-factors",
+        "name": "Prime Factors",
+        "uuid": "0c48987b-b594-4bf6-8b65-ba696927cb04",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
+        "slug": "knapsack",
+        "name": "Knapsack",
+        "uuid": "ffa03fc8-0503-4524-ae40-9f3202349003",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "armstrong-numbers",
         "name": "Armstrong Numbers",
         "uuid": "386c397f-d9d5-4647-8bf8-671abd5cc8a1",
@@ -141,6 +253,22 @@
           "math"
         ],
         "difficulty": 1
+      },
+      {
+        "slug": "sublist",
+        "name": "Sublist",
+        "uuid": "a2c7d511-7f80-410b-923f-0343d0770d81",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
+        "slug": "run-length-encoding",
+        "name": "Run-Length Encoding",
+        "uuid": "71e5d918-6327-442a-98e8-3f9560b1ecd9",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
       },
       {
         "slug": "isogram",
@@ -163,6 +291,14 @@
         "difficulty": 1
       },
       {
+        "slug": "largest-series-product",
+        "name": "Largest Series Product",
+        "uuid": "1bc27002-2daa-4e09-b4a6-65053291c1dd",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "hamming",
         "name": "Hamming",
         "uuid": "bd72bb30-583f-494c-818d-4394703293a1",
@@ -183,6 +319,14 @@
           "type-coercion"
         ],
         "difficulty": 1
+      },
+      {
+        "slug": "pythagorean-triplet",
+        "name": "Pythagorean Triplet",
+        "uuid": "393d316c-f20a-4d86-859b-8bf0e920fb55",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
       },
       {
         "slug": "grains",
