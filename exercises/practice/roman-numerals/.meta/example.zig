@@ -7,7 +7,7 @@ const DigitValue = struct {
     digit: []const u8,
 };
 
-const max_result_size = 10;
+const max_result_size = 15;
 
 var digitValues = [_]DigitValue{
     .{ .value = 1000, .digit = "M" },
@@ -26,17 +26,17 @@ var digitValues = [_]DigitValue{
 };
 
 pub fn toRoman(allocator: mem.Allocator, arabicNumeral: i16) mem.Allocator.Error![]u8 {
-    var tmp: [10]u8 = undefined;
+    var tmp: [max_result_size]u8 = undefined;
     var numeral: i16 = arabicNumeral;
     var len: usize = 0;
     for (digitValues) |dv| {
         while (numeral >= dv.value) {
-            std.mem.copy(u8, tmp[len..], dv.digit);
+            @memcpy(tmp[len..(len + dv.digit.len)], dv.digit);
             len += dv.digit.len;
             numeral -= dv.value;
         }
     }
-    var result = try allocator.alloc(u8, len);
-    std.mem.copy(u8, result, tmp[0..len]);
+    const result = try allocator.alloc(u8, len);
+    @memcpy(result, tmp[0..len]);
     return result;
 }

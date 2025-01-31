@@ -2,6 +2,9 @@
   "authors": [
     "mk2s"
   ],
+  "contributors": [
+    "keiravillekode"
+  ],
   "files": {
     "solution": [
       "roman_numerals.zig"

@@ -178,6 +178,13 @@ test "3001 is MMMI" {
     try testing.expectEqualStrings(expected, actual);
 }
 
+test "3888 is MMMDCCCLXXXVIII" {
+    const expected = "MMMDCCCLXXXVIII";
+    const actual = try toRoman(testing.allocator, 3888);
+    defer testing.allocator.free(actual);
+    try testing.expectEqualStrings(expected, actual);
+}
+
 test "3999 is MMMCMXCIX" {
     const expected = "MMMCMXCIX";
     const actual = try toRoman(testing.allocator, 3999);
