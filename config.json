@@ -891,6 +891,19 @@
           "structs"
         ],
         "difficulty": 4
+      },
+      {
+        "slug": "roman-numerals",
+        "name": "Roman Numerals",
+        "uuid": "ad55f4da-9f64-4a81-908d-43224d672e80",
+        "practices": [],
+        "prerequisites": [
+          "allocators",
+          "conditionals",
+          "control-flow",
+          "slices"
+        ],
+        "difficulty": 4
       }
     ]
   },
