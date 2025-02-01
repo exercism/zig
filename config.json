@@ -271,6 +271,14 @@
         "difficulty": 4
       },
       {
+        "slug": "phone-number",
+        "name": "Phone Number",
+        "uuid": "66cd0755-1817-4ae3-9c5f-fab39bb08065",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "isogram",
         "name": "Isogram",
         "uuid": "93a9b5bd-b495-4a7d-86fe-b71fd0343336",
