@@ -36,7 +36,7 @@
     "practice": [
       {
         "slug": "hello-world",
-        "name": "Hello, World!",
+        "name": "Hello World",
         "uuid": "25a0331e-612f-48c1-8a3f-9b0e9601a2fa",
         "practices": [
           "functions",
@@ -578,7 +578,7 @@
       },
       {
         "slug": "two-fer",
-        "name": "Two Fer",
+        "name": "Two-Fer",
         "uuid": "866a09d8-6949-4363-b83f-7b9fefb53893",
         "practices": [
           "conditionals",
