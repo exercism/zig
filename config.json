@@ -341,17 +341,17 @@
         "name": "Grains",
         "uuid": "dff58791-4373-46ec-933a-ea27a28b4486",
         "practices": [
+          "asserting",
           "bitwise-operations",
           "builtin-functions",
           "conditionals",
-          "error-sets",
           "functions"
         ],
         "prerequisites": [
+          "asserting",
           "bitwise-operations",
           "builtin-functions",
           "conditionals",
-          "error-sets",
           "functions"
         ],
         "difficulty": 1
