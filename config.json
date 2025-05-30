@@ -52,7 +52,7 @@
         "uuid": "af541c61-e752-49f3-aa0e-8d96a738d0f1",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 1
+        "difficulty": 4
       },
       {
         "slug": "leap",
@@ -96,7 +96,7 @@
           "builtin-functions",
           "functions"
         ],
-        "difficulty": 1
+        "difficulty": 2
       },
       {
         "slug": "bottle-song",
@@ -136,7 +136,7 @@
           "control-flow",
           "functions"
         ],
-        "difficulty": 1
+        "difficulty": 2
       },
       {
         "slug": "pascals-triangle",
@@ -252,7 +252,7 @@
           "integers",
           "math"
         ],
-        "difficulty": 1
+        "difficulty": 2
       },
       {
         "slug": "sublist",
@@ -326,7 +326,7 @@
           "slices",
           "type-coercion"
         ],
-        "difficulty": 1
+        "difficulty": 2
       },
       {
         "slug": "pythagorean-triplet",
@@ -354,7 +354,7 @@
           "error-sets",
           "functions"
         ],
-        "difficulty": 1
+        "difficulty": 2
       },
       {
         "slug": "isbn-verifier",
@@ -370,7 +370,7 @@
           "math",
           "strings"
         ],
-        "difficulty": 1
+        "difficulty": 3
       },
       {
         "slug": "resistor-color",
@@ -428,7 +428,7 @@
           "math",
           "strings"
         ],
-        "difficulty": 1
+        "difficulty": 4
       },
       {
         "slug": "darts",
@@ -448,7 +448,7 @@
           "methods",
           "structs"
         ],
-        "difficulty": 1
+        "difficulty": 2
       },
       {
         "slug": "triangle",
@@ -522,7 +522,7 @@
           "conditionals",
           "strings"
         ],
-        "difficulty": 1
+        "difficulty": 3
       },
       {
         "slug": "queen-attack",
@@ -542,7 +542,7 @@
           "methods",
           "structs"
         ],
-        "difficulty": 1
+        "difficulty": 3
       },
       {
         "slug": "perfect-numbers",
@@ -560,7 +560,7 @@
           "integers",
           "math"
         ],
-        "difficulty": 1
+        "difficulty": 3
       },
       {
         "slug": "reverse-string",
@@ -632,7 +632,7 @@
           "math",
           "randomness"
         ],
-        "difficulty": 1
+        "difficulty": 3
       },
       {
         "slug": "atbash-cipher",
@@ -646,7 +646,7 @@
           "allocators",
           "strings"
         ],
-        "difficulty": 1
+        "difficulty": 4
       },
       {
         "slug": "sieve",
@@ -664,7 +664,7 @@
           "math",
           "slices"
         ],
-        "difficulty": 1
+        "difficulty": 3
       },
       {
         "slug": "binary-search",
@@ -684,7 +684,7 @@
           "optionals",
           "type-coercion"
         ],
-        "difficulty": 1
+        "difficulty": 3
       },
       {
         "slug": "matching-brackets",
@@ -696,7 +696,7 @@
         "prerequisites": [
           "strings"
         ],
-        "difficulty": 1
+        "difficulty": 4
       },
       {
         "slug": "raindrops",
@@ -736,7 +736,7 @@
           "functions",
           "slices"
         ],
-        "difficulty": 1
+        "difficulty": 2
       },
       {
         "slug": "proverb",
@@ -758,7 +758,7 @@
           "functions",
           "slices"
         ],
-        "difficulty": 1
+        "difficulty": 3
       },
       {
         "slug": "secret-handshake",
@@ -782,7 +782,7 @@
           "functions",
           "importing"
         ],
-        "difficulty": 1
+        "difficulty": 3
       },
       {
         "slug": "allergies",
@@ -796,7 +796,7 @@
           "bitwise-operations",
           "enums"
         ],
-        "difficulty": 1
+        "difficulty": 3
       },
       {
         "slug": "yacht",
@@ -812,7 +812,7 @@
           "enums",
           "games"
         ],
-        "difficulty": 1
+        "difficulty": 4
       },
       {
         "slug": "all-your-base",
@@ -830,7 +830,7 @@
           "integers",
           "math"
         ],
-        "difficulty": 1
+        "difficulty": 4
       },
       {
         "slug": "sum-of-multiples",
@@ -862,7 +862,7 @@
           "hashmaps",
           "slices"
         ],
-        "difficulty": 1
+        "difficulty": 3
       },
       {
         "slug": "word-count",
