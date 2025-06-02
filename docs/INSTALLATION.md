@@ -42,10 +42,10 @@ zig zen
 
 This third-party software provides editor completions and enhanced Zig code navigation features which can help you learn the language faster.
 
-You can install ZLS [here][install-zls].
+See the [ZLS Installation Guide][install-zls] for the latest instructions.
 
 [documentation]: https://ziglang.org/documentation/master/
 [install-zig]: https://ziglang.org/download/
 [linters]: https://en.wikipedia.org/wiki/Lint_(software)
 [style-guide]: https://ziglang.org/documentation/master/#Style-Guide
-[install-zls]: https://install.zigtools.org/
+[install-zls]: https://zigtools.org/zls/install/
