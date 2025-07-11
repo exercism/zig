@@ -16,7 +16,7 @@ case "${os}" in
   *)        ext='tar.xz' ;;
 esac
 
-arch="$(uname -m)"
+arch="$(uname -m | sed 's/arm64/aarch64/g')"
 
 version='0.13.0'
 url="https://ziglang.org/download/${version}/zig-${os}-${arch}-${version}.${ext}"
@@ -30,7 +30,7 @@ curlopts=(
 )
 
 file="zig.${ext}"
-echo "Downloading Zig release archive..." >&2
+echo "Downloading Zig release archive ${url}" >&2
 curl "${curlopts[@]}" --output "${file}" "${url}"
 echo "Extracting archive..." >&2
 
