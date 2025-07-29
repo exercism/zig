@@ -19,7 +19,7 @@ jobs:
     - name: Install Zig
       uses: mlugg/setup-zig@8d6198c65fb0feaa111df26e6b467fea8345e46f
       with:
-        version: 0.14.1
+        version: 0.15.0-dev.1254+c9ce1debe
 
     - name: Test exercises
       shell: bash
