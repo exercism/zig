@@ -1,6 +1,6 @@
 const std = @import("std");
 
-var prng = std.rand.DefaultPrng.init(42);
+var prng = std.Random.DefaultPrng.init(42);
 const random = prng.random();
 
 pub fn ability() u8 {

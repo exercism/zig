@@ -13,14 +13,14 @@ pub const Allergen = enum(u8) {
     cats = 128,
 };
 
-const tag_type = @typeInfo(Allergen).Enum.tag_type;
+const tag_type = @typeInfo(Allergen).@"enum".tag_type;
 
 pub fn isAllergicTo(score: tag_type, allergen: Allergen) bool {
     return score & @intFromEnum(allergen) != 0;
 }
 
 pub fn initAllergenSet(score: usize) EnumSet(Allergen) {
-    const len = @typeInfo(Allergen).Enum.fields.len;
+    const len = @typeInfo(Allergen).@"enum".fields.len;
     const bits = IntegerBitSet(len){ .mask = @as(tag_type, @truncate(score)) };
     return .{ .bits = bits };
 }
