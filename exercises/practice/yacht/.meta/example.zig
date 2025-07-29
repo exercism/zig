@@ -19,7 +19,7 @@ const DiceInt = u3;
 const Dice = [5]DiceInt;
 
 /// Returns the sum of the items in `dice` that equal `n`.
-fn sumOnly(dice: Dice, n: @typeInfo(Category).Enum.tag_type) u32 {
+fn sumOnly(dice: Dice, n: @typeInfo(Category).@"enum".tag_type) u32 {
     var result: u32 = 0;
     for (dice) |d| {
         if (d == n) result += n;
