@@ -3,7 +3,7 @@ name: Run Configlet Sync
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0 15 * *'
+    - cron: '0 0 17 * *'
 
 jobs:
   call-gha-workflow:
