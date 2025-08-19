@@ -11,7 +11,7 @@ pub const Signal = enum {
 
 pub fn calculateHandshake(allocator: mem.Allocator, n: u5) mem.Allocator.Error![]const Signal {
     const signals = comptime std.enums.values(Signal);
-    var list = try std.ArrayList(Signal).initCapacity(allocator, signals.len - 1);
+    var list = try std.array_list.Managed(Signal).initCapacity(allocator, signals.len - 1);
     errdefer list.deinit();
     inline for (signals) |signal| {
         if (1 << @intFromEnum(signal) & n > 0) {

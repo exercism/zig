@@ -1,7 +1,7 @@
 const std = @import("std");
 const mem = std.mem;
 const StringMap = std.StringHashMap(u32);
-const Word = std.ArrayList(u8);
+const Word = std.array_list.Managed(u8);
 
 /// If `self` contains the key `word`, increments its value by 1.
 /// Otherwise, dupes `word` and puts it into `self`, setting its value to 1.
