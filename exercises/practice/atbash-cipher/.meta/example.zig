@@ -13,7 +13,7 @@ fn atbash(c: u8) u8 {
 /// Encodes `s` using the Atbash cipher. Caller owns the returned memory.
 pub fn encode(allocator: mem.Allocator, s: []const u8) mem.Allocator.Error![]u8 {
     const group_len = 5;
-    var list = try std.ArrayList(u8).initCapacity(allocator, s.len + s.len / group_len);
+    var list = try std.array_list.Managed(u8).initCapacity(allocator, s.len + s.len / group_len);
     errdefer list.deinit();
     var count: u32 = 0;
     for (s) |c| {
@@ -36,7 +36,7 @@ pub fn encode(allocator: mem.Allocator, s: []const u8) mem.Allocator.Error![]u8 
 /// Caller guarantees that `s` consists only of digits, lowercase, and spaces.
 pub fn decode(allocator: mem.Allocator, s: []const u8) mem.Allocator.Error![]u8 {
     // The length of the returned slice is at most the length of `s`.
-    var list = try std.ArrayList(u8).initCapacity(allocator, s.len);
+    var list = try std.array_list.Managed(u8).initCapacity(allocator, s.len);
     errdefer list.deinit();
     for (s) |c| {
         switch (c) {
