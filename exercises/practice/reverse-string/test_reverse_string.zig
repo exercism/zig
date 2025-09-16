@@ -4,7 +4,8 @@ const testing = std.testing;
 const reverse_string = @import("reverse_string.zig");
 
 fn testReverse(comptime s: []const u8, expected: []const u8) !void {
-    var buffer: [s.len]u8 = undefined;
+    const buffer_size = 80;
+    var buffer: [buffer_size]u8 = undefined;
     const actual = reverse_string.reverse(&buffer, s);
     try testing.expectEqualStrings(expected, actual);
 }
