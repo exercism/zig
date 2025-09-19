@@ -882,6 +882,14 @@
         "difficulty": 4
       },
       {
+        "slug": "affine-cipher",
+        "name": "Affine Cipher",
+        "uuid": "0f7dabfb-8fe8-44f2-bf88-3c88d53cd8a6",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "food-chain",
         "name": "Food Chain",
         "uuid": "fe7bad93-d829-4308-9eed-68ad6e5d522f",
