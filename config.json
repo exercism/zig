@@ -139,48 +139,6 @@
         "difficulty": 1
       },
       {
-        "slug": "resistor-color",
-        "name": "Resistor Color",
-        "uuid": "f49a0baa-a309-4814-a123-f41a2d770bdd",
-        "practices": [
-          "arrays",
-          "builtin-functions",
-          "enums",
-          "functions",
-          "pointers",
-          "slices",
-          "type-coercion"
-        ],
-        "prerequisites": [
-          "arrays",
-          "builtin-functions",
-          "enums",
-          "functions",
-          "pointers",
-          "slices",
-          "type-coercion"
-        ],
-        "difficulty": 1
-      },
-      {
-        "slug": "resistor-color-duo",
-        "name": "Resistor Color Duo",
-        "uuid": "52a244a4-205d-4fb3-8725-2f31fbc0a0b8",
-        "practices": [
-          "arrays",
-          "builtin-functions",
-          "enums",
-          "functions"
-        ],
-        "prerequisites": [
-          "arrays",
-          "builtin-functions",
-          "enums",
-          "functions"
-        ],
-        "difficulty": 1
-      },
-      {
         "slug": "reverse-string",
         "name": "Reverse String",
         "uuid": "c4f19b16-4da3-4c81-bbf6-babde6ace276",
@@ -444,6 +402,56 @@
           "slices",
           "type-coercion"
         ],
+        "difficulty": 2
+      },
+      {
+        "slug": "resistor-color",
+        "name": "Resistor Color",
+        "uuid": "f49a0baa-a309-4814-a123-f41a2d770bdd",
+        "practices": [
+          "arrays",
+          "builtin-functions",
+          "enums",
+          "functions",
+          "pointers",
+          "slices",
+          "type-coercion"
+        ],
+        "prerequisites": [
+          "arrays",
+          "builtin-functions",
+          "enums",
+          "functions",
+          "pointers",
+          "slices",
+          "type-coercion"
+        ],
+        "difficulty": 2
+      },
+      {
+        "slug": "resistor-color-duo",
+        "name": "Resistor Color Duo",
+        "uuid": "52a244a4-205d-4fb3-8725-2f31fbc0a0b8",
+        "practices": [
+          "arrays",
+          "builtin-functions",
+          "enums",
+          "functions"
+        ],
+        "prerequisites": [
+          "arrays",
+          "builtin-functions",
+          "enums",
+          "functions"
+        ],
+        "difficulty": 2
+      },
+      {
+        "slug": "resistor-color-trio",
+        "name": "Resistor Color Trio",
+        "uuid": "7e57582e-a45b-4fe5-8e37-9c007c12d671",
+        "practices": [],
+        "prerequisites": [],
         "difficulty": 2
       },
       {
