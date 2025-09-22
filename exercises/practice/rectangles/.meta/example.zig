@@ -1,7 +1,5 @@
 /// Returns the number of rectangles in the ASCII diagram `strings`.
-pub fn rectangles(
-    strings: []const []const u8
-) usize {
+pub fn rectangles(strings: []const []const u8) usize {
     const rows: usize = strings.len;
     if (rows == 0) {
         return 0;
@@ -13,14 +11,14 @@ pub fn rectangles(
     }
 
     var count: usize = 0;
-    for (0 .. rows) |top| {
-        for (0 .. columns) |left| {
+    for (0..rows) |top| {
+        for (0..columns) |left| {
             const top_left = strings[top][left];
             if (top_left != '+') {
                 continue;
             }
 
-            for ((top + 1) .. rows) |bottom| {
+            for ((top + 1)..rows) |bottom| {
                 const bottom_left = strings[bottom][left];
                 if (bottom_left != '+') {
                     if (bottom_left != '|') {
@@ -30,7 +28,7 @@ pub fn rectangles(
                     continue;
                 }
 
-                for ((left + 1) .. columns) |right| {
+                for ((left + 1)..columns) |right| {
                     const top_right = strings[top][right];
                     const bottom_right = strings[bottom][right];
                     if (top_right != '+' or bottom_right != '+') {
@@ -41,7 +39,7 @@ pub fn rectangles(
                         continue;
                     }
 
-                    for ((top + 1) .. bottom) |row| {
+                    for ((top + 1)..bottom) |row| {
                         const row_right = strings[row][right];
                         if (row_right != '+' and row_right != '|') {
                             break;
