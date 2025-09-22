@@ -18,7 +18,7 @@ fn appendString(buffer: []u8, offset: *usize, str: []const u8) void {
 pub fn recite(buffer: []u8, start_verse: u32, end_verse: u32) []const u8 {
     var offset: usize = 0;
 
-    for (start_verse..end_verse+1) |verse| {
+    for (start_verse..(end_verse + 1)) |verse| {
         if (verse != start_verse) {
             buffer[offset] = '\n';
             offset += 1;
