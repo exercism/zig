@@ -1,0 +1,18 @@
+{
+  "authors": [
+    "keiravillekode"
+  ],
+  "files": {
+    "solution": [
+      "robot_simulator.zig"
+    ],
+    "test": [
+      "test_robot_simulator.zig"
+    ],
+    "example": [
+      ".meta/example.zig"
+    ]
+  },
+  "blurb": "Write a robot simulator.",
+  "source": "Inspired by an interview question at a famous company."
+}
