@@ -13,15 +13,15 @@ const that_wriggled = " that wriggled and jiggled and tickled inside her";
 const animals = [_][]const u8{ "", "fly", "spider", "bird", "cat", "dog", "goat", "cow", "horse" };
 
 const exclamations = [_][]const u8{
-    "",
-    "I don't know why she swallowed the fly. Perhaps she'll die.",
-    "It wriggled and jiggled and tickled inside her.\n",
-    "How absurd to swallow a bird!\n",
-    "Imagine that, to swallow a cat!\n",
-    "What a hog, to swallow a dog!\n",
-    "Just opened her throat and swallowed a goat!\n",
-    "I don't know how she swallowed a cow!\n",
-    "She's dead, of course!"
+    "", //
+    "I don't know why she swallowed the fly. Perhaps she'll die.", //
+    "It wriggled and jiggled and tickled inside her.\n", //
+    "How absurd to swallow a bird!\n", //
+    "Imagine that, to swallow a cat!\n", //
+    "What a hog, to swallow a dog!\n", //
+    "Just opened her throat and swallowed a goat!\n", //
+    "I don't know how she swallowed a cow!\n", //
+    "She's dead, of course!", //
 };
 
 fn appendString(buffer: []u8, offset: *usize, str: []const u8) void {
@@ -32,7 +32,7 @@ fn appendString(buffer: []u8, offset: *usize, str: []const u8) void {
 pub fn recite(buffer: []u8, start_verse: u32, end_verse: u32) []const u8 {
     var offset: usize = 0;
 
-    for (start_verse..end_verse+1) |verse| {
+    for (start_verse..(end_verse + 1)) |verse| {
         if (verse != start_verse) {
             buffer[offset] = '\n';
             buffer[offset + 1] = '\n';

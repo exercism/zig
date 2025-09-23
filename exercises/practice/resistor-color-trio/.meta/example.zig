@@ -26,7 +26,7 @@ fn colorCode(color: ColorBand) u8 {
         .blue => 6,
         .violet => 7,
         .grey => 8,
-        .white => 9
+        .white => 9,
     };
 }
 
@@ -72,7 +72,7 @@ pub fn label(allocator: mem.Allocator, colors: []const ColorBand) mem.Allocator.
             buffer[2] = '0';
             offset = 3;
         },
-        else => unreachable
+        else => unreachable,
     }
 
     appendString(&buffer, &offset, units[third / 3]);

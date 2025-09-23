@@ -24,19 +24,20 @@ pub fn translate(allocator: mem.Allocator, phrase: []const u8) mem.Allocator.Err
             ch != 'o' and
             ch != 'u' and
             (ch != 'x' or phrase[startIndex + 1] != 'r') and
-            (ch != 'y' or phrase[startIndex + 1] != 't')) {
-
+            (ch != 'y' or phrase[startIndex + 1] != 't'))
+        {
             var prev = ch;
             midIndex += 1;
             ch = phrase[midIndex];
             while (midIndex < phrase.len and
-                   ch != ' ' and
-                   ch != 'a' and
-                   ch != 'e' and
-                   ch != 'i' and
-                   ch != 'o' and
-                   ch != 'u' and
-                   ch != 'y') {
+                ch != ' ' and
+                ch != 'a' and
+                ch != 'e' and
+                ch != 'i' and
+                ch != 'o' and
+                ch != 'u' and
+                ch != 'y')
+            {
                 prev = ch;
                 midIndex += 1;
                 ch = phrase[midIndex];

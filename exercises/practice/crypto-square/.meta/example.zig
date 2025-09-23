@@ -29,7 +29,7 @@ pub fn ciphertext(allocator: mem.Allocator, plaintext: []const u8) mem.Allocator
 
     var result = try allocator.alloc(u8, length);
 
-    for (0 .. length) |index| {
+    for (0..length) |index| {
         result[index] = ' ';
     }
 
