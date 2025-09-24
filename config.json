@@ -575,6 +575,14 @@
         "difficulty": 3
       },
       {
+        "slug": "micro-blog",
+        "name": "Micro Blog",
+        "uuid": "0441593f-23d3-42b8-aa21-b47166c7c86d",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "perfect-numbers",
         "name": "Perfect Numbers",
         "uuid": "2fbd5bd8-a839-42a3-9293-4ad577766a12",

@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "keiravillekode"
+  ],
+  "files": {
+    "solution": [
+      "micro_blog.zig"
+    ],
+    "test": [
+      "test_micro_blog.zig"
+    ],
+    "example": [
+      ".meta/example.zig"
+    ]
+  },
+  "blurb": "Given an input string, truncate it to 5 characters."
+}
