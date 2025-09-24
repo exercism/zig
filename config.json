@@ -876,6 +876,14 @@
         "difficulty": 4
       },
       {
+        "slug": "state-of-tic-tac-toe",
+        "name": "State of Tic-Tac-Toe",
+        "uuid": "ddded9c9-2735-4ac8-8c19-0726de0f6fb0",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "word-count",
         "name": "Word Count",
         "uuid": "809cf06c-442b-4214-83ee-de7cf7e1a6fb",

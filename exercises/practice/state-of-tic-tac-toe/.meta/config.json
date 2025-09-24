@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "keiravillekode"
+  ],
+  "files": {
+    "solution": [
+      "state_of_tic_tac_toe.zig"
+    ],
+    "test": [
+      "test_state_of_tic_tac_toe.zig"
+    ],
+    "example": [
+      ".meta/example.zig"
+    ]
+  },
+  "blurb": "Determine the game state of a match of Tic-Tac-Toe.",
+  "source": "Created by Sascha Mann for the Julia track of the Exercism Research Experiment.",
+  "source_url": "https://github.com/exercism/research_experiment_1/tree/julia-dev/exercises/julia-1-a"
+}
