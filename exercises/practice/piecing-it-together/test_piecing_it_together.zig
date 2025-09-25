@@ -117,3 +117,22 @@ test "puzzle with contradictory data" {
     const actual = jigsawData(puzzle);
     try testing.expectError(PuzzleError.ContradictoryData, actual);
 }
+
+test "very large landscape" {
+    const puzzle = PartialInformation{
+        .border = 1216,
+        .inside = 86625,
+        .format = .landscape,
+    };
+    const expected = FullInformation{
+        .pieces = 87841,
+        .border = 1216,
+        .inside = 86625,
+        .rows = 233,
+        .columns = 377,
+        .aspectRatio = 1.6180257510729614,
+        .format = .landscape,
+    };
+    const actual = try jigsawData(puzzle);
+    try testing.expectEqual(expected, actual);
+}
