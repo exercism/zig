@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "keiravillekode"
+  ],
+  "files": {
+    "solution": [
+      "piecing_it_together.zig"
+    ],
+    "test": [
+      "test_piecing_it_together.zig"
+    ],
+    "example": [
+      ".meta/example.zig"
+    ]
+  },
+  "blurb": "Fill in missing jigsaw puzzle details from partial data",
+  "source": "atk just started another 1000-pieces jigsaw puzzle when this idea hit him",
+  "source_url": "https://github.com/exercism/problem-specifications/pull/2554"
+}
