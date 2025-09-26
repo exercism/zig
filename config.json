@@ -986,6 +986,14 @@
         "difficulty": 6
       },
       {
+        "slug": "piecing-it-together",
+        "name": "Piecing It Together",
+        "uuid": "6e8760d1-f231-42b8-a6ad-ac9cd36528d9",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 6
+      },
+      {
         "slug": "two-bucket",
         "name": "Two Bucket",
         "uuid": "76a612c1-2cff-44f6-903e-9bc7457916f8",
