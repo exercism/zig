@@ -978,6 +978,14 @@
         "difficulty": 6
       },
       {
+        "slug": "two-bucket",
+        "name": "Two Bucket",
+        "uuid": "76a612c1-2cff-44f6-903e-9bc7457916f8",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 6
+      },
+      {
         "slug": "book-store",
         "name": "Book Store",
         "uuid": "cc192edb-a5d5-4f0d-a585-324641235cd5",
