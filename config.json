@@ -954,6 +954,14 @@
         "difficulty": 5
       },
       {
+        "slug": "meetup",
+        "name": "Meetup",
+        "uuid": "a625f21c-b468-478a-b23b-1b3fd02fa2a7",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "pythagorean-triplet",
         "name": "Pythagorean Triplet",
         "uuid": "393d316c-f20a-4d86-859b-8bf0e920fb55",
