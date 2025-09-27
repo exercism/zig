@@ -2,6 +2,9 @@
   "authors": [
     "ee7"
   ],
+  "contributors": [
+    "keiravillekode"
+  ],
   "files": {
     "solution": [
       "word_count.zig"
