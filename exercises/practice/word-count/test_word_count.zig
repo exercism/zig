@@ -11,12 +11,22 @@ fn freeKeysAndDeinit(self: *std.StringHashMap(u32)) void {
     self.deinit();
 }
 
+fn countWordsTest(allocator: std.mem.Allocator, s: []const u8) anyerror!void {
+    var map = try countWords(allocator, s);
+    defer freeKeysAndDeinit(&map);
+}
+
 test "count one word" {
     const s = "word";
     var map = try countWords(testing.allocator, s);
     defer freeKeysAndDeinit(&map);
     try testing.expectEqual(@as(u32, 1), map.count());
     try testing.expectEqual(@as(?u32, 1), map.get("word"));
+    try std.testing.checkAllAllocationFailures(
+        std.testing.allocator,
+        countWordsTest,
+        .{s},
+    );
 }
 
 test "count one of each word" {
@@ -27,6 +37,11 @@ test "count one of each word" {
     try testing.expectEqual(@as(?u32, 1), map.get("one"));
     try testing.expectEqual(@as(?u32, 1), map.get("of"));
     try testing.expectEqual(@as(?u32, 1), map.get("each"));
+    try std.testing.checkAllAllocationFailures(
+        std.testing.allocator,
+        countWordsTest,
+        .{s},
+    );
 }
 
 test "multiple occurrences of a word" {
@@ -39,6 +54,11 @@ test "multiple occurrences of a word" {
     try testing.expectEqual(@as(?u32, 1), map.get("two"));
     try testing.expectEqual(@as(?u32, 1), map.get("red"));
     try testing.expectEqual(@as(?u32, 1), map.get("blue"));
+    try std.testing.checkAllAllocationFailures(
+        std.testing.allocator,
+        countWordsTest,
+        .{s},
+    );
 }
 
 test "handles cramped lists" {
@@ -49,6 +69,11 @@ test "handles cramped lists" {
     try testing.expectEqual(@as(?u32, 1), map.get("one"));
     try testing.expectEqual(@as(?u32, 1), map.get("two"));
     try testing.expectEqual(@as(?u32, 1), map.get("three"));
+    try std.testing.checkAllAllocationFailures(
+        std.testing.allocator,
+        countWordsTest,
+        .{s},
+    );
 }
 
 test "handles expanded lists" {
@@ -59,6 +84,11 @@ test "handles expanded lists" {
     try testing.expectEqual(@as(?u32, 1), map.get("one"));
     try testing.expectEqual(@as(?u32, 1), map.get("two"));
     try testing.expectEqual(@as(?u32, 1), map.get("three"));
+    try std.testing.checkAllAllocationFailures(
+        std.testing.allocator,
+        countWordsTest,
+        .{s},
+    );
 }
 
 test "ignore punctuation" {
@@ -71,6 +101,11 @@ test "ignore punctuation" {
     try testing.expectEqual(@as(?u32, 1), map.get("as"));
     try testing.expectEqual(@as(?u32, 1), map.get("java"));
     try testing.expectEqual(@as(?u32, 1), map.get("javascript"));
+    try std.testing.checkAllAllocationFailures(
+        std.testing.allocator,
+        countWordsTest,
+        .{s},
+    );
 }
 
 test "include numbers" {
@@ -81,6 +116,11 @@ test "include numbers" {
     try testing.expectEqual(@as(?u32, 2), map.get("testing"));
     try testing.expectEqual(@as(?u32, 1), map.get("1"));
     try testing.expectEqual(@as(?u32, 1), map.get("2"));
+    try std.testing.checkAllAllocationFailures(
+        std.testing.allocator,
+        countWordsTest,
+        .{s},
+    );
 }
 
 test "normalize case" {
@@ -90,6 +130,11 @@ test "normalize case" {
     try testing.expectEqual(@as(u32, 2), map.count());
     try testing.expectEqual(@as(?u32, 3), map.get("go"));
     try testing.expectEqual(@as(?u32, 2), map.get("stop"));
+    try std.testing.checkAllAllocationFailures(
+        std.testing.allocator,
+        countWordsTest,
+        .{s},
+    );
 }
 
 test "with apostrophes" {
@@ -105,6 +150,11 @@ test "with apostrophes" {
     try testing.expectEqual(@as(?u32, 1), map.get("you're"));
     try testing.expectEqual(@as(?u32, 1), map.get("getting"));
     try testing.expectEqual(@as(?u32, 1), map.get("it"));
+    try std.testing.checkAllAllocationFailures(
+        std.testing.allocator,
+        countWordsTest,
+        .{s},
+    );
 }
 
 test "with quotations" {
@@ -118,6 +168,11 @@ test "with quotations" {
     try testing.expectEqual(@as(?u32, 1), map.get("between"));
     try testing.expectEqual(@as(?u32, 2), map.get("large"));
     try testing.expectEqual(@as(?u32, 1), map.get("and"));
+    try std.testing.checkAllAllocationFailures(
+        std.testing.allocator,
+        countWordsTest,
+        .{s},
+    );
 }
 
 test "substrings from the beginning" {
@@ -133,6 +188,11 @@ test "substrings from the beginning" {
     try testing.expectEqual(@as(?u32, 1), map.get("apple"));
     try testing.expectEqual(@as(?u32, 1), map.get("and"));
     try testing.expectEqual(@as(?u32, 1), map.get("a"));
+    try std.testing.checkAllAllocationFailures(
+        std.testing.allocator,
+        countWordsTest,
+        .{s},
+    );
 }
 
 test "multiple spaces not detected as a word" {
@@ -142,6 +202,11 @@ test "multiple spaces not detected as a word" {
     try testing.expectEqual(@as(u32, 2), map.count());
     try testing.expectEqual(@as(?u32, 1), map.get("multiple"));
     try testing.expectEqual(@as(?u32, 1), map.get("whitespaces"));
+    try std.testing.checkAllAllocationFailures(
+        std.testing.allocator,
+        countWordsTest,
+        .{s},
+    );
 }
 
 test "alternating word separators not detected as a word" {
@@ -152,6 +217,11 @@ test "alternating word separators not detected as a word" {
     try testing.expectEqual(@as(?u32, 1), map.get("one"));
     try testing.expectEqual(@as(?u32, 1), map.get("two"));
     try testing.expectEqual(@as(?u32, 1), map.get("three"));
+    try std.testing.checkAllAllocationFailures(
+        std.testing.allocator,
+        countWordsTest,
+        .{s},
+    );
 }
 
 test "quotation for word with apostrophe" {
@@ -161,4 +231,9 @@ test "quotation for word with apostrophe" {
     try testing.expectEqual(@as(u32, 2), map.count());
     try testing.expectEqual(@as(?u32, 1), map.get("can"));
     try testing.expectEqual(@as(?u32, 2), map.get("can't"));
+    try std.testing.checkAllAllocationFailures(
+        std.testing.allocator,
+        countWordsTest,
+        .{s},
+    );
 }
