@@ -18,69 +18,59 @@ pub const Robot = struct {
         };
     }
 
-    pub fn move(self: Robot, instructions: []const u8) Robot {
-        var x = self.x;
-        var y = self.y;
-        var direction = self.direction;
-
+    pub fn move(self: *Robot, instructions: []const u8) void {
         for (instructions) |ch| {
             switch (ch) {
                 'R' => {
-                    switch (direction) {
+                    switch (self.direction) {
                         .north => {
-                            direction = .east;
+                            self.direction = .east;
                         },
                         .east => {
-                            direction = .south;
+                            self.direction = .south;
                         },
                         .south => {
-                            direction = .west;
+                            self.direction = .west;
                         },
                         .west => {
-                            direction = .north;
+                            self.direction = .north;
                         },
                     }
                 },
                 'L' => {
-                    switch (direction) {
+                    switch (self.direction) {
                         .north => {
-                            direction = .west;
+                            self.direction = .west;
                         },
                         .east => {
-                            direction = .north;
+                            self.direction = .north;
                         },
                         .south => {
-                            direction = .east;
+                            self.direction = .east;
                         },
                         .west => {
-                            direction = .south;
+                            self.direction = .south;
                         },
                     }
                 },
                 'A' => {
-                    switch (direction) {
+                    switch (self.direction) {
                         .north => {
-                            y += 1;
+                            self.y += 1;
                         },
                         .east => {
-                            x += 1;
+                            self.x += 1;
                         },
                         .south => {
-                            y -= 1;
+                            self.y -= 1;
                         },
                         .west => {
-                            x -= 1;
+                            self.x -= 1;
                         },
                     }
                 },
                 else => {},
             }
         }
-
-        return .{
-            .x = x,
-            .y = y,
-            .direction = direction,
-        };
     }
 };
