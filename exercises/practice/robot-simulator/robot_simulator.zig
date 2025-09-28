@@ -15,7 +15,7 @@ pub const Robot = struct {
         @compileError("please implement the init method");
     }
 
-    pub fn move(self: Robot, instructions: []const u8) Robot {
+    pub fn move(self: *Robot, instructions: []const u8) void {
         _ = self;
         _ = instructions;
         @compileError("please implement the move method");
