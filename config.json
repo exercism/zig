@@ -892,20 +892,6 @@
         "difficulty": 4
       },
       {
-        "slug": "word-count",
-        "name": "Word Count",
-        "uuid": "809cf06c-442b-4214-83ee-de7cf7e1a6fb",
-        "practices": [
-          "allocators",
-          "hashmaps"
-        ],
-        "prerequisites": [
-          "allocators",
-          "hashmaps"
-        ],
-        "difficulty": 4
-      },
-      {
         "slug": "yacht",
         "name": "Yacht",
         "uuid": "f73c7be1-ee3a-4fff-93f2-a8f5ab793ca1",
@@ -1032,6 +1018,20 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 7
+      },
+      {
+        "slug": "word-count",
+        "name": "Word Count",
+        "uuid": "809cf06c-442b-4214-83ee-de7cf7e1a6fb",
+        "practices": [
+          "allocators",
+          "hashmaps"
+        ],
+        "prerequisites": [
+          "allocators",
+          "hashmaps"
+        ],
+        "difficulty": 8
       }
     ]
   },
