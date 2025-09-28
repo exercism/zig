@@ -2,16 +2,23 @@ const std = @import("std");
 const fmt = std.fmt;
 const mem = std.mem;
 
-pub fn recite(allocator: mem.Allocator, words: []const []const u8) mem.Allocator.Error![][]u8 {
-    var main_slice = try allocator.alloc([]u8, words.len);
+fn free(allocator: mem.Allocator, array_list: *std.ArrayList([]u8)) void {
+    for (array_list.items) |item| {
+        allocator.free(item);
+    }
+    array_list.deinit(allocator);
+}
 
-    if (words.len > 1) {
-        for (0..words.len - 1) |i| {
-            main_slice[i] = try fmt.allocPrint(allocator, "For want of a {s} the {s} was lost.\n", .{ words[i], words[i + 1] });
-        }
+pub fn recite(allocator: mem.Allocator, words: []const []const u8) mem.Allocator.Error![][]u8 {
+    var array_list = try std.ArrayList([]u8).initCapacity(allocator, words.len);
+    errdefer free(allocator, &array_list);
+    if (words.len == 0) {
+        return array_list.toOwnedSlice(allocator);
     }
-    if (words.len > 0) {
-        main_slice[main_slice.len - 1] = try fmt.allocPrint(allocator, "And all for the want of a {s}.\n", .{words[0]});
+
+    for (0..(words.len - 1)) |i| {
+        try array_list.append(allocator, try fmt.allocPrint(allocator, "For want of a {s} the {s} was lost.\n", .{ words[i], words[i + 1] }));
     }
-    return main_slice;
+    try array_list.append(allocator, try fmt.allocPrint(allocator, "And all for the want of a {s}.\n", .{words[0]}));
+    return array_list.toOwnedSlice(allocator);
 }

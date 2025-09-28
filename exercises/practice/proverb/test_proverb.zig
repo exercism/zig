@@ -10,12 +10,24 @@ fn free(slices: [][]u8) void {
     testing.allocator.free(slices); // No problem when `slices` has zero length.
 }
 
+fn reciteTest(allocator: std.mem.Allocator, input: []const []const u8, expected: []const []const u8) anyerror!void {
+    const actual = try proverb.recite(allocator, input);
+    defer free(actual);
+
+    for (expected, 0..) |expected_slice, i| {
+        try testing.expectEqualSlices(u8, expected_slice, actual[i]);
+    }
+}
+
 test "zero pieces" {
     const input = [_][]const u8{};
     const expected = [_][]const u8{};
-    const actual = try proverb.recite(testing.allocator, &input);
-    defer free(actual);
-    try testing.expectEqualSlices([]const u8, &expected, actual);
+
+    try std.testing.checkAllAllocationFailures(
+        std.testing.allocator,
+        reciteTest,
+        .{ &input, &expected },
+    );
 }
 
 test "one piece" {
@@ -27,12 +39,11 @@ test "one piece" {
         "And all for the want of a nail.\n",
     };
 
-    const actual = try proverb.recite(testing.allocator, &input);
-    defer free(actual);
-
-    for (expected, 0..) |expected_slice, i| {
-        try testing.expectEqualSlices(u8, expected_slice, actual[i]);
-    }
+    try std.testing.checkAllAllocationFailures(
+        std.testing.allocator,
+        reciteTest,
+        .{ &input, &expected },
+    );
 }
 
 test "two pieces" {
@@ -46,12 +57,11 @@ test "two pieces" {
         "And all for the want of a nail.\n",
     };
 
-    const actual = try proverb.recite(testing.allocator, &input);
-    defer free(actual);
-
-    for (expected, 0..) |expected_slice, i| {
-        try testing.expectEqualSlices(u8, expected_slice, actual[i]);
-    }
+    try std.testing.checkAllAllocationFailures(
+        std.testing.allocator,
+        reciteTest,
+        .{ &input, &expected },
+    );
 }
 
 test "three pieces" {
@@ -67,12 +77,11 @@ test "three pieces" {
         "And all for the want of a nail.\n",
     };
 
-    const actual = try proverb.recite(testing.allocator, &input);
-    defer free(actual);
-
-    for (expected, 0..) |expected_slice, i| {
-        try testing.expectEqualSlices(u8, expected_slice, actual[i]);
-    }
+    try std.testing.checkAllAllocationFailures(
+        std.testing.allocator,
+        reciteTest,
+        .{ &input, &expected },
+    );
 }
 
 test "full proverb" {
@@ -96,12 +105,11 @@ test "full proverb" {
         "And all for the want of a nail.\n",
     };
 
-    const actual = try proverb.recite(testing.allocator, &input);
-    defer free(actual);
-
-    for (expected, 0..) |expected_slice, i| {
-        try testing.expectEqualSlices(u8, expected_slice, actual[i]);
-    }
+    try std.testing.checkAllAllocationFailures(
+        std.testing.allocator,
+        reciteTest,
+        .{ &input, &expected },
+    );
 }
 
 test "four pieces modernized" {
@@ -119,10 +127,9 @@ test "four pieces modernized" {
         "And all for the want of a pin.\n",
     };
 
-    const actual = try proverb.recite(testing.allocator, &input);
-    defer free(actual);
-
-    for (expected, 0..) |expected_slice, i| {
-        try testing.expectEqualSlices(u8, expected_slice, actual[i]);
-    }
+    try std.testing.checkAllAllocationFailures(
+        std.testing.allocator,
+        reciteTest,
+        .{ &input, &expected },
+    );
 }
