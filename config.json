@@ -988,6 +988,14 @@
         "difficulty": 6
       },
       {
+        "slug": "rail-fence-cipher",
+        "name": "Rail Fence Cipher",
+        "uuid": "db06d047-2ae9-4c12-a709-1d0c38e2698e",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 6
+      },
+      {
         "slug": "two-bucket",
         "name": "Two Bucket",
         "uuid": "76a612c1-2cff-44f6-903e-9bc7457916f8",
