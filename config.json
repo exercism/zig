@@ -1124,6 +1124,14 @@
         "difficulty": 6
       },
       {
+        "slug": "binary-search-tree",
+        "name": "Binary Search Tree",
+        "uuid": "44295913-ef1a-4a84-a3fd-1043b4e9d0f8",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 7
+      },
+      {
         "slug": "book-store",
         "name": "Book Store",
         "uuid": "cc192edb-a5d5-4f0d-a585-324641235cd5",
