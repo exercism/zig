@@ -1028,6 +1028,14 @@
         "difficulty": 7
       },
       {
+        "slug": "wordy",
+        "name": "Wordy",
+        "uuid": "5b48be8f-3aff-4d67-a774-51c3a5aa1d66",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 7
+      },
+      {
         "slug": "word-count",
         "name": "Word Count",
         "uuid": "809cf06c-442b-4214-83ee-de7cf7e1a6fb",
