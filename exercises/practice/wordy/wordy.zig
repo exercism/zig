@@ -1,7 +1,7 @@
 const std = @import("std");
 
 pub const ArgumentError = error{
-    UnknownOperation,
+    UnsupportedQuestion,
     SyntaxError,
     DivisionByZero,
 };

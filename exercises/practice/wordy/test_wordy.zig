@@ -82,11 +82,11 @@ test "multiple division" {
 }
 
 test "unknown operation" {
-    try testing.expectError(ArgumentError.UnknownOperation, answer("What is 52 cubed?"));
+    try testing.expectError(ArgumentError.UnsupportedQuestion, answer("What is 52 cubed?"));
 }
 
 test "Non math question" {
-    try testing.expectError(ArgumentError.UnknownOperation, answer("Who is the President of the United States?"));
+    try testing.expectError(ArgumentError.UnsupportedQuestion, answer("Who is the President of the United States?"));
 }
 
 test "reject problem missing an operand" {

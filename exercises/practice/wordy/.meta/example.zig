@@ -3,7 +3,7 @@ const fmt = std.fmt;
 const mem = std.mem;
 
 pub const ArgumentError = error{
-    UnknownOperation,
+    UnsupportedQuestion,
     SyntaxError,
     DivisionByZero,
 };
@@ -23,11 +23,11 @@ pub fn answer(question: []const u8) ArgumentError!i32 {
     var iter = mem.splitScalar(u8, question[0..(question.len - 1)], ' ');
 
     if (!consumeWord(&iter, "What")) {
-        return ArgumentError.UnknownOperation;
+        return ArgumentError.UnsupportedQuestion;
     }
 
     if (!consumeWord(&iter, "is")) {
-        return ArgumentError.UnknownOperation;
+        return ArgumentError.UnsupportedQuestion;
     }
 
     var first = consumeInt(&iter) orelse return ArgumentError.SyntaxError;
@@ -44,12 +44,12 @@ pub fn answer(question: []const u8) ArgumentError!i32 {
             if (consumeInt(&iter)) |_| {
                 return ArgumentError.SyntaxError;
             }
-            return ArgumentError.UnknownOperation;
+            return ArgumentError.UnsupportedQuestion;
         };
 
         if (operation == .multiplied_by or operation == .divided_by) {
             if (!consumeWord(&iter, "by")) {
-                return ArgumentError.UnknownOperation;
+                return ArgumentError.UnsupportedQuestion;
             }
         }
 
