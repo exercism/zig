@@ -10,7 +10,7 @@ test "fly" {
         \\I know an old lady who swallowed a fly.
         \\I don't know why she swallowed the fly. Perhaps she'll die.
     ;
-    const actual = food_chain.recite(&buffer, 1, 1);
+    const actual = try food_chain.recite(&buffer, 1, 1);
     try testing.expectEqualStrings(expected, actual);
 }
 
@@ -23,7 +23,7 @@ test "spider" {
         \\She swallowed the spider to catch the fly.
         \\I don't know why she swallowed the fly. Perhaps she'll die.
     ;
-    const actual = food_chain.recite(&buffer, 2, 2);
+    const actual = try food_chain.recite(&buffer, 2, 2);
     try testing.expectEqualStrings(expected, actual);
 }
 
@@ -37,7 +37,7 @@ test "bird" {
         \\She swallowed the spider to catch the fly.
         \\I don't know why she swallowed the fly. Perhaps she'll die.
     ;
-    const actual = food_chain.recite(&buffer, 3, 3);
+    const actual = try food_chain.recite(&buffer, 3, 3);
     try testing.expectEqualStrings(expected, actual);
 }
 
@@ -52,7 +52,7 @@ test "cat" {
         \\She swallowed the spider to catch the fly.
         \\I don't know why she swallowed the fly. Perhaps she'll die.
     ;
-    const actual = food_chain.recite(&buffer, 4, 4);
+    const actual = try food_chain.recite(&buffer, 4, 4);
     try testing.expectEqualStrings(expected, actual);
 }
 
@@ -68,7 +68,7 @@ test "dog" {
         \\She swallowed the spider to catch the fly.
         \\I don't know why she swallowed the fly. Perhaps she'll die.
     ;
-    const actual = food_chain.recite(&buffer, 5, 5);
+    const actual = try food_chain.recite(&buffer, 5, 5);
     try testing.expectEqualStrings(expected, actual);
 }
 
@@ -85,7 +85,7 @@ test "goat" {
         \\She swallowed the spider to catch the fly.
         \\I don't know why she swallowed the fly. Perhaps she'll die.
     ;
-    const actual = food_chain.recite(&buffer, 6, 6);
+    const actual = try food_chain.recite(&buffer, 6, 6);
     try testing.expectEqualStrings(expected, actual);
 }
 
@@ -103,7 +103,7 @@ test "cow" {
         \\She swallowed the spider to catch the fly.
         \\I don't know why she swallowed the fly. Perhaps she'll die.
     ;
-    const actual = food_chain.recite(&buffer, 7, 7);
+    const actual = try food_chain.recite(&buffer, 7, 7);
     try testing.expectEqualStrings(expected, actual);
 }
 
@@ -114,7 +114,7 @@ test "horse" {
         \\I know an old lady who swallowed a horse.
         \\She's dead, of course!
     ;
-    const actual = food_chain.recite(&buffer, 8, 8);
+    const actual = try food_chain.recite(&buffer, 8, 8);
     try testing.expectEqualStrings(expected, actual);
 }
 
@@ -136,7 +136,7 @@ test "multiple verses" {
         \\She swallowed the spider to catch the fly.
         \\I don't know why she swallowed the fly. Perhaps she'll die.
     ;
-    const actual = food_chain.recite(&buffer, 1, 3);
+    const actual = try food_chain.recite(&buffer, 1, 3);
     try testing.expectEqualStrings(expected, actual);
 }
 
@@ -195,6 +195,6 @@ test "full song" {
         \\I know an old lady who swallowed a horse.
         \\She's dead, of course!
     ;
-    const actual = food_chain.recite(&buffer, 1, 8);
+    const actual = try food_chain.recite(&buffer, 1, 8);
     try testing.expectEqualStrings(expected, actual);
 }
