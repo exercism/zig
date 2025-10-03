@@ -30,7 +30,10 @@ fn appendLine(buffer: []u8, offset: *usize, num_bottles: u32) void {
     appendString(buffer, offset, hanging_on);
 }
 
-pub fn recite(buffer: []u8, start_bottles: u32, take_down: u32) []const u8 {
+pub fn recite(buffer: []u8, start_bottles: u32, take_down: u32) ![]const u8 {
+    std.debug.assert(1 <= take_down);
+    std.debug.assert(take_down <= start_bottles);
+    std.debug.assert(start_bottles <= 10);
     var offset: usize = 0;
 
     var num_bottles = start_bottles;

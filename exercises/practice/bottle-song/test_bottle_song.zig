@@ -12,7 +12,7 @@ test "verse-single verse-first generic verse" {
         \\And if one green bottle should accidentally fall,
         \\There'll be nine green bottles hanging on the wall.
     ;
-    const actual = bottle_song.recite(&buffer, 10, 1);
+    const actual = try bottle_song.recite(&buffer, 10, 1);
     try testing.expectEqualStrings(expected, actual);
 }
 
@@ -25,7 +25,7 @@ test "verse-single verse-last generic verse" {
         \\And if one green bottle should accidentally fall,
         \\There'll be two green bottles hanging on the wall.
     ;
-    const actual = bottle_song.recite(&buffer, 3, 1);
+    const actual = try bottle_song.recite(&buffer, 3, 1);
     try testing.expectEqualStrings(expected, actual);
 }
 
@@ -38,7 +38,7 @@ test "verse-single verse-verse with 2 bottles" {
         \\And if one green bottle should accidentally fall,
         \\There'll be one green bottle hanging on the wall.
     ;
-    const actual = bottle_song.recite(&buffer, 2, 1);
+    const actual = try bottle_song.recite(&buffer, 2, 1);
     try testing.expectEqualStrings(expected, actual);
 }
 
@@ -51,7 +51,7 @@ test "verse-single verse-verse with 1 bottle" {
         \\And if one green bottle should accidentally fall,
         \\There'll be no green bottles hanging on the wall.
     ;
-    const actual = bottle_song.recite(&buffer, 1, 1);
+    const actual = try bottle_song.recite(&buffer, 1, 1);
     try testing.expectEqualStrings(expected, actual);
 }
 
@@ -69,7 +69,7 @@ test "lyrics-multiple verses-first two verses" {
         \\And if one green bottle should accidentally fall,
         \\There'll be eight green bottles hanging on the wall.
     ;
-    const actual = bottle_song.recite(&buffer, 10, 2);
+    const actual = try bottle_song.recite(&buffer, 10, 2);
     try testing.expectEqualStrings(expected, actual);
 }
 
@@ -92,7 +92,7 @@ test "lyrics-multiple verses-last three verses" {
         \\And if one green bottle should accidentally fall,
         \\There'll be no green bottles hanging on the wall.
     ;
-    const actual = bottle_song.recite(&buffer, 3, 3);
+    const actual = try bottle_song.recite(&buffer, 3, 3);
     try testing.expectEqualStrings(expected, actual);
 }
 
@@ -150,6 +150,6 @@ test "lyrics-multiple verses-all verses" {
         \\And if one green bottle should accidentally fall,
         \\There'll be no green bottles hanging on the wall.
     ;
-    const actual = bottle_song.recite(&buffer, 10, 10);
+    const actual = try bottle_song.recite(&buffer, 10, 10);
     try testing.expectEqualStrings(expected, actual);
 }
