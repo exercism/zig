@@ -1020,6 +1020,14 @@
         "difficulty": 6
       },
       {
+        "slug": "flower-field",
+        "name": "Flower Field",
+        "uuid": "afd931dd-33dd-4961-bd2b-251c62fb9311",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 6
+      },
+      {
         "slug": "piecing-it-together",
         "name": "Piecing It Together",
         "uuid": "6e8760d1-f231-42b8-a6ad-ac9cd36528d9",
