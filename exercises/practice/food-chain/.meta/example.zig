@@ -29,7 +29,10 @@ fn appendString(buffer: []u8, offset: *usize, str: []const u8) void {
     offset.* += str.len;
 }
 
-pub fn recite(buffer: []u8, start_verse: u32, end_verse: u32) []const u8 {
+pub fn recite(buffer: []u8, start_verse: u32, end_verse: u32) ![]const u8 {
+    std.debug.assert(start_verse >= 1);
+    std.debug.assert(end_verse >= start_verse);
+    std.debug.assert(end_verse <= 8);
     var offset: usize = 0;
 
     for (start_verse..(end_verse + 1)) |verse| {
