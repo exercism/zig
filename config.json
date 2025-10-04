@@ -1004,6 +1004,14 @@
         "difficulty": 5
       },
       {
+        "slug": "transpose",
+        "name": "Transpose",
+        "uuid": "3cad82e8-b201-4f4c-81eb-8239521be255",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "variable-length-quantity",
         "name": "Variable Length Quantity",
         "uuid": "1ec6b6b1-7c49-4902-a042-3dd05a8fdb09",
