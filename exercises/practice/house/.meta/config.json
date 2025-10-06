@@ -1,5 +1,7 @@
 {
-  "authors": [],
+  "authors": [
+    "keiravillekode"
+  ],
   "files": {
     "solution": [
       "house.zig"
