@@ -797,6 +797,14 @@
         "difficulty": 4
       },
       {
+        "slug": "flatten-array",
+        "name": "Flatten Array",
+        "uuid": "21272433-70b7-490a-9451-5701d4a9c54c",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "house",
         "name": "House",
         "uuid": "af541c61-e752-49f3-aa0e-8d96a738d0f1",
