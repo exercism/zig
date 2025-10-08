@@ -1028,6 +1028,14 @@
         "difficulty": 5
       },
       {
+        "slug": "series",
+        "name": "Series",
+        "uuid": "fc7d90fa-0bb6-4560-8dee-ddf82adf412c",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "spiral-matrix",
         "name": "Spiral Matrix",
         "uuid": "9d64ac83-82a9-44eb-a9c5-214c034e3ce4",
