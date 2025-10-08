@@ -1132,6 +1132,14 @@
         "difficulty": 7
       },
       {
+        "slug": "intergalactic-transmission",
+        "name": "Intergalactic Transmission",
+        "uuid": "241c4ac4-9fbc-488d-a7a6-ad4fccc72acf",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
+      },
+      {
         "slug": "palindrome-products",
         "name": "Palindrome Products",
         "uuid": "4f4d859e-18c2-4a80-ad95-5f2427dafc9d",
