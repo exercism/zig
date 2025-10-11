@@ -12,6 +12,7 @@ pub fn decode(allocator: mem.Allocator, msg: []const u8, rails: u3) mem.Allocato
 }
 
 fn cipher(allocator: mem.Allocator, msg: []const u8, rails: u3, decipher: bool) mem.Allocator.Error![]u8 {
+    std.debug.assert(rails >= 2);
     var table: [8]usize = undefined;
     @memset(&table, 0);
     var rail: i4 = 0;
