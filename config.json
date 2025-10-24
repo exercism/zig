@@ -1108,6 +1108,14 @@
         "difficulty": 6
       },
       {
+        "slug": "split-second-stopwatch",
+        "name": "Split-Second Stopwatch",
+        "uuid": "ffd410bf-09cf-44f4-99db-c8a35c611112",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 6
+      },
+      {
         "slug": "two-bucket",
         "name": "Two Bucket",
         "uuid": "76a612c1-2cff-44f6-903e-9bc7457916f8",
