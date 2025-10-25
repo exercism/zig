@@ -1184,6 +1184,14 @@
           "hashmaps"
         ],
         "difficulty": 8
+      },
+      {
+        "slug": "zebra-puzzle",
+        "name": "Zebra Puzzle",
+        "uuid": "da95c704-4565-4673-8e2b-463969709e49",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 9
       }
     ]
   },
