@@ -1156,6 +1156,14 @@
         "difficulty": 7
       },
       {
+        "slug": "connect",
+        "name": "Connect",
+        "uuid": "a6f839d1-2702-4bb9-87f5-c8a6b43c0ebc",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
+      },
+      {
         "slug": "intergalactic-transmission",
         "name": "Intergalactic Transmission",
         "uuid": "241c4ac4-9fbc-488d-a7a6-ad4fccc72acf",
