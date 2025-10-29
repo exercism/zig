@@ -40,7 +40,7 @@ pub const Node = struct {
         }
     }
 
-    fn write(self: *Node, list: *std.array_list.Managed(i32)) mem.Allocator.Error!void {
+    fn write(self: *const Node, list: *std.array_list.Managed(i32)) mem.Allocator.Error!void {
         if (self.left) |child| {
             try child.write(list);
         }
@@ -75,8 +75,8 @@ pub const Tree = struct {
         }
     }
 
-    pub fn sortedData(self: *Tree) mem.Allocator.Error![]i32 {
-        var list = std.array_list.Managed(i32).init(self.allocator);
+    pub fn sortedData(self: *const Tree, allocator: mem.Allocator) mem.Allocator.Error![]i32 {
+        var list = std.array_list.Managed(i32).init(allocator);
         defer list.deinit();
         if (self.root) |child| {
             try child.write(&list);

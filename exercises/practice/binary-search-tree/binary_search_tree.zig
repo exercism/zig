@@ -26,7 +26,7 @@ pub const Tree = struct {
         @compileError("please implement the insert method");
     }
 
-    pub fn sortedData(self: *Tree) mem.Allocator.Error![]i32 {
+    pub fn sortedData(self: *const Tree, allocator: mem.Allocator) mem.Allocator.Error![]i32 {
         _ = self;
         @compileError("please implement the sortedData method");
     }
