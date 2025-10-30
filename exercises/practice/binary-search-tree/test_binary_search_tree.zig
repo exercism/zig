@@ -25,7 +25,7 @@ test "data is retained" {
         try testing.expectEqual(null, o.left);
         try testing.expectEqual(null, o.right);
     } else {
-        unreachable;
+        try testing.expectEqual(false, true); // tree.root should not be null
     }
 }
 
@@ -41,11 +41,11 @@ test "insert data at proper node-smaller number at left node" {
             try testing.expectEqual(null, l.left);
             try testing.expectEqual(null, l.right);
         } else {
-            unreachable;
+            try testing.expectEqual(false, true); // o.left should not be null
         }
         try testing.expectEqual(null, o.right);
     } else {
-        unreachable;
+        try testing.expectEqual(false, true); // tree.root should not be null
     }
 }
 
@@ -61,11 +61,11 @@ test "insert data at proper node-same number at left node" {
             try testing.expectEqual(null, l.left);
             try testing.expectEqual(null, l.right);
         } else {
-            unreachable;
+            try testing.expectEqual(false, true); // o.left should not be null
         }
         try testing.expectEqual(null, o.right);
     } else {
-        unreachable;
+        try testing.expectEqual(false, true); // tree.root should not be null
     }
 }
 
@@ -82,10 +82,10 @@ test "insert data at proper node-greater number at right node" {
             try testing.expectEqual(null, r.left);
             try testing.expectEqual(null, r.right);
         } else {
-            unreachable;
+            try testing.expectEqual(false, true); // o.right should not be null
         }
     } else {
-        unreachable;
+        try testing.expectEqual(false, true); // tree.root should not be null
     }
 }
 
@@ -108,17 +108,17 @@ test "can create complex tree" {
                 try testing.expectEqual(null, ll.left);
                 try testing.expectEqual(null, ll.right);
             } else {
-                unreachable;
+                try testing.expectEqual(false, true); // l.left should not be null
             }
             if (l.right) |lr| {
                 try testing.expectEqual(3, lr.data);
                 try testing.expectEqual(null, lr.left);
                 try testing.expectEqual(null, lr.right);
             } else {
-                unreachable;
+                try testing.expectEqual(false, true); // l.right should not be null
             }
         } else {
-            unreachable;
+            try testing.expectEqual(false, true); // o.left should not be null
         }
         if (o.right) |r| {
             try testing.expectEqual(6, r.data);
@@ -127,20 +127,20 @@ test "can create complex tree" {
                 try testing.expectEqual(null, rl.left);
                 try testing.expectEqual(null, rl.right);
             } else {
-                unreachable;
+                try testing.expectEqual(false, true); // r.left should not be null
             }
             if (r.right) |rr| {
                 try testing.expectEqual(7, rr.data);
                 try testing.expectEqual(null, rr.left);
                 try testing.expectEqual(null, rr.right);
             } else {
-                unreachable;
+                try testing.expectEqual(false, true); // r.right should not be null
             }
         } else {
-            unreachable;
+            try testing.expectEqual(false, true); // o.right should not be null
         }
     } else {
-        unreachable;
+        try testing.expectEqual(false, true); // tree.root should not be null
     }
 }
 
