@@ -232,3 +232,17 @@ test "large garden" {
         .{ &expected, &garden },
     );
 }
+
+test "multiple adjacent flowers" {
+    const garden = [_][]const u8{
+        " ** ", //
+    };
+    const expected = [_][]const u8{
+        "1**1", //
+    };
+    try std.testing.checkAllAllocationFailures(
+        std.testing.allocator,
+        annotateTest,
+        .{ &expected, &garden },
+    );
+}

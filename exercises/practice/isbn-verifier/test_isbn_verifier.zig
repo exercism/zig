@@ -15,7 +15,7 @@ test "valid ISBN with a check digit of 10" {
     try testing.expect(isValidIsbn10("3-598-21507-X"));
 }
 
-test "check digit is a character other than x" {
+test "check digit is a character other than X" {
     try testing.expect(!isValidIsbn10("3-598-21507-A"));
 }
 
@@ -27,15 +27,19 @@ test "invalid character in ISBN is not treated as zero" {
     try testing.expect(!isValidIsbn10("3-598-P1581-X"));
 }
 
-test "x is only valid as a check digit" {
+test "X is only valid as a check digit" {
     try testing.expect(!isValidIsbn10("3-598-2X507-9"));
+}
+
+test "X is not substituted by the value 10" {
+    try testing.expect(!isValidIsbn10("3-598-2X507-5"));
 }
 
 test "valid ISBN without separating dashes" {
     try testing.expect(isValidIsbn10("3598215088"));
 }
 
-test "ISBN without separating dashes and x as check digit" {
+test "ISBN without separating dashes and X as check digit" {
     try testing.expect(isValidIsbn10("359821507X"));
 }
 
@@ -55,7 +59,7 @@ test "ISBN without check digit" {
     try testing.expect(!isValidIsbn10("3-598-21507"));
 }
 
-test "check digit of x should not be used for 0" {
+test "check digit of X should not be used for 0" {
     try testing.expect(!isValidIsbn10("3-598-21515-X"));
 }
 
