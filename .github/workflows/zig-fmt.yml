@@ -10,7 +10,7 @@ jobs:
       uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3
 
     - name: Install Zig
-      uses: mlugg/setup-zig@8d6198c65fb0feaa111df26e6b467fea8345e46f
+      uses: mlugg/setup-zig@fa65c4058643678a4e4a9a60513944a7d8d35440
       with:
         version: 0.15.1
 
