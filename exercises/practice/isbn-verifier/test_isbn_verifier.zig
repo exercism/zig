@@ -31,6 +31,10 @@ test "X is only valid as a check digit" {
     try testing.expect(!isValidIsbn10("3-598-2X507-9"));
 }
 
+test "only one check digit is allowed" {
+    try testing.expect(!isValidIsbn10("3-598-21508-96"));
+}
+
 test "X is not substituted by the value 10" {
     try testing.expect(!isValidIsbn10("3-598-2X507-5"));
 }
