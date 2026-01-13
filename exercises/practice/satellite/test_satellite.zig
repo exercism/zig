@@ -82,3 +82,129 @@ test "Reject traversals with repeated items" {
     const inorder = [_]u8{ 'b', 'a', 'a' };
     try testing.expectError(TraversalError.NonUniqueItems, Tree.initFromTraversals(testing.allocator, &preorder, &inorder));
 }
+
+test "A degenerate binary tree" {
+    const preorder = [_]u8{ 'a', 'b', 'c', 'd' };
+    const inorder = [_]u8{ 'd', 'c', 'b', 'a' };
+    var tree = try Tree.initFromTraversals(testing.allocator, &preorder, &inorder);
+    defer tree.deinit();
+    if (tree.root) |o| {
+        try testing.expectEqual('a', o.data);
+        if (o.left) |l| {
+            try testing.expectEqual('b', l.data);
+            if (l.left) |ll| {
+                try testing.expectEqual('c', ll.data);
+                if (ll.left) |lll| {
+                    try testing.expectEqual('d', lll.data);
+                    try testing.expectEqual(null, lll.left);
+                    try testing.expectEqual(null, lll.right);
+                } else {
+                    try testing.expectEqual(false, true); // ll.left should not be null
+                }
+                try testing.expectEqual(null, ll.right);
+            } else {
+                try testing.expectEqual(false, true); // l.left should not be null
+            }
+            try testing.expectEqual(null, l.right);
+        } else {
+            try testing.expectEqual(false, true); // o.left should not be null
+        }
+        try testing.expectEqual(null, o.right);
+    } else {
+        try testing.expectEqual(false, true); // tree.root should not be null
+    }
+}
+
+test "Another degenerate binary tree" {
+    const preorder = [_]u8{ 'a', 'b', 'c', 'd' };
+    const inorder = [_]u8{ 'a', 'b', 'c', 'd' };
+    var tree = try Tree.initFromTraversals(testing.allocator, &preorder, &inorder);
+    defer tree.deinit();
+    if (tree.root) |o| {
+        try testing.expectEqual('a', o.data);
+        try testing.expectEqual(null, o.left);
+        if (o.right) |r| {
+            try testing.expectEqual('b', r.data);
+            try testing.expectEqual(null, r.left);
+            if (r.right) |rr| {
+                try testing.expectEqual('c', rr.data);
+                try testing.expectEqual(null, rr.left);
+                if (rr.right) |rrr| {
+                    try testing.expectEqual('d', rrr.data);
+                    try testing.expectEqual(null, rrr.left);
+                    try testing.expectEqual(null, rrr.right);
+                } else {
+                    try testing.expectEqual(false, true); // rr.right should not be null
+                }
+            } else {
+                try testing.expectEqual(false, true); // r.right should not be null
+            }
+        } else {
+            try testing.expectEqual(false, true); // o.right should not be null
+        }
+    } else {
+        try testing.expectEqual(false, true); // tree.root should not be null
+    }
+}
+
+test "Tree with many more items" {
+    const preorder = [_]u8{ 'a', 'b', 'd', 'g', 'h', 'c', 'e', 'f', 'i' };
+    const inorder = [_]u8{ 'g', 'd', 'h', 'b', 'a', 'e', 'c', 'i', 'f' };
+    var tree = try Tree.initFromTraversals(testing.allocator, &preorder, &inorder);
+    defer tree.deinit();
+    if (tree.root) |o| {
+        try testing.expectEqual('a', o.data);
+        if (o.left) |l| {
+            try testing.expectEqual('b', l.data);
+            if (l.left) |ll| {
+                try testing.expectEqual('d', ll.data);
+                if (ll.left) |lll| {
+                    try testing.expectEqual('g', lll.data);
+                    try testing.expectEqual(null, lll.left);
+                    try testing.expectEqual(null, lll.right);
+                } else {
+                    try testing.expectEqual(false, true); // ll.left should not be null
+                }
+                if (ll.right) |llr| {
+                    try testing.expectEqual('h', llr.data);
+                    try testing.expectEqual(null, llr.left);
+                    try testing.expectEqual(null, llr.right);
+                } else {
+                    try testing.expectEqual(false, true); // ll.right should not be null
+                }
+            } else {
+                try testing.expectEqual(false, true); // l.left should not be null
+            }
+            try testing.expectEqual(null, l.right);
+        } else {
+            try testing.expectEqual(false, true); // o.left should not be null
+        }
+        if (o.right) |r| {
+            try testing.expectEqual('c', r.data);
+            if (r.left) |rl| {
+                try testing.expectEqual('e', rl.data);
+                try testing.expectEqual(null, rl.left);
+                try testing.expectEqual(null, rl.right);
+            } else {
+                try testing.expectEqual(false, true); // r.left should not be null
+            }
+            if (r.right) |rr| {
+                try testing.expectEqual('f', rr.data);
+                if (rr.left) |rrl| {
+                    try testing.expectEqual('i', rrl.data);
+                    try testing.expectEqual(null, rrl.left);
+                    try testing.expectEqual(null, rrl.right);
+                } else {
+                    try testing.expectEqual(false, true); // rr.left should not be null
+                }
+                try testing.expectEqual(null, rr.right);
+            } else {
+                try testing.expectEqual(false, true); // r.right should not be null
+            }
+        } else {
+            try testing.expectEqual(false, true); // o.right should not be null
+        }
+    } else {
+        try testing.expectEqual(false, true); // tree.root should not be null
+    }
+}
