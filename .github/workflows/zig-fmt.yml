@@ -12,7 +12,7 @@ jobs:
     - name: Install Zig
       uses: mlugg/setup-zig@fa65c4058643678a4e4a9a60513944a7d8d35440
       with:
-        version: 0.15.1
+        version: 0.15.2
 
     - name: Check that Zig code is formatted
       run: |
