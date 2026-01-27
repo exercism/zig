@@ -41,6 +41,12 @@ test "large abundant number is classified correctly" {
     try testing.expectEqual(expected, actual);
 }
 
+test "perfect square abundant number is classified correctly" {
+    const expected = Classification.abundant;
+    const actual = classify(196);
+    try testing.expectEqual(expected, actual);
+}
+
 test "smallest prime deficient number is classified correctly" {
     const expected = Classification.deficient;
     const actual = classify(2);
