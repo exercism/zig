@@ -17,7 +17,7 @@ jobs:
     - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
 
     - name: Install Zig
-      uses: mlugg/setup-zig@fa65c4058643678a4e4a9a60513944a7d8d35440
+      uses: mlugg/setup-zig@d1434d08867e3ee9daa34448df10607b98908d29
       with:
         version: 0.15.2
 
