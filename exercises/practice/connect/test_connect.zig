@@ -68,6 +68,26 @@ test "X wins crossing from left to right" {
     try testing.expectEqual('X', winner(testing.allocator, &board));
 }
 
+test "X wins with left-hand dead end fork" {
+    const board = [_][]const u8{
+        ". . X .", //
+        " X X . .", //
+        "  . X X X", //
+        "   O O O O",
+    };
+    try testing.expectEqual('X', winner(testing.allocator, &board));
+}
+
+test "X wins with right-hand dead end fork" {
+    const board = [_][]const u8{
+        ". . X X", //
+        " X X . .", //
+        "  . X X .", //
+        "   O O O O",
+    };
+    try testing.expectEqual('X', winner(testing.allocator, &board));
+}
+
 test "O wins crossing from top to bottom" {
     const board = [_][]const u8{
         ". O . .", //
