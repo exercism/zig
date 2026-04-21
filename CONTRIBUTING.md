@@ -4,15 +4,17 @@ We 💙 our community but **this repository does not accept unsolicited pull req
 
 Please read this [community blog post][guidelines] for details.
 
-If you want to contribute or have a bug to report, please open a topic [in the forum][zig-forum] first, so we can discuss things before we do things.
+## How to contribute
 
-Once you have a go-ahead from one of the maintainers, a pull request must adhere to [Exercism's style guide][style].
+1. Open a topic [in the forum][zig-forum] — for bug reports, feature ideas, or questions about the track, including anything you'd otherwise file as an issue.
+1. Discuss the proposal with the maintainers.
+1. Once you have a go-ahead, submit a pull request that adheres to [Exercism's style guide][style].
 
 If the PR touches an existing exercise, please also consider [this warning][unnecessary-test-runs] in the documentation for [building tracks][building-tracks].
 
 ## Running Tests
 
-Exercises can be tested against the locally installed Zig compliler using
+Exercises can be tested against the locally installed Zig compiler using
 
 ```bash
 bin/run-tests
