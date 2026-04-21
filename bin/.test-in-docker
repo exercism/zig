@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+# This script is meant to be run in the docker container of zig-test-runner
+
+all_slugs="$*"
+
+exit_code=0
+
+for slug in $all_slugs; do
+  snake="${slug//-/_}"
+  local_exit_code=0
+
+  rm -rf /tmp/solution
+  cp -r "/exercises/practice/${slug}" /tmp/solution
+
+  # Integration test: Check if the example solution passes the tests
+  # as run by the zig-test-runner similiarly to a student submitting
+  # their solution.
+  cp /tmp/solution/.meta/example.zig "/tmp/solution/${snake}.zig"
+  bin/run.sh "${slug}" /tmp/solution /tmp/solution > /dev/null
+  solution_pattern=$(cat /tmp/solution/results.json | jq -r tostring | grep "{\"version\":2,\"status\":\"pass\"")
+
+  errors=""
+
+  if [ -z "$solution_pattern" ]; then
+    errors="${errors}\n\nSolution is incorrect:\n$(cat /tmp/solution/results.json | jq -r '.message')"
+    local_exit_code=1;
+  fi
+
+  if [ $local_exit_code = 0 ]; then
+    echo -e "${slug}: \e[32mPASSED\e[0m"
+  else
+    exit_code=1
+    echo -e "${slug}: \e[31mFAILED\e[0m\n${errors}\n\n"
+  fi
+done
+
+exit ${exit_code}
