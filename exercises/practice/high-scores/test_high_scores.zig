@@ -38,3 +38,8 @@ test "Top 3 scores-Personal top when there is only one" {
     const scores = &[_]i32{40};
     try testing.expectEqualSlices(i32, &[_]i32{40}, HighScores.init(scores).personalTopThree());
 }
+
+test "Latest score can be outside top three" {
+    const scores = &[_]i32{ 80, 70, 90, 10, 20, 30 };
+    try testing.expectEqual(30, HighScores.init(scores).latest());
+}
