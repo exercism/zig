@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "keiravillekode"
+  ],
+  "files": {
+    "solution": [
+      "save_the_cow.zig"
+    ],
+    "test": [
+      "test_save_the_cow.zig"
+    ],
+    "example": [
+      ".meta/example.zig"
+    ]
+  },
+  "blurb": "Implement a word-guessing game."
+}
