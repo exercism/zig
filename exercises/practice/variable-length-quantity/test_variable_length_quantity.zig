@@ -48,7 +48,7 @@ test "encode - smallest double byte" {
 
 test "encode - arbitrary double byte" {
     const expected = [_]u8{ 192, 0 };
-    const integers = [_]u32{8192};
+    const integers = [_]u32{8_192};
     const actual = try encode(testing.allocator, &integers);
     defer testing.allocator.free(actual);
     try testing.expectEqualSlices(u8, &expected, actual);
@@ -64,7 +64,7 @@ test "encode - asymmetric double byte" {
 
 test "encode - largest double byte" {
     const expected = [_]u8{ 255, 127 };
-    const integers = [_]u32{16383};
+    const integers = [_]u32{16_383};
     const actual = try encode(testing.allocator, &integers);
     defer testing.allocator.free(actual);
     try testing.expectEqualSlices(u8, &expected, actual);
@@ -72,7 +72,7 @@ test "encode - largest double byte" {
 
 test "encode - smallest triple byte" {
     const expected = [_]u8{ 129, 128, 0 };
-    const integers = [_]u32{16384};
+    const integers = [_]u32{16_384};
     const actual = try encode(testing.allocator, &integers);
     defer testing.allocator.free(actual);
     try testing.expectEqualSlices(u8, &expected, actual);
@@ -80,7 +80,7 @@ test "encode - smallest triple byte" {
 
 test "encode - arbitrary triple byte" {
     const expected = [_]u8{ 192, 128, 0 };
-    const integers = [_]u32{1048576};
+    const integers = [_]u32{1_048_576};
     const actual = try encode(testing.allocator, &integers);
     defer testing.allocator.free(actual);
     try testing.expectEqualSlices(u8, &expected, actual);
@@ -88,7 +88,7 @@ test "encode - arbitrary triple byte" {
 
 test "encode - asymmetric triple byte" {
     const expected = [_]u8{ 135, 171, 28 };
-    const integers = [_]u32{120220};
+    const integers = [_]u32{120_220};
     const actual = try encode(testing.allocator, &integers);
     defer testing.allocator.free(actual);
     try testing.expectEqualSlices(u8, &expected, actual);
@@ -96,7 +96,7 @@ test "encode - asymmetric triple byte" {
 
 test "encode - largest triple byte" {
     const expected = [_]u8{ 255, 255, 127 };
-    const integers = [_]u32{2097151};
+    const integers = [_]u32{2_097_151};
     const actual = try encode(testing.allocator, &integers);
     defer testing.allocator.free(actual);
     try testing.expectEqualSlices(u8, &expected, actual);
@@ -104,7 +104,7 @@ test "encode - largest triple byte" {
 
 test "encode - smallest quadruple byte" {
     const expected = [_]u8{ 129, 128, 128, 0 };
-    const integers = [_]u32{2097152};
+    const integers = [_]u32{2_097_152};
     const actual = try encode(testing.allocator, &integers);
     defer testing.allocator.free(actual);
     try testing.expectEqualSlices(u8, &expected, actual);
@@ -112,7 +112,7 @@ test "encode - smallest quadruple byte" {
 
 test "encode - arbitrary quadruple byte" {
     const expected = [_]u8{ 192, 128, 128, 0 };
-    const integers = [_]u32{134217728};
+    const integers = [_]u32{134_217_728};
     const actual = try encode(testing.allocator, &integers);
     defer testing.allocator.free(actual);
     try testing.expectEqualSlices(u8, &expected, actual);
@@ -120,7 +120,7 @@ test "encode - arbitrary quadruple byte" {
 
 test "encode - asymmetric quadruple byte" {
     const expected = [_]u8{ 129, 213, 238, 4 };
-    const integers = [_]u32{3503876};
+    const integers = [_]u32{3_503_876};
     const actual = try encode(testing.allocator, &integers);
     defer testing.allocator.free(actual);
     try testing.expectEqualSlices(u8, &expected, actual);
@@ -128,7 +128,7 @@ test "encode - asymmetric quadruple byte" {
 
 test "encode - largest quadruple byte" {
     const expected = [_]u8{ 255, 255, 255, 127 };
-    const integers = [_]u32{268435455};
+    const integers = [_]u32{268_435_455};
     const actual = try encode(testing.allocator, &integers);
     defer testing.allocator.free(actual);
     try testing.expectEqualSlices(u8, &expected, actual);
@@ -136,7 +136,7 @@ test "encode - largest quadruple byte" {
 
 test "encode - smallest quintuple byte" {
     const expected = [_]u8{ 129, 128, 128, 128, 0 };
-    const integers = [_]u32{268435456};
+    const integers = [_]u32{268_435_456};
     const actual = try encode(testing.allocator, &integers);
     defer testing.allocator.free(actual);
     try testing.expectEqualSlices(u8, &expected, actual);
@@ -144,7 +144,7 @@ test "encode - smallest quintuple byte" {
 
 test "encode - arbitrary quintuple byte" {
     const expected = [_]u8{ 143, 248, 128, 128, 0 };
-    const integers = [_]u32{4278190080};
+    const integers = [_]u32{4_278_190_080};
     const actual = try encode(testing.allocator, &integers);
     defer testing.allocator.free(actual);
     try testing.expectEqualSlices(u8, &expected, actual);
@@ -152,7 +152,7 @@ test "encode - arbitrary quintuple byte" {
 
 test "encode - asymmetric quintuple byte" {
     const expected = [_]u8{ 136, 179, 149, 194, 5 };
-    const integers = [_]u32{2254790917};
+    const integers = [_]u32{2_254_790_917};
     const actual = try encode(testing.allocator, &integers);
     defer testing.allocator.free(actual);
     try testing.expectEqualSlices(u8, &expected, actual);
@@ -160,7 +160,7 @@ test "encode - asymmetric quintuple byte" {
 
 test "encode - maximum 32-bit integer input" {
     const expected = [_]u8{ 143, 255, 255, 255, 127 };
-    const integers = [_]u32{4294967295};
+    const integers = [_]u32{4_294_967_295};
     const actual = try encode(testing.allocator, &integers);
     defer testing.allocator.free(actual);
     try testing.expectEqualSlices(u8, &expected, actual);
@@ -176,7 +176,7 @@ test "encode - two single-byte values" {
 
 test "encode - two multi-byte values" {
     const expected = [_]u8{ 129, 128, 0, 200, 232, 86 };
-    const integers = [_]u32{ 16384, 1193046 };
+    const integers = [_]u32{ 16_384, 1_193_046 };
     const actual = try encode(testing.allocator, &integers);
     defer testing.allocator.free(actual);
     try testing.expectEqualSlices(u8, &expected, actual);
@@ -184,7 +184,7 @@ test "encode - two multi-byte values" {
 
 test "encode - many multi-byte values" {
     const expected = [_]u8{ 192, 0, 200, 232, 86, 255, 255, 255, 127, 0, 255, 127, 129, 128, 0 };
-    const integers = [_]u32{ 8192, 1193046, 268435455, 0, 16383, 16384 };
+    const integers = [_]u32{ 8_192, 1_193_046, 268_435_455, 0, 16_383, 16_384 };
     const actual = try encode(testing.allocator, &integers);
     defer testing.allocator.free(actual);
     try testing.expectEqualSlices(u8, &expected, actual);
@@ -199,7 +199,7 @@ test "decode - one byte" {
 }
 
 test "decode - two bytes" {
-    const expected = [_]u32{8192};
+    const expected = [_]u32{8_192};
     const integers = [_]u8{ 192, 0 };
     const actual = try decode(testing.allocator, &integers);
     defer testing.allocator.free(actual);
@@ -207,7 +207,7 @@ test "decode - two bytes" {
 }
 
 test "decode - three bytes" {
-    const expected = [_]u32{2097151};
+    const expected = [_]u32{2_097_151};
     const integers = [_]u8{ 255, 255, 127 };
     const actual = try decode(testing.allocator, &integers);
     defer testing.allocator.free(actual);
@@ -215,7 +215,7 @@ test "decode - three bytes" {
 }
 
 test "decode - four bytes" {
-    const expected = [_]u32{2097152};
+    const expected = [_]u32{2_097_152};
     const integers = [_]u8{ 129, 128, 128, 0 };
     const actual = try decode(testing.allocator, &integers);
     defer testing.allocator.free(actual);
@@ -223,7 +223,7 @@ test "decode - four bytes" {
 }
 
 test "decode - maximum 32-bit integer" {
-    const expected = [_]u32{4294967295};
+    const expected = [_]u32{4_294_967_295};
     const integers = [_]u8{ 143, 255, 255, 255, 127 };
     const actual = try decode(testing.allocator, &integers);
     defer testing.allocator.free(actual);
@@ -243,7 +243,7 @@ test "decode - incomplete sequence causes error, even if value is zero" {
 }
 
 test "decode - multiple values" {
-    const expected = [_]u32{ 8192, 1193046, 268435455, 0, 16383, 16384 };
+    const expected = [_]u32{ 8_192, 1_193_046, 268_435_455, 0, 16_383, 16_384 };
     const integers = [_]u8{ 192, 0, 200, 232, 86, 255, 255, 255, 127, 0, 255, 127, 129, 128, 0 };
     const actual = try decode(testing.allocator, &integers);
     defer testing.allocator.free(actual);

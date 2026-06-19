@@ -10,10 +10,7 @@ test "slices of one from one" {
     };
     const actual = try slices(1, testing.allocator, series);
     defer testing.allocator.free(actual);
-    try testing.expectEqual(expected.len, actual.len);
-    for (expected, 0..) |expected_slice, i| {
-        try testing.expectEqualStrings(&expected_slice, &actual[i]);
-    }
+    try testing.expectEqualSlices([1]u8, &expected, actual);
 }
 
 test "slices of one from two" {
@@ -24,10 +21,7 @@ test "slices of one from two" {
     };
     const actual = try slices(1, testing.allocator, series);
     defer testing.allocator.free(actual);
-    try testing.expectEqual(expected.len, actual.len);
-    for (expected, 0..) |expected_slice, i| {
-        try testing.expectEqualStrings(&expected_slice, &actual[i]);
-    }
+    try testing.expectEqualSlices([1]u8, &expected, actual);
 }
 
 test "slices of two" {
@@ -37,10 +31,7 @@ test "slices of two" {
     };
     const actual = try slices(2, testing.allocator, series);
     defer testing.allocator.free(actual);
-    try testing.expectEqual(expected.len, actual.len);
-    for (expected, 0..) |expected_slice, i| {
-        try testing.expectEqualStrings(&expected_slice, &actual[i]);
-    }
+    try testing.expectEqualSlices([2]u8, &expected, actual);
 }
 
 test "slices of two overlap" {
@@ -52,10 +43,7 @@ test "slices of two overlap" {
     };
     const actual = try slices(2, testing.allocator, series);
     defer testing.allocator.free(actual);
-    try testing.expectEqual(expected.len, actual.len);
-    for (expected, 0..) |expected_slice, i| {
-        try testing.expectEqualStrings(&expected_slice, &actual[i]);
-    }
+    try testing.expectEqualSlices([2]u8, &expected, actual);
 }
 
 test "slices can include duplicates" {
@@ -68,10 +56,7 @@ test "slices can include duplicates" {
     };
     const actual = try slices(3, testing.allocator, series);
     defer testing.allocator.free(actual);
-    try testing.expectEqual(expected.len, actual.len);
-    for (expected, 0..) |expected_slice, i| {
-        try testing.expectEqualStrings(&expected_slice, &actual[i]);
-    }
+    try testing.expectEqualSlices([3]u8, &expected, actual);
 }
 
 test "slices of a long series" {
@@ -88,10 +73,7 @@ test "slices of a long series" {
     };
     const actual = try slices(5, testing.allocator, series);
     defer testing.allocator.free(actual);
-    try testing.expectEqual(expected.len, actual.len);
-    for (expected, 0..) |expected_slice, i| {
-        try testing.expectEqualStrings(&expected_slice, &actual[i]);
-    }
+    try testing.expectEqualSlices([5]u8, &expected, actual);
 }
 
 test "slice length is too large" {
@@ -99,10 +81,7 @@ test "slice length is too large" {
     const expected = [_][6]u8{};
     const actual = try slices(6, testing.allocator, series);
     defer testing.allocator.free(actual);
-    try testing.expectEqual(expected.len, actual.len);
-    for (expected, 0..) |expected_slice, i| {
-        try testing.expectEqualStrings(&expected_slice, &actual[i]);
-    }
+    try testing.expectEqualSlices([6]u8, &expected, actual);
 }
 
 test "slice length is way too large" {
@@ -110,8 +89,5 @@ test "slice length is way too large" {
     const expected = [_][42]u8{};
     const actual = try slices(42, testing.allocator, series);
     defer testing.allocator.free(actual);
-    try testing.expectEqual(expected.len, actual.len);
-    for (expected, 0..) |expected_slice, i| {
-        try testing.expectEqualStrings(&expected_slice, &actual[i]);
-    }
+    try testing.expectEqualSlices([42]u8, &expected, actual);
 }

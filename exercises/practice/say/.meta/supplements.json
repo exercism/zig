@@ -1,0 +1,36 @@
+{
+  "cases": [
+    {
+      "description": "additional big number",
+      "property": "say",
+      "input": {
+        "number": 19011016013
+      },
+      "expected": "nineteen billion eleven million sixteen thousand thirteen"
+    },
+    {
+      "description": "different big number",
+      "property": "say",
+      "input": {
+        "number": 812000070017
+      },
+      "expected": "eight hundred twelve billion seventy thousand seventeen"
+    },
+    {
+      "description": "alternative big number",
+      "property": "say",
+      "input": {
+        "number": 60010015018
+      },
+      "expected": "sixty billion ten million fifteen thousand eighteen"
+    },
+    {
+      "description": "twelve sevens",
+      "property": "say",
+      "input": {
+        "number": 777777777777
+      },
+      "expected": "seven hundred seventy-seven billion seven hundred seventy-seven million seven hundred seventy-seven thousand seven hundred seventy-seven"
+    }
+  ]
+}

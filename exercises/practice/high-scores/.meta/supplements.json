@@ -1,0 +1,19 @@
+{
+  "cases": [
+    {
+      "description": "Latest score can be outside top three",
+      "property": "latest",
+      "input": {
+        "scores": [
+          80,
+          70,
+          90,
+          10,
+          20,
+          30
+        ]
+      },
+      "expected": 30
+    }
+  ]
+}

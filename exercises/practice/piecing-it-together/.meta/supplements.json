@@ -1,0 +1,22 @@
+{
+  "cases": [
+    {
+      "description": "very large landscape",
+      "property": "jigsawData",
+      "input": {
+        "border": 1216,
+        "inside": 86625,
+        "format": "landscape"
+      },
+      "expected": {
+        "pieces": 87841,
+        "border": 1216,
+        "inside": 86625,
+        "rows": 233,
+        "columns": 377,
+        "aspectRatio": 1.6180257510729614,
+        "format": "landscape"
+      }
+    }
+  ]
+}

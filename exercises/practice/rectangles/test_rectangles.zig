@@ -177,5 +177,5 @@ test "very large input" {
         "                      +-+         ", //
     };
     const count = rectangles.rectangles(&strings);
-    try testing.expectEqual(2063, count);
+    try testing.expectEqual(2_063, count);
 }

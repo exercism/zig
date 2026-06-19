@@ -1,0 +1,64 @@
+{
+  "cases": [
+    {
+      "description": "Orange and orange and red",
+      "property": "label",
+      "input": {
+        "colors": [
+          "orange",
+          "orange",
+          "red"
+        ]
+      },
+      "expected": {
+        "value": "3.3",
+        "unit": "kiloohms"
+      }
+    },
+    {
+      "description": "Orange and orange and green",
+      "property": "label",
+      "input": {
+        "colors": [
+          "orange",
+          "orange",
+          "green"
+        ]
+      },
+      "expected": {
+        "value": "3.3",
+        "unit": "megaohms"
+      }
+    },
+    {
+      "description": "White and white and violet",
+      "property": "label",
+      "input": {
+        "colors": [
+          "white",
+          "white",
+          "violet"
+        ]
+      },
+      "expected": {
+        "value": "990",
+        "unit": "megaohms"
+      }
+    },
+    {
+      "description": "White and white and grey",
+      "property": "label",
+      "input": {
+        "colors": [
+          "white",
+          "white",
+          "grey"
+        ]
+      },
+      "expected": {
+        "value": "9.9",
+        "unit": "gigaohms"
+      }
+    }
+  ]
+}

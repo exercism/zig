@@ -1,0 +1,12 @@
+{
+  "cases": [
+    {
+      "description": "ideograms",
+      "property": "truncate",
+      "input": {
+        "phrase": "二兎を追う者は一兎をも得ず"
+      },
+      "expected": "二兎を追う"
+    }
+  ]
+}

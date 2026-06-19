@@ -1,0 +1,16 @@
+{
+  "cases": [
+    {
+      "description": "encode boundary characters",
+      "property": "encode",
+      "input": {
+        "phrase": "/09:@AMNZ[`amnz{",
+        "key": {
+          "a": 25,
+          "b": 12
+        }
+      },
+      "expected": "09maz nmazn"
+    }
+  ]
+}
