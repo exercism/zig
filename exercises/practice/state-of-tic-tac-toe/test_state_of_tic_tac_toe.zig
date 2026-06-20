@@ -2,6 +2,7 @@ const std = @import("std");
 const testing = std.testing;
 
 const state_of_tic_tac_toe = @import("state_of_tic_tac_toe.zig");
+
 const GameState = state_of_tic_tac_toe.GameState;
 
 test "Won games-Finished game where X won via left column victory" {

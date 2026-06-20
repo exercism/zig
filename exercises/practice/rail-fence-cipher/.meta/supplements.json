@@ -1,0 +1,22 @@
+{
+  "cases": [
+    {
+      "description": "encode alphabet",
+      "property": "encode",
+      "input": {
+        "msg": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        "rails": 2
+      },
+      "expected": "ACEGIKMOQSUWYBDFHJLNPRTVXZ"
+    },
+    {
+      "description": "decode alphabet",
+      "property": "decode",
+      "input": {
+        "msg": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        "rails": 2
+      },
+      "expected": "ANBOCPDQERFSGTHUIVJWKXLYMZ"
+    }
+  ]
+}
