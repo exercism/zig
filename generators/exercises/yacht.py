@@ -1,43 +1,35 @@
 IMPORT_SELF = False
-HEADER = 'const score = @import("yacht.zig").score;'
 
+# Dice and category are passed through `testScore`'s runtime parameters, so a solution that
+# declares `score`'s parameters `comptime` is rejected at compile time.
+# See https://forum.exercism.org/t/zig-track-needs-tests-against-comptime-abuse-and-other-kinds-of-cheating/59830/
+HEADER = """const score = @import("yacht.zig").score;
+const Category = @import("yacht.zig").Category;
 
-# Canonical order of descriptions (lowercased), with the three track-specific
-# "alternative order" supplements interleaved right after their base case.
-_ORDER = [
-    "yacht",
-    "not yacht",
+fn testScore(dice: [5]u3, category: Category, expected: u32) !void {
+    try testing.expectEqual(expected, score(dice, category));
+}
+"""
+
+# Scoring categories, in the order of the `Category` enum in the solution.
+CATEGORIES = [
     "ones",
-    "ones, out of order",
-    "no ones",
     "twos",
+    "threes",
     "fours",
-    "yacht counted as threes",
-    "yacht of 3s counted as fives",
     "fives",
     "sixes",
-    "full house two small, three big",
-    "full house two small, three big, alternative order",
-    "full house three small, two big",
-    "full house three small, two big, alternative order",
-    "two pair is not a full house",
-    "four of a kind is not a full house",
-    "yacht is not a full house",
-    "four of a kind",
-    "four of a kind alternative order",
-    "yacht can be scored as four of a kind",
-    "full house is not four of a kind",
-    "little straight",
-    "little straight as big straight",
-    "four in order but not a little straight",
-    "no pairs but not a little straight",
-    "minimum is 1, maximum is 5, but not a little straight",
-    "big straight",
-    "big straight as little straight",
-    "no pairs but not a big straight",
+    "full_house",
+    "four_of_a_kind",
+    "little_straight",
+    "big_straight",
     "choice",
-    "yacht as choice",
+    "yacht",
 ]
+
+
+def _category(case):
+    return case["input"]["category"].replace(" ", "_")
 
 
 def describe(case, parent):
@@ -45,16 +37,11 @@ def describe(case, parent):
 
 
 def order_key(case):
-    d = case["description"].lower()
-    return _ORDER.index(d) if d in _ORDER else len(_ORDER)
+    return (CATEGORIES.index(_category(case)), case["description"].lower())
 
 
 def gen_case(case):
     dice = ", ".join(str(d) for d in case["input"]["dice"])
-    category = case["input"]["category"].replace(" ", "_")
+    category = _category(case)
     expected = case["expected"]
-    return (
-        f"    const expected: u32 = {expected};\n"
-        f"    const actual = score([_]u3{{ {dice} }}, .{category});\n"
-        f"    try testing.expectEqual(expected, actual);\n"
-    )
+    return f"    try testScore([_]u3{{ {dice} }}, .{category}, {expected});\n"

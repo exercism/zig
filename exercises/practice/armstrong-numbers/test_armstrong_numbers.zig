@@ -3,54 +3,58 @@ const testing = std.testing;
 
 const isArmstrongNumber = @import("armstrong_numbers.zig").isArmstrongNumber;
 
-test "zero is an armstrong number" {
-    try testing.expect(isArmstrongNumber(0));
+fn testIsArmstrongNumber(number: u128, expected: bool) !void {
+    try testing.expectEqual(expected, isArmstrongNumber(number));
 }
 
-test "single-digit numbers are armstrong numbers" {
-    try testing.expect(isArmstrongNumber(5));
+test "Zero is an Armstrong number" {
+    try testIsArmstrongNumber(0, true);
 }
 
-test "there are no two-digit armstrong numbers" {
-    try testing.expect(!isArmstrongNumber(10));
+test "Single-digit numbers are Armstrong numbers" {
+    try testIsArmstrongNumber(5, true);
 }
 
-test "three-digit number that is an armstrong number" {
-    try testing.expect(isArmstrongNumber(153));
+test "There are no two-digit Armstrong numbers" {
+    try testIsArmstrongNumber(10, false);
 }
 
-test "three-digit number that is not an armstrong number" {
-    try testing.expect(!isArmstrongNumber(100));
+test "Three-digit number that is an Armstrong number" {
+    try testIsArmstrongNumber(153, true);
 }
 
-test "four-digit number that is an armstrong number" {
-    try testing.expect(isArmstrongNumber(9_474));
+test "Three-digit number that is not an Armstrong number" {
+    try testIsArmstrongNumber(100, false);
 }
 
-test "four-digit number that is not an armstrong number" {
-    try testing.expect(!isArmstrongNumber(9_475));
+test "Four-digit number that is an Armstrong number" {
+    try testIsArmstrongNumber(9_474, true);
 }
 
-test "seven-digit number that is an armstrong number" {
-    try testing.expect(isArmstrongNumber(9_926_315));
+test "Four-digit number that is not an Armstrong number" {
+    try testIsArmstrongNumber(9_475, false);
 }
 
-test "seven-digit number that is not an armstrong number" {
-    try testing.expect(!isArmstrongNumber(9_926_314));
+test "Seven-digit number that is an Armstrong number" {
+    try testIsArmstrongNumber(9_926_315, true);
 }
 
-test "33-digit number that is an armstrong number" {
-    try testing.expect(isArmstrongNumber(186_709_961_001_538_790_100_634_132_976_990));
+test "Seven-digit number that is not an Armstrong number" {
+    try testIsArmstrongNumber(9_926_314, false);
+}
+
+test "Armstrong number containing seven zeroes" {
+    try testIsArmstrongNumber(186_709_961_001_538_790_100_634_132_976_990, true);
+}
+
+test "The largest and last Armstrong number" {
+    try testIsArmstrongNumber(115_132_219_018_763_992_565_095_597_973_971_522_401, true);
 }
 
 test "38-digit number that is not an armstrong number" {
-    try testing.expect(!isArmstrongNumber(99_999_999_999_999_999_999_999_999_999_999_999_999));
-}
-
-test "the largest and last armstrong number" {
-    try testing.expect(isArmstrongNumber(115_132_219_018_763_992_565_095_597_973_971_522_401));
+    try testIsArmstrongNumber(99_999_999_999_999_999_999_999_999_999_999_999_999, false);
 }
 
 test "the largest 128-bit unsigned integer value is not an armstrong number" {
-    try testing.expect(!isArmstrongNumber(340_282_366_920_938_463_463_374_607_431_768_211_455));
+    try testIsArmstrongNumber(340_282_366_920_938_463_463_374_607_431_768_211_455, false);
 }

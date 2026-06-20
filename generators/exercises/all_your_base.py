@@ -1,10 +1,21 @@
 from lib import zarray
 
 IMPORT_SELF = True
-HEADER = (
-    "const convert = all_your_base.convert;\n"
-    "const ConversionError = all_your_base.ConversionError;\n"
-)
+
+# The success cases pass their inputs through `testConvert`'s runtime parameters. Because
+# the whole test file compiles as a unit, that single runtime path is enough to reject a
+# solution that declares `convert`'s value parameters `comptime` - the other cases can keep
+# the simpler inline form.
+# See https://forum.exercism.org/t/zig-track-needs-tests-against-comptime-abuse-and-other-kinds-of-cheating/59830/
+HEADER = """const convert = all_your_base.convert;
+const ConversionError = all_your_base.ConversionError;
+
+fn testConvert(digits: []const u32, input_base: u32, output_base: u32, expected: []const u32) !void {
+    const actual = try convert(testing.allocator, digits, input_base, output_base);
+    defer testing.allocator.free(actual);
+    try testing.expectEqualSlices(u32, expected, actual);
+}
+"""
 
 _ERROR_FOR = {
     "input base must be >= 2": "ConversionError.InvalidInputBase",
@@ -87,12 +98,5 @@ def gen_case(case):
             "    try testing.expectEqualSlices(u32, &expected, again);\n"
         )
 
-    return (
-        f"    const expected = {expected_arr};\n"
-        f"    const digits = {digits};\n"
-        f"    const input_base = {input_base};\n"
-        f"    const output_base = {output_base};\n"
-        "    const actual = try convert(testing.allocator, &digits, input_base, output_base);\n"
-        "    defer testing.allocator.free(actual);\n"
-        "    try testing.expectEqualSlices(u32, &expected, actual);\n"
-    )
+    # Single comptime-defended path (see HEADER) - routes all three inputs through runtime.
+    return f"    try testConvert(&{digits}, {input_base}, {output_base}, &{expected_arr});\n"
