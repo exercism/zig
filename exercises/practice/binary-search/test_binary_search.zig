@@ -33,9 +33,9 @@ test "finds a value at the end of an array" {
 }
 
 test "finds a value in an array of odd length" {
-    const expected: ?usize = 5;
+    const expected: ?usize = 9;
     const array = [_]i16{ 1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 634 };
-    const actual = binarySearch(i16, 21, &array);
+    const actual = binarySearch(i16, 144, &array);
     try testing.expectEqual(expected, actual);
 }
 

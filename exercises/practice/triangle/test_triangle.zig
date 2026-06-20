@@ -44,7 +44,7 @@ test "isosceles first and last sides are equal" {
 }
 
 test "equilateral triangles are also isosceles" {
-    const actual = try triangle.Triangle.init(4, 3, 4);
+    const actual = try triangle.Triangle.init(4, 4, 4);
     try testing.expect(actual.isIsosceles());
 }
 
