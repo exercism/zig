@@ -1,7 +1,6 @@
 {
   "cases": [
     {
-      "uuid": "00000000-0000-0000-0000-000000000001",
       "description": "Full house two small, three big, alternative order",
       "property": "score",
       "input": {
@@ -11,7 +10,6 @@
       "expected": 14
     },
     {
-      "uuid": "00000000-0000-0000-0000-000000000002",
       "description": "Full house three small, two big, alternative order",
       "property": "score",
       "input": {
@@ -21,7 +19,6 @@
       "expected": 21
     },
     {
-      "uuid": "00000000-0000-0000-0000-000000000003",
       "description": "Four of a Kind alternative order",
       "property": "score",
       "input": {
