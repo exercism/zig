@@ -1,0 +1,14 @@
+{
+  "cases": [
+    {
+      "description": "sum is greater than maximum value of u32",
+      "property": "sum",
+      "comment": "Note that for a u32 `limit`, the maximum sum of multiples fits in a u64.",
+      "input": {
+        "factors": [100000000],
+        "limit": 1000000000
+      },
+      "expected": 4500000000
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "cases": [
+    {
+      "description": "maximum required level of nesting",
+      "property": "isPaired",
+      "input": {
+        "value": "(((_[[[_{{{_()_}}}_]]]_)))"
+      },
+      "expected": true
+    }
+  ]
+}

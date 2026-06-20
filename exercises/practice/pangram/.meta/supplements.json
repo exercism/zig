@@ -1,0 +1,12 @@
+{
+  "cases": [
+    {
+      "description": "non-alphanumeric printable ASCII",
+      "property": "isPangram",
+      "input": {
+        "sentence": " !\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
+      },
+      "expected": false
+    }
+  ]
+}

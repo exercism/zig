@@ -1,4 +1,6 @@
 const std = @import("std");
+const testing = std.testing;
+
 const expectApproxEqAbs = std.testing.expectApproxEqAbs;
 
 const space_age = @import("space_age.zig");
