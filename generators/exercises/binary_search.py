@@ -1,7 +1,15 @@
 from lib import zarray
 
 IMPORT_SELF = True
-HEADER = "const binarySearch = binary_search.binarySearch;\n"
+
+# Inputs are passed through `testBinarySearch`'s runtime parameters, so a solution that
+# declares `binarySearch`'s value parameters `comptime` is rejected at compile time.
+# See https://forum.exercism.org/t/zig-track-needs-tests-against-comptime-abuse-and-other-kinds-of-cheating/59830/
+HEADER = """
+fn testBinarySearch(comptime T: type, target: T, items: []const T, expected: ?usize) !void {
+    try testing.expectEqual(expected, binary_search.binarySearch(T, target, items));
+}
+"""
 
 # The committed target cycles a different integer type through each case, in order.
 _TYPE_BY_DESC = {
@@ -48,9 +56,4 @@ def gen_case(case):
     else:
         idx = str(expected)
 
-    return (
-        f"    const expected: ?usize = {idx};\n"
-        f"    const array = {array};\n"
-        f"    const actual = binarySearch({ty}, {value}, &array);\n"
-        "    try testing.expectEqual(expected, actual);\n"
-    )
+    return f"    try testBinarySearch({ty}, {value}, &{array}, {idx});\n"
