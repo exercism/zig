@@ -2,10 +2,10 @@ from lib import zarray
 
 IMPORT_SELF = True
 
-# The success cases pass their inputs through `testConvert`'s runtime parameters. Because
-# the whole test file compiles as a unit, that single runtime path is enough to reject a
-# solution that declares `convert`'s value parameters `comptime` - the other cases can keep
-# the simpler inline form.
+# `testConvert`/`testConvertError` reduce repetition across the success and error cases, and
+# - because they pass the inputs through runtime parameters - also reject a solution that
+# declares `convert`'s value parameters `comptime`. (Since the whole test file compiles as a
+# unit, a single such runtime path would already be enough to reject it.)
 # See https://forum.exercism.org/t/zig-track-needs-tests-against-comptime-abuse-and-other-kinds-of-cheating/59830/
 HEADER = """const convert = all_your_base.convert;
 const ConversionError = all_your_base.ConversionError;
@@ -14,6 +14,10 @@ fn testConvert(digits: []const u32, input_base: u32, output_base: u32, expected:
     const actual = try convert(testing.allocator, digits, input_base, output_base);
     defer testing.allocator.free(actual);
     try testing.expectEqualSlices(u32, expected, actual);
+}
+
+fn testConvertError(digits: []const u32, input_base: u32, output_base: u32, expected: ConversionError) !void {
+    try testing.expectError(expected, convert(testing.allocator, digits, input_base, output_base));
 }
 """
 
@@ -69,14 +73,7 @@ def gen_case(case):
 
     if isinstance(expected, dict) and "error" in expected:
         err = _ERROR_FOR[expected["error"]]
-        return (
-            f"    const expected = {err};\n"
-            f"    const digits = {digits};\n"
-            f"    const input_base = {input_base};\n"
-            f"    const output_base = {output_base};\n"
-            "    const actual = convert(testing.allocator, &digits, input_base, output_base);\n"
-            "    try testing.expectError(expected, actual);\n"
-        )
+        return f"    try testConvertError(&{digits}, {input_base}, {output_base}, {err});\n"
 
     expected_arr = _u32_array(expected)
 

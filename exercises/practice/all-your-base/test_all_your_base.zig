@@ -11,6 +11,10 @@ fn testConvert(digits: []const u32, input_base: u32, output_base: u32, expected:
     try testing.expectEqualSlices(u32, expected, actual);
 }
 
+fn testConvertError(digits: []const u32, input_base: u32, output_base: u32, expected: ConversionError) !void {
+    try testing.expectError(expected, convert(testing.allocator, digits, input_base, output_base));
+}
+
 test "single bit one to decimal" {
     try testConvert(&[_]u32{1}, 2, 10, &[_]u32{1});
 }
@@ -77,46 +81,21 @@ test "leading zeros" {
 }
 
 test "input base is one" {
-    const expected = ConversionError.InvalidInputBase;
-    const digits = [_]u32{0};
-    const input_base = 1;
-    const output_base = 10;
-    const actual = convert(testing.allocator, &digits, input_base, output_base);
-    try testing.expectError(expected, actual);
+    try testConvertError(&[_]u32{0}, 1, 10, ConversionError.InvalidInputBase);
 }
 
 test "input base is zero" {
-    const expected = ConversionError.InvalidInputBase;
-    const digits = [_]u32{};
-    const input_base = 0;
-    const output_base = 10;
-    const actual = convert(testing.allocator, &digits, input_base, output_base);
-    try testing.expectError(expected, actual);
+    try testConvertError(&[_]u32{}, 0, 10, ConversionError.InvalidInputBase);
 }
 
 test "invalid positive digit" {
-    const expected = ConversionError.InvalidDigit;
-    const digits = [_]u32{ 1, 2, 1, 0, 1, 0 };
-    const input_base = 2;
-    const output_base = 10;
-    const actual = convert(testing.allocator, &digits, input_base, output_base);
-    try testing.expectError(expected, actual);
+    try testConvertError(&[_]u32{ 1, 2, 1, 0, 1, 0 }, 2, 10, ConversionError.InvalidDigit);
 }
 
 test "output base is one" {
-    const expected = ConversionError.InvalidOutputBase;
-    const digits = [_]u32{ 1, 0, 1, 0, 1, 0 };
-    const input_base = 2;
-    const output_base = 1;
-    const actual = convert(testing.allocator, &digits, input_base, output_base);
-    try testing.expectError(expected, actual);
+    try testConvertError(&[_]u32{ 1, 0, 1, 0, 1, 0 }, 2, 1, ConversionError.InvalidOutputBase);
 }
 
 test "output base is zero" {
-    const expected = ConversionError.InvalidOutputBase;
-    const digits = [_]u32{7};
-    const input_base = 10;
-    const output_base = 0;
-    const actual = convert(testing.allocator, &digits, input_base, output_base);
-    try testing.expectError(expected, actual);
+    try testConvertError(&[_]u32{7}, 10, 0, ConversionError.InvalidOutputBase);
 }
