@@ -92,7 +92,7 @@ test "much larger factors" {
 }
 
 test "all numbers are multiples of 1" {
-    const expected: u64 = 4_950;
+    const expected: u64 = 4950;
     const factors = [_]u32{1};
     const limit = 100;
     const actual = try sum(testing.allocator, &factors, limit);

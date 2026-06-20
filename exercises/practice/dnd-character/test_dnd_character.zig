@@ -4,6 +4,20 @@ const testing = std.testing;
 const dnd_character = @import("dnd_character.zig");
 const Character = dnd_character.Character;
 
+fn isValidAbilityScore(n: isize) bool {
+    return n >= 3 and n <= 18;
+}
+
+fn isValid(c: Character) bool {
+    return isValidAbilityScore(c.strength) and
+        isValidAbilityScore(c.dexterity) and
+        isValidAbilityScore(c.constitution) and
+        isValidAbilityScore(c.intelligence) and
+        isValidAbilityScore(c.wisdom) and
+        isValidAbilityScore(c.charisma) and
+        (c.hitpoints == 10 + dnd_character.modifier(c.constitution));
+}
+
 test "ability modifier for score 3 is -4" {
     const expected: i8 = -4;
     const actual = dnd_character.modifier(3);
@@ -100,25 +114,11 @@ test "ability modifier for score 18 is +4" {
     try testing.expectEqual(expected, actual);
 }
 
-fn isValidAbilityScore(n: isize) bool {
-    return n >= 3 and n <= 18;
-}
-
 test "random ability is within range" {
     for (0..20) |_| {
         const actual = dnd_character.ability();
         try testing.expect(isValidAbilityScore(actual));
     }
-}
-
-fn isValid(c: Character) bool {
-    return isValidAbilityScore(c.strength) and
-        isValidAbilityScore(c.dexterity) and
-        isValidAbilityScore(c.constitution) and
-        isValidAbilityScore(c.intelligence) and
-        isValidAbilityScore(c.wisdom) and
-        isValidAbilityScore(c.charisma) and
-        (c.hitpoints == 10 + dnd_character.modifier(c.constitution));
 }
 
 test "random character is valid" {

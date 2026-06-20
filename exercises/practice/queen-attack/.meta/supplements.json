@@ -1,0 +1,10 @@
+{
+  "cases": [
+    {
+      "description": "queen has exactly two fields",
+      "property": "fields",
+      "input": {},
+      "expected": 2
+    }
+  ]
+}
