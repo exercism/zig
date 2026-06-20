@@ -9,9 +9,9 @@ Generates `exercises/practice/<slug>/test_<slug>.zig` files from the shared
 Run from the repo root:
 
 ```bash
-bin/run-generator <slug> [<slug> ...]   # generate specific exercises
-bin/run-generator --all                 # generate every exercise that has a module
-bin/run-generator --check <slug> ...    # CI: verify committed files are up to date (no write)
+bin/generate <slug> [<slug> ...]   # generate specific exercises
+bin/generate --all                 # generate every exercise that has a module
+bin/generate --check <slug> ...    # CI: verify committed files are up to date (no write)
 ```
 
 `zig` must be on `PATH` (or set `ZIG=/path/to/zig`); the output is run through `zig fmt`.

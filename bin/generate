@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Generate Zig practice-exercise test files from problem-specifications canonical data.
-# Usage: bin/run-generator <slug> [<slug> ...] | --all | --check <slug> ...
+# Usage: bin/generate <slug> [<slug> ...] | --all | --check <slug> ...
 set -euo pipefail
 cd "$(dirname "$0")/.."
 exec python3 generators/generate.py "$@"

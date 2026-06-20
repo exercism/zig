@@ -18,9 +18,9 @@ Per-exercise module surface (all optional except gen_case):
     def gen_case(case): -> str                # body of the test block (required)
 
 Usage:
-    bin/run-generator <slug> [<slug> ...]     # generate listed exercises
-    bin/run-generator --all                   # generate every exercise with a module
-    bin/run-generator --check <slug> ...      # verify generated file matches committed
+    bin/generate <slug> [<slug> ...]     # generate listed exercises
+    bin/generate --all                   # generate every exercise with a module
+    bin/generate --check <slug> ...      # verify generated file matches committed
 """
 
 import argparse
