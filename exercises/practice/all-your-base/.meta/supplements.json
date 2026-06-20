@@ -1,0 +1,14 @@
+{
+  "cases": [
+    {
+      "description": "empty list - second call returns different memory",
+      "property": "rebase",
+      "input": {
+        "inputBase": 10,
+        "digits": [],
+        "outputBase": 2
+      },
+      "expected": [0]
+    }
+  ]
+}
