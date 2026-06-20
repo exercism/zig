@@ -1,0 +1,28 @@
+{
+  "cases": [
+    {
+      "description": "third prime",
+      "property": "prime",
+      "input": { "number": 3 },
+      "expected": 5
+    },
+    {
+      "description": "fourth prime",
+      "property": "prime",
+      "input": { "number": 4 },
+      "expected": 7
+    },
+    {
+      "description": "fifth prime",
+      "property": "prime",
+      "input": { "number": 5 },
+      "expected": 11
+    },
+    {
+      "description": "seventh prime",
+      "property": "prime",
+      "input": { "number": 7 },
+      "expected": 17
+    }
+  ]
+}

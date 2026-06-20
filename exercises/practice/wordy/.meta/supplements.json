@@ -1,0 +1,14 @@
+{
+  "cases": [
+    {
+      "description": "reject division by zero",
+      "property": "answer",
+      "input": {
+        "question": "What is 76543 divided by 0?"
+      },
+      "expected": {
+        "error": "division by zero"
+      }
+    }
+  ]
+}

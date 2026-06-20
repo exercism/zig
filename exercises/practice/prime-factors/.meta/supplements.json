@@ -1,0 +1,16 @@
+{
+  "cases": [
+    {
+      "description": "product of three large primes",
+      "property": "factors",
+      "input": { "value": 9164464719174396253 },
+      "expected": [2077681, 2099191, 2101243]
+    },
+    {
+      "description": "one very large prime",
+      "property": "factors",
+      "input": { "value": 4016465016163 },
+      "expected": [4016465016163]
+    }
+  ]
+}

@@ -39,6 +39,6 @@ test "seventh prime" {
 }
 
 test "big prime" {
-    const p = try nth_prime.prime(testing.allocator, 10001);
-    try testing.expectEqual(104743, p);
+    const p = try nth_prime.prime(testing.allocator, 10_001);
+    try testing.expectEqual(104_743, p);
 }

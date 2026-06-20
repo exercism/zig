@@ -3,6 +3,7 @@ const mem = std.mem;
 const testing = std.testing;
 
 const rail_fence_cipher = @import("rail_fence_cipher.zig");
+
 const encode = rail_fence_cipher.encode;
 const decode = rail_fence_cipher.decode;
 
@@ -71,5 +72,25 @@ test "decode with six rails" {
         std.testing.allocator,
         railFenceCipherTest,
         .{ &decode, phrase, 6, expect },
+    );
+}
+
+test "encode alphabet" {
+    const phrase: []const u8 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const expect: []const u8 = "ACEGIKMOQSUWYBDFHJLNPRTVXZ";
+    try std.testing.checkAllAllocationFailures(
+        std.testing.allocator,
+        railFenceCipherTest,
+        .{ &encode, phrase, 2, expect },
+    );
+}
+
+test "decode alphabet" {
+    const phrase: []const u8 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const expect: []const u8 = "ANBOCPDQERFSGTHUIVJWKXLYMZ";
+    try std.testing.checkAllAllocationFailures(
+        std.testing.allocator,
+        railFenceCipherTest,
+        .{ &decode, phrase, 2, expect },
     );
 }

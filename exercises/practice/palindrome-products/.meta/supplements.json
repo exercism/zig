@@ -1,0 +1,72 @@
+{
+  "cases": [
+    {
+      "description": "smallest with large factors",
+      "property": "smallest",
+      "input": {
+        "min": 54773,
+        "max": 63245
+      },
+      "expected": {
+        "value": 3030220303,
+        "factors": [
+          [
+            54799,
+            55297
+          ]
+        ]
+      }
+    },
+    {
+      "description": "largest with large factors",
+      "property": "largest",
+      "input": {
+        "min": 54773,
+        "max": 63245
+      },
+      "expected": {
+        "value": 3956776593,
+        "factors": [
+          [
+            62799,
+            63007
+          ]
+        ]
+      }
+    },
+    {
+      "description": "smallest with very large factors",
+      "property": "smallest",
+      "input": {
+        "min": 3000100,
+        "max": 3141592
+      },
+      "expected": {
+        "value": 9003210123009,
+        "factors": [
+          [
+            3000131,
+            3000939
+          ]
+        ]
+      }
+    },
+    {
+      "description": "largest with very large factors",
+      "property": "largest",
+      "input": {
+        "min": 3100000,
+        "max": 3141592
+      },
+      "expected": {
+        "value": 9864278724689,
+        "factors": [
+          [
+            3140089,
+            3141401
+          ]
+        ]
+      }
+    }
+  ]
+}

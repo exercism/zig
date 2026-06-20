@@ -2,7 +2,6 @@ const std = @import("std");
 const testing = std.testing;
 
 const pascals_triangle = @import("pascals_triangle.zig");
-
 fn free(slices: [][]u128) void {
     for (slices) |slice| {
         testing.allocator.free(slice);
@@ -10,7 +9,7 @@ fn free(slices: [][]u128) void {
     testing.allocator.free(slices);
 }
 
-fn rowsTest(allocator: std.mem.Allocator, count: usize, expected: [][]const u128) anyerror!void {
+fn pascalsTriangleTest(allocator: std.mem.Allocator, count: usize, expected: [][]const u128) anyerror!void {
     const actual = try pascals_triangle.rows(allocator, count);
     defer free(actual);
 
@@ -24,7 +23,7 @@ test "zero rows" {
     const expected: [0][]const u128 = undefined;
     try std.testing.checkAllAllocationFailures(
         std.testing.allocator,
-        rowsTest,
+        pascalsTriangleTest,
         .{ 0, &expected },
     );
 }
@@ -34,7 +33,7 @@ test "single row" {
     expected[0] = &.{1};
     try std.testing.checkAllAllocationFailures(
         std.testing.allocator,
-        rowsTest,
+        pascalsTriangleTest,
         .{ 1, &expected },
     );
 }
@@ -45,7 +44,7 @@ test "two rows" {
     expected[1] = &.{ 1, 1 };
     try std.testing.checkAllAllocationFailures(
         std.testing.allocator,
-        rowsTest,
+        pascalsTriangleTest,
         .{ 2, &expected },
     );
 }
@@ -57,7 +56,7 @@ test "three rows" {
     expected[2] = &.{ 1, 2, 1 };
     try std.testing.checkAllAllocationFailures(
         std.testing.allocator,
-        rowsTest,
+        pascalsTriangleTest,
         .{ 3, &expected },
     );
 }
@@ -70,7 +69,7 @@ test "four rows" {
     expected[3] = &.{ 1, 3, 3, 1 };
     try std.testing.checkAllAllocationFailures(
         std.testing.allocator,
-        rowsTest,
+        pascalsTriangleTest,
         .{ 4, &expected },
     );
 }
@@ -84,7 +83,7 @@ test "five rows" {
     expected[4] = &.{ 1, 4, 6, 4, 1 };
     try std.testing.checkAllAllocationFailures(
         std.testing.allocator,
-        rowsTest,
+        pascalsTriangleTest,
         .{ 5, &expected },
     );
 }
@@ -99,7 +98,7 @@ test "six rows" {
     expected[5] = &.{ 1, 5, 10, 10, 5, 1 };
     try std.testing.checkAllAllocationFailures(
         std.testing.allocator,
-        rowsTest,
+        pascalsTriangleTest,
         .{ 6, &expected },
     );
 }
@@ -118,7 +117,7 @@ test "ten rows" {
     expected[9] = &.{ 1, 9, 36, 84, 126, 126, 84, 36, 9, 1 };
     try std.testing.checkAllAllocationFailures(
         std.testing.allocator,
-        rowsTest,
+        pascalsTriangleTest,
         .{ 10, &expected },
     );
 }
@@ -127,5 +126,5 @@ test "seventy-five rows" {
     const actual = try pascals_triangle.rows(testing.allocator, 75);
     defer free(actual);
 
-    try testing.expectEqual(17_46_130_564_335_626_209_832, actual[74][37]);
+    try testing.expectEqual(1_746_130_564_335_626_209_832, actual[74][37]);
 }

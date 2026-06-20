@@ -1,21 +1,21 @@
 const std = @import("std");
+const mem = std.mem;
 const testing = std.testing;
 
-const annotate = @import("flower_field.zig").annotate;
-
-fn free(slices: [][]u8) void {
-    for (slices) |slice| {
-        testing.allocator.free(slice);
+const flower_field = @import("flower_field.zig");
+fn annotateTest(
+    allocator: mem.Allocator,
+    expected: []const []const u8,
+    garden: []const []const u8,
+) anyerror!void {
+    const actual = try flower_field.annotate(allocator, garden);
+    defer {
+        for (actual) |line| allocator.free(line);
+        allocator.free(actual);
     }
-    testing.allocator.free(slices);
-}
-
-fn annotateTest(allocator: std.mem.Allocator, expected: []const []const u8, garden: []const []const u8) !void {
-    const actual = try annotate(allocator, garden);
-    defer free(actual);
     try testing.expectEqual(expected.len, actual.len);
-    for (0..expected.len) |i| {
-        try testing.expectEqualStrings(expected[i], actual[i]);
+    for (expected, actual) |e, a| {
+        try testing.expectEqualStrings(e, a);
     }
 }
 

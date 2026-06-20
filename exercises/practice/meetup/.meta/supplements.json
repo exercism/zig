@@ -1,0 +1,26 @@
+{
+  "cases": [
+    {
+      "description": "when last Thursday in February in a non-leap year is not the 29th",
+      "property": "meetup",
+      "input": {
+        "year": 2300,
+        "month": 2,
+        "week": "last",
+        "dayofweek": "Thursday"
+      },
+      "expected": "2300-02-22"
+    },
+    {
+      "description": "when fourth Monday is the 23nd, the second day of the fourth week",
+      "property": "meetup",
+      "input": {
+        "year": 2468,
+        "month": 1,
+        "week": "fourth",
+        "dayofweek": "Monday"
+      },
+      "expected": "2468-01-23"
+    }
+  ]
+}

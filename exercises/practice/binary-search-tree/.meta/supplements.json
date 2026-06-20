@@ -1,0 +1,25 @@
+{
+  "cases": [
+    {
+      "description": "empty tree has null root",
+      "property": "data",
+      "input": {
+        "treeData": []
+      },
+      "expected": null
+    },
+    {
+      "description": "can sort data",
+      "cases": [
+        {
+          "description": "can sort empty tree",
+          "property": "sortedData",
+          "input": {
+            "treeData": []
+          },
+          "expected": []
+        }
+      ]
+    }
+  ]
+}
