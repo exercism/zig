@@ -1,7 +1,7 @@
 {
   "cases": [
     {
-      "description": "Full house two small, three big, alternative order",
+      "description": "Full house three small, two big, alternative order",
       "property": "score",
       "input": {
         "dice": [4, 4, 2, 2, 2],
@@ -10,7 +10,7 @@
       "expected": 14
     },
     {
-      "description": "Full house three small, two big, alternative order",
+      "description": "Full house two small, three big, alternative order",
       "property": "score",
       "input": {
         "dice": [3, 5, 5, 3, 5],

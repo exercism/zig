@@ -53,7 +53,7 @@ test "full house three small, two big" {
 }
 
 test "full house three small, two big, alternative order" {
-    try testScore([_]u3{ 3, 5, 5, 3, 5 }, .full_house, 21);
+    try testScore([_]u3{ 4, 4, 2, 2, 2 }, .full_house, 14);
 }
 
 test "full house two small, three big" {
@@ -61,7 +61,7 @@ test "full house two small, three big" {
 }
 
 test "full house two small, three big, alternative order" {
-    try testScore([_]u3{ 4, 4, 2, 2, 2 }, .full_house, 14);
+    try testScore([_]u3{ 3, 5, 5, 3, 5 }, .full_house, 21);
 }
 
 test "two pair is not a full house" {
