@@ -1,0 +1,20 @@
+{
+  "cases": [
+    {
+      "description": "38-digit number that is not an armstrong number",
+      "property": "isArmstrongNumber",
+      "input": {
+        "number": 99999999999999999999999999999999999999
+      },
+      "expected": false
+    },
+    {
+      "description": "the largest 128-bit unsigned integer value is not an armstrong number",
+      "property": "isArmstrongNumber",
+      "input": {
+        "number": 340282366920938463463374607431768211455
+      },
+      "expected": false
+    }
+  ]
+}

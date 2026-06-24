@@ -1,0 +1,31 @@
+{
+  "cases": [
+    {
+      "description": "Full house three small, two big, alternative order",
+      "property": "score",
+      "input": {
+        "dice": [4, 4, 2, 2, 2],
+        "category": "full house"
+      },
+      "expected": 14
+    },
+    {
+      "description": "Full house two small, three big, alternative order",
+      "property": "score",
+      "input": {
+        "dice": [3, 5, 5, 3, 5],
+        "category": "full house"
+      },
+      "expected": 21
+    },
+    {
+      "description": "Four of a Kind alternative order",
+      "property": "score",
+      "input": {
+        "dice": [4, 4, 6, 4, 4],
+        "category": "four of a kind"
+      },
+      "expected": 16
+    }
+  ]
+}
