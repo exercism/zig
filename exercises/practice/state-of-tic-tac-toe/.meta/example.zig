@@ -38,18 +38,18 @@ pub fn gameState(board: []const []const u8) GameState {
         current = current << 1;
     }
 
-    if (countO > countX) {
-        // Wrong turn order: O started
-        return .impossible;
-    }
-
-    if (countX > countO + 1) {
-        // Wrong turn order: X went twice
-        return .impossible;
-    }
-
     const winX = isWin(bitsetX);
     const winO = isWin(bitsetO);
+
+    if (countO + @intFromBool(winX) > countX) {
+        // Wrong turn order: O started, or O kept playing after X wins
+        return .impossible;
+    }
+
+    if (countX + @intFromBool(winO) > countO + 1) {
+        // Wrong turn order: X went twice, or X kept playing after O wins
+        return .impossible;
+    }
 
     if (winX or winO) {
         if (winX and winO) {
