@@ -5,14 +5,18 @@ const state_of_tic_tac_toe = @import("state_of_tic_tac_toe.zig");
 
 const GameState = state_of_tic_tac_toe.GameState;
 
+fn testGameState(board: []const []const u8, expected: GameState) !void {
+    const actual = state_of_tic_tac_toe.gameState(board);
+    try testing.expectEqual(expected, actual);
+}
+
 test "Won games-Finished game where X won via left column victory" {
     const board = [_][]const u8{
         "XOO", //
         "X  ", //
         "X  ", //
     };
-    const actual = state_of_tic_tac_toe.gameState(&board);
-    try testing.expectEqual(GameState.win, actual);
+    try testGameState(&board, GameState.win);
 }
 
 test "Won games-Finished game where X won via middle column victory" {
@@ -21,8 +25,7 @@ test "Won games-Finished game where X won via middle column victory" {
         " X ", //
         " X ", //
     };
-    const actual = state_of_tic_tac_toe.gameState(&board);
-    try testing.expectEqual(GameState.win, actual);
+    try testGameState(&board, GameState.win);
 }
 
 test "Won games-Finished game where X won via right column victory" {
@@ -31,8 +34,7 @@ test "Won games-Finished game where X won via right column victory" {
         "  X", //
         "  X", //
     };
-    const actual = state_of_tic_tac_toe.gameState(&board);
-    try testing.expectEqual(GameState.win, actual);
+    try testGameState(&board, GameState.win);
 }
 
 test "Won games-Finished game where O won via left column victory" {
@@ -41,8 +43,7 @@ test "Won games-Finished game where O won via left column victory" {
         "OX ", //
         "O  ", //
     };
-    const actual = state_of_tic_tac_toe.gameState(&board);
-    try testing.expectEqual(GameState.win, actual);
+    try testGameState(&board, GameState.win);
 }
 
 test "Won games-Finished game where O won via middle column victory" {
@@ -51,8 +52,7 @@ test "Won games-Finished game where O won via middle column victory" {
         " OX", //
         " O ", //
     };
-    const actual = state_of_tic_tac_toe.gameState(&board);
-    try testing.expectEqual(GameState.win, actual);
+    try testGameState(&board, GameState.win);
 }
 
 test "Won games-Finished game where O won via right column victory" {
@@ -61,8 +61,7 @@ test "Won games-Finished game where O won via right column victory" {
         " XO", //
         "  O", //
     };
-    const actual = state_of_tic_tac_toe.gameState(&board);
-    try testing.expectEqual(GameState.win, actual);
+    try testGameState(&board, GameState.win);
 }
 
 test "Won games-Finished game where X won via top row victory" {
@@ -71,8 +70,7 @@ test "Won games-Finished game where X won via top row victory" {
         "XOO", //
         "O  ", //
     };
-    const actual = state_of_tic_tac_toe.gameState(&board);
-    try testing.expectEqual(GameState.win, actual);
+    try testGameState(&board, GameState.win);
 }
 
 test "Won games-Finished game where X won via middle row victory" {
@@ -81,8 +79,7 @@ test "Won games-Finished game where X won via middle row victory" {
         "XXX", //
         " O ", //
     };
-    const actual = state_of_tic_tac_toe.gameState(&board);
-    try testing.expectEqual(GameState.win, actual);
+    try testGameState(&board, GameState.win);
 }
 
 test "Won games-Finished game where X won via bottom row victory" {
@@ -91,8 +88,7 @@ test "Won games-Finished game where X won via bottom row victory" {
         "O X", //
         "XXX", //
     };
-    const actual = state_of_tic_tac_toe.gameState(&board);
-    try testing.expectEqual(GameState.win, actual);
+    try testGameState(&board, GameState.win);
 }
 
 test "Won games-Finished game where O won via top row victory" {
@@ -101,8 +97,7 @@ test "Won games-Finished game where O won via top row victory" {
         "XXO", //
         "XX ", //
     };
-    const actual = state_of_tic_tac_toe.gameState(&board);
-    try testing.expectEqual(GameState.win, actual);
+    try testGameState(&board, GameState.win);
 }
 
 test "Won games-Finished game where O won via middle row victory" {
@@ -111,8 +106,7 @@ test "Won games-Finished game where O won via middle row victory" {
         "OOO", //
         "X  ", //
     };
-    const actual = state_of_tic_tac_toe.gameState(&board);
-    try testing.expectEqual(GameState.win, actual);
+    try testGameState(&board, GameState.win);
 }
 
 test "Won games-Finished game where O won via bottom row victory" {
@@ -121,8 +115,7 @@ test "Won games-Finished game where O won via bottom row victory" {
         " XX", //
         "OOO", //
     };
-    const actual = state_of_tic_tac_toe.gameState(&board);
-    try testing.expectEqual(GameState.win, actual);
+    try testGameState(&board, GameState.win);
 }
 
 test "Won games-Finished game where X won via falling diagonal victory" {
@@ -131,8 +124,7 @@ test "Won games-Finished game where X won via falling diagonal victory" {
         " X ", //
         "  X", //
     };
-    const actual = state_of_tic_tac_toe.gameState(&board);
-    try testing.expectEqual(GameState.win, actual);
+    try testGameState(&board, GameState.win);
 }
 
 test "Won games-Finished game where X won via rising diagonal victory" {
@@ -141,8 +133,7 @@ test "Won games-Finished game where X won via rising diagonal victory" {
         "OX ", //
         "X  ", //
     };
-    const actual = state_of_tic_tac_toe.gameState(&board);
-    try testing.expectEqual(GameState.win, actual);
+    try testGameState(&board, GameState.win);
 }
 
 test "Won games-Finished game where O won via falling diagonal victory" {
@@ -151,8 +142,7 @@ test "Won games-Finished game where O won via falling diagonal victory" {
         "OOX", //
         "X O", //
     };
-    const actual = state_of_tic_tac_toe.gameState(&board);
-    try testing.expectEqual(GameState.win, actual);
+    try testGameState(&board, GameState.win);
 }
 
 test "Won games-Finished game where O won via rising diagonal victory" {
@@ -161,8 +151,7 @@ test "Won games-Finished game where O won via rising diagonal victory" {
         " OX", //
         "OXX", //
     };
-    const actual = state_of_tic_tac_toe.gameState(&board);
-    try testing.expectEqual(GameState.win, actual);
+    try testGameState(&board, GameState.win);
 }
 
 test "Won games-Finished game where X won via a row and a column victory" {
@@ -171,8 +160,7 @@ test "Won games-Finished game where X won via a row and a column victory" {
         "XOO", //
         "XOO", //
     };
-    const actual = state_of_tic_tac_toe.gameState(&board);
-    try testing.expectEqual(GameState.win, actual);
+    try testGameState(&board, GameState.win);
 }
 
 test "Won games-Finished game where X won via two diagonal victories" {
@@ -181,8 +169,7 @@ test "Won games-Finished game where X won via two diagonal victories" {
         "OXO", //
         "XOX", //
     };
-    const actual = state_of_tic_tac_toe.gameState(&board);
-    try testing.expectEqual(GameState.win, actual);
+    try testGameState(&board, GameState.win);
 }
 
 test "Drawn games-Draw" {
@@ -191,8 +178,7 @@ test "Drawn games-Draw" {
         "XXO", //
         "OXO", //
     };
-    const actual = state_of_tic_tac_toe.gameState(&board);
-    try testing.expectEqual(GameState.draw, actual);
+    try testGameState(&board, GameState.draw);
 }
 
 test "Drawn games-Another draw" {
@@ -201,8 +187,7 @@ test "Drawn games-Another draw" {
         "OXX", //
         "XOO", //
     };
-    const actual = state_of_tic_tac_toe.gameState(&board);
-    try testing.expectEqual(GameState.draw, actual);
+    try testGameState(&board, GameState.draw);
 }
 
 test "Ongoing games-Ongoing game: one move in" {
@@ -211,8 +196,7 @@ test "Ongoing games-Ongoing game: one move in" {
         "X  ", //
         "   ", //
     };
-    const actual = state_of_tic_tac_toe.gameState(&board);
-    try testing.expectEqual(GameState.ongoing, actual);
+    try testGameState(&board, GameState.ongoing);
 }
 
 test "Ongoing games-Ongoing game: two moves in" {
@@ -221,8 +205,7 @@ test "Ongoing games-Ongoing game: two moves in" {
         " X ", //
         "   ", //
     };
-    const actual = state_of_tic_tac_toe.gameState(&board);
-    try testing.expectEqual(GameState.ongoing, actual);
+    try testGameState(&board, GameState.ongoing);
 }
 
 test "Ongoing games-Ongoing game: five moves in" {
@@ -231,8 +214,7 @@ test "Ongoing games-Ongoing game: five moves in" {
         " XO", //
         "OX ", //
     };
-    const actual = state_of_tic_tac_toe.gameState(&board);
-    try testing.expectEqual(GameState.ongoing, actual);
+    try testGameState(&board, GameState.ongoing);
 }
 
 test "Invalid boards-Invalid board: X went twice" {
@@ -241,9 +223,8 @@ test "Invalid boards-Invalid board: X went twice" {
         "   ", //
         "   ", //
     };
-    const actual = state_of_tic_tac_toe.gameState(&board);
     // Wrong turn order: X went twice
-    try testing.expectEqual(GameState.impossible, actual);
+    try testGameState(&board, GameState.impossible);
 }
 
 test "Invalid boards-Invalid board: O started" {
@@ -252,9 +233,8 @@ test "Invalid boards-Invalid board: O started" {
         "   ", //
         "   ", //
     };
-    const actual = state_of_tic_tac_toe.gameState(&board);
     // Wrong turn order: O started
-    try testing.expectEqual(GameState.impossible, actual);
+    try testGameState(&board, GameState.impossible);
 }
 
 test "Invalid boards-Invalid board: X won and O kept playing" {
@@ -263,9 +243,8 @@ test "Invalid boards-Invalid board: X won and O kept playing" {
         "OOO", //
         "   ", //
     };
-    const actual = state_of_tic_tac_toe.gameState(&board);
     // Impossible board: game should have ended after the game was won
-    try testing.expectEqual(GameState.impossible, actual);
+    try testGameState(&board, GameState.impossible);
 }
 
 test "Invalid boards-Invalid board: players kept playing after a win" {
@@ -274,7 +253,26 @@ test "Invalid boards-Invalid board: players kept playing after a win" {
         "OOO", //
         "XOX", //
     };
-    const actual = state_of_tic_tac_toe.gameState(&board);
     // Impossible board: game should have ended after the game was won
-    try testing.expectEqual(GameState.impossible, actual);
+    try testGameState(&board, GameState.impossible);
+}
+
+test "Invalid boards-Invalid board: O kept playing after X wins" {
+    const board = [_][]const u8{
+        "OO ", //
+        "XXX", //
+        " O ", //
+    };
+    // Impossible board: game should have ended after the game was won
+    try testGameState(&board, GameState.impossible);
+}
+
+test "Invalid boards-Invalid board: X kept playing after O wins" {
+    const board = [_][]const u8{
+        "XX ", //
+        "OOO", //
+        " XX", //
+    };
+    // Impossible board: game should have ended after the game was won
+    try testGameState(&board, GameState.impossible);
 }

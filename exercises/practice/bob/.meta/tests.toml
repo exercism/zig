@@ -53,6 +53,9 @@ reimplements = "66953780-165b-4e7e-8ce3-4bcb80b6385a"
 [d6c98afd-df35-4806-b55e-2c457c3ab748]
 description = "shouting gibberish"
 
+[3c954328-86fb-4c71-8961-e18d6a5e2517]
+description = "shouting a statement containing a question mark"
+
 [a20e0c54-2224-4dde-8b10-bd2cdd4f61bc]
 description = "shouting numbers"
 
