@@ -3,63 +3,52 @@ const testing = std.testing;
 
 const food_chain = @import("food_chain.zig");
 
+fn testRecite(expected: []const u8, start_verse: u32, end_verse: u32) !void {
+    var buffer: [2129]u8 = undefined;
+    const actual = try food_chain.recite(&buffer, start_verse, end_verse);
+    try testing.expectEqual(@as([*]const u8, &buffer), actual.ptr);
+    try testing.expectEqualStrings(expected, actual);
+}
+
 test "fly" {
-    const buffer_size = 4000;
-    var buffer: [buffer_size]u8 = undefined;
-    const expected: []const u8 =
+    try testRecite(
         \\I know an old lady who swallowed a fly.
         \\I don't know why she swallowed the fly. Perhaps she'll die.
-    ;
-    const actual = try food_chain.recite(&buffer, 1, 1);
-    try testing.expectEqualStrings(expected, actual);
+    , 1, 1);
 }
 
 test "spider" {
-    const buffer_size = 4000;
-    var buffer: [buffer_size]u8 = undefined;
-    const expected: []const u8 =
+    try testRecite(
         \\I know an old lady who swallowed a spider.
         \\It wriggled and jiggled and tickled inside her.
         \\She swallowed the spider to catch the fly.
         \\I don't know why she swallowed the fly. Perhaps she'll die.
-    ;
-    const actual = try food_chain.recite(&buffer, 2, 2);
-    try testing.expectEqualStrings(expected, actual);
+    , 2, 2);
 }
 
 test "bird" {
-    const buffer_size = 4000;
-    var buffer: [buffer_size]u8 = undefined;
-    const expected: []const u8 =
+    try testRecite(
         \\I know an old lady who swallowed a bird.
         \\How absurd to swallow a bird!
         \\She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.
         \\She swallowed the spider to catch the fly.
         \\I don't know why she swallowed the fly. Perhaps she'll die.
-    ;
-    const actual = try food_chain.recite(&buffer, 3, 3);
-    try testing.expectEqualStrings(expected, actual);
+    , 3, 3);
 }
 
 test "cat" {
-    const buffer_size = 4000;
-    var buffer: [buffer_size]u8 = undefined;
-    const expected: []const u8 =
+    try testRecite(
         \\I know an old lady who swallowed a cat.
         \\Imagine that, to swallow a cat!
         \\She swallowed the cat to catch the bird.
         \\She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.
         \\She swallowed the spider to catch the fly.
         \\I don't know why she swallowed the fly. Perhaps she'll die.
-    ;
-    const actual = try food_chain.recite(&buffer, 4, 4);
-    try testing.expectEqualStrings(expected, actual);
+    , 4, 4);
 }
 
 test "dog" {
-    const buffer_size = 4000;
-    var buffer: [buffer_size]u8 = undefined;
-    const expected: []const u8 =
+    try testRecite(
         \\I know an old lady who swallowed a dog.
         \\What a hog, to swallow a dog!
         \\She swallowed the dog to catch the cat.
@@ -67,15 +56,11 @@ test "dog" {
         \\She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.
         \\She swallowed the spider to catch the fly.
         \\I don't know why she swallowed the fly. Perhaps she'll die.
-    ;
-    const actual = try food_chain.recite(&buffer, 5, 5);
-    try testing.expectEqualStrings(expected, actual);
+    , 5, 5);
 }
 
 test "goat" {
-    const buffer_size = 4000;
-    var buffer: [buffer_size]u8 = undefined;
-    const expected: []const u8 =
+    try testRecite(
         \\I know an old lady who swallowed a goat.
         \\Just opened her throat and swallowed a goat!
         \\She swallowed the goat to catch the dog.
@@ -84,15 +69,11 @@ test "goat" {
         \\She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.
         \\She swallowed the spider to catch the fly.
         \\I don't know why she swallowed the fly. Perhaps she'll die.
-    ;
-    const actual = try food_chain.recite(&buffer, 6, 6);
-    try testing.expectEqualStrings(expected, actual);
+    , 6, 6);
 }
 
 test "cow" {
-    const buffer_size = 4000;
-    var buffer: [buffer_size]u8 = undefined;
-    const expected: []const u8 =
+    try testRecite(
         \\I know an old lady who swallowed a cow.
         \\I don't know how she swallowed a cow!
         \\She swallowed the cow to catch the goat.
@@ -102,26 +83,18 @@ test "cow" {
         \\She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.
         \\She swallowed the spider to catch the fly.
         \\I don't know why she swallowed the fly. Perhaps she'll die.
-    ;
-    const actual = try food_chain.recite(&buffer, 7, 7);
-    try testing.expectEqualStrings(expected, actual);
+    , 7, 7);
 }
 
 test "horse" {
-    const buffer_size = 4000;
-    var buffer: [buffer_size]u8 = undefined;
-    const expected: []const u8 =
+    try testRecite(
         \\I know an old lady who swallowed a horse.
         \\She's dead, of course!
-    ;
-    const actual = try food_chain.recite(&buffer, 8, 8);
-    try testing.expectEqualStrings(expected, actual);
+    , 8, 8);
 }
 
 test "multiple verses" {
-    const buffer_size = 4000;
-    var buffer: [buffer_size]u8 = undefined;
-    const expected: []const u8 =
+    try testRecite(
         \\I know an old lady who swallowed a fly.
         \\I don't know why she swallowed the fly. Perhaps she'll die.
         \\
@@ -135,15 +108,11 @@ test "multiple verses" {
         \\She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.
         \\She swallowed the spider to catch the fly.
         \\I don't know why she swallowed the fly. Perhaps she'll die.
-    ;
-    const actual = try food_chain.recite(&buffer, 1, 3);
-    try testing.expectEqualStrings(expected, actual);
+    , 1, 3);
 }
 
 test "full song" {
-    const buffer_size = 4000;
-    var buffer: [buffer_size]u8 = undefined;
-    const expected: []const u8 =
+    try testRecite(
         \\I know an old lady who swallowed a fly.
         \\I don't know why she swallowed the fly. Perhaps she'll die.
         \\
@@ -194,7 +163,5 @@ test "full song" {
         \\
         \\I know an old lady who swallowed a horse.
         \\She's dead, of course!
-    ;
-    const actual = try food_chain.recite(&buffer, 1, 8);
-    try testing.expectEqualStrings(expected, actual);
+    , 1, 8);
 }

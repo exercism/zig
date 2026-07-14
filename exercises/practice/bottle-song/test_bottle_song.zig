@@ -3,62 +3,51 @@ const testing = std.testing;
 
 const bottle_song = @import("bottle_song.zig");
 
+fn testRecite(expected: []const u8, start_bottles: u32, take_down: u32) !void {
+    var buffer: [1821]u8 = undefined;
+    const actual = try bottle_song.recite(&buffer, start_bottles, take_down);
+    try testing.expectEqual(@as([*]const u8, &buffer), actual.ptr);
+    try testing.expectEqualStrings(expected, actual);
+}
+
 test "verse-single verse-first generic verse" {
-    const buffer_size = 4000;
-    var buffer: [buffer_size]u8 = undefined;
-    const expected: []const u8 =
+    try testRecite(
         \\Ten green bottles hanging on the wall,
         \\Ten green bottles hanging on the wall,
         \\And if one green bottle should accidentally fall,
         \\There'll be nine green bottles hanging on the wall.
-    ;
-    const actual = try bottle_song.recite(&buffer, 10, 1);
-    try testing.expectEqualStrings(expected, actual);
+    , 10, 1);
 }
 
 test "verse-single verse-last generic verse" {
-    const buffer_size = 4000;
-    var buffer: [buffer_size]u8 = undefined;
-    const expected: []const u8 =
+    try testRecite(
         \\Three green bottles hanging on the wall,
         \\Three green bottles hanging on the wall,
         \\And if one green bottle should accidentally fall,
         \\There'll be two green bottles hanging on the wall.
-    ;
-    const actual = try bottle_song.recite(&buffer, 3, 1);
-    try testing.expectEqualStrings(expected, actual);
+    , 3, 1);
 }
 
 test "verse-single verse-verse with 2 bottles" {
-    const buffer_size = 4000;
-    var buffer: [buffer_size]u8 = undefined;
-    const expected: []const u8 =
+    try testRecite(
         \\Two green bottles hanging on the wall,
         \\Two green bottles hanging on the wall,
         \\And if one green bottle should accidentally fall,
         \\There'll be one green bottle hanging on the wall.
-    ;
-    const actual = try bottle_song.recite(&buffer, 2, 1);
-    try testing.expectEqualStrings(expected, actual);
+    , 2, 1);
 }
 
 test "verse-single verse-verse with 1 bottle" {
-    const buffer_size = 4000;
-    var buffer: [buffer_size]u8 = undefined;
-    const expected: []const u8 =
+    try testRecite(
         \\One green bottle hanging on the wall,
         \\One green bottle hanging on the wall,
         \\And if one green bottle should accidentally fall,
         \\There'll be no green bottles hanging on the wall.
-    ;
-    const actual = try bottle_song.recite(&buffer, 1, 1);
-    try testing.expectEqualStrings(expected, actual);
+    , 1, 1);
 }
 
 test "lyrics-multiple verses-first two verses" {
-    const buffer_size = 4000;
-    var buffer: [buffer_size]u8 = undefined;
-    const expected: []const u8 =
+    try testRecite(
         \\Ten green bottles hanging on the wall,
         \\Ten green bottles hanging on the wall,
         \\And if one green bottle should accidentally fall,
@@ -68,15 +57,11 @@ test "lyrics-multiple verses-first two verses" {
         \\Nine green bottles hanging on the wall,
         \\And if one green bottle should accidentally fall,
         \\There'll be eight green bottles hanging on the wall.
-    ;
-    const actual = try bottle_song.recite(&buffer, 10, 2);
-    try testing.expectEqualStrings(expected, actual);
+    , 10, 2);
 }
 
 test "lyrics-multiple verses-last three verses" {
-    const buffer_size = 4000;
-    var buffer: [buffer_size]u8 = undefined;
-    const expected: []const u8 =
+    try testRecite(
         \\Three green bottles hanging on the wall,
         \\Three green bottles hanging on the wall,
         \\And if one green bottle should accidentally fall,
@@ -91,15 +76,11 @@ test "lyrics-multiple verses-last three verses" {
         \\One green bottle hanging on the wall,
         \\And if one green bottle should accidentally fall,
         \\There'll be no green bottles hanging on the wall.
-    ;
-    const actual = try bottle_song.recite(&buffer, 3, 3);
-    try testing.expectEqualStrings(expected, actual);
+    , 3, 3);
 }
 
 test "lyrics-multiple verses-all verses" {
-    const buffer_size = 4000;
-    var buffer: [buffer_size]u8 = undefined;
-    const expected: []const u8 =
+    try testRecite(
         \\Ten green bottles hanging on the wall,
         \\Ten green bottles hanging on the wall,
         \\And if one green bottle should accidentally fall,
@@ -149,7 +130,5 @@ test "lyrics-multiple verses-all verses" {
         \\One green bottle hanging on the wall,
         \\And if one green bottle should accidentally fall,
         \\There'll be no green bottles hanging on the wall.
-    ;
-    const actual = try bottle_song.recite(&buffer, 10, 10);
-    try testing.expectEqualStrings(expected, actual);
+    , 10, 10);
 }
