@@ -65,7 +65,7 @@ verify_exercise() {
         cd "${tmp_dir}"
 
         copy_example_or_examplar_to_solution
-        run_tests "${slug}"
+        run_tests "${slug}" || { cat "${tmp_dir}/results.json"; exit 1; }
     )
 }
 
