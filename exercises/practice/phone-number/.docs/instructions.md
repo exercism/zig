@@ -31,4 +31,6 @@ should all produce the output
 
 `6139950253`
 
+Any invalid phone number should produce a `null` output.
+
 **Note:** As this exercise only deals with telephone numbers used in NANP-countries, only 1 is considered a valid country code.
