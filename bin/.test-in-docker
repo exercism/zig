@@ -18,12 +18,15 @@ for slug in $all_slugs; do
   # their solution.
   cp /tmp/solution/.meta/example.zig "/tmp/solution/${snake}.zig"
   bin/run.sh "${slug}" /tmp/solution /tmp/solution > /dev/null
-  solution_pattern=$(cat /tmp/solution/results.json | jq -r tostring | grep "{\"version\":2,\"status\":\"pass\"")
 
   errors=""
 
-  if [ -z "$solution_pattern" ]; then
-    errors="${errors}\n\nSolution is incorrect:\n$(cat /tmp/solution/results.json | jq -r '.message')"
+  if ! jq -e '.status == "pass"' /tmp/solution/results.json > /dev/null; then
+    # A compile error reports at the top level; failing tests report per test.
+    errors="${errors}\n\nSolution is incorrect:\n$(jq -r '
+      .message
+      // ([.tests[]? | select(.status != "pass") | "\(.name):\n\(.message // "no message")"] | join("\n\n"))
+    ' /tmp/solution/results.json)"
     local_exit_code=1;
   fi
 
