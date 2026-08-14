@@ -1,6 +1,12 @@
 from lib import zstr
 
-HEADER = "const format = line_up.format;\n"
+HEADER = r"""
+fn testFormat(allocator: std.mem.Allocator, expected: []const u8, name: []const u8, number: u10) !void {
+    const actual = try line_up.format(allocator, name, number);
+    defer allocator.free(actual);
+    try testing.expectEqualStrings(expected, actual);
+}
+"""
 
 
 def gen_case(case):
@@ -8,8 +14,9 @@ def gen_case(case):
     number = case["input"]["number"]
     expected = case["expected"]
     return (
-        f"    const expected: []const u8 = {zstr(expected)};\n"
-        f"    const actual = try format(testing.allocator, {zstr(name)}, {number});\n"
-        f"    defer testing.allocator.free(actual);\n"
-        f"    try testing.expectEqualStrings(expected, actual);\n"
+        "    try testing.checkAllAllocationFailures(\n"
+        "        testing.allocator,\n"
+        "        testFormat,\n"
+        f"        .{{ {zstr(expected)}, {zstr(name)}, {number} }},\n"
+        "    );\n"
     )
