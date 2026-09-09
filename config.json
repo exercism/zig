@@ -1060,6 +1060,14 @@
         "difficulty": 5
       },
       {
+        "slug": "bowling",
+        "name": "Bowling",
+        "uuid": "b31afb14-1bed-44f4-963c-f08d8e9a7b35",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 6
+      },
+      {
         "slug": "change",
         "name": "Change",
         "uuid": "f43cb2e1-de01-4502-bc22-7b7bebbc10ab",
