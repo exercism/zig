@@ -789,6 +789,14 @@
         "difficulty": 4
       },
       {
+        "slug": "clock",
+        "name": "Clock",
+        "uuid": "7bde92b9-94dc-4655-a71f-4ba138266de5",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "crypto-square",
         "name": "Crypto Square",
         "uuid": "4742d7da-79df-4f09-9ce7-bc567f84a6ee",
