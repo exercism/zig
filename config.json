@@ -980,6 +980,14 @@
         "difficulty": 5
       },
       {
+        "slug": "complex-numbers",
+        "name": "Complex Numbers",
+        "uuid": "d79f6456-1d43-4cc7-a588-6870117e8135",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "food-chain",
         "name": "Food Chain",
         "uuid": "fe7bad93-d829-4308-9eed-68ad6e5d522f",
