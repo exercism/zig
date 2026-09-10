@@ -1,5 +1,5 @@
 pub fn isIsogram(s: []const u8) bool {
-    var letters = [_]bool{false} ** 26;
+    var letters: [26]bool = @splat(false);
     for (s) |c| {
         const i = switch (c) {
             'A'...'Z' => c - 'A',

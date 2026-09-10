@@ -1,0 +1,7 @@
+var seen: u32 = 0;
+var i: usize = 0;
+while (i + block_len <= str.len) : (i += block_len) {
+    const mask = letterMask(str[i..][0..block_len].*) orelse return false;
+    if (seen & mask != 0) return false;
+    seen |= mask;
+}

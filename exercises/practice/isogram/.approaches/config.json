@@ -1,0 +1,39 @@
+{
+  "introduction": {
+    "authors": [
+      "keiravillekode"
+    ]
+  },
+  "approaches": [
+    {
+      "uuid": "41d585a0-fc4e-4108-8613-1d21a9477e79",
+      "slug": "bool-array",
+      "title": "Bool array",
+      "blurb": "Track which letters have been seen with an array of 26 booleans.",
+      "authors": [
+        "massivelivefun"
+      ],
+      "contributors": [
+        "keiravillekode"
+      ]
+    },
+    {
+      "uuid": "69518e6c-d384-434e-afcd-49afa6085488",
+      "slug": "bitfield",
+      "title": "Bit field",
+      "blurb": "Track which letters have been seen with the bits of a 32-bit integer.",
+      "authors": [
+        "keiravillekode"
+      ]
+    },
+    {
+      "uuid": "ca88bd01-a271-4c42-97c7-d6896b88f889",
+      "slug": "simd",
+      "title": "SIMD",
+      "blurb": "Process blocks of input characters at once with vector operations.",
+      "authors": [
+        "keiravillekode"
+      ]
+    }
+  ]
+}
