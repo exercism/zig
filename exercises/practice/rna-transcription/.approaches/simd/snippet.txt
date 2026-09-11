@@ -1,0 +1,8 @@
+fn transcribeBlock(block: Block) Block {
+    var rna: Block = block;
+    rna = @select(u8, block == @as(Block, @splat('A')), @as(Block, @splat('U')), rna);
+    rna = @select(u8, block == @as(Block, @splat('C')), @as(Block, @splat('G')), rna);
+    rna = @select(u8, block == @as(Block, @splat('G')), @as(Block, @splat('C')), rna);
+    rna = @select(u8, block == @as(Block, @splat('T')), @as(Block, @splat('A')), rna);
+    return rna;
+}

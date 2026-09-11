@@ -1,0 +1,8 @@
+const complement = blk: {
+    var table: [256]u8 = undefined;
+    table['A'] = 'U';
+    table['C'] = 'G';
+    table['G'] = 'C';
+    table['T'] = 'A';
+    break :blk table;
+};
