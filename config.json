@@ -1044,6 +1044,14 @@
         "difficulty": 5
       },
       {
+        "slug": "simple-cipher",
+        "name": "Simple Cipher",
+        "uuid": "3d08afb9-5be4-4195-ae47-3015598de1a6",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "spiral-matrix",
         "name": "Spiral Matrix",
         "uuid": "9d64ac83-82a9-44eb-a9c5-214c034e3ce4",
