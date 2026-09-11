@@ -1,0 +1,7 @@
+switch (dna_nucleotide) {
+    'A' => rna_slice[i] = 'U',
+    'C' => rna_slice[i] = 'G',
+    'G' => rna_slice[i] = 'C',
+    'T' => rna_slice[i] = 'A',
+    else => unreachable,
+}

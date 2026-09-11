@@ -1,0 +1,39 @@
+{
+  "introduction": {
+    "authors": [
+      "keiravillekode"
+    ]
+  },
+  "approaches": [
+    {
+      "uuid": "ff1e1b6a-5e9d-488f-b002-7cb4b7c25a82",
+      "slug": "switch",
+      "title": "Switch",
+      "blurb": "Map each nucleotide to its complement with a switch expression.",
+      "authors": [
+        "massivelivefun"
+      ],
+      "contributors": [
+        "keiravillekode"
+      ]
+    },
+    {
+      "uuid": "b458705a-ded6-479a-bcb8-2a9bae34d499",
+      "slug": "lookup-table",
+      "title": "Lookup table",
+      "blurb": "Precompute a 256-byte table and index it by each nucleotide.",
+      "authors": [
+        "keiravillekode"
+      ]
+    },
+    {
+      "uuid": "34c0f10e-3d03-4b18-8fca-cd769d852618",
+      "slug": "simd",
+      "title": "SIMD",
+      "blurb": "Transcribe a whole block of nucleotides at once with vector operations.",
+      "authors": [
+        "keiravillekode"
+      ]
+    }
+  ]
+}
