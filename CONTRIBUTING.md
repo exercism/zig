@@ -36,6 +36,13 @@ All Zig code — exercise stubs, example solutions and test files — must be fo
 zig fmt --check .
 ```
 
+The remaining checks use [configlet], Exercism's track maintenance tool.
+Fetch it once before running any `bin/configlet` command — this downloads the binary to `bin/configlet`:
+
+```bash
+bin/fetch-configlet    # bin/fetch-configlet.ps1 on Windows
+```
+
 The track configuration must pass configlet's linter, and the JSON files must be formatted with configlet's formatter:
 
 ```bash
@@ -60,4 +67,5 @@ bin/generate <slug>
 [building-tracks]: https://exercism.org/docs/building/tracks
 [style]: https://exercism.org/docs/building/markdown/style-guide
 [unnecessary-test-runs]: https://exercism.org/docs/building/tracks#h-avoiding-triggering-unnecessary-test-runs
+[configlet]: https://github.com/exercism/configlet
 [problem-specifications]: https://github.com/exercism/problem-specifications
