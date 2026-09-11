@@ -948,6 +948,14 @@
         "difficulty": 4
       },
       {
+        "slug": "save-the-cow",
+        "name": "Save the Cow",
+        "uuid": "06766bb8-e77b-43fb-80d0-f228d65f309b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "state-of-tic-tac-toe",
         "name": "State of Tic-Tac-Toe",
         "uuid": "ddded9c9-2735-4ac8-8c19-0726de0f6fb0",
