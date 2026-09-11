@@ -1,0 +1,8 @@
+var seen: u32 = 0;
+for (str) |c| {
+    if (!std.ascii.isAlphabetic(c)) continue;
+    const bit = @as(u32, 1) << @intCast((c | 0x20) - 'a');
+    if (seen & bit != 0) return false;
+    seen |= bit;
+}
+return true;
