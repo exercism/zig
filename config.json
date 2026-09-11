@@ -964,6 +964,14 @@
         "difficulty": 4
       },
       {
+        "slug": "strain",
+        "name": "Strain",
+        "uuid": "d43bd44d-585c-4e2f-b634-5e5e5173f0c5",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "yacht",
         "name": "Yacht",
         "uuid": "f73c7be1-ee3a-4fff-93f2-a8f5ab793ca1",
