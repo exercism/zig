@@ -39,8 +39,14 @@ zig fmt --check .
 The remaining checks use [configlet], Exercism's track maintenance tool.
 Fetch it once before running any `bin/configlet` command — this downloads the binary to `bin/configlet`:
 
-```bash
-bin/fetch-configlet    # bin/fetch-configlet.ps1 on Windows
+```sh
+bin/fetch-configlet
+```
+
+Or for Windows:
+
+```sh
+bin/fetch-configlet.ps1
 ```
 
 The track configuration must pass configlet's linter, and the JSON files must be formatted with configlet's formatter:
