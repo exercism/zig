@@ -3,58 +3,62 @@ const testing = std.testing;
 
 const isogram = @import("isogram.zig");
 
+fn testIsIsogram(phrase: []const u8, expected: bool) !void {
+    try testing.expectEqual(expected, isogram.isIsogram(phrase));
+}
+
 test "empty string" {
-    try testing.expect(isogram.isIsogram(""));
+    try testIsIsogram("", true);
 }
 
 test "isogram with only lower case characters" {
-    try testing.expect(isogram.isIsogram("isogram"));
+    try testIsIsogram("isogram", true);
 }
 
 test "word with one duplicated character" {
-    try testing.expect(!isogram.isIsogram("eleven"));
+    try testIsIsogram("eleven", false);
 }
 
 test "word with one duplicated character from the end of the alphabet" {
-    try testing.expect(!isogram.isIsogram("zzyzx"));
+    try testIsIsogram("zzyzx", false);
 }
 
 test "longest reported english isogram" {
-    try testing.expect(isogram.isIsogram("subdermatoglyphic"));
+    try testIsIsogram("subdermatoglyphic", true);
 }
 
 test "word with duplicated character in mixed case" {
-    try testing.expect(!isogram.isIsogram("Alphabet"));
+    try testIsIsogram("Alphabet", false);
 }
 
 test "word with duplicated character in mixed case, lowercase first" {
-    try testing.expect(!isogram.isIsogram("alphAbet"));
+    try testIsIsogram("alphAbet", false);
 }
 
 test "hypothetical isogrammic word with hyphen" {
-    try testing.expect(isogram.isIsogram("thumbscrew-japingly"));
+    try testIsIsogram("thumbscrew-japingly", true);
 }
 
 test "hypothetical word with duplicated character following hyphen" {
-    try testing.expect(!isogram.isIsogram("thumbscrew-jappingly"));
+    try testIsIsogram("thumbscrew-jappingly", false);
 }
 
 test "isogram with duplicated hyphen" {
-    try testing.expect(isogram.isIsogram("six-year-old"));
+    try testIsIsogram("six-year-old", true);
 }
 
 test "made-up name that is an isogram" {
-    try testing.expect(isogram.isIsogram("Emily Jung Schwartzkopf"));
+    try testIsIsogram("Emily Jung Schwartzkopf", true);
 }
 
 test "duplicated character in the middle" {
-    try testing.expect(!isogram.isIsogram("accentor"));
+    try testIsIsogram("accentor", false);
 }
 
 test "same first and last characters" {
-    try testing.expect(!isogram.isIsogram("angola"));
+    try testIsIsogram("angola", false);
 }
 
 test "word with duplicated character and with two hyphens" {
-    try testing.expect(!isogram.isIsogram("up-to-date"));
+    try testIsIsogram("up-to-date", false);
 }
