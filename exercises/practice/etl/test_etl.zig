@@ -6,47 +6,48 @@ const transform = etl.transform;
 
 test "single letter" {
     var legacy = std.AutoHashMap(i5, []const u8).init(testing.allocator);
+    defer legacy.deinit();
     try legacy.put(1, "A");
-    var actual = try transform(testing.allocator, legacy);
-    legacy.deinit();
 
+    var actual = try transform(testing.allocator, legacy);
+    defer actual.deinit();
     try testing.expectEqual(1, actual.count());
     try testing.expectEqual(1, actual.get('a'));
-    actual.deinit();
 }
 
 test "single score with multiple letters" {
     var legacy = std.AutoHashMap(i5, []const u8).init(testing.allocator);
+    defer legacy.deinit();
     try legacy.put(1, "AEIOU");
-    var actual = try transform(testing.allocator, legacy);
-    legacy.deinit();
 
+    var actual = try transform(testing.allocator, legacy);
+    defer actual.deinit();
     try testing.expectEqual(5, actual.count());
     try testing.expectEqual(1, actual.get('a'));
     try testing.expectEqual(1, actual.get('e'));
     try testing.expectEqual(1, actual.get('i'));
     try testing.expectEqual(1, actual.get('o'));
     try testing.expectEqual(1, actual.get('u'));
-    actual.deinit();
 }
 
 test "multiple scores with multiple letters" {
     var legacy = std.AutoHashMap(i5, []const u8).init(testing.allocator);
+    defer legacy.deinit();
     try legacy.put(1, "AE");
     try legacy.put(2, "DG");
-    var actual = try transform(testing.allocator, legacy);
-    legacy.deinit();
 
+    var actual = try transform(testing.allocator, legacy);
+    defer actual.deinit();
     try testing.expectEqual(4, actual.count());
     try testing.expectEqual(1, actual.get('a'));
     try testing.expectEqual(2, actual.get('d'));
     try testing.expectEqual(1, actual.get('e'));
     try testing.expectEqual(2, actual.get('g'));
-    actual.deinit();
 }
 
 test "multiple scores with differing numbers of letters" {
     var legacy = std.AutoHashMap(i5, []const u8).init(testing.allocator);
+    defer legacy.deinit();
     try legacy.put(1, "AEIOULNRST");
     try legacy.put(10, "QZ");
     try legacy.put(2, "DG");
@@ -54,9 +55,9 @@ test "multiple scores with differing numbers of letters" {
     try legacy.put(4, "FHVWY");
     try legacy.put(5, "K");
     try legacy.put(8, "JX");
-    var actual = try transform(testing.allocator, legacy);
-    legacy.deinit();
 
+    var actual = try transform(testing.allocator, legacy);
+    defer actual.deinit();
     try testing.expectEqual(26, actual.count());
     try testing.expectEqual(1, actual.get('a'));
     try testing.expectEqual(3, actual.get('b'));
@@ -84,5 +85,4 @@ test "multiple scores with differing numbers of letters" {
     try testing.expectEqual(8, actual.get('x'));
     try testing.expectEqual(4, actual.get('y'));
     try testing.expectEqual(10, actual.get('z'));
-    actual.deinit();
 }
