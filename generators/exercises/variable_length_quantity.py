@@ -1,10 +1,15 @@
 from lib import zint, is_error
 
-HEADER = (
-    "const encode = variable_length_quantity.encode;\n"
-    "const decode = variable_length_quantity.decode;\n"
-    "const DecodeError = variable_length_quantity.DecodeError;\n"
-)
+HEADER = """const encode = variable_length_quantity.encode;
+const decode = variable_length_quantity.decode;
+const DecodeError = variable_length_quantity.DecodeError;
+
+fn testDecodeError(integers: []const u8) !void {
+    const actual = decode(testing.allocator, integers);
+    defer if (actual) |slice| testing.allocator.free(slice) else |_| {};
+    try testing.expectError(DecodeError.IncompleteSequence, actual);
+}
+"""
 
 
 def describe(case, parent):
@@ -26,10 +31,10 @@ def gen_case(case):
     )
 
     if is_error(expected):
+        assert prop == "decode", f"unexpected error case for {prop}"
         return (
             f"    const integers = [_]{in_ty}{integers_lit};\n"
-            f"    const actual = {prop}(testing.allocator, &integers);\n"
-            f"    try testing.expectError(DecodeError.IncompleteSequence, actual);\n"
+            "    try testDecodeError(&integers);\n"
         )
 
     out_ty = "u8" if prop == "encode" else "u32"

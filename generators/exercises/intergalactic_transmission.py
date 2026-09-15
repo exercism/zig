@@ -1,10 +1,15 @@
 from lib import is_error
 
-HEADER = (
-    "const transmitSequence = intergalactic_transmission.transmitSequence;\n"
-    "const decodeMessage = intergalactic_transmission.decodeMessage;\n"
-    "const TransmissionError = intergalactic_transmission.TransmissionError;\n"
-)
+HEADER = """const transmitSequence = intergalactic_transmission.transmitSequence;
+const decodeMessage = intergalactic_transmission.decodeMessage;
+const TransmissionError = intergalactic_transmission.TransmissionError;
+
+fn testDecodeMessageError(message: []const u8) !void {
+    const actual = decodeMessage(testing.allocator, message);
+    defer if (actual) |slice| testing.allocator.free(slice) else |_| {};
+    try testing.expectError(TransmissionError.WrongParity, actual);
+}
+"""
 
 
 def _bytes_lit(values):
@@ -20,9 +25,10 @@ def gen_case(case):
     msg_lit = _bytes_lit(message)
 
     if is_error(expected):
+        assert prop == "decodeMessage", f"unexpected error case for {prop}"
         return (
             f"    const message = [_]u8{msg_lit};\n"
-            f"    try testing.expectError(TransmissionError.WrongParity, {prop}(testing.allocator, &message));\n"
+            "    try testDecodeMessageError(&message);\n"
         )
 
     exp_lit = _bytes_lit(expected)

@@ -6,6 +6,12 @@ const proteins = protein_translation.proteins;
 const Protein = protein_translation.Protein;
 const TranslationError = protein_translation.TranslationError;
 
+fn testProteinsError(strand: []const u8) !void {
+    const actual = proteins(testing.allocator, strand);
+    defer if (actual) |slice| testing.allocator.free(slice) else |_| {};
+    try testing.expectError(TranslationError.InvalidCodon, actual);
+}
+
 test "Empty RNA sequence results in no proteins" {
     const expected = [_]Protein{};
     const actual = try proteins(testing.allocator, "");
@@ -196,11 +202,11 @@ test "Sequence of two non-STOP codons does not translate to a STOP codon" {
 }
 
 test "Unknown amino acids, not part of a codon, can't translate" {
-    try testing.expectError(TranslationError.InvalidCodon, proteins(testing.allocator, "XYZ"));
+    try testProteinsError("XYZ");
 }
 
 test "Incomplete RNA sequence can't translate" {
-    try testing.expectError(TranslationError.InvalidCodon, proteins(testing.allocator, "AUGU"));
+    try testProteinsError("AUGU");
 }
 
 test "Incomplete RNA sequence can translate if valid until a STOP codon" {
