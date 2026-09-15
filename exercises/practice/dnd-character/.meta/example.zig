@@ -1,9 +1,10 @@
 const std = @import("std");
 
-var prng = std.Random.DefaultPrng.init(42);
-const random = prng.random();
+pub fn modifier(score: u8) i8 {
+    return @divFloor(@as(i8, @intCast(score)) - 10, 2);
+}
 
-pub fn ability() u8 {
+pub fn ability(random: std.Random) u8 {
     var lowest: u8 = std.math.maxInt(u8);
     var result: u8 = 0;
     for (0..4) |_| {
@@ -11,12 +12,7 @@ pub fn ability() u8 {
         result += roll;
         lowest = @min(lowest, roll);
     }
-    result -= lowest;
-    return result;
-}
-
-pub fn modifier(score: u8) i8 {
-    return @divFloor(@as(i8, @intCast(score)) - 10, 2);
+    return result - lowest;
 }
 
 pub const Character = struct {
@@ -28,16 +24,16 @@ pub const Character = struct {
     charisma: u8,
     hitpoints: u8,
 
-    pub fn init() Character {
-        const constitution = ability();
+    pub fn init(random: std.Random) Character {
+        const constitution = ability(random);
         return .{
-            .strength = ability(),
-            .dexterity = ability(),
+            .strength = ability(random),
+            .dexterity = ability(random),
             .constitution = constitution,
-            .intelligence = ability(),
-            .wisdom = ability(),
-            .charisma = ability(),
-            .hitpoints = @as(u8, @intCast(10 + modifier(constitution))),
+            .intelligence = ability(random),
+            .wisdom = ability(random),
+            .charisma = ability(random),
+            .hitpoints = @intCast(10 + modifier(constitution)),
         };
     }
 };

@@ -1,0 +1,28 @@
+{
+  "cases": [
+    {
+      "description": "random ability is distributed correctly",
+      "property": "abilityDistribution",
+      "input": {},
+      "expected": "chi-squared test against the 4d6-drop-lowest distribution passes at p < 0.0001"
+    },
+    {
+      "description": "each character ability is distributed correctly",
+      "property": "characterDistribution",
+      "input": {},
+      "expected": "chi-squared test of each ability against the 4d6-drop-lowest distribution passes at p < 0.0001"
+    },
+    {
+      "description": "character abilities are independent",
+      "property": "characterParity",
+      "input": {},
+      "expected": "chi-squared test of the odd/even pattern of the six abilities passes at p < 0.0001"
+    },
+    {
+      "description": "character depends only on the random number generator",
+      "property": "sameSeed",
+      "input": {},
+      "expected": "generators with the same seed produce the same characters"
+    }
+  ]
+}
