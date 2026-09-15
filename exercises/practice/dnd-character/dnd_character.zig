@@ -1,22 +1,26 @@
-pub fn modifier(score: i8) i8 {
+const std = @import("std");
+
+pub fn modifier(score: u8) i8 {
     _ = score;
     @compileError("please implement the modifier function");
 }
 
-pub fn ability() i8 {
+pub fn ability(random: std.Random) u8 {
+    _ = random;
     @compileError("please implement the ability function");
 }
 
 pub const Character = struct {
-    strength: i8,
-    dexterity: i8,
-    constitution: i8,
-    intelligence: i8,
-    wisdom: i8,
-    charisma: i8,
-    hitpoints: i8,
+    strength: u8,
+    dexterity: u8,
+    constitution: u8,
+    intelligence: u8,
+    wisdom: u8,
+    charisma: u8,
+    hitpoints: u8,
 
-    pub fn init() Character {
+    pub fn init(random: std.Random) Character {
+        _ = random;
         @compileError("please implement the init method");
     }
 };
