@@ -106,7 +106,7 @@ def gen_case(case):
         )
     if prop == "abilityDistribution":
         return s + (
-            "    var counts = [_]u64{0} ** 16;\n"
+            "    var counts: [16]u64 = @splat(0);\n"
             "    for (0..sample_size) |_| {\n"
             "        const score = dnd_character.ability(random);\n"
             "        try testing.expect(isValidAbilityScore(score));\n"
@@ -116,7 +116,7 @@ def gen_case(case):
         )
     if prop == "characterDistribution":
         return s + (
-            "    var counts = [_][16]u64{[_]u64{0} ** 16} ** 6;\n"
+            "    var counts: [6][16]u64 = @splat(@splat(0));\n"
             "    for (0..sample_size) |_| {\n"
             "        const character = Character.init(random);\n"
             "        for (abilityScores(character), &counts) |score, *ability_counts| {\n"
@@ -130,7 +130,7 @@ def gen_case(case):
         )
     if prop == "characterParity":
         return s + (
-            "    var counts = [_]u64{0} ** 64;\n"
+            "    var counts: [64]u64 = @splat(0);\n"
             "    for (0..sample_size) |_| {\n"
             "        const character = Character.init(random);\n"
             "        var pattern: usize = 0;\n"

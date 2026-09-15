@@ -174,7 +174,7 @@ test "random ability is within range" {
 test "random ability is distributed correctly" {
     var prng = std.Random.DefaultPrng.init(testing.random_seed);
     const random = prng.random();
-    var counts = [_]u64{0} ** 16;
+    var counts: [16]u64 = @splat(0);
     for (0..sample_size) |_| {
         const score = dnd_character.ability(random);
         try testing.expect(isValidAbilityScore(score));
@@ -195,7 +195,7 @@ test "random character is valid" {
 test "each character ability is distributed correctly" {
     var prng = std.Random.DefaultPrng.init(testing.random_seed);
     const random = prng.random();
-    var counts = [_][16]u64{[_]u64{0} ** 16} ** 6;
+    var counts: [6][16]u64 = @splat(@splat(0));
     for (0..sample_size) |_| {
         const character = Character.init(random);
         for (abilityScores(character), &counts) |score, *ability_counts| {
@@ -211,7 +211,7 @@ test "each character ability is distributed correctly" {
 test "character abilities are independent" {
     var prng = std.Random.DefaultPrng.init(testing.random_seed);
     const random = prng.random();
-    var counts = [_]u64{0} ** 64;
+    var counts: [64]u64 = @splat(0);
     for (0..sample_size) |_| {
         const character = Character.init(random);
         var pattern: usize = 0;
