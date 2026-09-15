@@ -15,7 +15,7 @@ The distribution of your ability scores is checked by [chi-squared tests][chi-sq
 
 A correct implementation has less than a 0.01% chance of failing each test.
 
-Note that, according to the instructions, an ability score is _the sum of the three largest results out of four rolls of an unbiased d6 (six-sided die)_.
+See the instructions above for a definition of what an ability score is.
 
 [random]: https://ziglang.org/documentation/0.16.0/std/#std.Random
 [random-seed]: https://ziglang.org/documentation/0.16.0/std/#std.testing.random_seed
