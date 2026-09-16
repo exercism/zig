@@ -6,6 +6,12 @@ const encode = variable_length_quantity.encode;
 const decode = variable_length_quantity.decode;
 const DecodeError = variable_length_quantity.DecodeError;
 
+fn testDecodeError(integers: []const u8) !void {
+    const actual = decode(testing.allocator, integers);
+    defer if (actual) |slice| testing.allocator.free(slice) else |_| {};
+    try testing.expectError(DecodeError.IncompleteSequence, actual);
+}
+
 test "encode - zero" {
     const expected = [_]u8{0};
     const integers = [_]u32{0};
@@ -232,14 +238,12 @@ test "decode - maximum 32-bit integer" {
 
 test "decode - incomplete sequence causes error" {
     const integers = [_]u8{255};
-    const actual = decode(testing.allocator, &integers);
-    try testing.expectError(DecodeError.IncompleteSequence, actual);
+    try testDecodeError(&integers);
 }
 
 test "decode - incomplete sequence causes error, even if value is zero" {
     const integers = [_]u8{128};
-    const actual = decode(testing.allocator, &integers);
-    try testing.expectError(DecodeError.IncompleteSequence, actual);
+    try testDecodeError(&integers);
 }
 
 test "decode - multiple values" {

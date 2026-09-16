@@ -6,6 +6,18 @@ const encode = affine_cipher.encode;
 const decode = affine_cipher.decode;
 const AffineCipherError = affine_cipher.AffineCipherError;
 
+fn testEncodeError(phrase: []const u8, a: u8, b: u8) !void {
+    const actual = encode(testing.allocator, phrase, a, b);
+    defer if (actual) |slice| testing.allocator.free(slice) else |_| {};
+    try testing.expectError(AffineCipherError.NotCoprime, actual);
+}
+
+fn testDecodeError(phrase: []const u8, a: u8, b: u8) !void {
+    const actual = decode(testing.allocator, phrase, a, b);
+    defer if (actual) |slice| testing.allocator.free(slice) else |_| {};
+    try testing.expectError(AffineCipherError.NotCoprime, actual);
+}
+
 test "encode yes" {
     const expected: []const u8 = "xbt";
     const actual = try encode(testing.allocator, "yes", 5, 7);
@@ -63,8 +75,7 @@ test "encode all the letters" {
 }
 
 test "encode with a not coprime to m" {
-    const actual = encode(testing.allocator, "This is a test.", 6, 17);
-    try testing.expectError(AffineCipherError.NotCoprime, actual);
+    try testEncodeError("This is a test.", 6, 17);
 }
 
 test "decode exercism" {
@@ -110,8 +121,7 @@ test "decode with too many spaces" {
 }
 
 test "decode with a not coprime to m" {
-    const actual = decode(testing.allocator, "Test", 13, 5);
-    try testing.expectError(AffineCipherError.NotCoprime, actual);
+    try testDecodeError("Test", 13, 5);
 }
 
 test "encode boundary characters" {

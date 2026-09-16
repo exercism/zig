@@ -6,6 +6,12 @@ const transmitSequence = intergalactic_transmission.transmitSequence;
 const decodeMessage = intergalactic_transmission.decodeMessage;
 const TransmissionError = intergalactic_transmission.TransmissionError;
 
+fn testDecodeMessageError(message: []const u8) !void {
+    const actual = decodeMessage(testing.allocator, message);
+    defer if (actual) |slice| testing.allocator.free(slice) else |_| {};
+    try testing.expectError(TransmissionError.WrongParity, actual);
+}
+
 test "calculate transmit sequences-empty message" {
     const message = [_]u8{};
     const expected = [_]u8{};
@@ -136,12 +142,12 @@ test "decode received messages-0x2881 is decoded to 0x29" {
 
 test "decode received messages-first byte has wrong parity" {
     const message = [_]u8{ 0x07, 0x00 };
-    try testing.expectError(TransmissionError.WrongParity, decodeMessage(testing.allocator, &message));
+    try testDecodeMessageError(&message);
 }
 
 test "decode received messages-second byte has wrong parity" {
     const message = [_]u8{ 0x03, 0x68 };
-    try testing.expectError(TransmissionError.WrongParity, decodeMessage(testing.allocator, &message));
+    try testDecodeMessageError(&message);
 }
 
 test "decode received messages-0xcf4b00 is decoded to 0xce94" {
@@ -178,7 +184,7 @@ test "decode received messages-seven byte message" {
 
 test "decode received messages-last byte has wrong parity" {
     const message = [_]u8{ 0x47, 0xb8, 0x99, 0xac, 0x17, 0xa0, 0xc5, 0x43 };
-    try testing.expectError(TransmissionError.WrongParity, decodeMessage(testing.allocator, &message));
+    try testDecodeMessageError(&message);
 }
 
 test "decode received messages-eight byte message" {
@@ -199,5 +205,5 @@ test "decode received messages-twenty byte message" {
 
 test "decode received messages-wrong parity on 16th byte" {
     const message = [_]u8{ 0x44, 0xbd, 0x18, 0xaf, 0x27, 0x1b, 0xa5, 0xe7, 0x6c, 0x90, 0x1b, 0x2e, 0x33, 0x03, 0x84, 0xef, 0x65, 0xb8, 0xdb, 0xed, 0xd7, 0x28, 0x84 };
-    try testing.expectError(TransmissionError.WrongParity, decodeMessage(testing.allocator, &message));
+    try testDecodeMessageError(&message);
 }
