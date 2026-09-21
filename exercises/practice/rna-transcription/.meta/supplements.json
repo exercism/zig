@@ -1,0 +1,13 @@
+{
+  "cases": [
+    {
+      "description": "long rna complement",
+      "property": "toRna",
+      "comment": "108 nucleotides: longer than a SIMD block of 64 bytes (AVX-512), with a partial block left over for 8, 16, 32 and 64 lanes.",
+      "input": {
+        "dna": "ACGTGGTCTTAAACGTGGTCTTAAACGTGGTCTTAAACGTGGTCTTAAACGTGGTCTTAAACGTGGTCTTAAACGTGGTCTTAAACGTGGTCTTAAACGTGGTCTTAA"
+      },
+      "expected": "UGCACCAGAAUUUGCACCAGAAUUUGCACCAGAAUUUGCACCAGAAUUUGCACCAGAAUUUGCACCAGAAUUUGCACCAGAAUUUGCACCAGAAUUUGCACCAGAAUU"
+    }
+  ]
+}

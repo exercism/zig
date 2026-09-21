@@ -62,3 +62,15 @@ test "same first and last characters" {
 test "word with duplicated character and with two hyphens" {
     try testIsIsogram("up-to-date", false);
 }
+
+test "long isogram with spaces and hyphens" {
+    try testIsIsogram("a - - B - - c - - D - - e - - F - - g - - H - - i - - J - - k - - L - - m - - N - - o - - P - - q - - R - - s - - T - - u - - V - - w - - X - - y - - Z", true);
+}
+
+test "long phrase with duplicated character in mixed case" {
+    try testIsIsogram("a - - B - - c - - D - - e - - F - - g - - H - - i - - J - - k - - L - - m - - N - - o - - P - - q - - A - - s - - T - - u - - V - - w - - X - - y - - Z", false);
+}
+
+test "long phrase with first letter repeated at the end" {
+    try testIsIsogram("a - - B - - c - - D - - e - - F - - g - - H - - i - - J - - k - - L - - m - - N - - o - - P - - q - - R - - s - - T - - u - - V - - w - - X - - y - - A", false);
+}

@@ -1,0 +1,31 @@
+{
+  "cases": [
+    {
+      "description": "long isogram with spaces and hyphens",
+      "property": "isIsogram",
+      "comment": "151 bytes: more than two SIMD blocks of 64 bytes (AVX-512), with a partial block left over for 8, 16, 32 and 64 lanes.",
+      "input": {
+        "phrase": "a - - B - - c - - D - - e - - F - - g - - H - - i - - J - - k - - L - - m - - N - - o - - P - - q - - R - - s - - T - - u - - V - - w - - X - - y - - Z"
+      },
+      "expected": true
+    },
+    {
+      "description": "long phrase with duplicated character in mixed case",
+      "property": "isIsogram",
+      "comment": "The duplicates are at bytes 0 and 102, so a SIMD solution sees them in different full blocks for 8, 16, 32 and 64 lanes.",
+      "input": {
+        "phrase": "a - - B - - c - - D - - e - - F - - g - - H - - i - - J - - k - - L - - m - - N - - o - - P - - q - - A - - s - - T - - u - - V - - w - - X - - y - - Z"
+      },
+      "expected": false
+    },
+    {
+      "description": "long phrase with first letter repeated at the end",
+      "property": "isIsogram",
+      "comment": "The duplicates are at bytes 0 and 150, so a SIMD solution sees the second one in the final partial block for 8, 16, 32 and 64 lanes.",
+      "input": {
+        "phrase": "a - - B - - c - - D - - e - - F - - g - - H - - i - - J - - k - - L - - m - - N - - o - - P - - q - - R - - s - - T - - u - - V - - w - - X - - y - - A"
+      },
+      "expected": false
+    }
+  ]
+}

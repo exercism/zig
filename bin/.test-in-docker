@@ -6,6 +6,20 @@ all_slugs="$*"
 
 exit_code=0
 
+# Runs the tests against /tmp/solution/${snake}.zig, recording any failure
+# under the given description.
+check_solution() {
+  bin/run.sh "${slug}" /tmp/solution /tmp/solution > /dev/null
+  if ! jq -e '.status == "pass"' /tmp/solution/results.json > /dev/null; then
+    # A compile error reports at the top level; failing tests report per test.
+    errors="${errors}\n\n${1} is incorrect:\n$(jq -r '
+      .message
+      // ([.tests[]? | select(.status != "pass") | "\(.name):\n\(.message // "no message")"] | join("\n\n"))
+    ' /tmp/solution/results.json)"
+    local_exit_code=1;
+  fi
+}
+
 for slug in $all_slugs; do
   snake="${slug//-/_}"
   local_exit_code=0
@@ -13,22 +27,24 @@ for slug in $all_slugs; do
   rm -rf /tmp/solution
   cp -r "/exercises/practice/${slug}" /tmp/solution
 
+  errors=""
+
   # Integration test: Check if the example solution passes the tests
   # as run by the zig-test-runner similiarly to a student submitting
   # their solution.
   cp /tmp/solution/.meta/example.zig "/tmp/solution/${snake}.zig"
-  bin/run.sh "${slug}" /tmp/solution /tmp/solution > /dev/null
+  check_solution "Solution"
 
-  errors=""
-
-  if ! jq -e '.status == "pass"' /tmp/solution/results.json > /dev/null; then
-    # A compile error reports at the top level; failing tests report per test.
-    errors="${errors}\n\nSolution is incorrect:\n$(jq -r '
-      .message
-      // ([.tests[]? | select(.status != "pass") | "\(.name):\n\(.message // "no message")"] | join("\n\n"))
-    ' /tmp/solution/results.json)"
-    local_exit_code=1;
-  fi
+  # Approach docs: by convention, the first ```zig block in each
+  # approach's content.md is a complete solution, so it must also pass.
+  for content in "/exercises/practice/${slug}"/.approaches/*/content.md; do
+    [ -e "${content}" ] || continue
+    approach=$(basename "$(dirname "${content}")")
+    awk '/^```zig$/ && !found { in_block = 1; found = 1; next }
+         in_block && /^```$/ { exit }
+         in_block { print }' "${content}" > "/tmp/solution/${snake}.zig"
+    check_solution "Approach ${approach} solution"
+  done
 
   if [ $local_exit_code = 0 ]; then
     echo -e "${slug}: \e[32mPASSED\e[0m"

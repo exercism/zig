@@ -20,6 +20,19 @@ execute_test() {
       printf '%s\n' "Error: ${exercise_name} lacks its '.meta/example.zig' file" >&2
       exit 1
     fi
+
+    # Approach docs: by convention, the first ```zig block in each
+    # approach's content.md is a complete solution, so it must also pass.
+    local content
+    for content in .approaches/*/content.md; do
+      [[ -e "${content}" ]] || continue
+      printf '%s\n' "Running tests for ${1} approach $(basename "$(dirname "${content}")")..." >&2
+      awk '/^```zig$/ && !found { in_block = 1; found = 1; next }
+           in_block && /^```$/ { exit }
+           in_block { print }' "${content}" > "${exercise_name}".zig
+      zig test "test_${exercise_name}.zig"
+      printf '\n' >&2
+    done
   )
 }
 
