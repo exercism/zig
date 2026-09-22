@@ -49,6 +49,27 @@ run_tests() {
     jq -e '.status == "pass"' "${PWD}/results.json" >/dev/null 2>&1
 }
 
+first_zig_block() {
+    awk '/^```zig$/ && !found { in_block = 1; found = 1; next }
+         in_block && /^```$/ { exit }
+         in_block { print }' "${1}"
+}
+
+verify_approaches() {
+    local slug content approach solution
+    slug="${1}"
+    solution=$(jq -r '.files.solution[0]' .meta/config.json)
+
+    # Approach docs: by convention, the first ```zig block in each
+    # approach's content.md is a complete solution, so it must also pass.
+    for content in .approaches/*/content.md; do
+        approach=$(basename "$(dirname "${content}")")
+        echo "Verifying ${slug} approach: ${approach}..."
+        first_zig_block "${content}" > "${solution}"
+        run_tests "${slug}" || { cat results.json; return 1; }
+    done
+}
+
 verify_exercise() {
     local dir
     local slug
@@ -66,6 +87,7 @@ verify_exercise() {
 
         copy_example_or_examplar_to_solution
         run_tests "${slug}" || { cat "${tmp_dir}/results.json"; exit 1; }
+        verify_approaches "${slug}" || exit 1
     )
 }
 
