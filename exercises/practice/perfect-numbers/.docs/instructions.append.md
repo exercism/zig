@@ -8,6 +8,6 @@ For more details, see the [Zig Language Reference][zig-reference] and the implem
 
 However, note that this exercise does not currently test an input of 0 (because `std.testing` does [not yet support expecting a panic][proposal]).
 
-[zig-reference]: https://ziglang.org/documentation/0.16.0/#unreachable
-[assert]: https://ziglang.org/documentation/0.16.0/std/#std.debug.assert
+[zig-reference]: https://ziglang.org/documentation/0.17.0/#unreachable
+[assert]: https://ziglang.org/documentation/0.17.0/std/#std.debug.assert
 [proposal]: https://github.com/ziglang/zig/issues/1356

@@ -5,15 +5,15 @@ const queen_attack = @import("queen_attack.zig");
 const QueenError = queen_attack.QueenError;
 
 test "queen has exactly two fields" {
-    try testing.expectEqual(2, std.meta.fields(queen_attack.Queen).len);
+    try testing.expectEqual(2, @typeInfo(queen_attack.Queen).@"struct".field_names.len);
 }
 
 test "queen with a valid position" {
     const queen = try queen_attack.Queen.init(2, 2);
     // Allow the fields to have any name.
-    const fields = std.meta.fields(@TypeOf(queen));
-    inline for (fields) |f| {
-        const actual = @field(queen, f.name);
+    const field_names = @typeInfo(@TypeOf(queen)).@"struct".field_names;
+    inline for (field_names) |name| {
+        const actual = @field(queen, name);
         const expected = @as(@TypeOf(actual), 2);
         try testing.expectEqual(expected, actual);
     }

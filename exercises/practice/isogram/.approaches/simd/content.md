@@ -28,7 +28,7 @@ pub fn isIsogram(str: []const u8) bool {
         seen |= mask;
     }
     // Pad the remaining bytes with zeroes to fill one last block.
-    var padded = [_]u8{0} ** block_len;
+    var padded: [block_len]u8 = @splat(0);
     @memcpy(padded[0 .. str.len - i], str[i..]);
     const mask = letterMask(padded) orelse return false;
     return seen & mask == 0;

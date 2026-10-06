@@ -19,7 +19,7 @@ def gen_case(case):
     inp = case["input"]
     if prop == "fields":
         n = case["expected"]
-        return f"    try testing.expectEqual({n}, std.meta.fields(queen_attack.Queen).len);\n"
+        return f"    try testing.expectEqual({n}, @typeInfo(queen_attack.Queen).@\"struct\".field_names.len);\n"
     if prop == "create":
         pos = inp["queen"]["position"]
         row, col = pos["row"], pos["column"]
@@ -32,9 +32,9 @@ def gen_case(case):
         return (
             f"    const queen = try queen_attack.Queen.init({row}, {col});\n"
             f"    // Allow the fields to have any name.\n"
-            f"    const fields = std.meta.fields(@TypeOf(queen));\n"
-            f"    inline for (fields) |f| {{\n"
-            f"        const actual = @field(queen, f.name);\n"
+            f"    const field_names = @typeInfo(@TypeOf(queen)).@\"struct\".field_names;\n"
+            f"    inline for (field_names) |name| {{\n"
+            f"        const actual = @field(queen, name);\n"
             f"        const expected = @as(@TypeOf(actual), {row});\n"
             f"        try testing.expectEqual(expected, actual);\n"
             f"    }}\n"

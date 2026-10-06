@@ -20,7 +20,7 @@ pub fn isAllergicTo(score: tag_type, allergen: Allergen) bool {
 }
 
 pub fn initAllergenSet(score: usize) EnumSet(Allergen) {
-    const len = @typeInfo(Allergen).@"enum".fields.len;
+    const len = @typeInfo(Allergen).@"enum".field_names.len;
     const bits = IntegerBitSet(len){ .mask = @as(tag_type, @truncate(score)) };
     return .{ .bits = bits };
 }
