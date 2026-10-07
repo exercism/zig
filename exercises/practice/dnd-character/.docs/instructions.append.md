@@ -17,7 +17,7 @@ A correct implementation has less than a 0.01% chance of failing each test.
 
 See the instructions above for a definition of what an ability score is.
 
-[random]: https://ziglang.org/documentation/0.16.0/std/#std.Random
-[random-seed]: https://ziglang.org/documentation/0.16.0/std/#std.testing.random_seed
+[random]: https://ziglang.org/documentation/0.17.0/std/#std.Random
+[random-seed]: https://ziglang.org/documentation/0.17.0/std/#std.testing.random_seed
 [chi-squared-test]: https://en.wikipedia.org/wiki/Pearson%27s_chi-squared_test
 [p-value]: https://en.wikipedia.org/wiki/P-value

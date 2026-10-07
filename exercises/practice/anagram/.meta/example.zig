@@ -4,7 +4,7 @@ const mem = std.mem;
 /// Returns the case-insensitive counts of English letters in `s`.
 /// Caller guarantees that `s` contains at most 15 of a single letter.
 fn count(s: []const u8) [26]u4 {
-    var result = [_]u4{0} ** 26;
+    var result: [26]u4 = @splat(0);
     for (s) |c| {
         switch (c) {
             'A'...'Z' => result[c - 'A'] += 1,

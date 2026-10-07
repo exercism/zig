@@ -5,7 +5,7 @@ Fortunately, all of the popular installation methods are listed on the [Zig inst
 
 ## Zig version
 
-Exercism currently supports Zig 0.16.0 (released on 2026-04-14) only.
+Exercism uses Zig 0.17.0 (released on 2026-10-01).
 
 An exercise may be compatible with a different Zig version, but that isn't guaranteed.
 Zig has not yet reached version 1.0, and breaking changes are common.
