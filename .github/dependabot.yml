@@ -3,10 +3,16 @@ version: 2
 updates:
 
   # Keep dependencies for GitHub Actions up-to-date
-  - package-ecosystem: 'github-actions'
-    directory: '/'
+  - package-ecosystem: github-actions
+    directory: /
     schedule:
-      interval: 'monthly'
-      time: '05:00'
+      interval: monthly
+      time: 05:00
     commit-message:
-      prefix: '.github'
+      prefix: .github
+
+  # Enable updates to the dependencies of our Dockerfile
+  - package-ecosystem: docker
+    directory: /
+    schedule:
+      interval: monthly
