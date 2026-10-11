@@ -244,3 +244,23 @@ test "puzzle with 94 columns and 94/87 aspect ratio" {
     const actual = try jigsawData(puzzle);
     try testing.expectEqual(expected, actual);
 }
+
+test "portrait puzzle with no inside pieces and aspect ratio 1" {
+    const puzzle = PartialInformation{
+        .inside = 0,
+        .aspectRatio = 1.0,
+        .format = .portrait,
+    };
+    const actual = jigsawData(puzzle);
+    try testing.expectError(PuzzleError.ContradictoryData, actual);
+}
+
+test "landscape puzzle with no inside pieces and aspect ratio 1" {
+    const puzzle = PartialInformation{
+        .inside = 0,
+        .aspectRatio = 1.0,
+        .format = .landscape,
+    };
+    const actual = jigsawData(puzzle);
+    try testing.expectError(PuzzleError.ContradictoryData, actual);
+}

@@ -119,6 +119,30 @@
         "aspectRatio": 1.0804597701149425,
         "format": "landscape"
       }
+    },
+    {
+      "description": "portrait puzzle with no inside pieces and aspect ratio 1",
+      "property": "jigsawData",
+      "input": {
+        "inside": 0,
+        "aspectRatio": 1.0,
+        "format": "portrait"
+      },
+      "expected": {
+        "error": "Contradictory data"
+      }
+    },
+    {
+      "description": "landscape puzzle with no inside pieces and aspect ratio 1",
+      "property": "jigsawData",
+      "input": {
+        "inside": 0,
+        "aspectRatio": 1.0,
+        "format": "landscape"
+      },
+      "expected": {
+        "error": "Contradictory data"
+      }
     }
   ]
 }
