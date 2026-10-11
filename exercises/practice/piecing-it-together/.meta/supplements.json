@@ -17,6 +17,108 @@
         "aspectRatio": 1.6180257510729614,
         "format": "landscape"
       }
+    },
+    {
+      "description": "portrait puzzle with 8 border pieces",
+      "property": "jigsawData",
+      "input": {
+        "border": 8,
+        "format": "portrait"
+      },
+      "expected": {
+        "pieces": 8,
+        "border": 8,
+        "inside": 0,
+        "rows": 4,
+        "columns": 2,
+        "aspectRatio": 0.5,
+        "format": "portrait"
+      }
+    },
+    {
+      "description": "landscape puzzle with 8 border pieces",
+      "property": "jigsawData",
+      "input": {
+        "border": 8,
+        "format": "landscape"
+      },
+      "expected": {
+        "pieces": 8,
+        "border": 8,
+        "inside": 0,
+        "rows": 2,
+        "columns": 4,
+        "aspectRatio": 2.0,
+        "format": "landscape"
+      }
+    },
+    {
+      "description": "puzzle with no inside pieces and aspect ratio 5",
+      "property": "jigsawData",
+      "input": {
+        "inside": 0,
+        "aspectRatio": 5.0
+      },
+      "expected": {
+        "pieces": 20,
+        "border": 20,
+        "inside": 0,
+        "rows": 2,
+        "columns": 10,
+        "aspectRatio": 5.0,
+        "format": "landscape"
+      }
+    },
+    {
+      "description": "puzzle with no inside pieces and aspect ratio 0.2",
+      "property": "jigsawData",
+      "input": {
+        "inside": 0,
+        "aspectRatio": 0.2
+      },
+      "expected": {
+        "pieces": 20,
+        "border": 20,
+        "inside": 0,
+        "rows": 10,
+        "columns": 2,
+        "aspectRatio": 0.2,
+        "format": "portrait"
+      }
+    },
+    {
+      "description": "puzzle with 87 rows and 94/87 aspect ratio",
+      "property": "jigsawData",
+      "input": {
+        "rows": 87,
+        "aspectRatio": 1.0804597701149425
+      },
+      "expected": {
+        "pieces": 8178,
+        "border": 358,
+        "inside": 7820,
+        "rows": 87,
+        "columns": 94,
+        "aspectRatio": 1.0804597701149425,
+        "format": "landscape"
+      }
+    },
+    {
+      "description": "puzzle with 94 columns and 94/87 aspect ratio",
+      "property": "jigsawData",
+      "input": {
+        "columns": 94,
+        "aspectRatio": 1.0804597701149425
+      },
+      "expected": {
+        "pieces": 8178,
+        "border": 358,
+        "inside": 7820,
+        "rows": 87,
+        "columns": 94,
+        "aspectRatio": 1.0804597701149425,
+        "format": "landscape"
+      }
     }
   ]
 }

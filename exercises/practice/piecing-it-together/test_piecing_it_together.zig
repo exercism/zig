@@ -136,3 +136,111 @@ test "very large landscape" {
     const actual = try jigsawData(puzzle);
     try testing.expectEqual(expected, actual);
 }
+
+test "portrait puzzle with 8 border pieces" {
+    const puzzle = PartialInformation{
+        .border = 8,
+        .format = .portrait,
+    };
+    const expected = FullInformation{
+        .pieces = 8,
+        .border = 8,
+        .inside = 0,
+        .rows = 4,
+        .columns = 2,
+        .aspectRatio = 0.5,
+        .format = .portrait,
+    };
+    const actual = try jigsawData(puzzle);
+    try testing.expectEqual(expected, actual);
+}
+
+test "landscape puzzle with 8 border pieces" {
+    const puzzle = PartialInformation{
+        .border = 8,
+        .format = .landscape,
+    };
+    const expected = FullInformation{
+        .pieces = 8,
+        .border = 8,
+        .inside = 0,
+        .rows = 2,
+        .columns = 4,
+        .aspectRatio = 2.0,
+        .format = .landscape,
+    };
+    const actual = try jigsawData(puzzle);
+    try testing.expectEqual(expected, actual);
+}
+
+test "puzzle with no inside pieces and aspect ratio 5" {
+    const puzzle = PartialInformation{
+        .inside = 0,
+        .aspectRatio = 5.0,
+    };
+    const expected = FullInformation{
+        .pieces = 20,
+        .border = 20,
+        .inside = 0,
+        .rows = 2,
+        .columns = 10,
+        .aspectRatio = 5.0,
+        .format = .landscape,
+    };
+    const actual = try jigsawData(puzzle);
+    try testing.expectEqual(expected, actual);
+}
+
+test "puzzle with no inside pieces and aspect ratio 0.2" {
+    const puzzle = PartialInformation{
+        .inside = 0,
+        .aspectRatio = 0.2,
+    };
+    const expected = FullInformation{
+        .pieces = 20,
+        .border = 20,
+        .inside = 0,
+        .rows = 10,
+        .columns = 2,
+        .aspectRatio = 0.2,
+        .format = .portrait,
+    };
+    const actual = try jigsawData(puzzle);
+    try testing.expectEqual(expected, actual);
+}
+
+test "puzzle with 87 rows and 94/87 aspect ratio" {
+    const puzzle = PartialInformation{
+        .rows = 87,
+        .aspectRatio = 1.0804597701149425,
+    };
+    const expected = FullInformation{
+        .pieces = 8178,
+        .border = 358,
+        .inside = 7820,
+        .rows = 87,
+        .columns = 94,
+        .aspectRatio = 1.0804597701149425,
+        .format = .landscape,
+    };
+    const actual = try jigsawData(puzzle);
+    try testing.expectEqual(expected, actual);
+}
+
+test "puzzle with 94 columns and 94/87 aspect ratio" {
+    const puzzle = PartialInformation{
+        .columns = 94,
+        .aspectRatio = 1.0804597701149425,
+    };
+    const expected = FullInformation{
+        .pieces = 8178,
+        .border = 358,
+        .inside = 7820,
+        .rows = 87,
+        .columns = 94,
+        .aspectRatio = 1.0804597701149425,
+        .format = .landscape,
+    };
+    const actual = try jigsawData(puzzle);
+    try testing.expectEqual(expected, actual);
+}
