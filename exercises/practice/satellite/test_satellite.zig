@@ -30,11 +30,7 @@ fn expectNull(actual: ?*Node) !void {
 test "Empty tree" {
     const preorder: []const u8 = "";
     const inorder: []const u8 = "";
-    var actual: Tree = try .initFromTraversals(
-        testing.allocator,
-        preorder,
-        inorder,
-    );
+    var actual: Tree = try .initFromTraversals(testing.allocator, preorder, inorder);
     defer actual.deinit();
     try expectNull(actual.root);
 }
@@ -42,11 +38,7 @@ test "Empty tree" {
 test "Tree with one item" {
     const preorder: []const u8 = "a";
     const inorder: []const u8 = "a";
-    var actual: Tree = try .initFromTraversals(
-        testing.allocator,
-        preorder,
-        inorder,
-    );
+    var actual: Tree = try .initFromTraversals(testing.allocator, preorder, inorder);
     defer actual.deinit();
     try testing.expect(actual.root != null);
     try expectEqualChars('a', actual.root.?.data);
@@ -57,11 +49,7 @@ test "Tree with one item" {
 test "Tree with many items" {
     const preorder: []const u8 = "aixfr";
     const inorder: []const u8 = "iafxr";
-    var actual: Tree = try .initFromTraversals(
-        testing.allocator,
-        preorder,
-        inorder,
-    );
+    var actual: Tree = try .initFromTraversals(testing.allocator, preorder, inorder);
     defer actual.deinit();
     try testing.expect(actual.root != null);
     try expectEqualChars('a', actual.root.?.data);
@@ -120,11 +108,7 @@ test "Reject traversals with repeated items" {
 test "A degenerate binary tree" {
     const preorder: []const u8 = "abcd";
     const inorder: []const u8 = "dcba";
-    var actual: Tree = try .initFromTraversals(
-        testing.allocator,
-        preorder,
-        inorder,
-    );
+    var actual: Tree = try .initFromTraversals(testing.allocator, preorder, inorder);
     defer actual.deinit();
     try testing.expect(actual.root != null);
     try expectEqualChars('a', actual.root.?.data);
@@ -144,11 +128,7 @@ test "A degenerate binary tree" {
 test "Another degenerate binary tree" {
     const preorder: []const u8 = "abcd";
     const inorder: []const u8 = "abcd";
-    var actual: Tree = try .initFromTraversals(
-        testing.allocator,
-        preorder,
-        inorder,
-    );
+    var actual: Tree = try .initFromTraversals(testing.allocator, preorder, inorder);
     defer actual.deinit();
     try testing.expect(actual.root != null);
     try expectEqualChars('a', actual.root.?.data);
@@ -168,11 +148,7 @@ test "Another degenerate binary tree" {
 test "Tree with many more items" {
     const preorder: []const u8 = "abdghcefi";
     const inorder: []const u8 = "gdhbaecif";
-    var actual: Tree = try .initFromTraversals(
-        testing.allocator,
-        preorder,
-        inorder,
-    );
+    var actual: Tree = try .initFromTraversals(testing.allocator, preorder, inorder);
     defer actual.deinit();
     try testing.expect(actual.root != null);
     try expectEqualChars('a', actual.root.?.data);

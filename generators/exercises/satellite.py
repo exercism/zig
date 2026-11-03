@@ -64,7 +64,7 @@ def gen_case(case):
         return "".join(out)
 
     out.append("""var actual: Tree = try .initFromTraversals(
-        testing.allocator, preorder, inorder,);
+        testing.allocator, preorder, inorder);
         defer actual.deinit();
         """)
     _traverse("actual.root", expected, out)
