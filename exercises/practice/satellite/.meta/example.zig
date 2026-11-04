@@ -10,9 +10,9 @@ pub const TraversalError = error{
 pub const Node = struct {
     left: ?*Node,
     right: ?*Node,
-    data: i32,
+    data: u8,
 
-    fn init(allocator: mem.Allocator, left: ?*Node, right: ?*Node, data: i32) mem.Allocator.Error!*Node {
+    fn init(allocator: mem.Allocator, left: ?*Node, right: ?*Node, data: u8) mem.Allocator.Error!*Node {
         const self = try allocator.create(Node);
         self.left = left;
         self.right = right;
@@ -30,7 +30,7 @@ pub const Node = struct {
         allocator.destroy(self);
     }
 
-    fn write(self: *const Node, list: *std.array_list.Managed(i32)) mem.Allocator.Error!void {
+    fn write(self: *const Node, list: *std.array_list.Managed(u8)) mem.Allocator.Error!void {
         if (self.left) |child| {
             try child.write(list);
         }

@@ -1,7 +1,29 @@
 from lib import is_error
 
 HEADER = """const Tree = satellite.Tree;
-const TraversalError = satellite.TraversalError;
+const Node = satellite.Node;
+const Result = (std.mem.Allocator.Error || satellite.TraversalError)!Tree;
+
+fn expectEqualChars(expected: u8, actual: u8) !void {
+    const fmtChar = std.zig.fmtChar;
+    if (actual != expected) {
+        testing.failPrint("expected '{f}', found '{f}'\\n", .{
+            fmtChar(expected),
+            fmtChar(actual),
+        });
+        return error.TestExpectedEqual;
+    }
+}
+
+fn expectNull(actual: ?*Node) !void {
+    const fmtChar = std.zig.fmtChar;
+    if (actual) |a| {
+        testing.failPrint("expected null, found node '{f}'\\n", .{
+            fmtChar(a.data),
+        });
+        return error.TestExpectedNull;
+    }
+}
 """
 
 _ERROR_MAP = {
@@ -11,29 +33,18 @@ _ERROR_MAP = {
 }
 
 
-def _u8_array(name, chars):
-    if not chars:
-        return f"const {name} = [_]u8{{}};\n"
-    inner = ", ".join(f"'{c}'" for c in chars)
-    return f"const {name} = [_]u8{{ {inner} }};\n"
+def _u8_const_slice(name, chars):
+    inner = "".join(chars)
+    return f"const {name}: []const u8 = \"{inner}\";\n"
 
-
-def _traverse(expr, name, node, out):
+def _traverse(expr, node, out):
     if not node:
-        out.append(f"try testing.expectEqual(null, {expr});\n")
+        out.append(f"try expectNull({expr});\n")
         return
-
-    if len(name) > 1 and name[0] == "o":
-        name = name[1:]
-
-    out.append(f"if ({expr}) |{name}| {{\n")
-    out.append(f"try testing.expectEqual('{node['v']}', {name}.data);\n")
-    _traverse(name + ".left", name + "l", node.get("l"), out)
-    _traverse(name + ".right", name + "r", node.get("r"), out)
-    out.append("} else {\n")
-    out.append(f"try testing.expectEqual(false, true); // {expr} should not be null\n")
-    out.append("}\n")
-
+    out.append(f"try testing.expect({expr} != null);\n")
+    out.append(f"try expectEqualChars('{node['v']}', {expr}.?.data);\n")
+    _traverse(expr + ".?.left", node['l'],out)
+    _traverse(expr + ".?.right", node['r'],out)
 
 def gen_case(case):
     inp = case["input"]
@@ -41,24 +52,21 @@ def gen_case(case):
     preorder = inp["preorder"]
     inorder = inp["inorder"]
 
-    out = [_u8_array("preorder", preorder), _u8_array("inorder", inorder)]
+    out = [_u8_const_slice("preorder", preorder), _u8_const_slice("inorder", inorder)]
 
     if is_error(expected):
+        out.append("""var actual: Result = .initFromTraversals(
+            testing.allocator, preorder, inorder,);
+            defer if (actual) |*a| a.deinit() else |_| {};
+            """)
         err = _ERROR_MAP[expected["error"]]
-        out.append(
-            f"try testing.expectError(TraversalError.{err}, "
-            "Tree.initFromTraversals(testing.allocator, &preorder, &inorder));\n"
-        )
+        out.append(f"try testing.expectError(error.{err}, actual);\n")
         return "".join(out)
 
-    out.append(
-        "var tree = try Tree.initFromTraversals(testing.allocator, &preorder, &inorder);\n"
-    )
-    out.append("defer tree.deinit();\n")
-
-    if not expected:
-        out.append("try testing.expectEqual(null, tree.root);\n")
-    else:
-        _traverse("tree.root", "o", expected, out)
+    out.append("""var actual: Tree = try .initFromTraversals(
+        testing.allocator, preorder, inorder);
+        defer actual.deinit();
+        """)
+    _traverse("actual.root", expected, out)
 
     return "".join(out)

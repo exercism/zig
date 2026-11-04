@@ -3,208 +3,179 @@ const testing = std.testing;
 
 const satellite = @import("satellite.zig");
 const Tree = satellite.Tree;
-const TraversalError = satellite.TraversalError;
+const Node = satellite.Node;
+const Result = (std.mem.Allocator.Error || satellite.TraversalError)!Tree;
+
+fn expectEqualChars(expected: u8, actual: u8) !void {
+    const fmtChar = std.zig.fmtChar;
+    if (actual != expected) {
+        testing.failPrint("expected '{f}', found '{f}'\n", .{
+            fmtChar(expected),
+            fmtChar(actual),
+        });
+        return error.TestExpectedEqual;
+    }
+}
+
+fn expectNull(actual: ?*Node) !void {
+    const fmtChar = std.zig.fmtChar;
+    if (actual) |a| {
+        testing.failPrint("expected null, found node '{f}'\n", .{
+            fmtChar(a.data),
+        });
+        return error.TestExpectedNull;
+    }
+}
 
 test "Empty tree" {
-    const preorder = [_]u8{};
-    const inorder = [_]u8{};
-    var tree = try Tree.initFromTraversals(testing.allocator, &preorder, &inorder);
-    defer tree.deinit();
-    try testing.expectEqual(null, tree.root);
+    const preorder: []const u8 = "";
+    const inorder: []const u8 = "";
+    var actual: Tree = try .initFromTraversals(testing.allocator, preorder, inorder);
+    defer actual.deinit();
+    try expectNull(actual.root);
 }
 
 test "Tree with one item" {
-    const preorder = [_]u8{'a'};
-    const inorder = [_]u8{'a'};
-    var tree = try Tree.initFromTraversals(testing.allocator, &preorder, &inorder);
-    defer tree.deinit();
-    if (tree.root) |o| {
-        try testing.expectEqual('a', o.data);
-        try testing.expectEqual(null, o.left);
-        try testing.expectEqual(null, o.right);
-    } else {
-        try testing.expectEqual(false, true); // tree.root should not be null
-    }
+    const preorder: []const u8 = "a";
+    const inorder: []const u8 = "a";
+    var actual: Tree = try .initFromTraversals(testing.allocator, preorder, inorder);
+    defer actual.deinit();
+    try testing.expect(actual.root != null);
+    try expectEqualChars('a', actual.root.?.data);
+    try expectNull(actual.root.?.left);
+    try expectNull(actual.root.?.right);
 }
 
 test "Tree with many items" {
-    const preorder = [_]u8{ 'a', 'i', 'x', 'f', 'r' };
-    const inorder = [_]u8{ 'i', 'a', 'f', 'x', 'r' };
-    var tree = try Tree.initFromTraversals(testing.allocator, &preorder, &inorder);
-    defer tree.deinit();
-    if (tree.root) |o| {
-        try testing.expectEqual('a', o.data);
-        if (o.left) |l| {
-            try testing.expectEqual('i', l.data);
-            try testing.expectEqual(null, l.left);
-            try testing.expectEqual(null, l.right);
-        } else {
-            try testing.expectEqual(false, true); // o.left should not be null
-        }
-        if (o.right) |r| {
-            try testing.expectEqual('x', r.data);
-            if (r.left) |rl| {
-                try testing.expectEqual('f', rl.data);
-                try testing.expectEqual(null, rl.left);
-                try testing.expectEqual(null, rl.right);
-            } else {
-                try testing.expectEqual(false, true); // r.left should not be null
-            }
-            if (r.right) |rr| {
-                try testing.expectEqual('r', rr.data);
-                try testing.expectEqual(null, rr.left);
-                try testing.expectEqual(null, rr.right);
-            } else {
-                try testing.expectEqual(false, true); // r.right should not be null
-            }
-        } else {
-            try testing.expectEqual(false, true); // o.right should not be null
-        }
-    } else {
-        try testing.expectEqual(false, true); // tree.root should not be null
-    }
+    const preorder: []const u8 = "aixfr";
+    const inorder: []const u8 = "iafxr";
+    var actual: Tree = try .initFromTraversals(testing.allocator, preorder, inorder);
+    defer actual.deinit();
+    try testing.expect(actual.root != null);
+    try expectEqualChars('a', actual.root.?.data);
+    try testing.expect(actual.root.?.left != null);
+    try expectEqualChars('i', actual.root.?.left.?.data);
+    try expectNull(actual.root.?.left.?.left);
+    try expectNull(actual.root.?.left.?.right);
+    try testing.expect(actual.root.?.right != null);
+    try expectEqualChars('x', actual.root.?.right.?.data);
+    try testing.expect(actual.root.?.right.?.left != null);
+    try expectEqualChars('f', actual.root.?.right.?.left.?.data);
+    try expectNull(actual.root.?.right.?.left.?.left);
+    try expectNull(actual.root.?.right.?.left.?.right);
+    try testing.expect(actual.root.?.right.?.right != null);
+    try expectEqualChars('r', actual.root.?.right.?.right.?.data);
+    try expectNull(actual.root.?.right.?.right.?.left);
+    try expectNull(actual.root.?.right.?.right.?.right);
 }
 
 test "Reject traversals of different length" {
-    const preorder = [_]u8{ 'a', 'b' };
-    const inorder = [_]u8{ 'b', 'a', 'r' };
-    try testing.expectError(TraversalError.DifferentLengths, Tree.initFromTraversals(testing.allocator, &preorder, &inorder));
+    const preorder: []const u8 = "ab";
+    const inorder: []const u8 = "bar";
+    var actual: Result = .initFromTraversals(
+        testing.allocator,
+        preorder,
+        inorder,
+    );
+    defer if (actual) |*a| a.deinit() else |_| {};
+    try testing.expectError(error.DifferentLengths, actual);
 }
 
 test "Reject inconsistent traversals of same length" {
-    const preorder = [_]u8{ 'x', 'y', 'z' };
-    const inorder = [_]u8{ 'a', 'b', 'c' };
-    try testing.expectError(TraversalError.DifferentItems, Tree.initFromTraversals(testing.allocator, &preorder, &inorder));
+    const preorder: []const u8 = "xyz";
+    const inorder: []const u8 = "abc";
+    var actual: Result = .initFromTraversals(
+        testing.allocator,
+        preorder,
+        inorder,
+    );
+    defer if (actual) |*a| a.deinit() else |_| {};
+    try testing.expectError(error.DifferentItems, actual);
 }
 
 test "Reject traversals with repeated items" {
-    const preorder = [_]u8{ 'a', 'b', 'a' };
-    const inorder = [_]u8{ 'b', 'a', 'a' };
-    try testing.expectError(TraversalError.NonUniqueItems, Tree.initFromTraversals(testing.allocator, &preorder, &inorder));
+    const preorder: []const u8 = "aba";
+    const inorder: []const u8 = "baa";
+    var actual: Result = .initFromTraversals(
+        testing.allocator,
+        preorder,
+        inorder,
+    );
+    defer if (actual) |*a| a.deinit() else |_| {};
+    try testing.expectError(error.NonUniqueItems, actual);
 }
 
 test "A degenerate binary tree" {
-    const preorder = [_]u8{ 'a', 'b', 'c', 'd' };
-    const inorder = [_]u8{ 'd', 'c', 'b', 'a' };
-    var tree = try Tree.initFromTraversals(testing.allocator, &preorder, &inorder);
-    defer tree.deinit();
-    if (tree.root) |o| {
-        try testing.expectEqual('a', o.data);
-        if (o.left) |l| {
-            try testing.expectEqual('b', l.data);
-            if (l.left) |ll| {
-                try testing.expectEqual('c', ll.data);
-                if (ll.left) |lll| {
-                    try testing.expectEqual('d', lll.data);
-                    try testing.expectEqual(null, lll.left);
-                    try testing.expectEqual(null, lll.right);
-                } else {
-                    try testing.expectEqual(false, true); // ll.left should not be null
-                }
-                try testing.expectEqual(null, ll.right);
-            } else {
-                try testing.expectEqual(false, true); // l.left should not be null
-            }
-            try testing.expectEqual(null, l.right);
-        } else {
-            try testing.expectEqual(false, true); // o.left should not be null
-        }
-        try testing.expectEqual(null, o.right);
-    } else {
-        try testing.expectEqual(false, true); // tree.root should not be null
-    }
+    const preorder: []const u8 = "abcd";
+    const inorder: []const u8 = "dcba";
+    var actual: Tree = try .initFromTraversals(testing.allocator, preorder, inorder);
+    defer actual.deinit();
+    try testing.expect(actual.root != null);
+    try expectEqualChars('a', actual.root.?.data);
+    try testing.expect(actual.root.?.left != null);
+    try expectEqualChars('b', actual.root.?.left.?.data);
+    try testing.expect(actual.root.?.left.?.left != null);
+    try expectEqualChars('c', actual.root.?.left.?.left.?.data);
+    try testing.expect(actual.root.?.left.?.left.?.left != null);
+    try expectEqualChars('d', actual.root.?.left.?.left.?.left.?.data);
+    try expectNull(actual.root.?.left.?.left.?.left.?.left);
+    try expectNull(actual.root.?.left.?.left.?.left.?.right);
+    try expectNull(actual.root.?.left.?.left.?.right);
+    try expectNull(actual.root.?.left.?.right);
+    try expectNull(actual.root.?.right);
 }
 
 test "Another degenerate binary tree" {
-    const preorder = [_]u8{ 'a', 'b', 'c', 'd' };
-    const inorder = [_]u8{ 'a', 'b', 'c', 'd' };
-    var tree = try Tree.initFromTraversals(testing.allocator, &preorder, &inorder);
-    defer tree.deinit();
-    if (tree.root) |o| {
-        try testing.expectEqual('a', o.data);
-        try testing.expectEqual(null, o.left);
-        if (o.right) |r| {
-            try testing.expectEqual('b', r.data);
-            try testing.expectEqual(null, r.left);
-            if (r.right) |rr| {
-                try testing.expectEqual('c', rr.data);
-                try testing.expectEqual(null, rr.left);
-                if (rr.right) |rrr| {
-                    try testing.expectEqual('d', rrr.data);
-                    try testing.expectEqual(null, rrr.left);
-                    try testing.expectEqual(null, rrr.right);
-                } else {
-                    try testing.expectEqual(false, true); // rr.right should not be null
-                }
-            } else {
-                try testing.expectEqual(false, true); // r.right should not be null
-            }
-        } else {
-            try testing.expectEqual(false, true); // o.right should not be null
-        }
-    } else {
-        try testing.expectEqual(false, true); // tree.root should not be null
-    }
+    const preorder: []const u8 = "abcd";
+    const inorder: []const u8 = "abcd";
+    var actual: Tree = try .initFromTraversals(testing.allocator, preorder, inorder);
+    defer actual.deinit();
+    try testing.expect(actual.root != null);
+    try expectEqualChars('a', actual.root.?.data);
+    try expectNull(actual.root.?.left);
+    try testing.expect(actual.root.?.right != null);
+    try expectEqualChars('b', actual.root.?.right.?.data);
+    try expectNull(actual.root.?.right.?.left);
+    try testing.expect(actual.root.?.right.?.right != null);
+    try expectEqualChars('c', actual.root.?.right.?.right.?.data);
+    try expectNull(actual.root.?.right.?.right.?.left);
+    try testing.expect(actual.root.?.right.?.right.?.right != null);
+    try expectEqualChars('d', actual.root.?.right.?.right.?.right.?.data);
+    try expectNull(actual.root.?.right.?.right.?.right.?.left);
+    try expectNull(actual.root.?.right.?.right.?.right.?.right);
 }
 
 test "Tree with many more items" {
-    const preorder = [_]u8{ 'a', 'b', 'd', 'g', 'h', 'c', 'e', 'f', 'i' };
-    const inorder = [_]u8{ 'g', 'd', 'h', 'b', 'a', 'e', 'c', 'i', 'f' };
-    var tree = try Tree.initFromTraversals(testing.allocator, &preorder, &inorder);
-    defer tree.deinit();
-    if (tree.root) |o| {
-        try testing.expectEqual('a', o.data);
-        if (o.left) |l| {
-            try testing.expectEqual('b', l.data);
-            if (l.left) |ll| {
-                try testing.expectEqual('d', ll.data);
-                if (ll.left) |lll| {
-                    try testing.expectEqual('g', lll.data);
-                    try testing.expectEqual(null, lll.left);
-                    try testing.expectEqual(null, lll.right);
-                } else {
-                    try testing.expectEqual(false, true); // ll.left should not be null
-                }
-                if (ll.right) |llr| {
-                    try testing.expectEqual('h', llr.data);
-                    try testing.expectEqual(null, llr.left);
-                    try testing.expectEqual(null, llr.right);
-                } else {
-                    try testing.expectEqual(false, true); // ll.right should not be null
-                }
-            } else {
-                try testing.expectEqual(false, true); // l.left should not be null
-            }
-            try testing.expectEqual(null, l.right);
-        } else {
-            try testing.expectEqual(false, true); // o.left should not be null
-        }
-        if (o.right) |r| {
-            try testing.expectEqual('c', r.data);
-            if (r.left) |rl| {
-                try testing.expectEqual('e', rl.data);
-                try testing.expectEqual(null, rl.left);
-                try testing.expectEqual(null, rl.right);
-            } else {
-                try testing.expectEqual(false, true); // r.left should not be null
-            }
-            if (r.right) |rr| {
-                try testing.expectEqual('f', rr.data);
-                if (rr.left) |rrl| {
-                    try testing.expectEqual('i', rrl.data);
-                    try testing.expectEqual(null, rrl.left);
-                    try testing.expectEqual(null, rrl.right);
-                } else {
-                    try testing.expectEqual(false, true); // rr.left should not be null
-                }
-                try testing.expectEqual(null, rr.right);
-            } else {
-                try testing.expectEqual(false, true); // r.right should not be null
-            }
-        } else {
-            try testing.expectEqual(false, true); // o.right should not be null
-        }
-    } else {
-        try testing.expectEqual(false, true); // tree.root should not be null
-    }
+    const preorder: []const u8 = "abdghcefi";
+    const inorder: []const u8 = "gdhbaecif";
+    var actual: Tree = try .initFromTraversals(testing.allocator, preorder, inorder);
+    defer actual.deinit();
+    try testing.expect(actual.root != null);
+    try expectEqualChars('a', actual.root.?.data);
+    try testing.expect(actual.root.?.left != null);
+    try expectEqualChars('b', actual.root.?.left.?.data);
+    try testing.expect(actual.root.?.left.?.left != null);
+    try expectEqualChars('d', actual.root.?.left.?.left.?.data);
+    try testing.expect(actual.root.?.left.?.left.?.left != null);
+    try expectEqualChars('g', actual.root.?.left.?.left.?.left.?.data);
+    try expectNull(actual.root.?.left.?.left.?.left.?.left);
+    try expectNull(actual.root.?.left.?.left.?.left.?.right);
+    try testing.expect(actual.root.?.left.?.left.?.right != null);
+    try expectEqualChars('h', actual.root.?.left.?.left.?.right.?.data);
+    try expectNull(actual.root.?.left.?.left.?.right.?.left);
+    try expectNull(actual.root.?.left.?.left.?.right.?.right);
+    try expectNull(actual.root.?.left.?.right);
+    try testing.expect(actual.root.?.right != null);
+    try expectEqualChars('c', actual.root.?.right.?.data);
+    try testing.expect(actual.root.?.right.?.left != null);
+    try expectEqualChars('e', actual.root.?.right.?.left.?.data);
+    try expectNull(actual.root.?.right.?.left.?.left);
+    try expectNull(actual.root.?.right.?.left.?.right);
+    try testing.expect(actual.root.?.right.?.right != null);
+    try expectEqualChars('f', actual.root.?.right.?.right.?.data);
+    try testing.expect(actual.root.?.right.?.right.?.left != null);
+    try expectEqualChars('i', actual.root.?.right.?.right.?.left.?.data);
+    try expectNull(actual.root.?.right.?.right.?.left.?.left);
+    try expectNull(actual.root.?.right.?.right.?.left.?.right);
+    try expectNull(actual.root.?.right.?.right.?.right);
 }
