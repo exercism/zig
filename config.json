@@ -675,15 +675,15 @@
         "name": "Queen Attack",
         "uuid": "6eb542c3-c14f-430a-81ce-ba9f2c0551c2",
         "practices": [
+          "asserting",
           "control-flow",
-          "error-sets",
           "importing",
           "methods",
           "structs"
         ],
         "prerequisites": [
+          "asserting",
           "control-flow",
-          "error-sets",
           "importing",
           "methods",
           "structs"

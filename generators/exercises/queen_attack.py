@@ -1,6 +1,14 @@
-from lib import is_error
-
-HEADER = "const QueenError = queen_attack.QueenError;"
+HEADER = """
+fn testCreate(row: u3, col: u3) !void {
+    const queen = queen_attack.Queen.init(row, col);
+    // Allow the fields to have any name, in any order.
+    const field_names = @typeInfo(@TypeOf(queen)).@"struct".field_names;
+    inline for (field_names) |name| {
+        const actual = @field(queen, name);
+        try testing.expect(actual == row or actual == col);
+    }
+}
+"""
 
 
 def describe(case, parent):
@@ -22,30 +30,13 @@ def gen_case(case):
         return f"    try testing.expectEqual({n}, @typeInfo(queen_attack.Queen).@\"struct\".field_names.len);\n"
     if prop == "create":
         pos = inp["queen"]["position"]
-        row, col = pos["row"], pos["column"]
-        if is_error(case["expected"]):
-            return (
-                f"    const queen = queen_attack.Queen.init({row}, {col});\n"
-                f"    try testing.expectError(QueenError.InitializationFailure, queen);\n"
-            )
-        # Valid position: allow any field names, all equal to the input value.
-        return (
-            f"    const queen = try queen_attack.Queen.init({row}, {col});\n"
-            f"    // Allow the fields to have any name.\n"
-            f"    const field_names = @typeInfo(@TypeOf(queen)).@\"struct\".field_names;\n"
-            f"    inline for (field_names) |name| {{\n"
-            f"        const actual = @field(queen, name);\n"
-            f"        const expected = @as(@TypeOf(actual), {row});\n"
-            f"        try testing.expectEqual(expected, actual);\n"
-            f"    }}\n"
-        )
+        return f"    try testCreate({pos['row']}, {pos['column']});\n"
     # canAttack
     w = inp["white_queen"]["position"]
     b = inp["black_queen"]["position"]
-    expected = case["expected"]
-    bang = "" if expected else "!"
+    bang = "" if case["expected"] else "!"
     return (
-        f"    const white = try queen_attack.Queen.init({w['row']}, {w['column']});\n"
-        f"    const black = try queen_attack.Queen.init({b['row']}, {b['column']});\n"
-        f"    try testing.expect({bang}try white.canAttack(black));\n"
+        f"    const white = queen_attack.Queen.init({w['row']}, {w['column']});\n"
+        f"    const black = queen_attack.Queen.init({b['row']}, {b['column']});\n"
+        f"    try testing.expect({bang}white.canAttack(black));\n"
     )
