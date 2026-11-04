@@ -158,8 +158,8 @@ test "position of y in a word determines if it is a consonant or a vowel-y as se
 }
 
 test "phrases are translated-a whole phrase" {
-    const expected: []const u8 = "ickquay astfay unray";
-    const actual = try pig_latin.translate(testing.allocator, "quick fast run");
+    const expected: []const u8 = "ywhay oday idssquay enjoyay xraysay";
+    const actual = try pig_latin.translate(testing.allocator, "why do squids enjoy xrays");
     defer testing.allocator.free(actual);
     try testing.expectEqualStrings(expected, actual);
 }
