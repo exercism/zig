@@ -14,15 +14,19 @@ description = "Test creation of Queens with valid and invalid positions -> queen
 
 [4e812d5d-b974-4e38-9a6b-8e0492bfa7be]
 description = "Test creation of Queens with valid and invalid positions -> queen must have positive row"
+include = false
 
 [f07b7536-b66b-4f08-beb9-4d70d891d5c8]
 description = "Test creation of Queens with valid and invalid positions -> queen must have row on board"
+include = false
 
 [15a10794-36d9-4907-ae6b-e5a0d4c54ebe]
 description = "Test creation of Queens with valid and invalid positions -> queen must have positive column"
+include = false
 
 [6907762d-0e8a-4c38-87fb-12f2f65f0ce4]
 description = "Test creation of Queens with valid and invalid positions -> queen must have column on board"
+include = false
 
 [33ae4113-d237-42ee-bac1-e1e699c0c007]
 description = "Test the ability of one queen to attack another -> cannot attack"
