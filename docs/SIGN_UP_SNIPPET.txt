@@ -1,0 +1,16 @@
+fn mostCommonWord(allocator: std.mem.Allocator, text: []const u8) ![]u8 {
+    var counts = std.StringHashMap(u32).init(allocator);
+    defer counts.deinit();
+    var best: []const u8 = "";
+    var best_count: u32 = 0;
+    var words = std.mem.splitScalar(u8, text, ' ');
+    while (words.next()) |word| {
+        const count = (counts.get(word) orelse 0) + 1;
+        try counts.put(word, count);
+        if (count > best_count) {
+            best = word;
+            best_count = count;
+        }
+    }
+    return std.fmt.allocPrint(allocator, "\"{s}\" appears {d} times", .{ best, best_count });
+}
