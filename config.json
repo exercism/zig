@@ -103,7 +103,6 @@
         "practices": [
           "bitwise-operations",
           "builtin-functions",
-          "conditionals",
           "control-flow",
           "importing",
           "slices",
@@ -196,7 +195,6 @@
           "builtin-functions",
           "control-flow",
           "enums",
-          "functions",
           "methods",
           "structs"
         ],
@@ -234,7 +232,6 @@
           "bitwise-operations",
           "conditionals",
           "error-sets",
-          "functions",
           "methods",
           "structs"
         ],
@@ -277,7 +274,6 @@
           "conditionals",
           "control-flow",
           "error-sets",
-          "functions",
           "slices"
         ],
         "prerequisites": [
@@ -398,7 +394,6 @@
           "conditionals",
           "control-flow",
           "error-sets",
-          "functions",
           "slices",
           "type-coercion"
         ],
@@ -428,9 +423,7 @@
           "arrays",
           "builtin-functions",
           "enums",
-          "functions",
           "pointers",
-          "slices",
           "type-coercion"
         ],
         "prerequisites": [
@@ -654,11 +647,8 @@
         "uuid": "7b7db815-5e14-477e-8012-f7719561dd8f",
         "practices": [
           "allocators",
-          "conditionals",
           "control-flow",
-          "error-sets",
-          "functions",
-          "slices"
+          "error-sets"
         ],
         "prerequisites": [
           "allocators",
@@ -675,7 +665,6 @@
         "name": "Queen Attack",
         "uuid": "6eb542c3-c14f-430a-81ce-ba9f2c0551c2",
         "practices": [
-          "control-flow",
           "error-sets",
           "importing",
           "methods",
@@ -705,10 +694,7 @@
         "practices": [
           "allocators",
           "bitwise-operations",
-          "conditionals",
           "control-flow",
-          "error-sets",
-          "functions",
           "importing"
         ],
         "prerequisites": [
